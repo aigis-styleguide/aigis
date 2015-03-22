@@ -1,3 +1,16 @@
 "name": "test_project"
 "path":
   "css": "./css"
+  "dist": "./ronde"
+"assets":
+  "js": [
+    "jquery.js": "./node_modules/jquery/dist/jquery.js"
+  ]
+  "css": [
+    "github.css": "./node_modules/highlight.js/styles/github.css"
+  ]
+"inject":
+  "js": [
+    "jquery.js"
+  ]
+  "css": []

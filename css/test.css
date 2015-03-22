@@ -1,0 +1,67 @@
+/*
+---
+title: test1
+category: test
+libs: [jquery.js]
+---
+
+## test1
+
+```html
+<div class="test1">test1</div>
+```
+
+```js
+var $btn = $('.test1');
+$btn.on("click", function() {
+  alert("test1!!");
+});
+```
+
+<button class="test1">test1</button>
+<script>
+var $btn = $('.test1');
+$btn.on("click", function() {
+  alert("test1!!");
+});
+</script>
+
+*/
+
+.test1 {
+  color: blue;
+}
+
+/*
+---
+title: test3
+category: test
+libs: [jquery.js]
+---
+
+## test3
+
+```html
+<div class="test3">test3</div>
+```
+
+```js
+var $btn = $('.test3');
+$btn.on("click", function() {
+  alert("test3!!");
+});
+```
+
+<button class="test3">test3</button>
+<script>
+var $btn = $('.test3');
+$btn.on("click", function() {
+  alert("test3!!");
+});
+</script>
+
+*/
+
+.test3 {
+  color: blue;
+}
