@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "bluebird": "^2.9.14",
+    "cson": "^3.0.1",
+    "css": "^2.2.0",
+    "js-yaml": "^3.2.7",
+    "lodash": "^3.5.0",
+    "marked": "^0.3.3",
+    "pygmentize-bundled": "^2.3.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^4.0.0",
+    "gulp-concat": "^2.5.2"
+  },
+  "main": "index.js"
+}

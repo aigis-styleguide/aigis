@@ -1,0 +1,31 @@
+/*
+---
+title: test2
+---
+
+## test2
+
+```html
+<div class="test2">test2</div>
+```
+
+```js
+var $btn = $('.test2');
+$btn.on("click", function() {
+  alert("test2!!");
+});
+```
+
+<button class="test2">test2</button>
+<script>
+var $btn = $('.test2');
+$btn.on("click", function() {
+  alert("test2!!");
+});
+</script>
+
+*/
+
+.test2 {
+  color: blue;
+}
