@@ -3,7 +3,7 @@ babel = require "gulp-babel"
 concat = require "gulp-concat"
 plumber = require "gulp-plumber"
 notify = require "gulp-notify"
-src = "./src/**/*.js"
+src = "src/**/*.js"
 
 dist =
   js: "./dist"

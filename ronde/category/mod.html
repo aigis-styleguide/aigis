@@ -1,12 +1,52 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../assets/css/lib/github.css">
+    
+  </head>
+  <body>
+    <h2 id="test2">test2</h2>
+<button class="test2">test2</button>
+
+
+<button class="test2">test2</button>
+
+
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"test2"</span>&gt;</span>test2<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> <span class="hljs-variable">$btn</span> = $(<span class="hljs-string">'.test2'</span>);
+<span class="hljs-variable">$btn</span>.on(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  alert(<span class="hljs-string">"test2!!"</span>);
+});
+</code></pre>
+<script>
+var $btn = $('.test2');
+$btn.on("click", function() {
+  alert("test2!!");
+});
+</script>
+
+<script>
+var $btn = $('.test2');
+$btn.on("click", function() {
+  alert("test2!!");
+});
+</script>
+
+
+
 <h2 id="mod">mod</h2>
-<pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"mod"</span>&gt;<span class="hljs-keyword">mod</span>&lt;/<span class="hljs-keyword">div</span>&gt;
+<button class="mod">mod</button>
+
+
+<pre><code class="lang-html">&lt;button <span class="hljs-type">class</span>=<span class="hljs-string">"mod"</span>&gt;<span class="hljs-keyword">mod</span>&lt;/button&gt;
 </code></pre>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> <span class="hljs-variable">$btn</span> = $(<span class="hljs-string">'.mod'</span>);
 <span class="hljs-variable">$btn</span>.on(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
   alert(<span class="hljs-string">"mod!!"</span>);
 });
 </code></pre>
-<p><button class="mod">mod</button></p>
 <script>
 var $btn = $('.mod');
 $btn.on("click", function() {
@@ -14,3 +54,6 @@ $btn.on("click", function() {
 });
 </script>
 
+
+  </body>
+</html>

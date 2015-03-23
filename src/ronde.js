@@ -18,18 +18,39 @@ export function Ronde() {
       });
       
       var categories = pluckCategories(parsedRules);
-      var categorizedComment = {};
+      var categorizedComment = {uncategorized: []};
       _.each(categories, (category) => {
         categorizedComment[category] = [];
       });
       
       _.each(parsedRules, (comments) => {
         _.each(comments, (comment) => {
-          // comment.html = mdToHTML(comment);
-          categorizedComment[comment.yaml.category].push(comment);
+          if (comment.yaml.category) {
+            if (_.isArray(comment.yaml.category)) {
+              _.each(comment.yaml.category, (category) => {
+                categorizedComment[category].push(comment);
+              });
+            }
+            else {
+              categorizedComment[comment.yaml.category].push(comment);
+            }
+          }
+          else {
+            categorizedComment.uncategorized.push(comment);
+          }
         });
         // console.log(comment);
         // writeHTML(comment, config);
+      });
+      
+      _.each(_.keys(categorizedComment), (key) => {
+        categorizedComment[key].libs =
+          _.chain(categorizedComment[key])
+          .map((comment) => comment.yaml.libs)
+          .compact()
+          .flatten()
+          .uniq()
+          .value();
       });
       // console.log(categorizedComment);
       writeCategolizedHTML(categorizedComment, config);

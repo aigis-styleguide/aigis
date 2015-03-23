@@ -8,7 +8,7 @@ export function parseRules(rules) {
     .filter({type: "comment"})
     .pluck("comment").value();
   rules = _.map(comments, (comment) => {
-    var reg = /---[\s\S]*---/;
+    var reg = /-{3}[\s\S]+?-{3}/;
     var yamlStr = comment.match(reg)[0].replace(/---/g, '');
     var yaml = YAML.load(yamlStr);
     var md = comment.replace(reg, '');    

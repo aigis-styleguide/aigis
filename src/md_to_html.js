@@ -1,5 +1,6 @@
 import marked from "marked";
 import hljs from "highlight.js";
+import {injectHTMLBlock} from "./inject_html_block";
 
 marked.setOptions({
   highlight: function (code) {
@@ -8,5 +9,6 @@ marked.setOptions({
 });
 
 export function mdToHTML(comment) {
+  injectHTMLBlock(comment);
   return marked(comment.md);
 }

@@ -5,6 +5,8 @@ export function pluckCategories(parsedRules) {
     var categories = _.chain(comments).map((comment) => {
       return comment.yaml.category;
     })
+    .compact()
+    .flatten()
     .value();
     return categories;
   });
