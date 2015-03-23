@@ -1,4 +1,5 @@
 export function injectHTMLBlock(comment) {
+  if (comment.injected) return comment;
   var md = comment.md;
   md = md.replace(/`{3}(html|block|\n)+[\s\S]*?`{3}/, (match) => {
     var block = match;
@@ -15,5 +16,6 @@ export function injectHTMLBlock(comment) {
   });
   
   comment.md = md;
+  comment.injected = true;
   return comment;
 }
