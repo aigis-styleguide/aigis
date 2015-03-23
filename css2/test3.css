@@ -1,18 +1,12 @@
 /*
 ---
-title: "test1"
-category:["test", "hoge"]
-libs: [
-  "jquery.js"
-]
+title: test3
+category: test
+libs:
+  - jquery.js
 ---
 
-## test1
-
-* aaaaa
-* bbbbb
-* ccccc
-
+## test3
 
 ```
 <div class="box">
@@ -71,9 +65,11 @@ $boxBtn.on("click", function() {
 
 /*
 ---
-title: "test3"
-category: "test mod"
-libs: "jquery.js"
+title: test3
+category:
+  - test
+  - mod
+libs: jquery.js
 ---
 
 ## test3
@@ -83,10 +79,6 @@ libs: "jquery.js"
   <button class="test3">test3</button>
 </div>
 ```
-
-* aaa
-* bbb
-* ccc
 
 ```js
 var $btn = $('.test3');

@@ -3,10 +3,10 @@ babel = require "gulp-babel"
 concat = require "gulp-concat"
 plumber = require "gulp-plumber"
 notify = require "gulp-notify"
-src = "src/**/*.js"
+src = "src2/**/*.js"
 
 dist =
-  js: "./dist"
+  js: "./dist2"
 
 name =
   js: "index.js"
