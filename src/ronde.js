@@ -51,7 +51,17 @@ export function Ronde() {
           .flatten()
           .uniq()
           .value();
+        
+        categorizedComment[key].css =
+          _.chain(categorizedComment[key])
+          .map((comment) => comment.source)
+          .compact()
+          .flatten()
+          .uniq()
+          .value();
       });
+      
+      
       // console.log(categorizedComment);
       writeCategolizedHTML(categorizedComment, config);
     });

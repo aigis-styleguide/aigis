@@ -6,6 +6,7 @@ import {injectStyleSheet} from "./inject_stylesheet";
 import {mdToHTML} from "./md_to_html";
 import {setAssetsPath} from "./set_assets_path";
 import Handlebars from "handlebars";
+import {copyCSS} from "./copy_css";
 
 export function writeCategolizedHTML(categorizedComment, config) {  
   var dist = path.resolve(config.path.dist);
@@ -19,9 +20,12 @@ export function writeCategolizedHTML(categorizedComment, config) {
     }).join('\n');
   });
   
+  copyCSS(categorizedComment, config);
   setAssetsPath(categorizedComment);
+  // console.log(categorizedComment.test);
   
   _.each(categorizedComment, (comments, categoryName) => {
+    if (_.isEmpty(comments.html)) return;
     mkdirp(dist, (err) => {
       if (err) console.log(err);
       mkdirp(`${dist}/category`, (err) => {
@@ -30,12 +34,17 @@ export function writeCategolizedHTML(categorizedComment, config) {
         
         fs.readFile(baseTempaltePath, (err, hbs) => {
           hbs = hbs.toString();
+          var css = _.map(comments.css, (filePath) => {
+            var fileName = path.basename(filePath);
+            return `../assets/css/${fileName}`;
+          });
           
           var template = Handlebars.compile(hbs);
           var html = template({
               body: comments.html,
-              js: comments.assets.js,
-              css: comments.assets.css
+              assets_js: comments.assets.js,
+              assets_css: comments.assets.css,
+              css: css
             });
           fs.writeFile(`${dist}/category/${categoryName}.html`, html, (err) => {
             if (err) console.log(err);

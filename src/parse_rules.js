@@ -4,16 +4,17 @@ import YAML from "js-yaml";
 export function parseRules(rules) {
   var comments;
   
-  comments = _.chain(rules)
+  rules = _.chain(rules)
     .filter({type: "comment"})
-    .pluck("comment").value();
-  rules = _.map(comments, (comment) => {
-    var reg = /-{3}[\s\S]+?-{3}/;
-    var yamlStr = comment.match(reg)[0].replace(/---/g, '');
-    var yaml = YAML.load(yamlStr);
-    var md = comment.replace(reg, '');    
+    .value();
 
-    return { yaml,md };
+  rules = _.map(rules, (rule) => {
+    var reg = /-{3}[\s\S]+?-{3}/;
+    var yamlStr = rule.comment.match(reg)[0].replace(/---/g, '');
+    var yaml = YAML.load(yamlStr);
+    var md = rule.comment.replace(reg, '');    
+    var source = rule.position.source;
+    return { yaml,md,source };
   });
 
   return rules;

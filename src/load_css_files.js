@@ -23,10 +23,10 @@ export function loadCssFiles(config) {
       });
     });
   });
-  function readFile(file) {
+  function readFile(source) {
     return new Promise((resolve, reject) => {
-        fs.readFile(file, "utf8", (err, file) => {
-          var ast = css.parse(file);
+        fs.readFile(source, "utf8", (err, file) => {
+          var ast = css.parse(file, {source});
           resolve(ast.stylesheet.rules);
         });
     });

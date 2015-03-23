@@ -3,11 +3,16 @@
     <meta charset="utf-8">
     <title>{{title}}</title>
     <link rel="stylesheet" href="../assets/css/lib/monokai.css">
-    {{{css}}}
+    {{#each assets_css}}
+    <link rel="stylesheet" href="{{this}}">
+    {{/each}}
+    {{#each css}}
+    <link rel="stylesheet" href="{{this}}">
+    {{/each}}
   </head>
   <body>
-    {{#each js}}
-      <script src="{{this}}"></script>
+    {{#each assets_js}}
+    <script src="{{this}}"></script>
     {{/each}}
     {{{body}}}
   </body>
