@@ -5,6 +5,7 @@
     "css": "^2.2.0",
     "findit": "^2.0.0",
     "handlebars": "^3.0.0",
+    "highlights": "^1.2.0",
     "js-yaml": "^3.2.7",
     "lodash": "^3.5.0",
     "marked": "^0.3.3",
