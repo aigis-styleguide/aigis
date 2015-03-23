@@ -41,6 +41,7 @@ export function writeCategolizedHTML(categorizedComment, config) {
           
           var template = Handlebars.compile(hbs);
           var html = template({
+              categoryName,
               body: comments.html,
               assets_js: comments.assets.js,
               assets_css: comments.assets.css,

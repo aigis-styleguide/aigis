@@ -19,6 +19,9 @@ marked.setOptions({
       fileContents: code,
       scopeName
     });
+    if (type) {
+      html = `<div class="ronde-codeblock__header">${type}</div>${html}`;
+    }
     return html;
   }
 });
