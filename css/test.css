@@ -50,6 +50,12 @@ $btn.on("click", function() {
 });
 ```
 
+```css
+.test3 {
+  color: blue;
+}
+```
+
 */
 
 .test3 {

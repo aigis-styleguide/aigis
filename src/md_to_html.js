@@ -9,7 +9,8 @@ marked.setOptions({
       js: "source.js",
       javascript: "source.js",
       html: "text.html.gohtml",
-      block: "text.html.gohtml"
+      block: "text.html.gohtml",
+      css: "source.css"
     };
     var scopeName = scope[type] || "text.html.gohtml";
     
