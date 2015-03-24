@@ -36,9 +36,6 @@ export default class Ronde extends Base {
   }
   writeHTMLbyCSS() {
     this.rules.writeHTML();
-    // _.each(this.rules, (rule) => {
-    //   rule.writeHTML();
-    // });
   }
   writeHTMLbyCategory(categoryName) {
     this.rules.writeHTMLbyCategory(categoryName);

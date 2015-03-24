@@ -51,7 +51,7 @@ export default class RuleCollection extends Base{
   }
   writeHTML() {
     _.each(this.rules, (rule) => {
-      rule.toHTML();
+      rule.writeHTML();
     });
   }
   writeHTMLbyCategory() {
