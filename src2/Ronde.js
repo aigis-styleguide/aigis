@@ -2,7 +2,7 @@ import Promise from "bluebird";
 import Base from "./Base";
 import ConfigModel from "./ConfigModel";
 import FileReader from "./FileReader";
-import RulesCollection from "./RuleCollection";
+import RuleCollection from "./RuleCollection";
 import _ from "lodash";
 
 export default class Ronde extends Base {
@@ -19,8 +19,8 @@ export default class Ronde extends Base {
   }
   _initilize() {
     this._getCSSList()
-      .then((x) => {
-        this.emit("create:rules", x[0]);
+      .then((fileList) => {
+        this.emit("create:rules", _.flatten(fileList));
       });
   }
   _getCSSList() {
@@ -28,9 +28,19 @@ export default class Ronde extends Base {
     return this.reader.findBySource(source, ".css");
   }
   _onCreateRules(cssList) {
-    this.rules = new RulesCollection({cssList});
+    this.rules = new RuleCollection({cssList});
     this.rules.on('end:createcollection', () => {
-      this.rules.filterByCategory("test");
+    this.writeHTMLbyCSS();
+    this.writeHTMLbyCategory();
     });
+  }
+  writeHTMLbyCSS() {
+    this.rules.writeHTML();
+    // _.each(this.rules, (rule) => {
+    //   rule.writeHTML();
+    // });
+  }
+  writeHTMLbyCategory(categoryName) {
+    this.rules.writeHTMLbyCategory(categoryName);
   }
 }

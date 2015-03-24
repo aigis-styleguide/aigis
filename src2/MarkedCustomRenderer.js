@@ -17,7 +17,6 @@ export default class MarkedCustomRenderer extends marked.Renderer {
     var classes = this.config.json.md_class[type];
     var template = this.loadTemplate("listitem");
     var html = template({text,classes});
-    console.log(html);
     return html;
   }
   loadTemplate(type) {

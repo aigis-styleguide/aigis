@@ -1,7 +1,10 @@
 /*
 ---
-title: mod
-category: mod
+title: "mod"
+category:["mod"]
+libs: [
+  "jquery"
+]
 ---
 
 ## mod

@@ -3,7 +3,7 @@
 title: "test1"
 category:["test", "hoge"]
 libs: [
-  "jquery"
+  "jquery.js"
 ]
 ---
 
@@ -77,7 +77,7 @@ category: [
   "mod"
 ]
 libs: [
-  "jquery"
+  "jquery.js"
 ]
 ---
 
