@@ -4,6 +4,7 @@ import ConfigModel from "./ConfigModel";
 import FileReader from "./FileReader";
 import RuleCollection from "./RuleCollection";
 import _ from "lodash";
+import del from "del";
 
 export default class Ronde extends Base {
   constructor(opt) {
@@ -18,10 +19,12 @@ export default class Ronde extends Base {
     this.on("create:rules", this._onCreateRules);
   }
   _initilize() {
-    this._getCSSList()
-      .then((fileList) => {
-        this.emit("create:rules", _.flatten(fileList));
-      });
+    del(this.config.json.dest, () => {
+      this._getCSSList()
+        .then((fileList) => {
+          this.emit("create:rules", _.flatten(fileList));
+        });
+    });
   }
   _getCSSList() {
     var source = this.config.json.source;

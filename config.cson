@@ -2,9 +2,9 @@
 # The directory containing the source files to parse recursively
 "source": [
   "./css"
-  "./css2"
+  # "./css2"
 ]
-"dest": "./ronde2"
+"dest": "./ronde"
 # You may put doc related assets here too: images, css, js, etc.
 "doc_assets": "./doc_assets"
 # document. May also include additional folders as needed.
@@ -15,16 +15,12 @@
 ###
 
 ###
-Reference JS library from CSS file by YAML.
----
-libs
-  - jquery.js
----
-then inject into HTML & copy
+Reference JS library from CSS file by CSON.
+Write library name & file path.File path is relative to "doc_assets" path.
 ###
-"libs":
+"lib":
   "jquery": "./js/lib/jquery.js"
-# Custom renderer for MarkedRenderer
+# Markdown renderer custom template for MarkedRenderer
 "md_template": "./renderer_template/"
 # Attach class to rendererd Markdown HTML Element
 # value is must be array

@@ -1,0 +1,27 @@
+/*
+---
+title: "mod"
+category:["mod"]
+libs: [
+  "jquery"
+]
+---
+
+## mod
+
+```html
+<button class="mod">mod</button>
+```
+
+```js
+var $btn = $('.mod');
+$btn.on("click", function() {
+  alert("mod!!");
+});
+```
+
+*/
+
+.mod {
+  color: yellow;
+}
