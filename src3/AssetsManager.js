@@ -19,21 +19,21 @@ export default class AssetsManager extends EventEmitter {
     this._eventify();
   }
   _eventify() {
-    this.on("end:deleteall", this._onEndDeleteAll);
+    this.on("end:deletedest", this._onEndDeleteAll);
   }
   /**
    * @method copyAssets
    */
   copyAssets() {
-    this._deleteAll();
+    this._deleteDest();
   }
   /**
-   * @method _deleteAll
+   * @method _deleteDest
    * delete dest folder
    */
-  _deleteAll() {
+  _deleteDest() {
     del(this.config.dest, () => {
-      this.emit("end:deleteall");
+      this.emit("end:deletedest");
     });
   }
   /**
