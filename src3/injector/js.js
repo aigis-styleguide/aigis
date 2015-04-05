@@ -1,5 +1,9 @@
 import through from "through2";
 
+/**
+ * @method js
+ * inject javascript from codeblock to markdown
+ */
 export default function js(opts) {
   var reg_block = /`{3}(js|javascript)+[\s\S]*?`{3}/;
   var reg_start = /`{3}(js|javascript|\n)+/;
