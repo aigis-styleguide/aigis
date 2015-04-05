@@ -6,11 +6,10 @@ export default defaultConfig = {
   dest: "./ronde",
   doc_assets: ["./doc_assets"],
   lib: {},
+  highlight: "enable",
   md_template: "./md_template",
   md_class: {
-    code:       [],
     blockquote: [],
-    html:       [],
     heading:    [],
     hr:         [],
     list:       [],

@@ -5,11 +5,13 @@ import fs from "fs";
 import objectAssign from "object-assign";
 import defaultConfig from "./defaultConfig";
 import _ from "lodash";
+import highlight from "./highlight";
 
 export default class MarkedCustomRenderer extends marked.Renderer {
   constructor(config) {
     super();
     this.config = config || defaultConfig;
+    this._enableSyntaxHighlight();
     this._defineRenderer();
   }
   _defineRenderer() {
@@ -39,7 +41,7 @@ export default class MarkedCustomRenderer extends marked.Renderer {
     return props;
   }
   _argsToHandlebarsProps(type, args) {
-    var code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align;
+    var code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align, raw, id;
 
     switch(type) {
       case "code":
@@ -52,7 +54,8 @@ export default class MarkedCustomRenderer extends marked.Renderer {
         [html] = args;
         break;
       case "heading":
-        [text, level] = args;
+        [text, level, raw] = args;
+        id = this.options.headerPrefix + raw.toLowerCase().replace(/[^\w]+/g, '-');
         break;
       case "list":
         [body, ordered] = args;
@@ -75,10 +78,15 @@ export default class MarkedCustomRenderer extends marked.Renderer {
         tag = flags.header ? "th" : "td";
         align = flags.align ? flags.align : undefined;
     }
-
-    var props =  _.omit({code, language, quote, html, level, body, ordered, header, context, content, flags, tag, align}, (val,prop) => {
+    
+    var props =  _.omit({code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align, id}, (val,prop) => {
       return _.isUndefined(val);
     });
     return props;
+  }
+  _enableSyntaxHighlight() {
+    if (this.config.highlight === "enable") {
+      marked.setOptions({ highlight });
+    }
   }
 }
