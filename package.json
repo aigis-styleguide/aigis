@@ -4,13 +4,18 @@
     "cson": "^3.0.1",
     "css": "^2.2.0",
     "del": "^1.1.1",
+    "eventemitter2": "^0.4.14",
     "findit": "^2.0.0",
     "handlebars": "^3.0.0",
     "highlights": "^1.2.0",
     "js-yaml": "^3.2.7",
     "lodash": "^3.5.0",
+    "map-stream": "0.0.5",
     "marked": "^0.3.3",
-    "mkdirp": "^0.5.0"
+    "mkdirp": "^0.5.0",
+    "object-assign": "^2.0.0",
+    "through2": "^0.6.3",
+    "vinyl-fs": "^1.0.0"
   },
   "devDependencies": {
     "coffee-script": "^1.9.1",
@@ -18,7 +23,8 @@
     "gulp-babel": "^4.0.0",
     "gulp-concat": "^2.5.2",
     "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.0"
+    "gulp-plumber": "^1.0.0",
+    "run-sequence": "^1.0.2"
   },
   "main": "index.js"
 }
