@@ -18,6 +18,9 @@ export default class AssetsManager extends EventEmitter {
     this.config = opts;
     this._eventify();
   }
+  init() {
+    this.copyAssets();
+  }
   _eventify() {
     this.on("end:deletedest", this._onEndDeleteAll);
   }
