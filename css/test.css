@@ -7,20 +7,8 @@ libs: [
 ]
 ---
 
-## test1
-
-* aaaaa
-* bbbbb
-* ccccc
-
-```
-<div class="box">
-  <h2 class="box__heading">This is box</h2>
-  <p class="box__paragraph">
-    The quick brown fox jumps over the lazy dog. 1234567890
-  </p>
-  <button class="box__btn" data-box-btn>box__btn</button>
-</div>
+```html
+<div class="box">hogehoge</div>
 ```
 
 ```js
@@ -29,7 +17,6 @@ $boxBtn.on("click", function() {
   alert("box__btn!!");
 });
 ```
-
 */
 
 .box {
@@ -67,3 +54,20 @@ $boxBtn.on("click", function() {
   cursor: pointer;
   font-size: 16px;
 }
+
+/*
+---
+title: "hogehogehoge"
+---
+
+# hogehogehoge
+
+---
+
+* aaaaa
+* bbbbb
+* ccccc
+
+----
+
+*/
