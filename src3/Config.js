@@ -35,6 +35,20 @@ export default class Config extends EventEmitter {
   }
   _onEndLoadConfigCson(json) {
     objectAssign(this, defaultConfig, json);
-    console.log(this);
   }
+  globWithExt(key, ext) {
+    var paths = this[key];
+    
+    if (_.isArray(paths)) {
+      paths = _.map(paths, function(path) {
+        return path + "/**/*" + ext;
+      });
+    }
+    else {
+      paths = paths + "/**/*" + ext;
+    }
+    
+    return paths;
+  }
+  
 }
