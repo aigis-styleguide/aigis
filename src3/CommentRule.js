@@ -9,12 +9,14 @@ import CSON from "cson";
 export default class CommentRule extends EventEmitter {
   constructor(opts) {
     super(opts);
+    this.config = opts;
     this._eventify();
   }
   _eventify() {
     this.on("end:loadcss", this._onEndParseCSS);
   }
-  loadCSS(config) {
+  loadCSS() {
+    var config = this.config;
     var source = config.globWithExt("source", ".css");
     this.sourceStream = vfs.src(source)
       .pipe(this.parse())
