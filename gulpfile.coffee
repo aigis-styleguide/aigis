@@ -7,15 +7,15 @@ process = require "child_process"
 exec = process.exec
 runseq = require "run-sequence"
 
-src = "src3/**/*.js"
+src = ["src/**/*.js"]
 
 dist =
-  js: "./dist3"
+  js: "./dist"
 
 name =
   js: "index.js"
 
-index = "./index.js"
+index = "./dist/index.js"
 
 gulp.task "exec:index", (cb) ->
   exec "node #{index}" , (err, stdout, stderr) ->
@@ -28,18 +28,14 @@ gulp.task "babel", ->
     .pipe plumber({errorHandler: notify.onError('<%= error.message %>')})
     .pipe babel
       modules: "common"
+      blacklist: "strict"
     .pipe gulp.dest dist.js
 
 gulp.task "babel:exec", ->
-  runseq [
-    "babel"
-    "exec:index"
-  ]
+  runseq "babel", "exec:index"
 
 gulp.task "watch", ->
   gulp.watch [src], ["babel:exec"]
-  gulp.watch [index], ["exec:index"]
-  # gulp.watch [src], ["babel"]
 
 gulp.task "default", ["watch"]
     
