@@ -24,8 +24,8 @@ function log (opt) {
   });
 }
 
-var commentRule = new CommentRule();
-commentRule.loadCSS(config);
+var commentRule = new CommentRule(config);
+commentRule.loadCSS();
 
 commentRule.on("complete:loadcss", function () {
   var md = commentRule.comments[1].md;
