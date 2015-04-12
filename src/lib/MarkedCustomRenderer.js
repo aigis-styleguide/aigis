@@ -8,7 +8,7 @@ import _ from "lodash";
 import highlight from "./highlight";
 
 export default class MarkedCustomRenderer extends marked.Renderer {
-  constructor(config) {
+  constructor({config}) {
     super();
     this.config = config || defaultConfig;
     this._enableSyntaxHighlight();

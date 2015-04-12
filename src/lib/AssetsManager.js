@@ -13,9 +13,9 @@ import vfs from "vinyl-fs";
  * doing before generate documents
  */
 export default class AssetsManager extends EventEmitter {
-  constructor(opts) {
-    super(opts);
-    this.config = opts;
+  constructor({config}) {
+    super();
+    this.config = config;
     this._eventify();
   }
   init() {

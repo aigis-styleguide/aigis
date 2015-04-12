@@ -5,11 +5,13 @@ import _ from "lodash";
 import vfs from "vinyl-fs";
 import CSS from "css";
 import CSON from "cson";
+import parseCSS from "./parseCSS";
+import log from "./logStream";
 
 export default class CommentRule extends EventEmitter {
-  constructor(opts) {
-    super(opts);
-    this.config = opts;
+  constructor({config}) {
+    super();
+    this.config = config;
     this._eventify();
   }
   _eventify() {
@@ -17,46 +19,15 @@ export default class CommentRule extends EventEmitter {
   }
   loadCSS() {
     var config = this.config;
-    var source = config.globWithExt("source", ".css");
+    var source = config.sourcePath;
     this.sourceStream = vfs.src(source)
-      .pipe(this.parse())
+      .pipe(parseCSS())
       .on("end", (comments) => {
         this.emit("end:loadcss", comments);
       });
   }
-  parse() {
-    var comments = [];
-    return through.obj(function(file, enc, cb) {
-      var css = CSS.parse(file.contents.toString(), {source: file.path});
-      var _this = this;
-      _.chain(css.stylesheet.rules)
-        .filter({type: "comment"})
-        .each((rule) => {
-          var comment = rule.comment;
-          var source = rule.position.source;
-          var reg = /-{3}[\s\S]+?-{3}/;
-          
-          var config = CSON.parse(comment.match(reg)[0].replace(/-{3}/g, ""));
-          var md = comment.replace(reg, "");
-          var obj = objectAssign({},{config: config, md: md, source: source});
-          this.push(obj);
-          comments.push(obj);
-        })
-        .value();
-      cb();
-    }, function() {
-      this.emit("end", comments);
-    });
-  }
   _onEndParseCSS(comments) {
     this.comments = comments;
     this.emit("complete:loadcss");
-  }
-  log (opt) {
-    return through.obj(function(obj, enc, cb) {
-      console.log(obj);
-      this.push(obj);
-      cb();
-    });
   }
 }
