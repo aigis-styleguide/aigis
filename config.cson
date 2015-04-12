@@ -4,7 +4,7 @@
   "./css"
   # "./css2"
 ]
-"dest": "./ronde"
+"dest": "./docs"
 # You may put doc related assets here too: images, css, js, etc.
 "doc_assets": ["./doc_assets"]
 # document. May also include additional folders as needed.
@@ -24,7 +24,7 @@ Write library name & file path.File path is relative to "doc_assets" path.
 "md_template": "./md_template/"
 # Attach class to rendererd Markdown HTML Element
 # value is must be array
-# "highlight": "disable"
+"highlight": "disable"
 "md_class":
   "blockquote": []
   "heading"   : []
