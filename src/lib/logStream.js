@@ -1,4 +1,5 @@
 import through from "through2";
+
 export default function log () {
   console.log("------------- log -------------\n");
   return through.obj(function(obj, enc, cb) {
