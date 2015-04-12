@@ -1,9 +1,9 @@
 var defaultConfig;
 
 export default defaultConfig = {
-  name: "hoge",
+  name: "Components Guide",
   source: ["./css"],
-  dest: "./ronde",
+  dest: "./docs",
   doc_assets: ["./doc_assets"],
   lib: {},
   highlight: "enable",
