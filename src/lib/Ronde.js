@@ -1,10 +1,11 @@
+import {EventEmitter2 as EventEmitter} from "eventemitter2";
 import AssetsManager from "./AssetsManager";
 import Config from "./Config";
 import CommentRule from "./CommentRule";
 import MarkedCustomRenderer from "./MarkedCustomRenderer";
 import marked from "marked";
 
-export default class Ronde {
+export default class Ronde extends EventEmitter {
   constructor() {
     var config = this.config = new Config();
     this.assetsManager = new AssetsManager({config});
