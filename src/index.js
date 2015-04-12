@@ -1,3 +1,1 @@
-import Ronde from "./lib/Ronde";
-
-var ronde = new Ronde();
+import ronde from "./lib/Ronde";
