@@ -7,6 +7,9 @@ import CSS from "css";
 import CSON from "cson";
 import parseCSS from "./parseCSS";
 import log from "./logStream";
+import html from "./injector/html";
+import js from "./injector/js";
+
 
 export default class CommentRule extends EventEmitter {
   constructor({config}) {
@@ -22,6 +25,8 @@ export default class CommentRule extends EventEmitter {
     var source = config.sourcePath;
     this.sourceStream = vfs.src(source)
       .pipe(parseCSS())
+      .pipe(html())
+      .pipe(js())
       .on("end", (comments) => {
         this.emit("end:loadcss", comments);
       });

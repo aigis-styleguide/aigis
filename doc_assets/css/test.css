@@ -1,20 +1,20 @@
 /*
 ---
 title: "test1"
-category:["test", "hoge"]
+category:["hoge"]
 libs: [
-  "jquery.js"
+  "jquery"
 ]
 ---
 
-## test1
+# test1
 
 * aaaaa
 * bbbbb
 * ccccc
 
 
-```
+```html
 <div class="box">
   <h2 class="box__heading">This is box</h2>
   <p class="box__paragraph">
@@ -30,6 +30,8 @@ $boxBtn.on("click", function() {
   alert("box__btn!!");
 });
 ```
+
+![リンク設定](http://localhost:8000/docs/test1.html "hoge")
 
 */
 
@@ -71,26 +73,17 @@ $boxBtn.on("click", function() {
 
 /*
 ---
-title: "test3"
-category: [
-  "test"
-  "mod"
-]
-libs: [
-  "jquery.js"
-]
+title: "hogehogehoge"
 ---
 
-## test3
+# hogehogehoge
 
-```html
-<div>test3
-  <button class="test3">test3</button>
-</div>
-```
+---
+
+* aaaaa
+* bbbbb
+* ccccc
+
+----
 
 */
-
-.test3 {
-  color: blue;
-}

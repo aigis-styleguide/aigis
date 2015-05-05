@@ -8,6 +8,7 @@ exec = process.exec
 runseq = require "run-sequence"
 
 src = ["src/**/*.js"]
+css = ["css/**/*.css"]
 
 dist =
   js: "./dist"
@@ -36,6 +37,7 @@ gulp.task "babel:exec", ->
 
 gulp.task "watch", ->
   gulp.watch [src], ["babel:exec"]
+  gulp.watch [css], ["exec:index"]
 
 gulp.task "default", ["watch"]
     

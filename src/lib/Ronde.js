@@ -10,6 +10,8 @@ import log from "./logStream";
 import through from "through2";
 import fs from "graceful-fs";
 import markdownToHTML from "./markdownToHTML";
+import Handlebars from "handlebars";
+import HbsUtil from "./HandlebarsUtil";
 
 class Ronde extends EventEmitter {
   constructor() {
@@ -17,6 +19,7 @@ class Ronde extends EventEmitter {
     this.renderer = new MarkedCustomRenderer({config});
     this.assetsManager = new AssetsManager({config});
     this.commentRule = new CommentRule({config});
+    this.hbsUtil = new HbsUtil({config});
     this._eventify();
     this.commentRule.loadCSS();
   }
@@ -29,23 +32,19 @@ class Ronde extends EventEmitter {
       .pipe(markdownToHTML(renderer))
       .pipe(this.writer())
       ;
-    // var file = new File({
-    //   cwd: "/local/work/Ronde/",
-    //   base: "/local/work/Ronde/ronde",
-    //   path: "/local/work/Ronde/ronde/file.html",
-    //   contents: new Buffer(md)
-    // });
-    // console.log(file);
-    // file.pipe(log())
-    //   .pipe(vfs.dest());
-    // vfs.dest(file);
-    // console.log(marked(md,{renderer}));
   }
   writer() {
     var config = this.config;
     var dist = config.dest;
+    var _this = this;
+    var config_css = _this.hbsUtil.configCSS();
     return through.obj(function(comment, enc, cb) {
-      var contents = new Buffer(comment.html);
+      var html = Handlebars.compile(fs.readFileSync("./layout/base.hbs", "utf8"))({
+        config_css,
+        body: comment.html
+      });
+      
+      var contents = new Buffer(html);
       var writePath = `${dist}/${comment.config.title}.html`;
       fs.writeFile(writePath, contents);
       this.push(comment);

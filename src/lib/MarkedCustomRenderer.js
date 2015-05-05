@@ -41,7 +41,7 @@ export default class MarkedCustomRenderer extends marked.Renderer {
     return props;
   }
   _argsToHandlebarsProps(type, args) {
-    var code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align, raw, id;
+    var code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align, raw, id, href, title;
 
     switch(type) {
       case "code":
@@ -77,9 +77,14 @@ export default class MarkedCustomRenderer extends marked.Renderer {
         [content, flags] = args;
         tag = flags.header ? "th" : "td";
         align = flags.align ? flags.align : undefined;
+        break;
+      case "image":
+      case "link":
+        [href, title, text] = args;
+        break;
     }
     
-    var props =  _.omit({code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align, id}, (val,prop) => {
+    var props =  _.omit({code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align, id, href, title}, (val,prop) => {
       return _.isUndefined(val);
     });
     return props;

@@ -8,6 +8,7 @@ export default function js(opts) {
   var reg_block = /`{3}(js|javascript)+[\s\S]*?`{3}/;
   var reg_start = /`{3}(js|javascript|\n)+/;
   var reg_end = /`{3}/;
+  var comments = [];
   
   return through.obj(function(comment, enc, cb) {
     var md = comment.md.replace(reg_block, (codeblock) => {
@@ -17,6 +18,9 @@ export default function js(opts) {
     comment.md = md;
 
     this.push(comment);
+    comments.push(comment);
     cb();
+  }, function() {
+    this.emit("end", comments);
   });
 }

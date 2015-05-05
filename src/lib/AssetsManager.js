@@ -1,5 +1,4 @@
 import through from "through2";
-import objectAssign from "object-assign";
 import {EventEmitter2 as EventEmitter} from "eventemitter2";
 import _ from "lodash";
 import del from "del";
@@ -17,6 +16,7 @@ export default class AssetsManager extends EventEmitter {
     super();
     this.config = config;
     this._eventify();
+    this.init();
   }
   init() {
     this.copyAssets();
@@ -59,7 +59,12 @@ export default class AssetsManager extends EventEmitter {
         this.emit("complete");
       });
   }
+  _copyRondeAssets() {
+    vfs.src("./ronde_assets/**/*")
+      .pipe(vfs.dest(this.config.dest + "/ronde_assets"));
+  }
   _onEndDeleteAll() {
     this._copyAllAssetsToDest();
+    this._copyRondeAssets()
   }
 }

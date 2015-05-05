@@ -1,37 +1,46 @@
 "name": "test_project"
-# The directory containing the source files to parse recursively
+
+# The directory containing the source files to parse recursively.
 "source": [
-  "./css"
-  # "./css2"
+  "./doc_assets/css/"
 ]
 "dest": "./docs"
+
 # You may put doc related assets here too: images, css, js, etc.
-"doc_assets": ["./doc_assets"]
+"doc_assets": "./doc_assets"
+
 # document. May also include additional folders as needed.
-###
-"dependencies": [
-  "./dist"
-]
-###
 
 ###
 Reference JS library from CSS file by CSON.
-Write library name & file path.File path is relative to "doc_assets" path.
+Write {"library name": "file path"} "file path" is relative from "doc_assets".
 ###
 "lib":
   "jquery": "./js/lib/jquery.js"
+  
+  
 # Markdown renderer custom template for MarkedRenderer
 "md_template": "./md_template/"
-# Attach class to rendererd Markdown HTML Element
-# value is must be array
-"highlight": "disable"
+
+# Attach class to rendererd HTML Element
+# value is must be Array
 "md_class":
   "blockquote": []
   "heading"   : []
-  "hr"        : ["redline"]
+  "hr"        : []
   "list"      : []
   "listitem"  : []
   "paragraph" : []
   "table"     : []
   "tablerow"  : []
   "tablecell" : []
+  "link"      : ["link"]
+  "image"     : ["image"]
+
+# "highlight": "disable"
+"highlight_theme": "monokai"
+
+"common_assets":
+  "css": [
+    # "css/test.css"
+  ]
