@@ -9,6 +9,8 @@
     "graceful-fs": "^3.0.6",
     "handlebars": "3.0.0",
     "highlights": "1.2.0",
+    "jade": "^1.9.2",
+    "language-jade": "git://github.com/devongovett/atom-jade",
     "lodash": "3.5.0",
     "marked": "0.3.3",
     "mkdirp": "0.5.0",
@@ -25,7 +27,11 @@
     "gulp-concat": "^2.5.2",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.0",
+    "node-inspector": "^0.10.0",
     "run-sequence": "^1.0.2"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "scripts": {
+    "debug": "node-debug ./dist/index.js"
+  }
 }

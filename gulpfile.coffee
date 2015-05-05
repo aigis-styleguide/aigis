@@ -39,5 +39,8 @@ gulp.task "watch", ->
   gulp.watch [src], ["babel:exec"]
   gulp.watch [css], ["exec:index"]
 
+gulp.task "babel:watch", ->
+  gulp.watch [src], ["babel"]
+
 gulp.task "default", ["watch"]
     

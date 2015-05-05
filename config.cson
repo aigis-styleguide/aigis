@@ -1,13 +1,13 @@
-"name": "test_project"
+name: "test_project"
 
 # The directory containing the source files to parse recursively.
-"source": [
+source: [
   "./doc_assets/css/"
 ]
-"dest": "./docs"
+dest: "./docs"
 
 # You may put doc related assets here too: images, css, js, etc.
-"doc_assets": "./doc_assets"
+doc_assets: "./doc_assets"
 
 # document. May also include additional folders as needed.
 
@@ -15,32 +15,39 @@
 Reference JS library from CSS file by CSON.
 Write {"library name": "file path"} "file path" is relative from "doc_assets".
 ###
-"lib":
-  "jquery": "./js/lib/jquery.js"
+lib:
+  jquery: "./js/lib/jquery.js"
   
   
-# Markdown renderer custom template for MarkedRenderer
-"md_template": "./md_template/"
+# Markdown-renderer custom-template for MarkedRenderer.
+md_template: "./md_template/"
 
-# Attach class to rendererd HTML Element
-# value is must be Array
-"md_class":
-  "blockquote": []
-  "heading"   : []
-  "hr"        : []
-  "list"      : []
-  "listitem"  : []
-  "paragraph" : []
-  "table"     : []
-  "tablerow"  : []
-  "tablecell" : []
-  "link"      : ["link"]
-  "image"     : ["image"]
+# Add CSS class to rendered HTML-element from Markdown.
+# Value is expected Array or String.
+md_class:
+  blockquote: []
+  heading   : ["hoge"]
+  hr        : []
+  list      : []
+  listitem  : []
+  paragraph : []
+  table     : []
+  tablerow  : []
+  tablecell : []
+  link      : "link hoge hogehuga"
+  image     : ["image"]
 
 # "highlight": "disable"
-"highlight_theme": "monokai"
+highlight_theme: "monokai"
 
-"common_assets":
-  "css": [
+common_assets:
+  css: [
     # "css/test.css"
   ]
+  js: []
+
+"inject":
+  "html"  : true
+  "js"    : false
+  "jade"  : true
+  "coffee": false

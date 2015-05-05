@@ -24,6 +24,22 @@ libs: [
 </div>
 ```
 
+```jade
+.klass1
+  p(data-hoge="hoge") hogehoge
+  button hogehogehoge
+```
+
+```coffee
+class Hoge extends Fuga
+  constructor: ->
+    super
+    this.hoge = "hoge"
+  fuga: (opt) =>
+    console.log opt
+```
+
+
 ```js
 var $boxBtn = $('[data-box-btn]');
 $boxBtn.on("click", function() {
@@ -31,7 +47,16 @@ $boxBtn.on("click", function() {
 });
 ```
 
+```md
+# hoge
+
+* hoge1
+* hoge2
+* hoge3
+```
+
 ![リンク設定](http://localhost:8000/docs/test1.html "hoge")
+[リンク設定](http://localhost:8000/docs/test1.html "hoge")
 
 */
 
