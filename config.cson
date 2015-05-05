@@ -46,8 +46,8 @@ common_assets:
   ]
   js: []
 
-"inject":
-  "html"  : true
-  "js"    : false
-  "jade"  : true
-  "coffee": false
+inject:
+  html  : true
+  js    : false
+  jade  : true
+  coffee: false

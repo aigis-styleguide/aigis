@@ -24,6 +24,7 @@ export default class MarkedCustomRenderer extends marked.Renderer {
   _render(type, args) {
     var props = this._genProps(type,args);
     var template = this._loadTemplate(type);
+    console.log(props);
     var html = template(props);
     return html;
   }
@@ -35,9 +36,12 @@ export default class MarkedCustomRenderer extends marked.Renderer {
     return template;
   }
   _genProps(type, args) {
-    var props = this._argsToHandlebarsProps(type,args);
+    var props = this._argsToHandlebarsProps(type, args);
     var classes = this.config.md_class[type];
-    props = objectAssign(props,{classes}); 
+    if (!_.isArray(classes)) {
+      classes = [classes];
+    }
+    props = objectAssign(props, {classes}); 
     return props;
   }
   _argsToHandlebarsProps(type, args) {

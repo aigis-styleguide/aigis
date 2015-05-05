@@ -9,6 +9,8 @@ import parseCSS from "./parseCSS";
 import log from "./logStream";
 import html from "./injector/html";
 import js from "./injector/js";
+import jade from "./injector/jade";
+import coffee from "./injector/coffee";
 
 
 export default class CommentRule extends EventEmitter {
@@ -23,10 +25,13 @@ export default class CommentRule extends EventEmitter {
   loadCSS() {
     var config = this.config;
     var source = config.sourcePath;
+    var inject = config.inject || {};
     this.sourceStream = vfs.src(source)
       .pipe(parseCSS())
-      .pipe(html())
-      .pipe(js())
+      .pipe(html({inject: inject.html}))
+      .pipe(jade({inject: inject.jade}))
+      .pipe(js({inject: inject.js}))
+      .pipe(coffee({inject: inject.coffee}))
       .on("end", (comments) => {
         this.emit("end:loadcss", comments);
       });

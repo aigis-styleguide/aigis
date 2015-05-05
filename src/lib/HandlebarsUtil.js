@@ -27,7 +27,7 @@ export default class HandlebarsUtil extends EventEmitter {
     
     css.push(this.highlight());
     
-    return this.build(templatePath, {css, assetsPath});
+    return this.build(templatePath, {css});
   }
   assetsCSS() {
     var templatePath = this.config.doc_assets;
