@@ -1,12 +1,12 @@
 import through from "through2";
-
+import jade from "jade";
 /**
  * @method js
  * inject javascript from codeblock to markdown
  */
-export default function js(opts = {}) {
-  var reg_block = /`{3}(js|javascript)+[\s\S]*?`{3}/;
-  var reg_start = /`{3}(js|javascript|\n)+/;
+export default function jade(opts = {}) {
+  var reg_block = /`{3}(jade)+[\s\S]*?`{3}/;
+  var reg_start = /`{3}(jade|\n)+/;
   var reg_end = /`{3}/;
   var comments = [];
   
@@ -14,11 +14,11 @@ export default function js(opts = {}) {
     if (opts.inject) {
       var md = comment.md.replace(reg_block, (codeblock) => {
         var code = codeblock.replace(reg_start, "").replace(reg_end, "");
-        return `${codeblock}\n\n<script>\n(function(){\n${code}\n})();\n</script>`;
+        code = jade.compile(code)();
+        return `${code}\n\n${codeblock}`;
       });
       comment.md = md;
     }
-
     this.push(comment);
     comments.push(comment);
     cb();
