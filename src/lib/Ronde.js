@@ -37,10 +37,8 @@ class Ronde extends EventEmitter {
     var config = this.config;
     var dist = config.dest;
     var _this = this;
-    var config_css = _this.hbsUtil.configCSS();
     return through.obj(function(comment, enc, cb) {
       var html = Handlebars.compile(fs.readFileSync("./layout/base.hbs", "utf8"))({
-        config_css,
         body: comment.html
       });
       

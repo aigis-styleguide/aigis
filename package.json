@@ -6,6 +6,7 @@
     "del": "1.1.1",
     "eventemitter2": "0.4.14",
     "findit": "2.0.0",
+    "fs-extra": "^0.18.2",
     "graceful-fs": "^3.0.6",
     "handlebars": "3.0.0",
     "highlights": "1.2.0",

@@ -29,10 +29,6 @@ export default class HandlebarsUtil extends EventEmitter {
     
     return this.build(templatePath, {css});
   }
-  assetsCSS() {
-    var templatePath = this.config.doc_assets;
-    return this.build(templatePath, {assets_css});
-  }
   highlight() {
     var syntaxName = this.config.highlight_theme;
     var cssPath = `./ronde_assets/css/highlight/${syntaxName}.css`;

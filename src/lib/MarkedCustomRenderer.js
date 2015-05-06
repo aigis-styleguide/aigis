@@ -24,7 +24,6 @@ export default class MarkedCustomRenderer extends marked.Renderer {
   _render(type, args) {
     var props = this._genProps(type,args);
     var template = this._loadTemplate(type);
-    console.log(props);
     var html = template(props);
     return html;
   }

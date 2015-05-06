@@ -2,9 +2,9 @@ var defaultConfig;
 
 export default defaultConfig = {
   name: "Components Guide",
-  source: ["./doc_assets/css"],
+  source: ["./static/css"],
   dest: "./docs",
-  doc_assets: ["./doc_assets"],
+  dependencies: [],
   lib: {},
   md_template: "./md_template",
   md_class: {
@@ -21,5 +21,4 @@ export default defaultConfig = {
     image     : "",
   },
   highlight_theme: "monokai",
-  dependencies: []
 };

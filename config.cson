@@ -2,13 +2,12 @@ name: "test_project"
 
 # The directory containing the source files to parse recursively.
 source: [
-  "./doc_assets/css/"
+  "./static/css/"
 ]
 dest: "./docs"
 
 # You may put doc related assets here too: images, css, js, etc.
-doc_assets: "./doc_assets"
-
+dependencies: "./static"
 # document. May also include additional folders as needed.
 
 ###

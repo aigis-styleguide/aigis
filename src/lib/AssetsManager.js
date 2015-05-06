@@ -3,6 +3,8 @@ import {EventEmitter2 as EventEmitter} from "eventemitter2";
 import _ from "lodash";
 import del from "del";
 import vfs from "vinyl-fs";
+import fse from "fs-extra";
+import path from "path";
 
 /**
  * @class AssetsManager
@@ -41,23 +43,30 @@ export default class AssetsManager extends EventEmitter {
   }
   /**
    * @method _copyAllAssetsToDest
-   * copy doc_assets from config.doc_assets to config.dest
+   * copy doc_assets from config.dependencies to config.dest
    */
   _copyAllAssetsToDest() {
-    var _doc_assets = [];
-    if (_.isArray(this.config.doc_assets)) {
-      _doc_assets = _.map(this.config.doc_assets, (folder) => {
-        return folder + "/**/*";
+    var config = this.config;
+    var _dependencies = [];
+    
+    if (_.isArray(config.dependencies) && config.dependencies.length !== -1) {
+      _dependencies = _.map(config.dependencies, (folder) => {
+        return folder + "";
       });
     }
     else {
-      _doc_assets = this.config.doc_assets + "/**/*";
+      if (config.dependencies && config.dependencies.length !== -1) {
+        _dependencies.push(config.dependencies);
+      }
     }
-    vfs.src(_doc_assets)
-      .pipe(vfs.dest(this.config.dest + "/doc_assets"))
-      .on("end", () => {
-        this.emit("complete");
-      });
+    
+    _dependencies.forEach((_path) =>{
+      var folderName = path.basename(_path);
+      var folderPath = `${config.dest}/${folderName}`;
+      fse.emptyDirSync(folderPath);
+      fse.copySync(_path, folderPath);
+    });
+    this.emit("complete");
   }
   _copyRondeAssets() {
     vfs.src("./ronde_assets/**/*")
