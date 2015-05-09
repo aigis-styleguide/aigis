@@ -93,7 +93,7 @@ export default class MarkedCustomRenderer extends marked.Renderer {
     return props;
   }
   _enableSyntaxHighlight() {
-    if (this.config.highlight === "enable") {
+    if (this.config.highlight !== false) {
       marked.setOptions({ highlight });
     }
   }
