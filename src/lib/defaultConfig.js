@@ -20,5 +20,6 @@ export default defaultConfig = {
     link      : "",
     image     : "",
   },
+  highlight: true,
   highlight_theme: "monokai",
 };

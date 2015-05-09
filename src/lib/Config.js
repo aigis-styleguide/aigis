@@ -12,6 +12,7 @@ export default class Config extends EventEmitter {
   constructor(opts) {
     super(opts);
     this._eventify();
+    this.support = [".css", ".scss", ".styl"];
     this._loadConfigCson();
   }
   _eventify() {
@@ -38,18 +39,19 @@ export default class Config extends EventEmitter {
     this._setup();
   }
   _setup() {
-    this.sourcePath = this._globWithExt("source", ".css");
+    var paths = _.map(this.support, ext => this._globWithExt("source", ext));
+    this.sourcePath = _.flatten(paths);
   }
   _globWithExt(key, ext) {
     var paths = this[key];
     
     if (_.isArray(paths)) {
       paths = _.map(paths, function(path) {
-        return path + "/**/*" + ext;
+        return (path + "/**/*" + ext).replace(/\/\//g,"/");
       });
     }
     else {
-      paths = paths + "/**/*" + ext;
+      paths = (paths + "/**/*" + ext).replace(/\/\//g,"/");
     }
     
     return paths;
