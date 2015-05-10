@@ -7,7 +7,7 @@ export default function log () {
     console.log("\n------------- log -------------\n");
     this.push(obj);
     cb();
-  }, function() {
-    this.emit("end");
+  }, function(cb) {
+    cb();
   });
 }

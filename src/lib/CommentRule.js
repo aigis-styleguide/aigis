@@ -12,7 +12,6 @@ import js from "./injector/js";
 import jade from "./injector/jade";
 import coffee from "./injector/coffee";
 
-
 export default class CommentRule extends EventEmitter {
   constructor({config}) {
     super();
@@ -20,29 +19,27 @@ export default class CommentRule extends EventEmitter {
     this._eventify();
   }
   _eventify() {
-    this.on("end:loadcss", this._onEndParseCSS);
+    this.once("endloadcss", this._onEndLoadCSS);
   }
-  loadCSS() {
+  parse() {
+    this._loadCSS();
+  }
+  _loadCSS() {
     var config = this.config;
     var source = config.sourcePath;
-    var inject = objectAssign({
-      html: true,
-      jade: true,
-      js: false,
-      coffee: false,
-    }, config.inject);
+    var inject = config.inject;
     this.sourceStream = vfs.src(source)
+      .once("end", () => {
+        this.emit("endloadcss");
+      })
       .pipe(parseCSS())
       .pipe(html({inject: inject.html}))
       .pipe(jade({inject: inject.jade}))
       .pipe(js({inject: inject.js}))
       .pipe(coffee({inject: inject.coffee}))
-      .on("end", (comments) => {
-        this.emit("end:loadcss", comments);
-      });
+      ;
   }
-  _onEndParseCSS(comments) {
-    this.comments = comments;
-    this.emit("complete:loadcss");
+  _onEndLoadCSS(comments) {
+    this.emit("complete:parsecss");
   }
 }

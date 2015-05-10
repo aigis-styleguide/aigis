@@ -8,7 +8,7 @@ import stylus from "stylus";
 import sass from "node-sass";
 
 export default function parseCSS () {
-  var comments = [];
+
   return through.obj(function(file, enc, cb) {
     var css, content;
     var ext  = path.extname(file.path);
@@ -33,7 +33,6 @@ export default function parseCSS () {
     }
     css = CSS.parse(content, {source});
 
-    var _this = this;
     _.chain(css.stylesheet.rules)
       .filter({type: "comment"})
       .each((rule) => {
@@ -45,11 +44,10 @@ export default function parseCSS () {
         var md = comment.replace(reg, "");
         var obj = objectAssign({},{config: config, md: md, source: source});
         this.push(obj);
-        comments.push(obj);
       })
       .value();
     cb();
-  }, function() {
-    this.emit("end", comments);
+  }, function(cb) {
+    cb();
   });
 }

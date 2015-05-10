@@ -10,6 +10,8 @@ import fs from "graceful-fs";
 import markdownToHTML from "./markdownToHTML";
 import Handlebars from "handlebars";
 import HbsUtil from "./HandlebarsUtil";
+import _ from "lodash";
+import categoryWriter from "./writer/category";
 
 class Ronde extends EventEmitter {
   constructor() {
@@ -17,37 +19,21 @@ class Ronde extends EventEmitter {
     this.renderer = new MarkedCustomRenderer({config});
     this.assetsManager = new AssetsManager({config});
     this.commentRule = new CommentRule({config});
-    this.hbsUtil = new HbsUtil({config});
     this._eventify();
-    this.commentRule.loadCSS();
+    this.commentRule.parse();
   }
   _eventify() {
-    this.commentRule.on("complete:loadcss", this._onCompleteLoadCSS.bind(this));
+    this.commentRule.once("complete:parsecss", this._onCompleteParseCSS.bind(this));
   }
-  _onCompleteLoadCSS() {
+  write() {
     var renderer = this.renderer;
     this.commentRule.sourceStream
       .pipe(markdownToHTML(renderer))
-      .pipe(this.writer())
+      .pipe(categoryWriter(this.config))
       ;
   }
-  writer() {
-    var config = this.config;
-    var dist = config.dest;
-    var _this = this;
-    return through.obj(function(comment, enc, cb) {
-      var html = Handlebars.compile(fs.readFileSync("./layout/base.hbs", "utf8"))({
-        body: comment.html
-      });
-      
-      var contents = new Buffer(html);
-      var writePath = `${dist}/${comment.config.title}.html`;
-      fs.writeFile(writePath, contents);
-      this.push(comment);
-      cb();
-    }, function() {
-      this.emit("end");
-    });
+  _onCompleteParseCSS() {
+    this.write();
   }
 }
 
