@@ -40,7 +40,6 @@ class Hoge extends Fuga
     console.log opt
 ```
 
-
 ```js
 var $boxBtn = $('[data-box-btn]');
 $boxBtn.on("click", function() {

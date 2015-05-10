@@ -25,7 +25,12 @@ export default class CommentRule extends EventEmitter {
   loadCSS() {
     var config = this.config;
     var source = config.sourcePath;
-    var inject = config.inject || {};
+    var inject = objectAssign({
+      html: true,
+      jade: true,
+      js: false,
+      coffee: false,
+    }, config.inject);
     this.sourceStream = vfs.src(source)
       .pipe(parseCSS())
       .pipe(html({inject: inject.html}))

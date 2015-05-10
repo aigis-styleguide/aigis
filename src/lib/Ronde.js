@@ -3,8 +3,6 @@ import AssetsManager from "./AssetsManager";
 import Config from "./Config";
 import CommentRule from "./CommentRule";
 import MarkedCustomRenderer from "./MarkedCustomRenderer";
-import stream from "obj-stream";
-import File from "vinyl";
 import vfs from "vinyl-fs";
 import log from "./logStream";
 import through from "through2";

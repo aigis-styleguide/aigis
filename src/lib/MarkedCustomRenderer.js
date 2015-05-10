@@ -87,9 +87,7 @@ export default class MarkedCustomRenderer extends marked.Renderer {
         break;
     }
     
-    var props =  _.omit({code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align, id, href, title}, (val,prop) => {
-      return _.isUndefined(val);
-    });
+    var props =  _.omit({code, language, quote, text, html, level, body, ordered, header, context, content, flags, tag, align, id, href, title}, (val,prop) => _.isUndefined(val));
     return props;
   }
   _enableSyntaxHighlight() {
