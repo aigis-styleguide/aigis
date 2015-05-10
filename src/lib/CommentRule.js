@@ -11,11 +11,14 @@ import html from "./injector/html";
 import js from "./injector/js";
 import jade from "./injector/jade";
 import coffee from "./injector/coffee";
+import MarkedCustomRenderer from "./MarkedCustomRenderer";
+import mdToHTML from "./markdownToHTML";
 
 export default class CommentRule extends EventEmitter {
   constructor({config}) {
     super();
     this.config = config;
+    this.renderer = new MarkedCustomRenderer({config});
     this._eventify();
   }
   _eventify() {
@@ -28,6 +31,8 @@ export default class CommentRule extends EventEmitter {
     var config = this.config;
     var source = config.sourcePath;
     var inject = config.inject;
+    var renderer = this.renderer;
+    
     this.sourceStream = vfs.src(source)
       .once("end", () => {
         this.emit("endloadcss");
@@ -37,6 +42,7 @@ export default class CommentRule extends EventEmitter {
       .pipe(jade({inject: inject.jade}))
       .pipe(js({inject: inject.js}))
       .pipe(coffee({inject: inject.coffee}))
+      .pipe(mdToHTML(renderer))
       ;
   }
   _onEndLoadCSS(comments) {
