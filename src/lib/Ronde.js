@@ -8,6 +8,7 @@ import categoryWriter from "./writer/category";
 
 class Ronde extends EventEmitter {
   constructor() {
+    console.log("\n*** Ronde: start ***\n");
     var config = this.config = new Config();
     this.assetsManager = new AssetsManager({config});
     this.commentRule = new CommentRule({config});
@@ -20,7 +21,11 @@ class Ronde extends EventEmitter {
   write() {
     var renderer = this.renderer;
     this.commentRule.sourceStream
-      .pipe(categoryWriter(this.config));
+      .once("end", () => {
+        console.log("\n*** Ronde: end ***");
+      })
+      .pipe(categoryWriter(this.config))
+      
   }
   _onCompleteParseCSS() {
     this.write();
