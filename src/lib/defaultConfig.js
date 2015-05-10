@@ -7,6 +7,7 @@ export default defaultConfig = {
   dependencies: [],
   lib: {},
   md_template: "./md_template",
+  layout_template: "./layout_template",
   md_class: {
     blockquote: "",
     heading   : "",

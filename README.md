@@ -126,12 +126,17 @@ inject.html(code)
 
 ## ToDo
 
+* テンプレートをわける
+  * header
+  * footer
+  * main
+* デバッグロッグを出す
 * Handlebarsのテンプレートをキャッシュする
 * タグ機能
   * tagsかな
 * 出力
-  * カテゴリごと
+  * 済:カテゴリごと
   * コメント単位？
 * KSS構文
-* Scss対応
-* Stylus対応
+* 済:Scss対応
+* 済:Stylus対応

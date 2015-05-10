@@ -1,7 +1,8 @@
 import through from "through2";
-import fs from "graceful-fs";
+import fs from "fs-extra";
 import Handlebars from "handlebars";
 import _ from "lodash";
+import Render from "../layout/Render";
 
 export default function categoryWriter(config) {
   var categorized = {};
@@ -16,17 +17,22 @@ export default function categoryWriter(config) {
     this.push(comment);
     cb();
   }, function(cb) {
+    var render = new Render(config);
     var categorizedHtml = _.map(categorized, (comments, name) => {
-      var html = _.map(comments, (comment) => comment.html).join("\n");
-      return {name, html};
+      var contents = _.map(comments, (comment) => comment.html);
+      var html = contents.join("\n");
+      return {name, html, contents};
     });
-    var tmpl = Handlebars.compile(fs.readFileSync("./layout/base.hbs", "utf8"));
+    
     _.each(categorizedHtml, (category) => {
-      var html = tmpl({
-        body: category.html,
-        name: category.name
+      var _html = render.build({
+        header: {name: category.name},
+        footer: {},
+        contents: category.contents,
+        name: category.name,
       });
-      var contents = new Buffer(html);
+    
+      var contents = new Buffer(_html);
       var writePath = `${dist}/${category.name}.html`;
       fs.writeFile(writePath, contents);
     });
