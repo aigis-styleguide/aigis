@@ -1,9 +1,17 @@
 name: "test_project"
 
+# Supported file extensions are CSS(.css), Sass(.scss, .sass) and Stylus(.styl)
 # The directory containing the source files to parse recursively.
+source: "./static/css"
+# You may alternately specify multiple directories.
+###
 source: [
-  "./static/css/"
+  "./static/css"
+  "./lib/css"
 ]
+###
+
+# The directory that Ronde will build to
 dest: "./docs"
 
 # You may put doc related assets here too: images, css, js, etc.
@@ -47,6 +55,6 @@ common_assets:
 
 inject:
   html  : true
-  js    : false
   jade  : true
+  js    : false
   coffee: false

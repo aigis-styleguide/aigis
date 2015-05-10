@@ -22,4 +22,10 @@ export default defaultConfig = {
   },
   highlight: true,
   highlight_theme: "monokai",
+  inject: {
+    html: true,
+    jade: true,
+    js: true,
+    coffee: false,
+  }
 };
