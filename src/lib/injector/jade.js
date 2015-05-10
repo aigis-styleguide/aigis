@@ -8,7 +8,6 @@ export default function jade({inject}) {
   var reg_block = /`{3}(jade)+[\s\S]*?`{3}/;
   var reg_start = /`{3}(jade|\n)+/;
   var reg_end = /`{3}/;
-  var comments = [];
   
   return through.obj(function(comment, enc, cb) {
     if (inject) {
@@ -19,10 +18,10 @@ export default function jade({inject}) {
       });
       comment.md = md;
     }
+    
     this.push(comment);
-    comments.push(comment);
     cb();
-  }, function() {
-    this.emit("end", comments);
+  }, function(cb) {
+    cb();
   });
 }

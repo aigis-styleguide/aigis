@@ -1,5 +1,4 @@
 import through from "through2";
-// import {register as coffee} from "coffee-script";
 import coffee from "coffee-script";
 
 /**
@@ -10,7 +9,6 @@ export default function coffee({inject}) {
   var reg_block = /`{3}(coffee)+[\s\S]*?`{3}/;
   var reg_start = /`{3}(coffee|\n)+/;
   var reg_end = /`{3}/;
-  var comments = [];
   
   return through.obj(function(comment, enc, cb) {
     if (inject) {
@@ -21,10 +19,10 @@ export default function coffee({inject}) {
       });
       comment.md = md;
     }
+    
     this.push(comment);
-    comments.push(comment);
     cb();
-  }, function() {
-    this.emit("end", comments);
+  }, function(cb) {
+    cb();
   });
 }
