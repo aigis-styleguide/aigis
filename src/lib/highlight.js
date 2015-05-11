@@ -3,6 +3,7 @@ import Highlights from "highlights";
 var highlighter = new Highlights();
 
 export default function highlight(code, type) {
+  type = type || "";
   var scope = {
     js: "source.js",
     javascript: "source.js",
@@ -16,10 +17,16 @@ export default function highlight(code, type) {
     scss: "source.css.scss",
     sass: "source.sass",
     less: "source.css.less",
+    stylus: "source.stylus",
   };
+  type = type.toLowerCase();
+  
   var scopeName = scope[type] || "text.html.gohtml";
   if (type == "jade") {
     grammarsRegister("jade");
+  }
+  if (type == "stylus") {
+    grammarsRegister("stylus");
   }
   var html = highlighter.highlightSync({
     fileContents: code,
@@ -40,6 +47,9 @@ function grammarsRegister(type) {
   switch(type) {
     case "jade":
       packageName = "language-jade";
+      break;
+    case "stylus":
+      packageName = "language-stylus";
       break;
   }
   
