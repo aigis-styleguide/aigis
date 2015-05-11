@@ -7,9 +7,27 @@ tag: ["tag1", "tag2"]
 
 # testsass
 
-* aaaaa
-* bbbbb
-* ccccc
+```scss
+.box {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2px;
+  
+  .box__heading {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    margin-top: 0;
+    margin-bottom: 3px;
+    background-color: #333;
+    color: #eee;
+    padding: 5px;
+  }
+}
+
+```
 
 */
 
@@ -40,11 +58,5 @@ tag: ["tag1", "tag2"]
 ---
 
 ## test_sass2
-
-```html
-<div class="hoge">test_sass2</div>
-```
-
-hogesasssass~
 
 */

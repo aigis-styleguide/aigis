@@ -99,13 +99,48 @@ $boxBtn.on("click", function() {
 /*
 ---
 name: "test_css2"
-category:["hoge", "css"]
+category:["css"]
 tags: ["tag1", "tag2"]
 ---
 
 ## test_css2
 
-* aaa
-* bbb
+```css
+.box {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2px;
+}
+.box__heading {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  margin-top: 0;
+  margin-bottom: 3px;
+  background-color: #333;
+  color: #eee;
+  padding: 5px;
+}
+.box__paragraph {
+  text-align: left;
+  color: #000;
+  padding: 10px 0;
+  margin: 0;
+}
+.box__btn {
+  -webkit-appearance: none;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  width: 50%;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+```
 
 */
