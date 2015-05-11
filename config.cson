@@ -34,7 +34,7 @@ layout_template: "./layout_template"
 # Value is expected Array or String.
 md_class:
   blockquote: []
-  heading   : ["hoge"]
+  heading   : []
   hr        : []
   list      : []
   listitem  : []
@@ -42,8 +42,8 @@ md_class:
   table     : []
   tablerow  : []
   tablecell : []
-  link      : "link hoge hogehuga"
-  image     : ["image"]
+  link      : []
+  image     : []
 
 # highlight: false
 highlight_theme: "monokai"

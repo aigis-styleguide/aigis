@@ -28,6 +28,7 @@ export default function categoryWriter(config) {
       var _html = render.build({
         header: {name: category.name},
         footer: {},
+        sidemenu: {category: _.keys(categorized)},
         contents: category.contents,
         name: category.name,
       });

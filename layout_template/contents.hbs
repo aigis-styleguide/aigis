@@ -1,9 +1,11 @@
 {{{header}}}
-{{{beforeScript}}}
-<h1 class="ronde-heading">{{name}}</h1>
-{{{sideBar}}}
-{{#each contents}}
-{{{this}}}
-{{/each}}
-{{{afterScript}}}
+  <div class="ronde-sidemenu">
+  {{{sidemenu}}}
+  </div>
+  <div class="ronde-contents">
+  <h1 class="ronde-heading">{{name}}</h1>
+  {{#each contents}}
+  {{{this}}}
+  {{/each}}
+  </div>
 {{{footer}}}
