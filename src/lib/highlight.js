@@ -13,6 +13,9 @@ export default function highlight(code, type) {
     coffee: "source.coffee",
     md: "source.gfm",
     markdown: "source.gfm",
+    scss: "source.css.scss",
+    sass: "source.sass",
+    less: "source.css.less",
   };
   var scopeName = scope[type] || "text.html.gohtml";
   if (type == "jade") {
@@ -24,6 +27,9 @@ export default function highlight(code, type) {
   });
   if (type) {
     html = `<div class="ronde-codeblock ronde-codeblock--${type}">${html}</div>`;
+  }
+  else {
+    html = `<div class="ronde-codeblock">${html}</div>`;
   }
   return html;
 }

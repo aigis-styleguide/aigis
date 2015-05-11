@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bluebird": "2.9.14",
+    "coffee-script": "^1.9.1",
     "cson": "3.0.1",
     "css": "2.2.0",
     "del": "1.1.1",
@@ -15,13 +16,13 @@
     "lodash": "3.5.0",
     "marked": "0.3.3",
     "mkdirp": "0.5.0",
+    "moment": "^2.10.2",
     "node-sass": "^3.0.0",
     "object-assign": "2.0.0",
     "stylus": "^0.51.1",
     "through2": "0.6.3",
     "vinyl": "0.4.6",
-    "vinyl-fs": "1.0.0",
-    "coffee-script": "^1.9.1"
+    "vinyl-fs": "1.0.0"
   },
   "devDependencies": {
     "coffee-script": "^1.9.1",
