@@ -6,13 +6,13 @@ export default class Render {
   constructor(config) {
     this.config = config;
     this.headerTmpl = this.compile("header");
-    this.contentTmpl = this.compile("content");
+    this.contentsTmpl = this.compile("contents");
     this.footerTmpl = this.compile("footer");
   }
   build({footer, contents, header, name}) {
     var headerHtml = this.headerTmpl(header);
     var footerHtml = this.footerTmpl(footer);
-    var contentsHtml = this.contentTmpl({
+    var contentsHtml = this.contentsTmpl({
       header: headerHtml,
       footer: footerHtml,
       contents: contents,

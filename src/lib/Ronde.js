@@ -4,7 +4,7 @@ import Config from "./Config";
 import CommentRule from "./CommentRule";
 import through from "through2";
 import _ from "lodash";
-import categoryWriter from "./writer/category";
+import writeCategory from "./writer/category";
 
 class Ronde extends EventEmitter {
   constructor() {
@@ -24,8 +24,8 @@ class Ronde extends EventEmitter {
       .once("end", () => {
         console.log("\n*** Ronde: end ***");
       })
-      .pipe(categoryWriter(this.config))
-      
+      .pipe(writeCategory(this.config))
+      ;
   }
   _onCompleteParseCSS() {
     this.write();
