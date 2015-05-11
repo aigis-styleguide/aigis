@@ -1,0 +1,11 @@
+{{#if name}}
+<h2>{{name}}</h2>
+{{/if}}
+{{#if tags}}
+<ul class="ronde-tags">
+{{#each tags}}
+<li class="ronde-tags__item ronde-tags__item--{{this}}">{{this}}
+{{/each}}
+</ul>
+{{/if}}
+{{{html}}}
