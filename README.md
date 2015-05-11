@@ -125,15 +125,23 @@ inject.html(code)
   * header
   * footer
   * main
+  * sidemenu
+* headermenuいる？
 * デバッグロッグを出す
-* Handlebarsのテンプレートをキャッシュする
 * 済:タグ機能
   * tagsかな
 * 出力
   * 済:カテゴリごと
   * コメント単位？
-* KSS構文
+* ボツ:KSS構文
 * 済:Scss対応
 * 済:Stylus対応
-* どのcssファイルから出力されたか刻印を入れる
+* どのcssファイルから出力されたかモジュール単位の出力に刻印を入れる
   * relativeで
+* 済:codeblockのhighlight
+  * scss, sass
+  * stylus
+  * less
+  * 
+
+* Handlebarsのテンプレートをキャッシュする
