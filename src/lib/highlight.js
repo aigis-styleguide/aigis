@@ -23,7 +23,7 @@ export default function highlight(code, type) {
     scopeName
   });
   if (type) {
-    html = `<div class="ronde-codeblock__header">${type}</div>${html}`;
+    html = `<div class="ronde-codeblock ronde-codeblock--${type}">${html}</div>`;
   }
   return html;
 }

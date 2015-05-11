@@ -13,7 +13,7 @@ export default function html({inject}) {
     if (inject) {
       var md = comment.md.replace(reg_block, (codeblock) => {
         var code = codeblock.replace(reg_start, "").replace(reg_end, "");
-        return `${code}\n\n${codeblock}`;
+        return `<div class="ronde-preview">${code}</div>\n\n${codeblock}`;
       });
       comment.md = md;
     }
