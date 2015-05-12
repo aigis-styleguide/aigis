@@ -156,10 +156,7 @@ font-size: 1rem;
   margin-bottom: 1.5rem;
   font-size: 14px;
 }
-.ronde-categoryList a {
-  color: #4183c4;
-  text-decoration: none;
-}
+
 .ronde-categoryList a:active,
 .ronde-categoryList a:hover {
   outline: 0;
@@ -169,6 +166,8 @@ font-size: 1rem;
 }
 
 .ronde-categoryList__item {
+  color: #4183c4;
+  text-decoration: none;
   position: relative;
   display: block;
   padding: 8px 10px;
@@ -176,9 +175,10 @@ font-size: 1rem;
   border-bottom: 1px solid #eee;
 }
 .ronde-categoryList__item--selected {
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #222;
   cursor: default;
+  pointer-events: none;
 }
 .ronde-categoryList__item--selected:before {
   position: absolute;
