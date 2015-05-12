@@ -16,6 +16,7 @@ font-size: 1rem;
   border-radius: 3px;
   margin: 0 auto;
   overflow: scroll;
+  border: 1px solid #A0A0A0;
 }
 /* 
 .ronde-codeblock pre.editor:before, .ronde-preview:before {
@@ -51,6 +52,7 @@ font-size: 1rem;
 }
 .ronde-preview + pre .editor{
   border-radius: 0 0 3px 3px;
+  border-top: none;
 }
 /* .ronde-preview:before {
   content: "preview";
