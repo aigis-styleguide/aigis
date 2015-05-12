@@ -36,3 +36,4 @@ Components Styleguide generator.
 * moduleのnameからページ内容のモジュール一覧（#リンクでとべる）
 * どのcssファイルから出力されたかモジュール単位の出力に刻印を入れる
   * relativeで
+* highlightの背景を設定する

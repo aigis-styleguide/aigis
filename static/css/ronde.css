@@ -53,3 +53,30 @@ tags: ["タグ", "が", "つけられるよ"]
   background-color: #4183c4;
   border-color: #266aa2;
 }
+
+/*
+---
+name: "json_test"
+category: ["config"]
+---
+
+```json
+{
+  "hoge": {
+    "hogehoge": "huga",
+    "hoge----": "fugaga"
+  },
+  "hoho": "fufu"
+}
+```
+
+* hogehoge
+
+```cson
+hoge:
+  hogehoge: "huga"
+  hoge----: "fugaga"
+hoho: "fufu"
+```
+
+*/
