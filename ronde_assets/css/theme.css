@@ -15,6 +15,7 @@ font-size: 1rem;
   padding: 16px;
   border-radius: 3px;
   margin: 0 auto;
+  overflow: scroll;
 }
 /* 
 .ronde-codeblock pre.editor:before, .ronde-preview:before {
@@ -106,7 +107,7 @@ font-size: 1rem;
 .ronde-footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   line-height: 1.75;
   color: #7a7a7a;
   border-top: 1px solid #eee;
@@ -146,6 +147,19 @@ font-size: 1rem;
   box-sizing: border-box;
   padding-right: 10px;
   padding-left: 10px;
+}
+
+@media (max-width: 34em) {
+  .ronde-contents {
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
+  .ronde-sidemenu {
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
 }
 
 .ronde-categoryList {
