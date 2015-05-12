@@ -1,14 +1,12 @@
 /*
 ---
 name: "test1"
-category:["hoge"]
+category:["test", "all"]
 libs: [
   "jquery"
 ]
-tags: ["tag1", "tag2"]
+tag: ["tag1", "tag2"]
 ---
-
-## test1
 
 * aaaaa
 * bbbbb
@@ -99,11 +97,9 @@ $boxBtn.on("click", function() {
 /*
 ---
 name: "test_css2"
-category:["css"]
-tags: ["tag1", "tag2"]
+category:["css", "all"]
+tag: ["tag1", "tag2"]
 ---
-
-## test_css2
 
 ```css
 .box {

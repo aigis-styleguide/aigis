@@ -48,12 +48,6 @@ md_class:
 # highlight: false
 highlight_theme: "monokai"
 
-common_assets:
-  css: [
-    # "css/test.css"
-  ]
-  js: []
-
 inject:
   html  : true
   jade  : true

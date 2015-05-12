@@ -1,11 +1,9 @@
 /*
 ---
-title: "test_sass"
-category:["sass"]
+name: "test_sass"
+category:["sass", "all"]
 tag: ["tag1", "tag2"]
 ---
-
-# testsass
 
 ```scss
 .box {
@@ -49,14 +47,3 @@ tag: ["tag1", "tag2"]
     padding: 5px;
   }
 }
-
-/*
----
-title: "test_sass2"
-category:["hoge"]
-tag: ["tag1", "tag2"]
----
-
-## test_sass2
-
-*/

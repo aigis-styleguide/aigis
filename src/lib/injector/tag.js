@@ -10,7 +10,7 @@ export default function tag(config) {
     var config = comment.config;
     comment.html = tmpl({
       html: comment.html,
-      tags: config.tags,
+      tag: config.tag,
       name: config.name,
     });
     
