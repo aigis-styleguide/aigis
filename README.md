@@ -45,3 +45,4 @@ Components Styleguide generator.
 * 同じtagまとめたページ
 * カテゴリなしのコメントをuncategolized的なやつにまとめる
 * highlightの背景を設定する
+* 時間のフォーマットを指定できるように

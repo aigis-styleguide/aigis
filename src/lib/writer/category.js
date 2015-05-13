@@ -24,17 +24,21 @@ export default function categoryWriter(config) {
       return {name, html, contents};
     });
     
-    _.each(categorizedHtml, (category) => {
+    var category = _.map(categorized, (val, name) => {
+      return {name, href: `./${name}.html`};
+    });
+    
+    _.each(categorizedHtml, (_category) => {
       var _html = render.build({
-        header: {name: category.name},
+        header: {name: _category.name},
         footer: {},
-        sidemenu: {category: _.keys(categorized)},
-        contents: category.contents,
-        name: category.name,
+        sidemenu: {category},
+        contents: _category.contents,
+        name: _category.name,
       });
     
       var contents = new Buffer(_html);
-      var writePath = `${dist}/${category.name}.html`;
+      var writePath = `${dist}/${_category.name}.html`;
       fs.writeFile(writePath, contents);
     });
     
