@@ -37,3 +37,6 @@ Components Styleguide generator.
 * どのcssファイルから出力されたかモジュール単位の出力に刻印を入れる
   * relativeで
 * highlightの背景を設定する
+* 同じtagまとめたページ
+* 設定をYAMLとJSONで書けるように
+* カテゴリなしのコメントをuncategolized的なやつにまとめる
