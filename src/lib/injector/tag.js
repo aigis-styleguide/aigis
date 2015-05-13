@@ -12,6 +12,8 @@ export default function tag(config) {
       html: comment.html,
       tag: config.tag,
       name: config.name,
+      path: config._filePath,
+      config
     });
     
     this.push(comment);

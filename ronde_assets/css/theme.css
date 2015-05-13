@@ -68,13 +68,19 @@ font-size: 1rem;
   line-height: 1.2;
   border-bottom: 1px solid #eee;
 }
-.ronde-module > h2 {
+.ronde-module__heading {
   padding-bottom: 0.3em;
   font-size: 1.75em;
   line-height: 1.225;
   border-bottom: 1px solid #eee;
 }
-
+.ronde-module__filepath {
+  display: block;
+  text-align: right;
+  margin-top: -20px;
+  font-size: smaller;
+  color: #939393;
+}
 .ronde-tags {
   padding: 0;
   margin: 10px 0;

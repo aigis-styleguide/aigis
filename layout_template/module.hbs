@@ -1,5 +1,15 @@
+{{!-- 
+config = {
+  name: "module_name",
+  category: ["category_name"],
+  tag: ["tag_name"],
+  _filePath: "relative_file_path_from_docsroot",
+}
+ --}}
+
 {{#if name}}
-<h2 id="{{name}}">{{name}}</h2>
+<h2 class="ronde-module__heading" id="{{name}}">{{name}}</h2>
+<div class="ronde-module__filepath">{{path}}</div>
 {{/if}}
 {{#if tag}}
 <ul class="ronde-tags">

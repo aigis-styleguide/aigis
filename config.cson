@@ -3,6 +3,7 @@ name: "test_project"
 # Supported file extensions are CSS(.css), Sass(.scss, .sass) and Stylus(.styl)
 # The directory containing the source files to parse recursively.
 source: "./static/css"
+format: "cson"
 # You may alternately specify multiple directories.
 ###
 source: [

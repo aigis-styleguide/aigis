@@ -10,14 +10,13 @@ Components Styleguide generator.
   * Markdownで記述
   * 設定はCSON
 
-## ToDo
+## done
 
 * 済:テンプレートをわける
   * header
   * footer
   * main
   * sidemenu
-* デバッグロッグを出す
 * 済:タグ機能
   * tagsかな
 * 出力
@@ -30,13 +29,19 @@ Components Styleguide generator.
   * scss, sass
   * stylus
   * less
+* 済:どのcssファイルから出力されたかモジュール単位の出力に刻印を入れる
+  * relativeで
+* 済:ユーザーが拡張できるように
+  * configにotherがあったらそれをテンプレートに渡してあげる?
+  * configそのまま渡せばいいかも
+* 済:設定をYAMLとJSONで書けるように
 
+## ToDo
+
+* デバッグロッグを出す
 * headermenuいる？
 * Handlebarsのテンプレートをキャッシュする
 * moduleのnameからページ内容のモジュール一覧（#リンクでとべる）
-* どのcssファイルから出力されたかモジュール単位の出力に刻印を入れる
-  * relativeで
-* highlightの背景を設定する
 * 同じtagまとめたページ
-* 設定をYAMLとJSONで書けるように
 * カテゴリなしのコメントをuncategolized的なやつにまとめる
+* highlightの背景を設定する

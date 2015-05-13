@@ -38,7 +38,7 @@ export default class CommentRule extends EventEmitter {
       .once("end", () => {
         this.emit("endloadcss");
       })
-      .pipe(parseCSS())
+      .pipe(parseCSS(config))
       .pipe(html({inject: inject.html}))
       .pipe(jade({inject: inject.jade}))
       .pipe(js({inject: inject.js}))
