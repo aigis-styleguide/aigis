@@ -13,6 +13,7 @@ export default class Render {
   }
   build({footer, module, contents, header, name, sidemenu}) {
     footer.timestamp = moment().format("YYYY/MM/DD HH:mm");
+    header.highlight = this.config.highlight_theme || "monokai";
     var headerHtml = this.headerTmpl(header);
     var footerHtml = this.footerTmpl(footer);
     var sidemenuHtml = this.sidemenuTmpl(sidemenu);

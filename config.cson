@@ -47,7 +47,7 @@ md_class:
   image     : []
 
 # highlight: false
-highlight_theme: "monokai"
+highlight_theme: "dracula"
 
 inject:
   html  : true
