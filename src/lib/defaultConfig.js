@@ -6,6 +6,8 @@ export default defaultConfig = {
   dest: "./docs",
   dependencies: [],
   lib: {},
+  format: "yaml",
+  timestamp_format: "YYYY/MM/DD HH:mm",
   md_template: "./md_template",
   layout_template: "./layout_template",
   md_class: {
@@ -22,7 +24,7 @@ export default defaultConfig = {
     image     : "",
   },
   highlight: true,
-  highlight_theme: "monokai",
+  highlight_theme: "dracula",
   inject: {
     html: true,
     jade: true,

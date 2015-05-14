@@ -12,8 +12,9 @@ export default class Render {
     this.sidemenuTmpl = this.compile("sidemenu");
   }
   build({footer, module, contents, header, name, sidemenu}) {
-    footer.timestamp = moment().format("YYYY/MM/DD HH:mm");
-    header.highlight = this.config.highlight_theme || "monokai";
+    var timestampFormat = this.config.timestamp_format;
+    footer.timestamp = moment().format();
+    header.highlight = this.config.highlight_theme;
     var headerHtml = this.headerTmpl(header);
     var footerHtml = this.footerTmpl(footer);
     var sidemenuHtml = this.sidemenuTmpl(sidemenu);
