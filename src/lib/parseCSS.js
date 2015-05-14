@@ -18,6 +18,7 @@ export default function parseCSS (config) {
     var source = file.path;
     
     console.log(file.path);
+    
     switch(ext.toLowerCase()) {
       case ".css":
         content = file.contents.toString();
@@ -46,25 +47,44 @@ export default function parseCSS (config) {
         var reg = /-{3}[\s\S]+?-{3}/;
         var matched = comment.match(reg);
         
-        if (matched !== null) {
-          configString = matched[0].replace(/-{3}/g, "");
-          
-          switch(format) {
-            case "cson":
-              config = CSON.parse(configString);
-              break;
-            case "yaml":
+        if (matched === null) return;
+        
+        configString = matched[0].replace(/-{3}/g, "");
+        
+        switch(format) {
+          case "cson":
+            config = CSON.parse(configString);
+            if (config instanceof Error) {
+              return;
+            }
+            break;
+          case "yaml":
+            try{
               config = YAML.load(configString);
-              break;
-            case "json":
-              config = JSON.parse(configString);
-          }
-          config._filePath = filePath;
-          var md = comment.replace(reg, "");
-          var obj = objectAssign({},{config, md, source});
-          
-          this.push(obj);
+            }
+            catch (e) {
+              return;
+            }
+            break;
         }
+        
+        // try {
+        //   config = YAML.load(configString);
+        // }
+        // catch(e) {
+        //   config = CSON.parse(configString);
+        // }
+        // finally {
+        //   if (config instanceof Error) {
+        //     return;
+        //   }
+        // }
+
+        config._filePath = filePath;
+        var md = comment.replace(reg, "");
+        var obj = objectAssign({},{config, md, source});
+        
+        this.push(obj);
       })
       .value();
     cb();
