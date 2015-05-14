@@ -12,9 +12,9 @@ export default class Render {
     this.sidemenuTmpl = this.compile("sidemenu");
   }
   build({footer, module, contents, header, name, sidemenu}) {
-    var timestampFormat = this.config.timestamp_format;
-    footer.timestamp = moment().format();
+    footer.timestamp = moment().format(this.config.timestamp_format);
     header.highlight = this.config.highlight_theme;
+    
     var headerHtml = this.headerTmpl(header);
     var footerHtml = this.footerTmpl(footer);
     var sidemenuHtml = this.sidemenuTmpl(sidemenu);
