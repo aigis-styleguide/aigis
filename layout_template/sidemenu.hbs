@@ -1,5 +1,15 @@
+{{#if category}}
 <nav class="ronde-categoryList">
 {{#each category}}
   <a class="ronde-categoryList__item" href="{{href}}">{{name}}</a>
 {{/each}}
 </nav>
+{{/if}}
+
+{{#if tag}}
+<nav class="ronde-tags ronde-tagList">
+{{#each tag}}
+  <a class="ronde-tags__item ronde-tags__item--{{name}}" href="{{href}}">{{name}}</a>
+{{/each}}
+</nav>
+{{/if}}

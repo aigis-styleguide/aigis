@@ -5,6 +5,7 @@ import CommentRule from "./CommentRule";
 import through from "through2";
 import _ from "lodash";
 import writeCategory from "./writer/category";
+import writeTag from "./writer/tag";
 
 class Ronde extends EventEmitter {
   constructor() {
@@ -20,11 +21,13 @@ class Ronde extends EventEmitter {
   }
   write() {
     var renderer = this.renderer;
+    var config = this.config;
     this.commentRule.sourceStream
       .once("end", () => {
         console.log("\n*** Ronde: end ***");
       })
-      .pipe(writeCategory(this.config))
+      .pipe(writeCategory(config))
+      .pipe(writeTag(config))
       ;
   }
   _onCompleteParseCSS() {

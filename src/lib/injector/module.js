@@ -3,7 +3,7 @@ import _ from "lodash";
 import fs from "fs-extra";
 import Handlebars from "Handlebars";
 
-export default function tag(config) {
+export default function module(config) {
   var tmpl = Handlebars.compile(fs.readFileSync(`${config.layout_template}/module.hbs`, "utf8"));
   
   return through.obj(function(comment, enc, cb) {

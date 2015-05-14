@@ -2,7 +2,7 @@
 ---
 name: "module_name"
 category:["category_name"]
-tag: ["タグ", "が", "つけられるよ"]
+tag: ["hoge"]
 ---
 
 ## md_heading2
@@ -23,7 +23,7 @@ tag: ["タグ", "が", "つけられるよ"]
 ```
 name: "module_name"
 category:["category_name"]
-tags: ["タグ", "が", "つけられるよ"]
+tags: ["hoge"]
 ```
 
 */

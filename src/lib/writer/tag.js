@@ -4,45 +4,45 @@ import Handlebars from "handlebars";
 import _ from "lodash";
 import Render from "../layout/Render";
 
-export default function categoryWriter(config) {
-  var categorized = {};
+export default function tagWriter(config) {
+  var tagged = {};
   var dist = config.dest;
   
   return through.obj(function(comment, enc, cb) {
-    _.each(comment.config.category, (categoryName) => {
-      categorized[categoryName] = categorized[categoryName] || [];
-      categorized[categoryName].push(comment);
+    _.each(comment.config.tag, (tagName) => {
+      tagged[tagName] = tagged[tagName] || [];
+      tagged[tagName].push(comment);
     });
     
     this.push(comment);
     cb();
   }, function(cb) {
     var render = new Render(config);
-    var categorizedHtml = _.map(categorized, (comments, name) => {
+    var taggedHtml = _.map(tagged, (comments, name) => {
       var contents = _.map(comments, (comment) => comment.html);
       var html = contents.join("\n");
       return {name, html, contents};
     });
     
     var category = _.map(config.categoryList, (name) => {
-      return {name, href: `./${name}.html`};
+      return {name, href: `../${name}.html`};
     });
 
     var tag = _.map(config.tagList, (name) => {
-      return {name, href: `./tag/${name}.html`};
+      return {name, href: `./${name}.html`};
     });
     
-    _.each(categorizedHtml, (_category) => {
+    _.each(taggedHtml, (_tag) => {
       var _html = render.build({
-        header: {name: _category.name, path: "."},
-        footer: {path: "."},
+        header: {name: _tag.name, path: ".."},
+        footer: {path: ".."},
         sidemenu: {category, tag},
-        contents: _category.contents,
-        name: _category.name,
+        contents: _tag.contents,
+        name: _tag.name,
       });
     
       var contents = new Buffer(_html);
-      var writePath = `${dist}/${_category.name}.html`;
+      var writePath = `${dist}/tag/${_tag.name}.html`;
       fs.outputFile(writePath, contents);
     });
     

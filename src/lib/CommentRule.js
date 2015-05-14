@@ -11,7 +11,8 @@ import html from "./injector/html";
 import js from "./injector/js";
 import jade from "./injector/jade";
 import coffee from "./injector/coffee";
-import tag from "./injector/tag";
+import module from "./injector/module";
+import extendConfig from "./injector/config";
 import MarkedCustomRenderer from "./MarkedCustomRenderer";
 import mdToHTML from "./markdownToHTML";
 
@@ -39,12 +40,13 @@ export default class CommentRule extends EventEmitter {
         this.emit("endloadcss");
       })
       .pipe(parseCSS(config))
+      .pipe(extendConfig(config))
       .pipe(html({inject: inject.html}))
       .pipe(jade({inject: inject.jade}))
       .pipe(js({inject: inject.js}))
       .pipe(coffee({inject: inject.coffee}))
       .pipe(mdToHTML(renderer))
-      .pipe(tag(config))
+      .pipe(module(config))
       ;
   }
   _onEndLoadCSS(comments) {

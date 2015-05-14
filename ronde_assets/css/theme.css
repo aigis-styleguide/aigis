@@ -89,13 +89,14 @@ font-size: 1rem;
 }
 .ronde-tags__item {
   display: inline-block;
-  border: 1px solid #999;
   border-radius: 2px;
+  margin: 3px 0;
   margin-right: 5px;
   font-size: 12px;
   padding: 2px 5px;
   background-color: #333;
   color: #fff;
+  text-decoration: none;
 }
 
 .ronde-header {
@@ -214,4 +215,9 @@ font-size: 1rem;
 
 .ronde-categoryList__item:last-child {
   border-bottom: 0;
+}
+
+.ronde-tags__item--deprecated {
+  background-color: #ff4f4f;
+  color: #fff;
 }

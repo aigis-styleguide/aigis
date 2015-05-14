@@ -11,7 +11,7 @@ export default class Render {
     this.footerTmpl = this.compile("footer");
     this.sidemenuTmpl = this.compile("sidemenu");
   }
-  build({footer, contents, header, name, sidemenu}) {
+  build({footer, module, contents, header, name, sidemenu}) {
     footer.timestamp = moment().format("YYYY/MM/DD HH:mm");
     var headerHtml = this.headerTmpl(header);
     var footerHtml = this.footerTmpl(footer);
