@@ -5,6 +5,7 @@ import del from "del";
 import fs from "fs";
 import vfs from "vinyl-fs";
 import CSON from "cson";
+import YAML from "js-yaml";
 import path from "path";
 import defaultConfig from "./defaultConfig";
 
@@ -13,7 +14,9 @@ export default class Config extends EventEmitter {
     super(opts);
     this._eventify();
     this.support = [".css", ".scss", ".styl"];
+    // Todo 外部からどのファイル読み込むか決める
     this._loadConfigCson();
+    // this._loadConfigYaml();
   }
   _eventify() {
     this.on("end:loadconfigcson", this._onEndLoadConfigCson);
@@ -32,6 +35,22 @@ export default class Config extends EventEmitter {
         cson = CSON.parse(cson);
       }
       this.emit("end:loadconfigcson", cson);
+    }
+  }
+  _loadConfigYaml() {
+    var filePath = path.resolve("./config.yaml");
+    var yaml; 
+    try {
+      yaml = fs.readFileSync(filePath, "utf8");
+    }
+    catch (err) {
+      
+    }
+    finally {
+      if (yaml) {
+        yaml = YAML.load(yaml);
+      }
+      this.emit("end:loadconfigcson", yaml);
     }
   }
   _onEndLoadConfigCson(json) {
