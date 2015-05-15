@@ -77,9 +77,9 @@ font-size: 1rem;
 .ronde-module__filepath {
   display: block;
   text-align: right;
-  margin-top: -20px;
-  font-size: smaller;
-  color: #939393;
+  margin-top: -15px;
+  font-size: 16px;
+  color: #ADADAD;
 }
 .ronde-tags {
   padding: 0;
@@ -169,6 +169,10 @@ font-size: 1rem;
     float: none;
     padding: 0;
   }
+  .ronde-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .ronde-categoryList {
@@ -220,4 +224,15 @@ font-size: 1rem;
 .ronde-tags__item--deprecated {
   background-color: #ff4f4f;
   color: #fff;
+}
+
+.ronde-moduleList {
+  line-height: 1.6;
+}
+.ronde-moduleList__item a{
+  color: #4183c4;
+  text-decoration: none;
+}
+.ronde-moduleList__item a:hover{
+  text-decoration: underline;
 }

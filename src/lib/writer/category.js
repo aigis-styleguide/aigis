@@ -20,8 +20,9 @@ export default function categoryWriter(config) {
     var render = new Render(config);
     var categorizedHtml = _.map(categorized, (comments, name) => {
       var contents = _.map(comments, (comment) => comment.html);
+      var moduleList = _.map(comments, (comment) => comment.config.name);
       var html = contents.join("\n");
-      return {name, html, contents};
+      return {name, html, contents, moduleList};
     });
     
     var category = _.map(config.categoryList, (name) => {
@@ -38,6 +39,7 @@ export default function categoryWriter(config) {
         footer: {path: "."},
         sidemenu: {category, tag},
         contents: _category.contents,
+        module: {list: _category.moduleList, contents: _category.contents},
         name: _category.name,
       });
     

@@ -20,8 +20,9 @@ export default function tagWriter(config) {
     var render = new Render(config);
     var taggedHtml = _.map(tagged, (comments, name) => {
       var contents = _.map(comments, (comment) => comment.html);
+      var moduleList = _.map(comments, (comment) => comment.config.name);
       var html = contents.join("\n");
-      return {name, html, contents};
+      return {name, html, contents, moduleList};
     });
     
     var category = _.map(config.categoryList, (name) => {
@@ -38,6 +39,7 @@ export default function tagWriter(config) {
         footer: {path: ".."},
         sidemenu: {category, tag},
         contents: _tag.contents,
+        module: {list: _tag.moduleList, contents: _tag.contents},
         name: _tag.name,
       });
     

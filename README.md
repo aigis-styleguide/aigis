@@ -38,13 +38,15 @@ Components Styleguide generator.
 * 済:設定からハイライトのファイル指定できる
 * 済:同じtagまとめたページ
 * 済:時間のフォーマットを指定できるように
+* 済:moduleのnameからページ内容のモジュール一覧（#リンクでとべる）
+  * テンプレートにモジュールの名前とリンクを渡す
 
 ## ToDo
 
 * デバッグロッグを出す
 * headermenuいる？
 * Handlebarsのテンプレートをキャッシュする
-
+* カテゴリの説明文を追加したい？
 * カテゴリなしのコメントをuncategolized的なやつにまとめる
 
 * モジュールの書き出し順を制御する何か
@@ -52,5 +54,3 @@ Components Styleguide generator.
 * highlightの背景を設定する
 * indexページを作る
   * sidemenuに渡してるのと同じの渡せばよさそう
-* moduleのnameからページ内容のモジュール一覧（#リンクでとべる）
-  * テンプレートにモジュールの名前とリンクを渡す

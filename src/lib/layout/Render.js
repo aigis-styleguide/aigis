@@ -24,6 +24,7 @@ export default class Render {
       sidemenu: sidemenuHtml,
       contents: contents,
       name,
+      module,
     });
     return contentsHtml;
   }
