@@ -108,8 +108,8 @@ font-size: 1rem;
   background-color: #4183c4;
   color: #FFF;
   text-align: left;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
   padding-left: 20px;
   margin-bottom: 1.5rem;
 }
