@@ -48,8 +48,9 @@ timestamp_format: "YYYY年MM月DD日 HH時mm分"
 #   image     : []
 
 # highlight: false
-# highlight_theme: "monokai"
-# dracula, duotone-light, monokai, on-light, seti
+highlight_theme: "duotone-light"
+  # dark  [monokai, dracula, seti]
+  # light [duotone-light, on-light]
 
 inject:
   html  : true
