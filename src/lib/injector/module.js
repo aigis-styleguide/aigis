@@ -10,7 +10,7 @@ export default function module(config) {
     var config = comment.config;
     comment.html = tmpl({
       html: comment.html,
-      tag: config.tag,
+      tag: _.sortBy(config.tag),
       name: config.name,
       path: config._filePath,
       config

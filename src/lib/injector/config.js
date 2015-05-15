@@ -12,8 +12,8 @@ export default function extendConfig(config) {
     this.push(comment);
     cb();
   }, function(cb) {
-    config.categoryList = _.uniq(categoryList);
-    config.tagList = _.uniq(tagList);
+    config.categoryList = _.sortBy(_.uniq(categoryList));
+    config.tagList = _.sortBy(_.uniq(tagList));
     cb();
   });
 }
