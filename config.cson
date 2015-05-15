@@ -23,31 +23,33 @@ dependencies: "./static"
 Reference JS library from CSS file by CSON.
 Write {"library name": "file path"} "file path" is relative from "doc_assets".
 ###
-lib:
-  jquery: "./js/lib/jquery.js"
+# lib:
+#   jquery: "./js/lib/jquery.js"
   
   
 # Markdown-renderer custom-template for MarkedRenderer.
-md_template: "./md_template"
+# md_template: "./md_template"
 layout_template: "./layout_template"
+timestamp_format: "YYYY年MM月DD日 HH時mm分"
 
-# Add CSS class to rendered HTML-element from Markdown.
+# When you needed add CSS-class to rendered HTML-element from Markdown.
 # Value is expected Array or String.
-md_class:
-  blockquote: []
-  heading   : []
-  hr        : []
-  list      : []
-  listitem  : []
-  paragraph : []
-  table     : []
-  tablerow  : []
-  tablecell : []
-  link      : []
-  image     : []
+# md_class:
+#   blockquote: []
+#   heading   : []
+#   hr        : []
+#   list      : []
+#   listitem  : []
+#   paragraph : []
+#   table     : []
+#   tablerow  : []
+#   tablecell : []
+#   link      : []
+#   image     : []
 
 # highlight: false
-highlight_theme: "dracula"
+# highlight_theme: "monokai"
+# dracula, duotone-light, monokai, on-light, seti
 
 inject:
   html  : true

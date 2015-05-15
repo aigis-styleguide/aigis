@@ -1,8 +1,11 @@
 /*
 ---
-name: "module_name"
-category:["category_name"]
-tag: ["hoge"]
+name: yaml_test
+category:
+  - config
+  - yaml
+tag:
+  - yaml
 ---
 
 ## md_heading2
@@ -56,8 +59,14 @@ tags: ["hoge"]
 
 /*
 ---
-name: "json_test"
-category: ["config"]
+{
+name: json_test
+category:
+  - config
+  - yaml
+tag:
+  - yaml
+}
 ---
 
 ```json
