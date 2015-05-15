@@ -262,3 +262,7 @@ atom-text-editor .fold-marker:after,
 .ruby.symbol > .punctuation {
   color: inherit;
 }
+.editor-colors {
+  background-color: #FAF8F5;
+  color: #5B594B;
+}

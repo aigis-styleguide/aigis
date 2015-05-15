@@ -361,3 +361,7 @@ atom-text-editor .fold-marker:after,
 .yaml .punctuation {
   color: #b6ad9a;
 }
+.editor.editor-colors {
+  background-color: #FAF8F5;
+  color: #545454;
+}
