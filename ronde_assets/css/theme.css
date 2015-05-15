@@ -73,6 +73,20 @@ font-size: 1rem;
   font-size: 1.75em;
   line-height: 1.225;
   border-bottom: 1px solid #eee;
+  position: relative;
+}
+.ronde-module__heading:hover a {
+  position: relative;  
+}
+.ronde-module__heading:hover a:before {
+  content: "\00a7";
+  position: absolute;
+  right: 100%;
+  bottom: 5px;
+  font-size: 20px;
+  color: #000;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 .ronde-module__filepath {
   display: block;
