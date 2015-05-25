@@ -8,7 +8,7 @@ exec = process.exec
 runseq = require "run-sequence"
 
 src = ["src/**/*.js"]
-css = ["css/**/*.css"]
+css = ["static/css/**/*"]
 
 dist =
   js: "./dist"
