@@ -1,3 +1,4 @@
 dist*
 ronde/
 docs/
+node_modules/
