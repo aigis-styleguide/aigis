@@ -19,7 +19,7 @@
     "marked": "0.3.3",
     "mkdirp": "0.5.0",
     "moment": "^2.10.2",
-    "node-sass": "^3.0.0",
+    "node-sass": "^3.1.2",
     "object-assign": "2.0.0",
     "stylus": "^0.51.1",
     "through2": "0.6.3",
