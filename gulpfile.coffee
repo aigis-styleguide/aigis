@@ -6,6 +6,8 @@ notify = require "gulp-notify"
 process = require "child_process"
 exec = process.exec
 runseq = require "run-sequence"
+bs = require "browser-sync"
+reload = bs.reload
 
 src = ["src/**/*.js"]
 css = ["static/css/**/*"]
@@ -35,12 +37,19 @@ gulp.task "babel", ->
 gulp.task "babel:exec", ->
   runseq "babel", "exec:index"
 
-gulp.task "watch", ->
-  gulp.watch [src], ["babel:exec"]
-  gulp.watch [css], ["exec:index"]
+gulp.task "watch", ["serve"], ->
+  gulp.watch [src], ["babel:exec", reload]
+  gulp.watch [css], ["exec:index", reload]
 
 gulp.task "babel:watch", ->
   gulp.watch [src], ["babel"]
 
-gulp.task "default", ["watch"]
-    
+gulp.task "serve", ->
+  bs.init
+    server:
+      baseDir: ["./docs"]
+      directory: true
+    notify: false
+    host: "localhost"
+
+gulp.task "default", ["exec:index"]
