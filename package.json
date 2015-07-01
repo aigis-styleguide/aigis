@@ -27,6 +27,7 @@
     "vinyl-fs": "1.0.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.7.13",
     "coffee-script": "^1.9.1",
     "gulp": "^3.8.11",
     "gulp-babel": "^4.0.0",
