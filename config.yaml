@@ -1,5 +1,5 @@
 name: test_project
-source: ./static/css
+source: ./static/css/test.css
 format: yaml
 dest: ./docs
 dependencies: ./static
@@ -9,9 +9,13 @@ timestamp_format: YYYY/MM/DD/ HH:mm
 highlight_theme: duotone-light
   # dark  [monokai, dracula, seti]
   # light [duotone-light, on-light]
-
+md_class: 
+  heading:
+    - hoge
+  listitem:
+    - hogehoge
 inject:
-  html  : true
-  jade  : true
-  js    : false
-  coffee: false
+  - html  
+  - jade  
+  - js    
+  - coffee
