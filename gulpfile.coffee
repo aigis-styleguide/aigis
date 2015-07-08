@@ -18,7 +18,7 @@ dist =
 name =
   js: "index.js"
 
-index = "./dist/index.js"
+index = "./index.js"
 
 gulp.task "exec:index", (cb) ->
   exec "node #{index}" , (err, stdout, stderr) ->
@@ -26,23 +26,26 @@ gulp.task "exec:index", (cb) ->
     console.log stderr
     cb()
 
-gulp.task "babel", ->
-  gulp.src src
-    .pipe plumber({errorHandler: notify.onError('<%= error.message %>')})
-    .pipe babel
-      modules: "common"
-      blacklist: "strict"
-    .pipe gulp.dest dist.js
+# gulp.task "babel", ->
+#   gulp.src src
+#     .pipe plumber({errorHandler: notify.onError('<%= error.message %>')})
+#     .pipe babel
+#       modules: "common"
+#       blacklist: "strict"
+#     .pipe gulp.dest dist.js
+# 
+# gulp.task "babel:exec", ->
+#   runseq "babel", "exec:index"
+# 
+# gulp.task "watch", ["serve"], ->
+#   gulp.watch [src], ["babel:exec", reload]
+#   gulp.watch [css], ["exec:index", reload]
+# 
+# gulp.task "babel:watch", ->
+#   gulp.watch [src], ["babel"]
 
-gulp.task "babel:exec", ->
-  runseq "babel", "exec:index"
-
-gulp.task "watch", ["serve"], ->
-  gulp.watch [src], ["babel:exec", reload]
-  gulp.watch [css], ["exec:index", reload]
-
-gulp.task "babel:watch", ->
-  gulp.watch [src], ["babel"]
+gulp.task "watch", ->
+  gulp.watch ["./lib/**/*.js"], ["exec:index"]
 
 gulp.task "serve", ->
   bs.init
