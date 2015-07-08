@@ -3,12 +3,9 @@ source: ./static/css/test.css
 format: yaml
 dest: ./docs
 dependencies: ./static
-layout_template: ./layout_template
+template: ./template
 timestamp_format: YYYY/MM/DD/ HH:mm
-# highlight: false
-highlight_theme: duotone-light
-  # dark  [monokai, dracula, seti]
-  # light [duotone-light, on-light]
+highlight_theme: dracula
 md_class: 
   heading:
     - hoge
