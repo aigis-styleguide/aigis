@@ -45,7 +45,7 @@ gulp.task "exec:index", (cb) ->
 #   gulp.watch [src], ["babel"]
 
 gulp.task "watch", ->
-  gulp.watch ["./lib/**/*.js"], ["exec:index"]
+  gulp.watch ["lib/**/*.js"], ["exec:index"]
 
 gulp.task "serve", ->
   bs.init

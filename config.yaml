@@ -16,4 +16,4 @@ inject:
   - jade  
   - js    
   - coffee
-highlight: false
+# highlight: false

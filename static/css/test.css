@@ -1,18 +1,20 @@
 /*
 ---
-name: "test1"
-category:["test", "all"]
-libs: [
-  "jquery"
-]
-tag: ["deprecated", "tag2", "aiueo"]
+name: test1btn
+category:
+  - all
+  - module/btn
+libs:
+  - jquery
+tag: 
+  - deprecated
+  - tag2
+  - aiueo
 ---
 
-## hoge_test
+## test1_btn
 
 * aaaaa
-* bbbbb
-* ccccc
 
 ---
 
@@ -27,9 +29,15 @@ tag: ["deprecated", "tag2", "aiueo"]
 
 /*
 ---
-name: "test_css2"
-category:["css", "all"]
-tag: ["tag1", "deprecated"]
+name:
+  - test_css2
+category:
+  - module
+  - module/btn/special
+  - all
+tag: 
+  - tag1
+  - deprecated
 ---
 
 ```coffee
@@ -41,5 +49,19 @@ console.log "test"
   border: 1px solid #333;
 }
 ```
+
+*/
+
+/*
+---
+name: "btn3"
+category:
+  - module/btn/special
+  - all
+tag:
+  - special
+---
+
+* this is special btn
 
 */
