@@ -1,3 +1,7 @@
-{{#each modules}}
-  <li><a href="#{{this.config.name}}">{{this.config.name}}</a>
-{{/each}}
+<nav>
+  <ul>
+  {{#each modules}}
+    <li><a href="#{{this.config.name}}">{{this.config.name}}</a>
+  {{/each}}
+  </ul>
+</nav>
