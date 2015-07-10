@@ -20,3 +20,4 @@ inject:
   - js
   - coffee
 # highlight: false
+index: ./styleguide.md
