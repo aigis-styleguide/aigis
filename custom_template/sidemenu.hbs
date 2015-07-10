@@ -1,0 +1,17 @@
+<div class="aigis-sidemenu">
+{{#if category}}
+<nav class="aigis-categoryList">
+{{#each category}}
+  <a class="aigis-categoryList__item" href="{{href}}">{{name}}</a>
+{{/each}}
+</nav>
+{{/if}}
+
+{{#if tag}}
+<nav class="aigis-tags aigis-tagList">
+{{#each tag}}
+  <a class="aigis-tags__item aigis-tags__item--{{name}}" href="{{href}}">{{name}}</a>
+{{/each}}
+</nav>
+{{/if}}
+</div>

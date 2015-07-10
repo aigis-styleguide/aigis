@@ -1,0 +1,27 @@
+{{!-- 
+  config: {
+    name: "module_name",
+    category: ["category_name"],
+    tag: ["tag_name"],
+    filePath: "relative_file_path_from_docsroot"
+  },
+  filePath: "/static/css/hoge.css",
+  md: "## hogehoge\n\n* hoge",
+  html: "<h2>hogehoge</h2><ul><li>hoge</ul>"
+}
+ --}}
+
+<div class="aigis-module">
+{{#if config.name}}
+<h2 class="aigis-module__heading" id="{{config.name}}"><a href="#{{config.name}}"></a>{{config.name}}</h2>
+{{/if}}
+<div class="aigis-module__filepath">{{config.filePath}}</div>
+{{#if config.tag}}
+<ul class="aigis-tags">
+{{#each config.tag}}
+<li class="aigis-tags__item aigis-tags__item--{{this}}">{{this}}
+{{/each}}
+</ul>
+{{/if}}
+{{{html}}}
+</div>
