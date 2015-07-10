@@ -114,16 +114,16 @@ font-size: 1rem;
 }
 
 .aigis-header {
-  font-family: cursive;
+  font-family: monospace;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 24px;
   background-color: #9ED94A;
   background-color: #FFFD62;
   background-color: #4183c4;
   color: #FFF;
   text-align: left;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 20px;
   margin-bottom: 1.5rem;
 }
