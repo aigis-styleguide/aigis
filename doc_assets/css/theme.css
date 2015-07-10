@@ -127,6 +127,10 @@ font-size: 1rem;
   padding-left: 20px;
   margin-bottom: 1.5rem;
 }
+.aigis-header a{
+  color: inherit;
+  text-decoration: none;
+}
 .aigis-footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
