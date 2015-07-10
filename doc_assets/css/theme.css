@@ -4,12 +4,12 @@ body {
   font-family: "Helvetica Neue",Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
 font-size: 1rem;
 }
-.ronde-codeblock, .ronde-preview {
+.aigis-codeblock, .aigis-preview {
   position: relative;
   margin: 0;
   overflow: scroll;
 }
-.ronde-codeblock pre.editor {
+.aigis-codeblock pre.editor {
   position: relative;
   padding: 35px 20px 20px;
   padding: 16px;
@@ -19,7 +19,7 @@ font-size: 1rem;
   border: 1px solid #A0A0A0;
 }
 /* 
-.ronde-codeblock pre.editor:before, .ronde-preview:before {
+.aigis-codeblock pre.editor:before, .aigis-preview:before {
   content: "code";
   position: absolute;
   padding: 2px 10px;
@@ -32,14 +32,14 @@ font-size: 1rem;
   opacity: 0.8;
 }
 
-.ronde-codeblock--html pre.editor:before { content: "html"; }
-.ronde-codeblock--jade pre.editor:before { content: "jade"; }
-.ronde-codeblock--js pre.editor:before { content: "js"; }
-.ronde-codeblock--javascript pre.editor:before { content: "javascript"; }
-.ronde-codeblock--coffee pre.editor:before { content: "coffee"; }
-.ronde-codeblock--md pre.editor:before { content: "md"; }
+.aigis-codeblock--html pre.editor:before { content: "html"; }
+.aigis-codeblock--jade pre.editor:before { content: "jade"; }
+.aigis-codeblock--js pre.editor:before { content: "js"; }
+.aigis-codeblock--javascript pre.editor:before { content: "javascript"; }
+.aigis-codeblock--coffee pre.editor:before { content: "coffee"; }
+.aigis-codeblock--md pre.editor:before { content: "md"; }
  */
-.ronde-preview {
+.aigis-preview {
   border: 1px solid #A0A0A0;
   border-radius: 3px;
   border-radius: 3px 3px 0 0;
@@ -47,38 +47,38 @@ font-size: 1rem;
   padding: 16px;
   margin: 0;
 }
-.ronde-preview + pre {
+.aigis-preview + pre {
   margin-top: 0;
 }
-.ronde-preview + pre .editor{
+.aigis-preview + pre .editor{
   border-radius: 0 0 3px 3px;
   border-top: none;
 }
-/* .ronde-preview:before {
+/* .aigis-preview:before {
   content: "preview";
 } */
-/* .ronde-codeblock:hover pre.editor:before,
-.ronde-preview:hover:before {
+/* .aigis-codeblock:hover pre.editor:before,
+.aigis-preview:hover:before {
   opacity: 0.3;
 } */
 
-.ronde-heading {
+.aigis-heading {
   padding-bottom: 0.3em;
   font-size: 2.25em;
   line-height: 1.2;
   border-bottom: 1px solid #eee;
 }
-.ronde-module__heading {
+.aigis-module__heading {
   padding-bottom: 0.3em;
   font-size: 1.75em;
   line-height: 1.225;
   border-bottom: 1px solid #eee;
   position: relative;
 }
-.ronde-module__heading:hover a {
+.aigis-module__heading:hover a {
   position: relative;  
 }
-.ronde-module__heading:hover a:before {
+.aigis-module__heading:hover a:before {
   content: "\00a7";
   position: absolute;
   right: 100%;
@@ -88,20 +88,20 @@ font-size: 1rem;
   padding-right: 5px;
   padding-left: 5px;
 }
-.ronde-module__filepath {
+.aigis-module__filepath {
   display: block;
   text-align: right;
   margin-top: -15px;
   font-size: 16px;
   color: #ADADAD;
 }
-.ronde-tags {
+.aigis-tags {
   padding: 0;
   margin: 10px 0;
   list-style: none;
   font-size: 0;
 }
-.ronde-tags__item {
+.aigis-tags__item {
   display: inline-block;
   border-radius: 2px;
   margin: 3px 0;
@@ -113,7 +113,7 @@ font-size: 1rem;
   text-decoration: none;
 }
 
-.ronde-header {
+.aigis-header {
   font-family: cursive;
   font-weight: 600;
   font-size: 30px;
@@ -127,7 +127,7 @@ font-size: 1rem;
   padding-left: 20px;
   margin-bottom: 1.5rem;
 }
-.ronde-footer {
+.aigis-footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-top: 2rem;
@@ -136,7 +136,7 @@ font-size: 1rem;
   border-top: 1px solid #eee;
   text-align: center;
 }
-.ronde-container {
+.aigis-container {
   width: auto;
   max-width: 1020px;
   padding-left: 10px;
@@ -144,27 +144,27 @@ font-size: 1rem;
   margin-right: auto;
   margin-left: auto;
 }
-.ronde-container:before {
+.aigis-container:before {
   display: table;
   content: "";
 }
-.ronde-container:after {
+.aigis-container:after {
   display: table;
   content: "";
   clear: both;
 }
 
-.ronde-contents {
+.aigis-contents {
   float: left;
   width: 75%;
   box-sizing: border-box;
   padding-right: 10px;
   padding-left: 10px;
 }
-.ronde-contents > *:first-child {
+.aigis-contents > *:first-child {
   margin-top: 0 !important;
 }
-.ronde-sidemenu {
+.aigis-sidemenu {
   float: left;
   width: 25%;
   box-sizing: border-box;
@@ -173,23 +173,23 @@ font-size: 1rem;
 }
 
 @media (max-width: 34em) {
-  .ronde-contents {
+  .aigis-contents {
     width: 100%;
     float: none;
     padding: 0;
   }
-  .ronde-sidemenu {
+  .aigis-sidemenu {
     width: 100%;
     float: none;
     padding: 0;
   }
-  .ronde-container {
+  .aigis-container {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 
-.ronde-categoryList {
+.aigis-categoryList {
   list-style: none;
   background-color: #fff;
   border: 1px solid #d8d8d8;
@@ -198,15 +198,15 @@ font-size: 1rem;
   font-size: 14px;
 }
 
-.ronde-categoryList a:active,
-.ronde-categoryList a:hover {
+.aigis-categoryList a:active,
+.aigis-categoryList a:hover {
   outline: 0;
 }
-.ronde-categoryList a:hover {
+.aigis-categoryList a:hover {
   background-color: #f9f9f9;
 }
 
-.ronde-categoryList__item {
+.aigis-categoryList__item {
   color: #4183c4;
   text-decoration: none;
   position: relative;
@@ -215,13 +215,13 @@ font-size: 1rem;
   text-shadow: 0 1px 0 #fff;
   border-bottom: 1px solid #eee;
 }
-.ronde-categoryList__item--selected {
+.aigis-categoryList__item--selected {
   /* font-weight: bold; */
   color: #222;
   cursor: default;
   pointer-events: none;
 }
-.ronde-categoryList__item--selected:before {
+.aigis-categoryList__item--selected:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -231,22 +231,22 @@ font-size: 1rem;
   background-color: #d26911;
 }
 
-.ronde-categoryList__item:last-child {
+.aigis-categoryList__item:last-child {
   border-bottom: 0;
 }
 
-.ronde-tags__item--deprecated {
+.aigis-tags__item--deprecated {
   background-color: #ff4f4f;
   color: #fff;
 }
 
-.ronde-moduleList {
+.aigis-moduleList {
   line-height: 1.6;
 }
-.ronde-moduleList__item a{
+.aigis-moduleList__item a{
   color: #4183c4;
   text-decoration: none;
 }
-.ronde-moduleList__item a:hover{
+.aigis-moduleList__item a:hover{
   text-decoration: underline;
 }
