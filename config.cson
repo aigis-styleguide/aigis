@@ -1,59 +1,22 @@
 name: "test_project"
-
-# Supported file extensions are CSS(.css), Sass(.scss, .sass) and Stylus(.styl)
-# The directory containing the source files to parse recursively.
-source: "./static/css"
-format: "cson"
-# You may alternately specify multiple directories.
-###
-source: [
-  "./static/css"
-  "./lib/css"
-]
-###
-
-# The directory that Ronde will build to
+source: "./static/css/test.css"
+format: "yaml"
 dest: "./docs"
-
-# You may put doc related assets here too: images, css, js, etc.
-dependencies: "./static"
-# document. May also include additional folders as needed.
-
-###
-Reference JS library from CSS file by CSON.
-Write {"library name": "file path"} "file path" is relative from "doc_assets".
-###
-# lib:
-#   jquery: "./js/lib/jquery.js"
-  
-  
-# Markdown-renderer custom-template for MarkedRenderer.
-# md_template: "./md_template"
-layout_template: "./layout_template"
-timestamp_format: "YYYY年MM月DD日 HH時mm分"
-
-# When you needed add CSS-class to rendered HTML-element from Markdown.
-# Value is expected Array or String.
-# md_class:
-#   blockquote: []
-#   heading   : []
-#   hr        : []
-#   list      : []
-#   listitem  : []
-#   paragraph : []
-#   table     : []
-#   tablerow  : []
-#   tablecell : []
-#   link      : []
-#   image     : []
-
-# highlight: false
+dependencies: [
+  "./static"
+  "./doc_assets"
+]
+template: "./template"
+timestamp_format: "YYYY/MM/DD/ HH:mm"
 highlight_theme: "dracula"
-  # dark  [monokai, dracula, seti]
-  # light [duotone-light, on-light]
-
-inject:
-  html  : true
-  jade  : true
-  js    : false
-  coffee: false
+md_class: 
+  heading: ["hoge"]
+  listitem: ["hogehoge"]
+inject: [
+  "html"
+  "jade"
+  "js"
+  "coffee"
+]
+highlight: false
+index: "./styleguide.md"
