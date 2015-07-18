@@ -1,0 +1,23 @@
+name: test_project
+source: ./static/css/test.css
+format: yaml
+dest: ./docs
+dependencies: 
+  - ./static
+  - ./doc_assets
+template: ./custom_template
+# template: ./template
+timestamp_format: YYYY/MM/DD/ HH:mm
+highlight_theme: dracula
+md_class: 
+  heading:
+    - hoge
+  listitem:
+    - hogehoge
+inject:
+  - html
+  - jade
+  - js
+  - coffee
+# highlight: false
+index: ./styleguide.md
