@@ -5,7 +5,7 @@ dest: ./docs
 dependencies: 
   - ./static
   - ./doc_assets
-template: ./template
+template: ./custom_template
 timestamp_format: YYYY/MM/DD/ HH:mm
 highlight_theme: dracula
 md_class: 
@@ -18,5 +18,5 @@ inject:
   - jade
   - js
   - coffee
-highlight: false
+highlight: true
 index: ./styleguide.md
