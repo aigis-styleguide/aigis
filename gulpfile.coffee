@@ -13,7 +13,7 @@ sass = require "gulp-sass"
 src =
   js: ["lib/**/*.js"]
   tests: ['./test/**/*.js', '!test/{temp,temp/**}']
-  scss: ["theme/**/*.scss", "!theme/**/_*.scss"]
+  scss: ["theme/**/*.scss"]
 
 name =
   js: "index.js"
@@ -22,6 +22,7 @@ index = "./index.js"
 
 gulp.task "scss", ->
   gulp.src src.scss
+    .pipe do plumber
     .pipe do sass
     .pipe gulp.dest("./docs/doc_assets/css/")
 
