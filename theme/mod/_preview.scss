@@ -1,0 +1,15 @@
+.aigis-preview {
+  border: 1px solid #A0A0A0;
+  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
+  padding: 20px 10px;
+  padding: 16px;
+  margin: 0;
+  
+  & + pre {
+    .editor {
+      border-radius: 0 0 3px 3px;
+      border-top: none;
+    }
+  }
+}

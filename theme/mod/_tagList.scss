@@ -1,0 +1,19 @@
+.aigis-tags {
+  padding: 10px;
+  &__item {
+    display: inline-block;
+    border-radius: 1px;
+    margin: 5px 0;
+    margin-right: 5px;
+    font-size: 12px;
+    padding: 3px 5px;
+    background-color: #454545;
+    color: #fff;
+    text-decoration: none;
+    
+    &--deprecated {
+      background-color: #ff4f4f;
+      color: #fff;
+    }
+  }
+}

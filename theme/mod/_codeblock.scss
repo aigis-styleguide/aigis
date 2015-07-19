@@ -1,0 +1,15 @@
+.aigis-codeblock, .aigis-preview {
+  position: relative;
+  margin: 0;
+  overflow: scroll;
+  
+  pre.editor {
+    position: relative;
+    padding: 35px 20px 20px;
+    padding: 16px;
+    border-radius: 3px;
+    margin: 0 auto;
+    overflow: scroll;
+    border: 1px solid #A0A0A0;
+  }
+}

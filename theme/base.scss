@@ -1,4 +1,49 @@
 @import "app/_color";
 @import "app/_value";
+@import "mod/_header";
+@import "mod/_footer";
 @import "mod/_markdown";
+@import "mod/_codeblock";
+@import "mod/_preview";
+@import "mod/_sidemenu";
+@import "mod/_categoryList";
+@import "mod/_tagList";
+@import "mod/_moduleList";
+@import "mod/_module";
 @import "layout/_app";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue",Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
+font-size: 1rem;
+}
+
+.aigis-container {
+  box-sizing: border-box;
+  width: auto;
+  min-width: 960px;
+  margin-right: auto;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.aigis-contents {
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-left: 280px;
+  margin: 0 auto;
+  &__body {
+    color: #33331a;
+    max-width: 960px;
+    min-width: 600px;
+    padding: 20px 20px;
+    margin: 0 auto;
+    & > *:first-child {
+      margin-top: 0;
+    }
+  }
+}
