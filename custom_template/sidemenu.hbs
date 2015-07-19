@@ -2,7 +2,7 @@
 {{#if category}}
 <nav class="aigis-categoryList">
 {{#each category}}
-  <a class="aigis-categoryList__item" href="{{href}}">{{base}}/{{name}}</a>
+  <a class="aigis-categoryList__item" data-path-level="{{level}}" data-path-root="{{root}}" data-path-parent="{{parent}}" href="{{href}}"><span class="opener"></span>{{name}}</a>
 {{/each}}
 </nav>
 {{/if}}
