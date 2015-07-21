@@ -25,6 +25,7 @@ gulp.task "scss", ->
     .pipe do plumber
     .pipe do sass
     .pipe gulp.dest("./docs/doc_assets/css/")
+    .pipe gulp.dest("./doc_assets/css/")
 
 gulp.task "test", ->
   gulp.src src.tests
