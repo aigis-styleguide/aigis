@@ -64,6 +64,9 @@
     font-weight: normal;
     padding-left: 10px;
     line-height: 1em; }
+    .aigis-sidemenu__heading a {
+      color: inherit;
+      text-decoration: none; }
 
 .aigis-categoryList {
   padding: 5px 10px; }

@@ -25,8 +25,18 @@ tag:
 
 .box {
   border: 1px solid #333;
+  color: red;
+  background-color: blue;
 }
 
+.box2 {
+  color: #f0f;
+  border: 1px solid #fff;
+}
+.box3 {
+  color: rgb(146, 135, 224);
+  background-color: hsl(27, 37%, 53%);
+}
 /*
 ---
 name:
