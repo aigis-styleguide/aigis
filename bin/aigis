@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var argv = require("yargs").argv;
+var path = require("path");
+var _ = require("lodash");
+
+var Aigis = require("../index");
+var configLoader = require("../lib/reader/config");
+
+var configFilePath;
+var config;
+var targetPath;
+
+if (_.isString(argv.c)) {
+  console.log("Configfile: ", path.resolve(argv.c));
+  config = configLoader(path.resolve(argv.c));
+}
+else {
+  config = require("../lib/app/options");
+}
+
+if (config.index) {
+  console.log("index: ", path.resolve(config.index));
+}
+
+if (_.isString(argv.s)) {
+  config.source = argv.s;
+}
+
+var aigis = new Aigis(config);
+
+aigis.run();

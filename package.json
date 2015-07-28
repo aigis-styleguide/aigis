@@ -1,15 +1,36 @@
 {
+  "name": "node-aigis",
+  "version": "0.0.1",
+  "description": "for documenting CSS and generating components guide",
+  "homepage": "http://pxgrid.github.io/aigis",
+  "author": {
+    "name": "nakajmg",
+    "email": "nakajmg@pxgrid.com"
+  },
+  "main": "index.js",
+  "bin": {
+    "aigis": "./bin/aigis"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Aigis"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/pxgrid/Aigis/issues"
+  },
   "dependencies": {
     "bluebird": "2.9.14",
     "coffee-script": "^1.9.1",
     "cson": "3.0.1",
     "css": "2.2.0",
-    "del": "1.1.1",
     "eventemitter2": "0.4.14",
-    "findit": "2.0.0",
     "fs-extra": "^0.18.2",
     "get-css-colors": "0.0.1",
-    "graceful-fs": "^3.0.6",
     "handlebars": "3.0.0",
     "highlights": "1.2.0",
     "jade": "^1.9.2",
@@ -18,14 +39,13 @@
     "language-stylus": "git://github.com/devongovett/atom-stylus",
     "lodash": "3.5.0",
     "marked": "0.3.3",
-    "mkdirp": "0.5.0",
     "moment": "^2.10.2",
     "node-sass": "^3.1.2",
-    "object-assign": "2.0.0",
     "stylus": "^0.51.1",
     "through2": "0.6.3",
     "vinyl": "0.4.6",
-    "vinyl-fs": "1.0.0"
+    "vinyl-fs": "1.0.0",
+    "yargs": "^3.15.0"
   },
   "devDependencies": {
     "browser-sync": "^2.7.13",
@@ -40,7 +60,6 @@
     "power-assert": "^0.11.0",
     "run-sequence": "^1.0.2"
   },
-  "main": "index.js",
   "scripts": {
     "debug": "node-debug ./dist/index.js",
     "test": "gulp test"
