@@ -15,6 +15,11 @@ else {
   configFilePath = argv._[0];
 }
 
-var aigis = new Aigis(configFilePath);
+try {
+  var aigis = new Aigis(configFilePath);
+  aigis.run();
+}
+catch(e) {
+  process.exit(1);
+}
 
-aigis.run();
