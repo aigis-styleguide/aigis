@@ -6,27 +6,15 @@ var _ = require("lodash");
 var fs = require("fs-extra");
 
 var Aigis = require("../index");
-var configLoader = require("../lib/reader/config");
-
 var configFilePath
 
-var DEFAULT = {
-  configFilePath: "aigis_config.yml"
-}
-
 if (_.isUndefined(argv._[0])) {
-  configFilePath = DEFAULT.configFilePath;
+  configFilePath = "aigis_config.yml";
 }
 else {
   configFilePath = argv._[0];
 }
 
-var config = configLoader(configFilePath);
-
-if (config.index) {
-  console.log("index: ", path.resolve(config.index));
-}
-
-var aigis = new Aigis(config);
+var aigis = new Aigis(configFilePath);
 
 aigis.run();
