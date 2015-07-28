@@ -1,0 +1,13 @@
+.aigis-moduleList {
+  line-height: 1.6;
+  &__item {
+    a {
+      color: #08f;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    
+  }
+}

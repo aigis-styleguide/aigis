@@ -1,0 +1,26 @@
+.aigis-sidemenu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  box-sizing: border-box;
+  background-color: #f9faf9;
+  color: #33331a;
+  overflow-x: scroll;
+  height: 100%;
+  
+  &__heading {
+    font-size: 20px;
+    margin: 12px 0;
+    border-left: 6px solid #33331a;
+    color: #33331a;
+    font-weight: normal;
+    padding-left: 10px;
+    line-height: 1em;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}

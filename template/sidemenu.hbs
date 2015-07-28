@@ -1,0 +1,15 @@
+{{#if category}}
+<nav>
+{{#each category}}
+  <a href="{{href}}">{{base}}/{{name}}</a>
+{{/each}}
+</nav>
+{{/if}}
+
+{{#if tag}}
+<nav>
+{{#each tag}}
+  <a href="{{href}}">{{name}}</a>
+{{/each}}
+</nav>
+{{/if}}

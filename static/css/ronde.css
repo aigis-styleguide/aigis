@@ -59,14 +59,12 @@ tags: ["hoge"]
 
 /*
 ---
-{
 name: json_test
 category:
   - config
   - yaml
 tag:
   - yaml
-}
 ---
 
 ```json

@@ -1,6 +1,5 @@
 gulp = require "gulp"
-babel = require "gulp-babel"
-concat = require "gulp-concat"
+mocha = require "gulp-mocha"
 plumber = require "gulp-plumber"
 notify = require "gulp-notify"
 process = require "child_process"
@@ -8,17 +7,30 @@ exec = process.exec
 runseq = require "run-sequence"
 bs = require "browser-sync"
 reload = bs.reload
+require('intelli-espower-loader')
+sass = require "gulp-sass"
 
-src = ["src/**/*.js"]
-css = ["static/css/**/*"]
-
-dist =
-  js: "./dist"
+src =
+  js: ["lib/**/*.js"]
+  tests: ['./test/**/*.js', '!test/{temp,temp/**}']
+  scss: ["theme/**/*.scss"]
 
 name =
   js: "index.js"
 
-index = "./dist/index.js"
+index = "./index.js"
+
+gulp.task "scss", ->
+  gulp.src src.scss
+    .pipe do plumber
+    .pipe do sass
+    .pipe gulp.dest("./docs/doc_assets/css/")
+    .pipe gulp.dest("./doc_assets/css/")
+
+gulp.task "test", ->
+  gulp.src src.tests
+    .pipe do plumber
+    .pipe do mocha
 
 gulp.task "exec:index", (cb) ->
   exec "node #{index}" , (err, stdout, stderr) ->
@@ -26,23 +38,11 @@ gulp.task "exec:index", (cb) ->
     console.log stderr
     cb()
 
-gulp.task "babel", ->
-  gulp.src src
-    .pipe plumber({errorHandler: notify.onError('<%= error.message %>')})
-    .pipe babel
-      modules: "common"
-      blacklist: "strict"
-    .pipe gulp.dest dist.js
+gulp.task "watch", ->
+  gulp.watch src.js, ["exec:index"]
 
-gulp.task "babel:exec", ->
-  runseq "babel", "exec:index"
-
-gulp.task "watch", ["serve"], ->
-  gulp.watch [src], ["babel:exec", reload]
-  gulp.watch [css], ["exec:index", reload]
-
-gulp.task "babel:watch", ->
-  gulp.watch [src], ["babel"]
+gulp.task "theme", ["serve"], ->
+  gulp.watch src.scss, ["scss", reload]
 
 gulp.task "serve", ->
   bs.init

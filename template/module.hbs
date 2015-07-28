@@ -1,0 +1,24 @@
+{{!-- 
+  config: {
+    name: "module_name",
+    category: ["category_name"],
+    tag: ["tag_name"],
+    filePath: "relative_file_path_from_docsroot"
+  },
+  filePath: "/static/css/hoge.css",
+  md: "## hogehoge\n\n* hoge",
+  html: "<h2>hogehoge</h2><ul><li>hoge</ul>"
+}
+ --}}
+{{#if config.name}}
+<h2 id="{{config.name}}"><a href="#{{config.name}}"></a>{{config.name}}</h2>
+{{/if}}
+<div>{{config.filePath}}</div>
+{{#if config.tag}}
+<ul class="ronde-tags">
+{{#each config.tag}}
+<li>{{this}}
+{{/each}}
+</ul>
+{{/if}}
+{{{html}}}

@@ -1,0 +1,21 @@
+<div class="aigis-sidemenu">
+<header class="aigis-header"><a href="{{root}}index.html">{{config.name}}</a></header>
+<h2 class="aigis-sidemenu__heading"><a href="{{root}}color.html">Color</a></h2>
+{{#if category}}
+<h2 class="aigis-sidemenu__heading">Category</h2>
+<nav class="aigis-categoryList">
+{{#each category}}
+  <a class="aigis-categoryList__item" data-path-level="{{level}}" data-path-root="{{root}}" data-path-parent="{{parent}}" href="{{href}}"><span class="opener"></span>{{name}}</a>
+{{/each}}
+</nav>
+{{/if}}
+
+{{#if tag}}
+<h2 class="aigis-sidemenu__heading">Tag</h2>
+<nav class="aigis-tags aigis-tagList">
+{{#each tag}}
+  <a class="aigis-tags__item aigis-tags__item--{{name}}" href="{{href}}">{{name}}</a>
+{{/each}}
+</nav>
+{{/if}}
+</div>

@@ -1,0 +1,30 @@
+.aigis-module {
+  &__heading {
+    padding-bottom: 0.3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    &:hover a {
+      position: relative;
+      &:before {
+        content: "\00a7";
+        position: absolute;
+        right: 100%;
+        bottom: 5px;
+        font-size: 20px;
+        color: #000;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+  }
+  
+  &__filepath {
+    display: block;
+    text-align: right;
+    margin-top: -15px;
+    font-size: 16px;
+    color: #ADADAD;
+  }
+}

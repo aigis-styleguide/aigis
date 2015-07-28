@@ -1,0 +1,8 @@
+<nav>
+  {{!-- <h2 class="aigis-module__heading">Modules</h2> --}}
+  <ul class="aigis-moduleList">
+  {{#each modules}}
+    <li class="aigis-moduleList__item"><a href="#{{this.config.name}}">{{this.config.name}}</a>
+  {{/each}}
+  </ul>
+</nav>
