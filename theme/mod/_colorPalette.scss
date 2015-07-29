@@ -1,0 +1,16 @@
+.aigis-colorPalette {
+  margin-top: 5px;
+  &__color {
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+    width: 50%;
+    margin-right: 5px;
+  }
+
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 40px;
+  }
+}
