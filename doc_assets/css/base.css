@@ -145,6 +145,19 @@
   font-size: 16px;
   color: #ADADAD; }
 
+.aigis-colorPalette {
+  margin-top: 5px; }
+  .aigis-colorPalette__color {
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+    width: 50%;
+    margin-right: 5px; }
+  .aigis-colorPalette__label {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 40px; }
+
 body {
   margin: 0;
   padding: 0;
