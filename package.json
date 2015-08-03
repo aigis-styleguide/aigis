@@ -34,6 +34,7 @@
     "handlebars": "3.0.0",
     "highlights": "1.2.0",
     "jade": "^1.9.2",
+    "js-beautify": "^1.5.10",
     "js-yaml": "^3.3.0",
     "language-jade": "git://github.com/devongovett/atom-jade",
     "language-stylus": "git://github.com/devongovett/atom-stylus",
