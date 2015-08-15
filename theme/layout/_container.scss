@@ -1,0 +1,11 @@
+.aigis-container {
+  box-sizing: border-box;
+  width: auto;
+  min-width: 960px;
+  margin-right: auto;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
