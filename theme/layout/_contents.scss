@@ -1,0 +1,16 @@
+.aigis-contents {
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-left: 280px;
+  margin: 0 auto;
+  &__body {
+    color: #33331a;
+    max-width: 960px;
+    min-width: 600px;
+    padding: 20px 20px;
+    margin: 0 auto;
+    & > *:first-child {
+      margin-top: 0;
+    }
+  }
+}
