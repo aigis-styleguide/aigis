@@ -8,24 +8,15 @@ runseq = require "run-sequence"
 bs = require "browser-sync"
 reload = bs.reload
 require('intelli-espower-loader')
-sass = require "gulp-sass"
 
 src =
   js: ["lib/**/*.js"]
   tests: ['./test/**/*.js', '!test/{temp,temp/**}']
-  scss: ["theme/**/*.scss"]
 
 name =
   js: "index.js"
 
 index = "./index.js"
-
-gulp.task "scss", ->
-  gulp.src src.scss
-    .pipe do plumber
-    .pipe do sass
-    .pipe gulp.dest("./docs/doc_assets/css/")
-    .pipe gulp.dest("./doc_assets/css/")
 
 gulp.task "test", ->
   gulp.src src.tests
@@ -40,9 +31,6 @@ gulp.task "exec:index", (cb) ->
 
 gulp.task "watch", ->
   gulp.watch src.js, ["exec:index"]
-
-gulp.task "theme", ["serve"], ->
-  gulp.watch src.scss, ["scss", reload]
 
 gulp.task "serve", ->
   bs.init
