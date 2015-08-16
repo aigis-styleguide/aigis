@@ -10,15 +10,18 @@
   html: "<h2>hogehoge</h2><ul><li>hoge</ul>"
 }
  --}}
+
+<div class="aigis-module">
 {{#if config.name}}
-<h2 id="{{config.name}}"><a href="#{{config.name}}"></a>{{config.name}}</h2>
+<h2 class="aigis-module__heading" id="{{config.name}}"><a href="#{{config.name}}"></a>{{config.name}}</h2>
 {{/if}}
-<div>{{config.filePath}}</div>
+<div class="aigis-module__filepath">{{config.filePath}}</div>
 {{#if config.tag}}
-<ul class="ronde-tags">
+<ul class="aigis-tags">
 {{#each config.tag}}
-<li>{{this}}
+<li class="aigis-tags__item aigis-tags__item--{{this}}">{{this}}
 {{/each}}
 </ul>
 {{/if}}
 {{{html}}}
+</div>
