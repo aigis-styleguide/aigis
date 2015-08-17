@@ -28,6 +28,7 @@
     "coffee-script": "^1.9.1",
     "cson": "3.0.1",
     "css": "2.2.0",
+    "cssfmt": "^0.8.2",
     "eventemitter2": "0.4.14",
     "fs-extra": "^0.18.2",
     "get-css-colors": "0.0.1",
@@ -42,6 +43,7 @@
     "marked": "0.3.3",
     "moment": "^2.10.2",
     "node-sass": "^3.1.2",
+    "postcss": "^4.1.16",
     "stylus": "^0.51.1",
     "through2": "0.6.3",
     "vinyl": "0.4.6",
@@ -60,7 +62,7 @@
   },
   "scripts": {
     "debug": "node-debug ./dist/index.js",
-    "test": "gulp test", 
+    "test": "gulp test",
     "start": "gulp",
     "watch": "gulp watch"
   }
