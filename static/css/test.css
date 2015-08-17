@@ -6,7 +6,7 @@ category:
   - module/btn
 libs:
   - jquery
-tag: 
+tag:
   - deprecated
   - tag2
   - aiueo
@@ -45,7 +45,7 @@ category:
   - module
   - module/btn/special
   - all
-tag: 
+tag:
   - tag1
   - deprecated
 ---
@@ -54,9 +54,31 @@ tag:
 console.log "test"
 ```
 
-```css
-.box {
-  border: 1px solid #333;
+```scss
+@mixin      clearfix    ()      { &:before,
+  &:after {
+                content:" ";
+    display              : table;  }
+
+  &:after        {clear: both;}
+   }.class
+{
+       padding:10px;@include        clearfix();}
+     .base {  color: red;  }
+
+%base
+{
+
+
+padding: 12px
+}
+
+.foo{
+@extend      .base;}
+
+.bar
+      {     @extend            %base;
+
 }
 ```
 
