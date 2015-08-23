@@ -1,12 +1,27 @@
 /*
 ---
+name: test_markup
+category:
+  - module/btn/special
+  - all
+tag:
+  - special
+markup: ./html/test.html
+---
+
+* this is special btn
+
+*/
+
+/*
+---
 name: test1btn
 category:
   - all
   - module/btn
 libs:
   - jquery
-tag: 
+tag:
   - deprecated
   - tag2
   - aiueo
@@ -45,7 +60,7 @@ category:
   - module
   - module/btn/special
   - all
-tag: 
+tag:
   - tag1
   - deprecated
 ---
@@ -59,19 +74,5 @@ console.log "test"
   border: 1px solid #333;
 }
 ```
-
-*/
-
-/*
----
-name: "btn3"
-category:
-  - module/btn/special
-  - all
-tag:
-  - special
----
-
-* this is special btn
 
 */
