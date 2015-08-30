@@ -6,10 +6,11 @@ category:
   - all
 tag:
   - special
-markup: ./html/test.html
 ---
 
-* this is special btn
+## import external html test
+
+!![hoge](./test.html)
 
 */
 
