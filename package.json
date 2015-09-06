@@ -2,7 +2,7 @@
   "name": "node-aigis",
   "version": "0.1.1",
   "description": "for documenting CSS and generating components guide",
-  "homepage": "http://pxgrid.github.io/aigis/",
+  "homepage": "http://pxgrid.github.io/aigis",
   "author": {
     "name": "nakajmg",
     "email": "nakajmg@pxgrid.com"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/aigis"
+    "url": "https://github.com/pxgrid/aigis.git"
   },
   "license": "MIT",
   "engines": {
