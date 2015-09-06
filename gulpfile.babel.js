@@ -1,37 +1,30 @@
 'use strict';
 
 const gulp = require("gulp");
-const mocha = require("gulp-mocha");
+const aigis = require("gulp-aigis");
+const sass = require("gulp-sass");
 const plumber = require("gulp-plumber");
-const process = require("child_process");
-const exec = process.exec;
 const bs = require("browser-sync");
 const reload = bs.reload;
-require('intelli-espower-loader');
 
 const src = {
-  js: ["lib/**/*.js"],
-  tests: ['./test/**/*.js', '!test/{temp,temp/**}']
+  scss: "./src/css/app.scss"
 };
 
-const index = "./bin/aigis";
-
-gulp.task("test", () => {
-  gulp.src(src.tests)
-    .pipe(plumber())
-    .pipe(mocha());
-});
-
-gulp.task("exec:index", (cb) => {
-  exec(`node ${index}` , (err, stdout, stderr) => {
-  console.log(stdout);
-  console.log(stderr);
-  cb();
-  });
-});
-
 gulp.task("watch", () => {
-  gulp.watch(src.js, ["exec:index"]);
+  gulp.watch(src.scss, ["scss"]);
+});
+
+gulp.task("scss", () =>{
+  return gulp.src(src.scss)
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(gulp.dest("./css"));
+});
+
+gulp.task("aigis", () => {
+  return gulp.src("./aigis_config.yml")
+    .pipe(aigis());
 });
 
 gulp.task("serve", () => {
@@ -45,4 +38,4 @@ gulp.task("serve", () => {
   });
 });
 
-gulp.task("default", ["exec:index"]);
+gulp.task("default", ["scss"]);
