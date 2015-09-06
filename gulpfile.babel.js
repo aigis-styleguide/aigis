@@ -30,8 +30,9 @@ gulp.task("aigis", () => {
 gulp.task("serve", () => {
   bs.init({
     server: {
-      baseDir: ["./docs"],
-      directory: true
+      index: "./index.html",
+      baseDir: ["./"],
+      directory: false
     },
     notify: false,
     host: "localhost"
