@@ -1,0 +1,41 @@
+.gh-header {
+  color: tomato;
+  background-color: #2fcdb4;
+  padding-left: 20px;
+  &__name {
+    font-size: 2.4rem;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.gh-header-menu {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.6rem;
+  margin: 0;
+  &__item {
+    list-style: none;
+    align-self: center;
+    padding: 20px;
+    background-color: transparent;
+    transition: background-color 300ms ease;
+    a {
+      color: rgba(#fff, .8);
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: #fff;
+      a {
+        color: #2fcdb4;
+      }
+    }
+  }
+}

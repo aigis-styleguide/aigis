@@ -1,0 +1,17 @@
+.gh-l-container {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.gh-l-header {
+  display: flex;
+
+  &__left {
+    align-self: center;
+  }
+
+  &__right {
+    align-self: center;
+    flex-grow: 1;
+  }
+}
