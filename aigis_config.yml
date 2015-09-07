@@ -1,2 +1,6 @@
 source: ./src/css
 dest: ./docs
+dependencies:
+  - ./css
+  - ./doc_assets
+template: ./template

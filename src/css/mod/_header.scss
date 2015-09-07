@@ -11,6 +11,24 @@
   }
 }
 
+/*
+---
+name: header-menu
+category: header
+---
+
+```html
+<div class="gh-header">
+  <ul class="gh-header-menu">
+    <li class="gh-header-menu__item"><a href="#">About</a>
+    <li class="gh-header-menu__item"><a href="#">Usage</a>
+    <li class="gh-header-menu__item"><a href="#">Docs</a>
+    <li class="gh-header-menu__item"><a href="#">GitHub</a>
+  </ul>
+</div>
+```
+
+*/
 .gh-header-menu {
   padding: 0;
   list-style: none;
