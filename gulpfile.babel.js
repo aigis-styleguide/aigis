@@ -11,8 +11,9 @@ const src = {
   scss: "./src/css/app.scss"
 };
 
-gulp.task("watch", () => {
-  gulp.watch(src.scss, ["scss"]);
+gulp.task("watch", ["serve"], () => {
+  gulp.watch("./**.html", reload);
+  gulp.watch(src.scss, ["scss"], reload);
 });
 
 gulp.task("scss", () =>{
