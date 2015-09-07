@@ -8,18 +8,18 @@ const bs = require("browser-sync");
 const reload = bs.reload;
 
 const src = {
-  scss: "./src/css/**/*.scss"
+  scss: ["src/css/**/*.scss"]
 };
 
 gulp.task("watch", ["serve"], () => {
   gulp.watch("./**.html", reload);
-  gulp.watch(src.scss, ["scss"], reload);
+  gulp.watch(src.scss, ["scss", reload]);
 });
 
 gulp.task("scss", () =>{
   return gulp.src("./src/css/app.scss")
     .pipe(plumber())
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest("./css"));
 });
 
