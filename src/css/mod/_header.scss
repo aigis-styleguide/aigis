@@ -1,34 +1,43 @@
-.gh-header {
-  color: tomato;
-  background-color: #2fcdb4;
-  padding-left: 20px;
-  &__name {
-    font-size: 2.4rem;
-    a {
-      color: white;
-      text-decoration: none;
-    }
-  }
-}
-
 /*
 ---
-name: header-menu
+name: header
 category: header
 ---
 
 ```html
 <div class="gh-header">
-  <ul class="gh-header-menu">
-    <li class="gh-header-menu__item"><a href="#">About</a>
-    <li class="gh-header-menu__item"><a href="#">Usage</a>
-    <li class="gh-header-menu__item"><a href="#">Docs</a>
-    <li class="gh-header-menu__item"><a href="#">GitHub</a>
-  </ul>
+  <div class="gh-l-container gh-l-header">
+    <div class="gh-l-header__left">
+      <h1 class="gh-header__name">
+        <a href="/pxgrid/aigis/">aigis</a>
+      </h1>
+    </div>
+    <div class="gh-l-header__right">
+      <ul class="gh-header-menu">
+        <li class="gh-header-menu__item"><a href="#">About</a>
+        <li class="gh-header-menu__item"><a href="#">Usage</a>
+        <li class="gh-header-menu__item"><a href="./docs/index.html">Sample</a>
+        <li class="gh-header-menu__item"><a href="#">Docs</a>
+        <li class="gh-header-menu__item"><a href="#">GitHub</a>
+      </ul>
+    </div>
+  </div>
 </div>
 ```
-
 */
+.gh-header {
+  color: tomato;
+  background-color: $main-color;
+  padding-left: 20px;
+  &__name {
+    font-size: 2.4rem;
+    a {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+}
+
 .gh-header-menu {
   padding: 0;
   list-style: none;
@@ -37,12 +46,12 @@ category: header
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-end;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin: 0;
   &__item {
     list-style: none;
     align-self: center;
-    padding: 20px;
+    padding: 16px;
     background-color: transparent;
     transition: background-color 300ms ease;
     a {
@@ -50,9 +59,9 @@ category: header
       text-decoration: none;
     }
     &:hover {
-      background-color: #fff;
+      background-color: $text-color;
       a {
-        color: #2fcdb4;
+        color: $main-color;
       }
     }
   }

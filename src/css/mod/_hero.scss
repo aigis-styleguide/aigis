@@ -1,0 +1,47 @@
+/*
+---
+name: hero
+category: header
+---
+
+```html
+<div class="gh-hero gh-l-hero">
+  <p class="gh-hero__mainText">Aigis is a style guide generator.</p>
+  <p class="gh-hero__subText">Make easier and maintainable.</p>
+
+  <button class="gh-hero__btn">Get Started!</button>
+</div>
+```
+
+*/
+
+.gh-hero {
+  background-color: $main-color;
+  color: $text-color;
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+  text-align: center;
+
+  &__mainText {
+    font-size: 5.0rem;
+  }
+
+  &__subText {
+    font-size: 2.5rem;
+  }
+
+  &__btn {
+    border: 1px solid $text-color;
+    background-color: transparent;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 2.6rem;
+    padding: 10px 40px;
+    font-weight: 300;
+    transition: background-color 200ms ease;
+    &:hover {
+      color: $main-color;
+      background-color: $text-color;
+    }
+  }
+}

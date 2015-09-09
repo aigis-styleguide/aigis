@@ -15,3 +15,20 @@
     flex-grow: 1;
   }
 }
+
+
+.gh-l-hero {
+  .gh-hero {
+    &__subText {
+      margin-top: 20px;
+    }
+    &__btn {
+      margin-top: 40px;
+    }
+  }
+
+}
+
+.gh-l-footer {
+  margin-top: 60px;
+}

@@ -2,9 +2,16 @@ html, body {
   margin: 0;
   padding: 0;
   font-size: 62.5%;
-  font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, arial, nimbussansl, liberationsans, freesans, clean, Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-weight: 300;
+  min-height: 100%;
+
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: normal;
+}
+p {
+  padding: 0;
+  margin: 0;
 }
