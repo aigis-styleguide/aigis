@@ -95,9 +95,12 @@ category: header
 .gh-hero {
   background-color: #3DB680;
   color: #fff;
-  padding-top: 8rem;
+  padding-top: 6rem;
   padding-bottom: 10rem;
-  text-align: center; }
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center 20px;
+  background-size: 220px auto; }
   .gh-hero__mainText {
     font-size: 5.0rem; }
   .gh-hero__subText {
@@ -118,8 +121,32 @@ category: header
 .gh-content {
   color: #555;
   font-size: 2rem;
-  text-align: center;
-  padding-top: 6rem; }
+  text-align: left;
+  padding: 4rem; }
+  .gh-content ul {
+    display: inline-block;
+    text-align: left; }
+  .gh-content code {
+    color: #666;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    line-height: 1.45;
+    padding: 2px 6px;
+    font-size: inherit;
+    font-family: inherit; }
+  .gh-content pre {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    overflow: auto;
+    font-size: 1.4rem;
+    line-height: 1.45;
+    color: #444;
+    background-color: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: left;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }
 
 .gh-footer {
   background-color: #3DB680;
