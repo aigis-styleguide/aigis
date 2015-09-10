@@ -1,8 +1,43 @@
 $content-text: #555;
+$code-text: #666;
+$pre-text: #444;
 
 .gh-content {
   color: $content-text;
   font-size: 2rem;
-  text-align: center;
-  padding-top: 6rem;
+  text-align: left;
+  padding: 3rem;
+
+  ul {
+    display: inline-block;
+    text-align: left;
+    li {
+
+    }
+  }
+
+  code {
+    color: $code-text;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    line-height: 1.45;
+    padding: 2px 6px;
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  pre {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    overflow: auto;
+    font-size: 1.4rem;
+    line-height: 1.45;
+    color: $pre-text;
+    background-color: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: left;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  }
 }

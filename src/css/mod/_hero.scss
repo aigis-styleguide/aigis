@@ -18,10 +18,13 @@ category: header
 .gh-hero {
   background-color: $main-color;
   color: $text-color;
-  padding-top: 8rem;
+  padding-top: 6rem;
   padding-bottom: 10rem;
   text-align: center;
-
+  //background-image: url(./logo.png);
+  background-repeat: no-repeat;
+  background-position: center 20px;
+  background-size: 220px auto;
   &__mainText {
     font-size: 5.0rem;
   }
