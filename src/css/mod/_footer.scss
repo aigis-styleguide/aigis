@@ -1,4 +1,19 @@
-$link-color: #FFEA3A;
+/*
+---
+name: footer
+category:
+  - mod/footer
+---
+
+```html
+<div class="gh-footer">
+  <p>Created and maintained by <a href="https://twitter.com/nakajmg">@nakajmg</a> and
+    <a href="https://twitter.com/geckotang">@geckotang</a>
+  </p>
+</div>
+```
+
+*/
 .gh-footer {
   background-color: $main-color;
   color: $text-color;

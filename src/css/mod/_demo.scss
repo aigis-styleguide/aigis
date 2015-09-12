@@ -1,0 +1,37 @@
+/*
+---
+name: Buttons
+category: mod/btn/test
+tag:
+  - latest
+  - base
+---
+
+Button styles.
+
+```html
+<a class="ag-btn">Button</a>
+<button class="ag-btn ag-btn--primary">Button</button>
+```
+
+*/
+.ag-btn {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: none;
+  background-color: $main-color;
+  color: $text-color;
+  padding: 20px;
+  text-align: center;
+  line-height: 40px;
+  min-width: 200px;
+  font-size: 20px;
+  box-sizing: border-box;
+
+  @at-root {
+    &--primary {
+      color: black;
+      background-color: $link-color;
+    }
+  }
+}

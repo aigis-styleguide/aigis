@@ -8,12 +8,23 @@ $pre-text: #444;
   text-align: left;
   padding: 4rem;
 
+  a:link {
+    color: $main-color;
+  }
+
   ul {
     display: inline-block;
     text-align: left;
     li {
 
     }
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+  p {
+    line-height: 1.5;
   }
 
   code {
