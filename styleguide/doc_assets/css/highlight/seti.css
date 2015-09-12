@@ -1,0 +1,273 @@
+.comment {
+  color: #41535b;
+  background: none;
+}
+.keyword {
+  color: #9fca56;
+}
+.keyword.control {
+  color: #9fca56;
+}
+.keyword.operator {
+  color: #9fca56;
+}
+.keyword.other.special-method {
+  color: #9fca56;
+}
+.keyword.other.unit {
+  color: #9fca56;
+}
+.storage {
+  color: #e6cd69;
+}
+.storage.modifier {
+  color: #e6cd69;
+}
+.constant {
+  color: #cd3f45;
+}
+.constant.character.escape {
+  color: #cd3f45;
+}
+.constant.numeric {
+  color: #cd3f45;
+}
+.constant.other.color {
+  color: #cd3f45;
+}
+.constant.other.symbol {
+  color: #cd3f45;
+}
+.variable {
+  color: #9fca56;
+}
+.variable.interpolation {
+  color: #9fca56;
+}
+.variable.parameter.function {
+  color: #55b5db;
+}
+.invalid.illegal,
+.invalid.deprecated {
+  background: none;
+  color: #cd3f45;
+}
+.string {
+  color: #55b5db;
+}
+.string .constant {
+  color: #55b5db;
+}
+.string.regexp {
+  color: #55b5db;
+}
+.string.regexp .constant.character.escape,
+.string.regexp .source.ruby.embedded,
+.string.regexp .string.regexp.arbitrary-repitition {
+  color: #55b5db;
+}
+.string.regexp.group {
+  color: #55b5db;
+}
+.string.regexp.character-class {
+  color: #55b5db;
+}
+.string.regexp .source.ruby.embedded {
+  color: #55b5db;
+}
+.string .variable {
+  color: #9fca56;
+}
+.string.other.link {
+  color: #55b5db;
+}
+.source .string .source,
+.source .string .meta.embedded.line {
+  color: #55b5db;
+}
+.source .string .punctuation.section.embedded {
+  color: #55b5db;
+}
+.source .string .punctuation.section.embedded .source {
+  color: #55b5db;
+}
+.punctuation.terminator {
+  color: #858d8a;
+}
+.punctuation.separator {
+  color: #858d8a;
+}
+.punctuation.definition {
+  color: #858d8a;
+}
+.punctuation.definition.comment {
+  color: #41535b;
+}
+.punctuation.definition.string,
+.punctuation.definition.variable,
+.punctuation.definition.array {
+  color: #55b5db;
+}
+.punctuation.definition.parameters {
+  color: #d4d7d6;
+}
+.punctuation.definition.heading,
+.punctuation.definition.identity {
+  color: #d4d7d6;
+}
+.punctuation.definition.bold {
+  color: #d4d7d6;
+  font-weight: bold;
+}
+.punctuation.definition.italic {
+  color: #d4d7d6;
+  font-style: italic;
+}
+.punctuation.section.embedded {
+  color: #d4d7d6;
+}
+.support {
+  color: #a074c4;
+}
+.support.class {
+  color: #a074c4;
+}
+.support.function {
+  color: #a074c4;
+}
+.support.function.any-method {
+  color: #a074c4;
+}
+.support.constant {
+  color: #cd3f45;
+}
+.support.type.property-name.css {
+  color: #a074c4;
+}
+.source .entity.name.tag,
+.source .entity.other.attribute-name,
+.meta.tag.inline,
+.meta.tag.inline .entity {
+  color: #9fca56;
+}
+.tag,
+.tag .entity {
+  color: #55b5db;
+}
+.html .string {
+  color: #d4d7d6;
+}
+.html .punctuation.definition.tag {
+  color: #55b5db;
+}
+.html .entity.name.tag {
+  text-decoration: done;
+}
+.html .entity.name.tag.structure {
+  color: #55b5db;
+}
+.html .entity.name.tag.block {
+  color: #55b5db;
+}
+.html .entity.other.attribute-name {
+  color: #9fca56;
+}
+.entity {
+  color: #55b5db;
+}
+.entity.name.type {
+  color: #55b5db;
+  text-decoration: none;
+}
+.entity.other.inherited-class {
+  color: #55b5db;
+}
+.entity.name.function {
+  color: #55b5db;
+}
+.entity.name.class,
+.entity.name.type.class {
+  color: #55b5db;
+}
+.entity.name.section {
+  color: #55b5db;
+}
+.entity.name.tag {
+  color: #55b5db;
+  text-decoration: done;
+}
+.entity.other.attribute-name {
+  color: #9fca56;
+}
+.entity.other.attribute-name.id {
+  color: #9fca56;
+}
+.meta.link {
+  color: #d4d7d6;
+}
+.meta.require {
+  color: #d4d7d6;
+}
+.meta.brace.curly {
+  color: #858d8a;
+}
+.meta.brace.round {
+  color: #d4d7d6;
+}
+.meta.comma {
+  color: #858d8a;
+}
+.meta.selector {
+  color: #858d8a;
+}
+.meta.separator {
+  background-color: #858d8a;
+  color: #858d8a;
+}
+.none {
+  color: #d4d7d6;
+}
+.markup.bold {
+  color: #d4d7d6;
+  font-weight: bold;
+}
+.markup.changed {
+  color: #d4d7d6;
+}
+.markup.deleted {
+  color: #d4d7d6;
+}
+.markup.italic {
+  color: #d4d7d6;
+  font-style: italic;
+}
+.markup.heading .punctuation.definition.heading {
+  color: #d4d7d6;
+}
+.markup.inserted {
+  color: #d4d7d6;
+}
+.markup.list {
+  color: #d4d7d6;
+}
+.markup.quote {
+  color: #d4d7d6;
+}
+.markup.raw.inline {
+  color: #d4d7d6;
+}
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+}
+.source.gfm .markup.heading {
+  color: #d4d7d6;
+}
+atom-text-editor[mini] .scroll-view,
+:host(.mini) .scroll-view {
+  padding-left: 1px;
+}
+
+.editor.editor-colors {
+  background-color: #151718;
+  color: #D6D9D8;
+}

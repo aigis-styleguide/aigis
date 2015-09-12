@@ -1,0 +1,251 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  font-family: "Helvetica Neue", Helvetica, arial, nimbussansl, liberationsans, freesans, clean, Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-weight: 300;
+  min-height: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal; }
+
+p {
+  padding: 0;
+  margin: 0; }
+
+/*
+---
+name: header
+category: mod/header
+---
+
+```html
+<div class="gh-header">
+  <div class="gh-l-container gh-l-header">
+    <div class="gh-l-header__left">
+      <h1 class="gh-header__name">
+        <a href="/pxgrid/aigis/">aigis</a>
+      </h1>
+    </div>
+    <div class="gh-l-header__right">
+      <ul class="gh-header-menu">
+        <li class="gh-header-menu__item"><a href="#">About</a>
+        <li class="gh-header-menu__item"><a href="#">Usage</a>
+        <li class="gh-header-menu__item"><a href="./docs/index.html">Sample</a>
+        <li class="gh-header-menu__item"><a href="#">Docs</a>
+        <li class="gh-header-menu__item"><a href="#">GitHub</a>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+*/
+.gh-header {
+  color: tomato;
+  background-color: #3DB680;
+  padding-left: 20px; }
+  .gh-header__name {
+    font-size: 2.4rem; }
+    .gh-header__name a {
+      color: #fff;
+      text-decoration: none; }
+
+.gh-header-menu {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.4rem;
+  margin: 0; }
+  .gh-header-menu__item {
+    list-style: none;
+    align-self: center;
+    padding: 16px;
+    background-color: transparent;
+    transition: background-color 300ms ease; }
+    .gh-header-menu__item a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none; }
+    .gh-header-menu__item:hover {
+      background-color: #fff; }
+      .gh-header-menu__item:hover a {
+        color: #3DB680; }
+
+/*
+---
+name: hero
+category: mod/hero
+---
+
+```html
+<div class="gh-hero gh-l-hero">
+  <p class="gh-hero__mainText">Aigis is a style guide generator.</p>
+  <p class="gh-hero__subText">Make easier and maintainable.</p>
+
+  <button class="gh-hero__btn">Get Started!</button>
+</div>
+```
+
+*/
+.gh-hero {
+  background-color: #3DB680;
+  color: #fff;
+  padding-top: 6rem;
+  padding-bottom: 10rem;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center 20px;
+  background-size: 220px auto; }
+  .gh-hero__mainText {
+    font-size: 5.0rem; }
+  .gh-hero__subText {
+    font-size: 2.5rem; }
+  .gh-hero__btn {
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 2.6rem;
+    padding: 10px 40px;
+    font-weight: 300;
+    transition: background-color 200ms ease; }
+    .gh-hero__btn:hover {
+      color: #3DB680;
+      background-color: #fff; }
+
+.gh-content {
+  color: #555;
+  font-size: 2rem;
+  text-align: left;
+  padding: 4rem;
+  padding-bottom: 0; }
+  .gh-content img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .gh-content__image {
+    border: 10px solid #F3F3F3;
+    border-radius: 3px; }
+  .gh-content a:link {
+    color: #3DB680; }
+  .gh-content ul {
+    display: inline-block;
+    text-align: left; }
+  .gh-content h2 {
+    margin-bottom: 10px; }
+  .gh-content p {
+    line-height: 1.5; }
+  .gh-content code {
+    color: #666;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    line-height: 1.45;
+    padding: 2px 6px;
+    font-size: inherit;
+    font-family: inherit; }
+  .gh-content pre {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    overflow: auto;
+    font-size: 1.4rem;
+    line-height: 1.45;
+    color: #444;
+    background-color: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    text-align: left;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+
+/*
+---
+name: footer
+category:
+  - mod/footer
+---
+
+```html
+<div class="gh-footer">
+  <p>Created and maintained by <a href="https://twitter.com/nakajmg">@nakajmg</a> and
+    <a href="https://twitter.com/geckotang">@geckotang</a>
+  </p>
+</div>
+```
+
+*/
+.gh-footer {
+  background-color: #3DB680;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 20px 0; }
+  .gh-footer a {
+    color: #FFEA3A;
+    text-decoration: none; }
+    .gh-footer a:hover {
+      text-decoration: underline; }
+
+/*
+---
+name: Buttons
+category:
+  - mod/btn
+  - base
+tag:
+  - latest
+  - base
+---
+
+Button styles.
+
+* Base button style.
+* Use `a` or `button` tag.
+
+```html
+<a class="ag-btn">Button</a>
+<button class="ag-btn ag-btn--primary">Button</button>
+```
+
+*/
+.ag-btn {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: none;
+  background-color: #3DB680;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  line-height: 40px;
+  min-width: 200px;
+  font-size: 20px;
+  box-sizing: border-box; }
+  .ag-btn--primary {
+    color: black;
+    background-color: #FFEA3A; }
+
+.gh-l-container {
+  max-width: 1020px;
+  margin: 0 auto; }
+
+.gh-l-header {
+  display: flex; }
+  .gh-l-header__left {
+    align-self: center; }
+  .gh-l-header__right {
+    align-self: center;
+    flex-grow: 1; }
+
+.gh-l-hero .gh-hero__subText {
+  margin-top: 20px; }
+
+.gh-l-hero .gh-hero__btn {
+  margin-top: 40px; }
+
+.gh-l-footer {
+  margin-top: 60px; }
