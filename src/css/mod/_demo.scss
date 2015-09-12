@@ -1,13 +1,18 @@
 /*
 ---
 name: Buttons
-category: mod/btn/test
+category:
+  - mod/btn
+  - base
 tag:
   - latest
   - base
 ---
 
 Button styles.
+
+* Base button style.
+* Use `a` or `button` tag.
 
 ```html
 <a class="ag-btn">Button</a>
@@ -21,7 +26,7 @@ Button styles.
   border: none;
   background-color: $main-color;
   color: $text-color;
-  padding: 20px;
+  padding: 10px 20px;
   text-align: center;
   line-height: 40px;
   min-width: 200px;

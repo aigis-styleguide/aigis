@@ -7,6 +7,18 @@ $pre-text: #444;
   font-size: 2rem;
   text-align: left;
   padding: 4rem;
+  padding-bottom: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__image {
+    border: 10px solid #F3F3F3;
+    border-radius: 3px;
+  }
 
   a:link {
     color: $main-color;

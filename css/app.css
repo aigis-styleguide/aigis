@@ -122,7 +122,15 @@ category: mod/hero
   color: #555;
   font-size: 2rem;
   text-align: left;
-  padding: 4rem; }
+  padding: 4rem;
+  padding-bottom: 0; }
+  .gh-content img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .gh-content__image {
+    border: 10px solid #F3F3F3;
+    border-radius: 3px; }
   .gh-content a:link {
     color: #3DB680; }
   .gh-content ul {
@@ -186,13 +194,18 @@ category:
 /*
 ---
 name: Buttons
-category: mod/btn/test
+category:
+  - mod/btn
+  - base
 tag:
   - latest
   - base
 ---
 
 Button styles.
+
+* Base button style.
+* Use `a` or `button` tag.
 
 ```html
 <a class="ag-btn">Button</a>
@@ -206,7 +219,7 @@ Button styles.
   border: none;
   background-color: #3DB680;
   color: #fff;
-  padding: 20px;
+  padding: 10px 20px;
   text-align: center;
   line-height: 40px;
   min-width: 200px;

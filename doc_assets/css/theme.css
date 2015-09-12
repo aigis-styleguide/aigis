@@ -178,6 +178,13 @@ body {
   font-family: "Helvetica Neue",Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
   font-size: 1rem; }
 
+.aigis-module > ul code, .aigis-module > p code, .aigis-contents__body > ul code, .aigis-contents__body > p code, .aigis-contents__body > h2 code, .aigis-contents__body > h3 code {
+  color: #666;
+  background-color: #f7f7f7;
+  padding: 0 3px;
+  font-size: 0.8em;
+  border-radius: 3px; }
+
 .aigis-container {
   box-sizing: border-box;
   width: auto;
@@ -202,6 +209,8 @@ body {
   margin: 0 auto; }
 .aigis-contents__body > *:first-child {
   margin-top: 0; }
+.aigis-contents__body > ul {
+  font-size: 16px; }
 .aigis-contents__body > p {
   margin-bottom: 1em; }
 .aigis-contents__body > h2 {
