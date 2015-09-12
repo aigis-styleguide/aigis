@@ -18,7 +18,7 @@ p {
 /*
 ---
 name: header
-category: header
+category: mod/header
 ---
 
 ```html
@@ -79,7 +79,7 @@ category: header
 /*
 ---
 name: hero
-category: header
+category: mod/hero
 ---
 
 ```html
@@ -123,9 +123,15 @@ category: header
   font-size: 2rem;
   text-align: left;
   padding: 4rem; }
+  .gh-content a:link {
+    color: #3DB680; }
   .gh-content ul {
     display: inline-block;
     text-align: left; }
+  .gh-content h2 {
+    margin-bottom: 10px; }
+  .gh-content p {
+    line-height: 1.5; }
   .gh-content code {
     color: #666;
     background-color: #f7f7f7;
@@ -148,6 +154,22 @@ category: header
     text-align: left;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }
 
+/*
+---
+name: footer
+category:
+  - mod/footer
+---
+
+```html
+<div class="gh-footer">
+  <p>Created and maintained by <a href="https://twitter.com/nakajmg">@nakajmg</a> and
+    <a href="https://twitter.com/geckotang">@geckotang</a>
+  </p>
+</div>
+```
+
+*/
 .gh-footer {
   background-color: #3DB680;
   color: #fff;
@@ -160,6 +182,39 @@ category: header
     text-decoration: none; }
     .gh-footer a:hover {
       text-decoration: underline; }
+
+/*
+---
+name: Buttons
+category: mod/btn/test
+tag:
+  - latest
+  - base
+---
+
+Button styles.
+
+```html
+<a class="ag-btn">Button</a>
+<button class="ag-btn ag-btn--primary">Button</button>
+```
+
+*/
+.ag-btn {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: none;
+  background-color: #3DB680;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  line-height: 40px;
+  min-width: 200px;
+  font-size: 20px;
+  box-sizing: border-box; }
+  .ag-btn--primary {
+    color: black;
+    background-color: #FFEA3A; }
 
 .gh-l-container {
   max-width: 1020px;
