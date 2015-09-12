@@ -1,5 +1,5 @@
 source: ./src/css
-dest: ./docs
+dest: ./styleguide
 dependencies:
   - ./css
   - ./doc_assets
