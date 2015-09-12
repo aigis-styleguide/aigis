@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>aigis - Styleguide Generator</title>
+    <link rel="stylesheet" href="./css/normalize.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./css/app.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <div class="gh-container">
+      <header>
+        <div class="gh-header">
+          <div class="gh-l-container gh-l-header">
+            <div class="gh-l-header__left">
+              <h1 class="gh-header__name">
+                <a href="/pxgrid/aigis/">aigis</a>
+              </h1>
+            </div>
+            <div class="gh-l-header__right">
+              <ul class="gh-header-menu">
+                <li class="gh-header-menu__item"><a href="#">About</a>
+                <li class="gh-header-menu__item"><a href="#">Usage</a>
+                <li class="gh-header-menu__item"><a href="./docs/index.html">Sample</a>
+                <li class="gh-header-menu__item"><a href="#">Docs</a>
+                <li class="gh-header-menu__item"><a href="#">GitHub</a>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="gh-hero gh-l-hero">
+          <p class="gh-hero__mainText">Aigis is a style guide generator.</p>
+          <p class="gh-hero__subText">Make easier and maintainable.</p>
+
+          <button class="gh-hero__btn">View on GitHub</button>
+        </div>
+      </header>
+      <main class="gh-contents gh-l-container">
+        <section class="gh-content">
+          <h2>How about it?</h2>
+          <p>Aigis is a Node.js package that parses comments in your CSS and generate style guide.It is similar to
+           <a href="https://github.com/trulia/hologram/">Hologram</a>. (like a Node.js implementation of Hologram.)</p>
+        </section>
+        <section class="gh-content">
+          <h2>How does it work?</h2>
+          <p>Here is an example documentation block.Markdown code blocks that will be rendered actual HTML output
+          and in order to show how the example was coded.</p>
+          <pre>/*
+---
+name: Buttons
+category:
+  - mod/btn
+  - base
+tag:
+  - latest
+  - base
+---
+
+Button styles.
+
+* Base button style.
+* Use &#x60;a&#x60; or &#x60;button&#x60; tag.
+
+&#x60;&#x60;&#x60;html
+&#x3C;a class=&#x22;ag-btn&#x22;&#x3E;Button&#x3C;/a&#x3E;
+&#x3C;button class=&#x22;ag-btn ag-btn--primary&#x22;&#x3E;Button&#x3C;/button&#x3E;
+&#x60;&#x60;&#x60;
+*/</pre>
+        <div class="gh-content__image">
+          <img src="./assets/img/SS_sg.png">
+        </div>
+        </section>
+
+        <section class="gh-content">
+          <h2>Supported Preprocessors/File Types</h2>
+          <ul>
+            <li>CSS (.css)</li>
+            <li>Sass (.scss, .sass)</li>
+            <li>Stylus (.styl)</li>
+          </ul>
+        </section>
+        <section class="gh-content">
+          <h2>Custom Code Example Renderers</h2>
+          <ul>
+            <li><code>html</code></li>
+            <li><code>jade</code></li>
+            <li><code>coffee</code></li>
+            <li><code>js</code></li>
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <div class="gh-footer gh-l-footer">
+          <p>Created and maintained by <a href="https://twitter.com/nakajmg">@nakajmg</a> and
+            <a href="https://twitter.com/geckotang">@geckotang</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
