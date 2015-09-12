@@ -7,13 +7,20 @@
   footer: {String},
 }
 --}}
+<html>
 {{{header}}}
-{{{sidemenu}}}
-<div class="aigis-contents">
-  <div class="aigis-contents__body">
-    <h2 class="aigis-module__heading">{{name}}</h2>
-    {{{modulelist}}}
-    {{{modules}}}
+<body>
+<div class="aigis-container">
+  {{{sidemenu}}}
+  <div class="aigis-contents">
+    <div class="aigis-contents__body">
+      <h2 class="aigis-module__heading">{{name}}</h2>
+      {{{modulelist}}}
+      {{{modules}}}
+    </div>
+    {{{footer}}}
   </div>
-</div>
-{{{footer}}}
+</body>
+</html>
+
+
