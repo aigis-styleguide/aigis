@@ -16,9 +16,9 @@ category:
 * You can write markdown.
 
 ```html
-<a class="btn">
+&lt;a class="btn"&gt;
   This is a Button
-</a>
+&lt;/a&gt;
 ```
 
 .btn {
