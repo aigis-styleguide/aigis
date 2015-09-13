@@ -39,7 +39,7 @@ category:
 npm install -g node-aigis
 ```
 
-## config
+## Config file
 
 ```yaml
 name: StyleGuide Name
@@ -69,4 +69,10 @@ inject:
     - jade
     - js
     - coffee
+```
+
+## Generate style guide.
+
+```sh
+aigis ./path/to/aigis_config.yml
 ```
