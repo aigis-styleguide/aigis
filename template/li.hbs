@@ -1,0 +1,11 @@
+{{!--
+{
+ href,
+ name,
+ depth,
+ children
+}
+--}}
+<li class="aigis-categoryList__item" data-path-depth="{{depth}}">
+<a {{#if href}}href="{{href}}{{/if}}">{{name}}</a>
+{{{children}}}</li>
