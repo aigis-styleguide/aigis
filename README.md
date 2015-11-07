@@ -1,90 +1,78 @@
-# Ronde
+# aigis
 
-Components Styleguide generator.
+Here's an example aigis comment.
 
-コンポーネントのスタイルガイドを目指す。イメージはnode版hologram
+<pre>
+/*
+---
+name: module_name
+category:
+    - button/standard
+    - base
+---
 
-## way
+## This is a standard button module
 
-* CSSファイルのコメントにスタイルガイド用の記述を行う
-  * Markdownで記述
-  * 設定はCSON
+* You can write markdown.
 
-## done
+```html
+&lt;a class="btn"&gt;
+  This is a Button
+&lt;/a&gt;
+```
 
-* 済:テンプレートをわける
-  * header
-  * footer
-  * main
-  * sidemenu
-* 済:タグ機能
-  * tagsかな
-* 出力
-  * 済:カテゴリごと
-  * コメント単位？
-* ボツ:KSS構文
-* 済:Scss対応
-* 済:Stylus対応
-* 済:codeblockのhighlight
-  * scss, sass
-  * stylus
-  * less
-* 済:どのcssファイルから出力されたかモジュール単位の出力に刻印を入れる
-  * relativeで
-* 済:ユーザーが拡張できるように
-  * configにotherがあったらそれをテンプレートに渡してあげる?
-  * configそのまま渡せばいいかも
-* 済:設定をYAMLとJSONで書けるように
-* 済:設定からハイライトのファイル指定できる
-* 済:同じtagまとめたページ
-* 済:時間のフォーマットを指定できるように
-* 済:moduleのnameからページ内容のモジュール一覧（#リンクでとべる）
-  * テンプレートにモジュールの名前とリンクを渡す
-* 済:モジュールの名前にホバーしたらアンカーを表示させる
-* 済:highlightの背景を設定する
+.btn {
+  color: white;
+  background-color: tomato;
+  text-align: center;
+  width: 200px;
+  line-height: 40px;
+  display: inline-block;
+}
 
-## ToDo
+*/
+</pre>
 
-* デバッグロッグを出す
-* headermenuいる？
-* Handlebarsのテンプレートをキャッシュする
-* カテゴリの説明文を追加したい？
-* カテゴリなしのコメントをuncategolized的なやつにまとめる
-* モジュールの書き出し順を制御する何か
-* tagの並びをソートする（表示順を一律に）
+## Installation
 
-* indexページを作る
-  * sidemenuに渡してるのと同じの渡せばよさそう
+```sh
+npm install -g node-aigis
+```
 
-* mdから普通のドキュメント作れるようにする？
-  * カテゴリーとかタグとか関係なくルールを乘せる的な用途
+## Config file
 
+```yaml
+name: StyleGuide Name
+source:
+    - ./path/to/source/foder
+    - /path/to/source/file.css
+dest: ./path/to/destination
+dependencies:
+    - ./build
+timestamp_format: YYYY/MM/DD HH:mm
+template: ./path/to/template
+md_class:
+    blockquote: [className]
+    heading: [className]
+    hr: [className]
+    list: [className]
+    paragraph: [className]
+    table: [className]
+    tablrow: [className]
+    tablecell: [className]
+    link: [className]
+    image: [className]
+highlight: true
+highlight_theme: dracula
+inject:
+    - html
+    - jade
+    - js
+    - coffee
+```
 
-* プロジェクト名を表示する
-* 設定ファイルの指定を外部からできるように
-* 設定ファイルなくてもオプションでオプション指定できるように
-* 付与するidにプリフィックスをつける
-  * KSSっぽいの
-* 名前変える？
+## Generate style guide.
 
-
-## 考え中
-
-* CSSのコメントに書くとシンタックスハイライト効かない問題
-  * markdownで適当に書くくらいで十分なときもある
-* HTMLを外部テンプレート（html）で書けるようにする
-  * 1モジュール1ファイルだけだとファイル増えまくる問題
-  * HTMLにid属性指定して`html: "./hoge.html#moduleName"`みたいなことするとか
-* Sass対応
-  * @importしてるファイル名を書き出す
-    * ジェネレートの対象がモジュール単位のファイル前提になっちゃう
-    * そもそもいらない？
-  * @extend
-    * めんどくさそう
-  
-* Markdownrendererのカスタマイズ機能重要
-* 最初からモジュールとコード表示しておく意味ある？
-    * モジュールの見た目だけ確認
-    * JavaScriptで制御する
-      * 一気に開くとか
-* sassdoc対応
+```sh
+aigis ./path/to/aigis_config.yml
+```

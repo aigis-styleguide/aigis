@@ -1,5 +1,4 @@
 var assert = require("power-assert");
-require("../../lib/app/namespace");
 var createCategoryTree = require("../../lib/parser/tree");
 
 describe("lib/parser/tree", function() {
@@ -13,6 +12,6 @@ describe("lib/parser/tree", function() {
     assert.equal(tree.length, 5);
     assert.equal(tree[0].name, "test");
     assert.equal(tree[0].children.length, 2);
-    assert.equal(tree[4].hierarchy, 2);
+    assert.equal(tree[4].level, 2);
   });
 });
