@@ -85,11 +85,14 @@
   border-radius: 0px;
   outline: none;
   text-decoration: none; }
+.aigis-categoryList__item > ul {
+  display: none;
+}
 .aigis-categoryList__item:hover a[href]:hover{
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
   background-color: #fff; }
 .aigis-categoryList__item[data-path-depth] a:before {
-  content: "-";
+  content: "└";
   margin-right: 10px; }
 .aigis-categoryList__item[data-path-depth="1"] a:before {
   margin-left: 1em; }
@@ -99,6 +102,9 @@
   margin-left: 3em; }
 .aigis-categoryList__item[data-path-depth="4"] a:before {
   margin-left: 4em; }
+.aigis-categoryList__toggle {
+  cursor: pointer;
+}
 
 .aigis-tags {
   padding: 10px;
