@@ -7,5 +7,7 @@
 }
 --}}
 <li class="aigis-categoryList__item" data-path-depth="{{depth}}">
-<a {{#if href}}href="{{href}}{{/if}}">{{name}}</a>
+<a {{#if href}}href="{{href}}{{/if}}">{{name}}
+{{#if children}}<span class="aigis-categoryList__toggle">+</span>{{/if}}
+</a>
 {{{children}}}</li>
