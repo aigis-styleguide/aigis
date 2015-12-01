@@ -1,3 +1,0 @@
-source: ./static/css/test.css
-beautify: true
-module_html: ./static/css/html
