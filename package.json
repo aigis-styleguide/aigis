@@ -2,7 +2,7 @@
   "devDependencies": {
     "browser-sync": "^2.9.1",
     "gulp": "^3.9.0",
-    "gulp-aigis": "^0.2.0",
+    "gulp-aigis": "^0.2.3",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4"
   }
