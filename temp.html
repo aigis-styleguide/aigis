@@ -18,29 +18,35 @@
             </div>
             <div class="gh-l-header__right">
               <ul class="gh-header-menu">
-                <li class="gh-header-menu__item"><a href="#">About</a>
-                <li class="gh-header-menu__item"><a href="#">Usage</a>
+                <li class="gh-header-menu__item"><a href="#about">About</a>
+                <li class="gh-header-menu__item"><a href="#usage">Usage</a>
                 <li class="gh-header-menu__item"><a href="./styleguide/index.html">Sample</a>
-                <li class="gh-header-menu__item"><a href="#">Docs</a>
-                <li class="gh-header-menu__item"><a href="#">GitHub</a>
+                <!-- <li class="gh-header-menu__item"><a href="#">Docs</a> -->
+                <li class="gh-header-menu__item"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a>
               </ul>
             </div>
           </div>
         </div>
         <div class="gh-hero gh-l-hero">
-          <p class="gh-hero__mainText">Aigis is a style guide generator.</p>
+          <p class="gh-hero__mainText">aigis is a styleguide generator.</p>
           <p class="gh-hero__subText">Make easier and maintainable.</p>
-
-          <button class="gh-hero__btn">View on GitHub</button>
+          <button class="gh-hero__btn"><a href="https://github.com/pxgrid/aigis/" target="_blank">View on GitHub</a></button>
         </div>
       </header>
       <main class="gh-contents gh-l-container">
-        <section class="gh-content">
+        <section class="gh-content" id="about">
           <h2>How about it?</h2>
           <p>Aigis is a Node.js package that parses comments in your CSS and generate style guide.It is similar to
            <a href="https://github.com/trulia/hologram/">Hologram</a>. (like a Node.js implementation of Hologram.)</p>
         </section>
         <section class="gh-content">
+          <h2>Why create it?</h2>
+          <p>
+            We don't want the dependence of Ruby environment for generate styleguide. Because dependencies less is better. 
+            And we wanted a more casual-to-use styleguide generator.
+          </p>
+        </section>
+        <section class="gh-content" id="usage">
           <h2>How does it work?</h2>
           <p>Here is an example documentation block.Markdown code blocks that will be rendered actual HTML output
           and in order to show how the example was coded.</p>
@@ -77,22 +83,29 @@ Button styles.
             <li>Sass (.scss, .sass)</li>
             <li>Stylus (.styl)</li>
           </ul>
-        </section>
-        <section class="gh-content">
-          <h2>Custom Code Example Renderers</h2>
+          <h2>Features</h2>
           <ul>
-            <li><code>html</code></li>
-            <li><code>jade</code></li>
-            <li><code>coffee</code></li>
-            <li><code>js</code></li>
+            <li>Customize Templates</li>
+            <li>Import HTML Files on Markdown</li>
           </ul>
         </section>
       </main>
       <footer>
         <div class="gh-footer gh-l-footer">
-          <p>Created and maintained by <a href="https://twitter.com/nakajmg">@nakajmg</a> and
-            <a href="https://twitter.com/geckotang">@geckotang</a>
-          </p>
+          <div class="gh-profile">
+            <p class="gh-profile__description">
+              Created and Maintained by
+            </p>
+            <a class="gh-profile__item" href="https://twitter.com/nakajmg">
+              <img class="gh-profile__gravatar" src="http://www.gravatar.com/avatar/5713bf32ecfacfc3b921151a453cc18e?s=256">
+              <span class="gh-profile__name">@nakajmg</span>
+            </a>
+            and
+            <a class="gh-profile__item" href="https://twitter.com/geckotang">
+              <img class="gh-profile__gravatar" src="http://www.gravatar.com/avatar/909a39901bdf059ebaa9fb6486134040.png?s=256">
+              <span class="gh-profile__name">@geckotang</span>
+            </a>
+          </div>
         </div>
       </footer>
     </div>
