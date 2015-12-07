@@ -1,0 +1,49 @@
+/*
+---
+name: profile
+category: mod/footer
+---
+
+```html
+<footer>
+  <div class="gh-footer gh-l-footer">
+    <div class="gh-profile">
+      <p class="gh-profile__description">
+        Created and Maintained by
+      </p>
+      <a class="gh-profile__item" href="https://twitter.com/nakajmg">
+        <img class="gh-profile__gravatar" src="http://www.gravatar.com/avatar/5713bf32ecfacfc3b921151a453cc18e?s=256">
+        <span class="gh-profile__name">@nakajmg</span>
+      </a>
+      and
+      <a class="gh-profile__item" href="https://twitter.com/geckotang">
+        <img class="gh-profile__gravatar" src="http://www.gravatar.com/avatar/909a39901bdf059ebaa9fb6486134040.png?s=256">
+        <span class="gh-profile__name">@geckotang</span>
+      </a>
+    </div>
+  </div>
+</footer>
+```
+*/
+.gh-profile {
+  &__description {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+  }
+  &__item {
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+  }
+  &__gravatar {
+    border-radius: 80px;
+    width: 80px;
+    height: auto;
+  }
+  &__name {
+    padding-top: 5px;
+    display: block;
+    text-align: center;
+  }
+
+}

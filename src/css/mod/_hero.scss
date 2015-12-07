@@ -6,10 +6,9 @@ category: mod/hero
 
 ```html
 <div class="gh-hero gh-l-hero">
-  <p class="gh-hero__mainText">Aigis is a style guide generator.</p>
+  <p class="gh-hero__mainText">aigis is a styleguide generator.</p>
   <p class="gh-hero__subText">Make easier and maintainable.</p>
-
-  <button class="gh-hero__btn">Get Started!</button>
+  <button class="gh-hero__btn"><a href="https://github.com/pxgrid/aigis/" target="_blank">View on GitHub</a></button>
 </div>
 ```
 
@@ -18,10 +17,10 @@ category: mod/hero
 .gh-hero {
   background-color: $main-color;
   color: $text-color;
-  padding-top: 6rem;
-  padding-bottom: 10rem;
+  padding-top: 30rem;
+  padding-bottom: 5rem;
   text-align: center;
-  //background-image: url(./logo.png);
+  background-image: url(./logo.svg);
   background-repeat: no-repeat;
   background-position: center 20px;
   background-size: 220px auto;
@@ -39,12 +38,18 @@ category: mod/hero
     border-radius: 3px;
     text-align: center;
     font-size: 2.6rem;
-    padding: 10px 40px;
     font-weight: 300;
+    padding: 0;
     transition: background-color 200ms ease;
     &:hover {
       color: $main-color;
       background-color: $text-color;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      padding: 10px 40px;
     }
   }
 }

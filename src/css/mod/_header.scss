@@ -51,12 +51,13 @@ category: mod/header
   &__item {
     list-style: none;
     align-self: center;
-    padding: 16px;
     background-color: transparent;
     transition: background-color 300ms ease;
     a {
       color: rgba(#fff, .8);
       text-decoration: none;
+      display: block;
+      padding: 16px;
     }
     &:hover {
       background-color: $text-color;
