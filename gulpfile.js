@@ -1,34 +1,32 @@
-'use strict';
+var gulp = require("gulp");
+var aigis = require("gulp-aigis");
+var sass = require("gulp-sass");
+var plumber = require("gulp-plumber");
+var bs = require("browser-sync");
+var reload = bs.reload;
 
-const gulp = require("gulp");
-const aigis = require("gulp-aigis");
-const sass = require("gulp-sass");
-const plumber = require("gulp-plumber");
-const bs = require("browser-sync");
-const reload = bs.reload;
-
-const src = {
+var src = {
   scss: ["src/css/**/*.scss"]
 };
 
-gulp.task("watch", ["serve"], () => {
+gulp.task("watch", ["serve"], function(){
   gulp.watch("./**.html", reload);
   gulp.watch(src.scss, ["scss", reload]);
 });
 
-gulp.task("scss", () =>{
+gulp.task("scss", function(){
   return gulp.src("./src/css/app.scss")
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest("./css"));
 });
 
-gulp.task("aigis", () => {
+gulp.task("aigis", function(){
   return gulp.src("./aigis_config.yml")
     .pipe(aigis());
 });
 
-gulp.task("serve", () => {
+gulp.task("serve", function(){
   bs.init({
     server: {
       index: "./index.html",
