@@ -24,12 +24,12 @@
     "url": "https://github.com/pxgrid/aigis/issues"
   },
   "dependencies": {
-    "bluebird": "^2.9.14",
+    "bluebird": "^3.0.6",
     "coffee-script": "^1.9.1",
     "css": "^2.2.0",
-    "fs-extra": "^0.18.2",
+    "fs-extra": "^0.26.2",
     "get-css-colors": "0.0.1",
-    "handlebars": "^3.0.0",
+    "handlebars": "^4.0.5",
     "highlights": "^1.2.0",
     "jade": "^1.9.2",
     "js-beautify": "^1.5.10",
@@ -40,10 +40,10 @@
     "marked": "^0.3.3",
     "moment": "^2.10.2",
     "node-sass": "^3.1.2",
-    "stylus": "^0.51.1",
-    "through2": "0.6.3",
-    "vinyl": "^0.4.6",
-    "vinyl-fs": "^1.0.0",
+    "stylus": "^0.53.0",
+    "through2": "^2.0.0",
+    "vinyl": "^1.1.0",
+    "vinyl-fs": "^2.2.1",
     "yargs": "^3.15.0"
   },
   "devDependencies": {
