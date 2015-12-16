@@ -76,3 +76,8 @@ inject:
 ```sh
 aigis ./path/to/aigis_config.yml
 ```
+
+## Others
+
+* [gulp plugin](https://github.com/pxgrid/gulp-aigis)
+* [Styleguide Template](https://github.com/pxgrid/aigis-theme)
