@@ -8,7 +8,7 @@ category: mod/hero
 <div class="gh-hero gh-l-hero">
   <p class="gh-hero__mainText">aigis is a styleguide generator.</p>
   <p class="gh-hero__subText">Make easier and maintainable.</p>
-  <button class="gh-hero__btn"><a href="https://github.com/pxgrid/aigis/" target="_blank">View on GitHub</a></button>
+  <div class="gh-hero__btn"><a href="https://github.com/pxgrid/aigis/" target="_blank">View on GitHub</a></div>
 </div>
 ```
 
@@ -33,6 +33,7 @@ category: mod/hero
   }
 
   &__btn {
+    display: inline-block;
     border: 1px solid $text-color;
     background-color: transparent;
     border-radius: 3px;
