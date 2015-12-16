@@ -1,8 +1,8 @@
 {
   "name": "node-aigis",
-  "version": "0.2.0",
-  "description": "For documenting CSS and generating components guide",
-  "homepage": "http://pxgrid.github.io/aigis",
+  "version": "0.2.1",
+  "description": "For documenting CSS and generating styleguide",
+  "homepage": "https://pxgrid.github.io/aigis",
   "author": {
     "name": "nakajmg",
     "email": "nakajmg@pxgrid.com"
