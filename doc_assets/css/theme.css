@@ -86,7 +86,7 @@
   outline: none;
   text-decoration: none; }
 .aigis-categoryList__item > ul {
-  display: none;
+  /*display: none;*/
 }
 .aigis-categoryList__item:hover a[href]:hover{
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
