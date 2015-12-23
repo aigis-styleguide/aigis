@@ -5,13 +5,15 @@ describe("lib/parser/tree", function() {
   it("カテゴリのパスからツリーができること", function() {
     var category = [
       "test",
-      "test/module/hoge",
+      "test/module",
       "test/module2/hoge",
     ];
     var tree = createCategoryTree(category);
-    assert.equal(tree.length, 5);
-    assert.equal(tree[0].name, "test");
-    assert.equal(tree[0].children.length, 2);
-    assert.equal(tree[4].level, 2);
+    assert(tree.test);
+    assert.equal(tree.test.depth, 0);
+    assert(tree.test.children.module);
+    assert.equal(tree.test.children.module.depth, 1);
+    assert(tree.test.children.module2.children.hoge);
+    assert.equal(tree.test.children.module2.children.hoge.depth, 2);
   });
 });
