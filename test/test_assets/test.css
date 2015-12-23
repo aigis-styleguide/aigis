@@ -1,1 +1,36 @@
+/*
+---
+name: test
+category:
+    - Module
+tag:
+    - tag1
+    - tag2
+---
+
+# Heading
+
+```html
+<div class="test">The quick brown fox jumps over the lazy dog.</div>
+```
+*/
 .test{color: red;}
+
+
+/*
+---
+name: test2
+category:
+    - Module
+tag:
+    - tag1
+    - tag2
+---
+
+# Heading
+
+```html
+<div class="test2">The quick brown fox jumps over the lazy dog.</div>
+```
+*/
+.test2{color: red;}
