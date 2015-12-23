@@ -1,4 +1,6 @@
 var gulp = require("gulp");
+var espower = require('gulp-espower');
+var mocha   = require('gulp-mocha');
 var plumber = require("gulp-plumber");
 var process = require("child_process");
 var exec = process.exec;
@@ -22,6 +24,15 @@ gulp.task("exec:index", function(cb) {
 
 gulp.task("watch",function() {
   return gulp.watch(src.js, ["exec:index"]);
+});
+
+gulp.task('test', function() {
+  gulp.src([
+      'test/**/*.js',
+      '!test/test_assets/**'
+    ])
+    .pipe(espower())
+    .pipe(mocha());
 });
 
 gulp.task("serve", function() {

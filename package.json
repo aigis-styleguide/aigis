@@ -29,6 +29,8 @@
     "css": "^2.2.0",
     "fs-extra": "^0.18.2",
     "get-css-colors": "0.0.1",
+    "gulp-espower": "^1.0.2",
+    "gulp-mocha": "^2.2.0",
     "handlebars": "^3.0.0",
     "highlights": "^1.2.0",
     "jade": "^1.9.2",
@@ -40,6 +42,7 @@
     "marked": "^0.3.3",
     "moment": "^2.10.2",
     "node-sass": "^3.1.2",
+    "power-assert": "^1.2.0",
     "stylus": "^0.51.1",
     "through2": "0.6.3",
     "vinyl": "^0.4.6",
@@ -53,6 +56,7 @@
   },
   "scripts": {
     "start": "gulp",
+    "test": "gulp test",
     "watch": "gulp watch"
   }
 }
