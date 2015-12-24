@@ -1,0 +1,27 @@
+name: StyleGuide Name
+source:
+    - ./path/to/source/folder
+    - /path/to/source/file.css
+dest: ./path/to/destination
+dependencies:
+    - ./build
+timestamp_format: YYYY/MM/DD HH:mm
+template: ./path/to/template
+md_class:
+    blockquote: sg-blockquote
+    heading: sg-heading
+    hr: sg-hr
+    list: sg-list
+    paragraph: sg-paragraph
+    table: sg-table
+    tablrow: sg-tablerow
+    tablecell: sg-tablecell
+    link: sg-link
+    image: sg-image
+highlight: true
+highlight_theme: dracula
+inject:
+    - html
+    - jade
+    - js
+    - coffee
