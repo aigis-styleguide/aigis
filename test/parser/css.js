@@ -24,4 +24,24 @@ describe("lib/parser/css", function() {
     });
   });
 
+  it("Sassのコメントブロックがパースできること", function(done) {
+    readCSSFiles(__dirname + "/../test_assets/test.scss").then(function(files){
+      var module = parseCSS(files)[0];
+      assert.equal(module.config.name, "test");
+      assert.equal(module.config.category[0], "Module");
+      assert.equal(module.config.tag[0], "tag1");
+      done();
+    });
+  });
+
+  it("Stylusのコメントブロックがパースできること", function(done) {
+    readCSSFiles(__dirname + "/../test_assets/test.styl").then(function(files){
+      var module = parseCSS(files)[0];
+      assert.equal(module.config.name, "test");
+      assert.equal(module.config.category[0], "Module");
+      assert.equal(module.config.tag[0], "tag1");
+      done();
+    });
+  });
+
 });
