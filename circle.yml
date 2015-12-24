@@ -1,3 +1,11 @@
 machine:
   node:
     version: 4.2.2
+dependencies:
+  cache_directories:
+    - sassc
+    - libsass
+  post:
+    - if [[ ! -e sassc ]]; then git clone git@github.com:sass/sassc.git sassc; fi
+    - if [[ ! -e libsass ]]; then git clone --recursive git@github.com:sass/libsass.git && cd sassc && export SASS_LIBSASS_PATH=$(readlink -f ../libsass) && make && cd ..; fi
+    - ln -s sassc/bin/sassc ~/bin/sassc
