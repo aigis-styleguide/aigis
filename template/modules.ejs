@@ -1,0 +1,19 @@
+<nav>
+  <ul class="aigis-moduleList"><% modules.forEach((module) => { %>
+    <li class="aigis-moduleList__item">
+      <a href="#<%- module.config.name %>"><%- module.config.name %></a>
+    </li><% }) %>
+  </ul>
+</nav>
+<div><% modules.forEach((module) => { %>
+  <div class="aigis-module">
+    <h2 class="aigis-module__heading" id="<%- module.config.name %>"><a href="#<%- module.config.name %>"></a><%- module.config.name %></h2>
+    <div class="aigis-module__filepath"><%- module.config.filePath %></div>
+    <ul class="aigis-tags">
+      <% module.config.tag.forEach((tag) => { %>
+        <li class="aigis-tags__item" aigis-tags__item--<%- tag %>><%- tag %></li>
+      <% })%>
+    </ul>
+    <%- module.html %>
+  </div><% }) %>
+</div>
