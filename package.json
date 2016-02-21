@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.7.13",
+    "ejs": "^2.4.1",
     "gulp": "^3.9.0",
     "gulp-plumber": "^1.0.0"
   },
