@@ -5,4 +5,5 @@ module.exports = {
   configParser: require('./src/config_parser'),
   pluginLoader: require('./src/plugin_loader'),
   pluginRegister: require('./src/plugin_register'),
+  collector: require('./src/collector'),
 };

@@ -1,4 +1,5 @@
 var path = require("path");
+console.log('hohoh:', __dirname);
 module.exports = {
   name: "Components Guide",
   source: [__dirname + "/../../static/css"],
@@ -9,7 +10,7 @@ module.exports = {
   lib: {},
   format: "yaml",
   timestamp_format: "YYYY/MM/DD HH:mm",
-  template: __dirname + "/../../template",
+  template: __dirname + "/../../../template/index.ejs",
   md_class: {
     blockquote: "",
     heading   : "",
