@@ -1,1 +1,1 @@
-module.exports = require("./lib/Aigis");
+module.exports = require("./lib2/Aigis");

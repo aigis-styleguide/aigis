@@ -6,7 +6,7 @@ var bs = require("browser-sync");
 var reload = bs.reload;
 
 var src = {
-  js: ["lib/**/*.js"],
+  js: ["lib2/**/*.js"],
   tests: ['./test/**/*.js', '!test/{temp,temp/**}']
 };
 
