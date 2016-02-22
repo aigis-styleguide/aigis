@@ -31,4 +31,4 @@ var Writer = (function() {
   return Writer;
 })();
 
-module.exports = Writer;
+module.exports = new Writer();

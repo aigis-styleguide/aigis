@@ -7,5 +7,6 @@ module.exports = {
   pluginRegister: require('./src/plugin_register'),
   collector: require('./src/collector'),
   getRoot: require('./src/get_root'),
-  timestamp: require('./src/timestamp')
+  timestamp: require('./src/timestamp'),
+  assetsManager: require('./src/assets_manager')
 };

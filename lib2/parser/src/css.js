@@ -14,7 +14,7 @@ function css(files) {
     .map(function(file) {
       var contents = file.contents.toString();
       var comments = contents.match(regex_comment);
-      console.log(file.path);
+
       comments = _.map(comments, function(comment) {
         var fb = comment.indexOf('\n');
         var lb = comment.lastIndexOf('\*\/');
