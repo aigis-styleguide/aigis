@@ -29,7 +29,6 @@
     "ejs": "^2.4.1",
     "fs-extra": "^0.18.2",
     "get-css-colors": "0.0.1",
-    "handlebars": "^3.0.0",
     "highlights": "^1.2.0",
     "jade": "^1.9.2",
     "js-beautify": "^1.5.10",
