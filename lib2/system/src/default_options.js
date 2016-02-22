@@ -9,7 +9,7 @@ module.exports = {
   lib: {},
   format: "yaml",
   timestamp_format: "YYYY/MM/DD HH:mm",
-  template: __dirname + "/../../../template/index.ejs",
+  template: __dirname + "/../../../template/layout.ejs",
   template_engine: "ejs",
   md_class: {
     blockquote: "",
