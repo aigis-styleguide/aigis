@@ -1,8 +1,6 @@
 function template(modules, options) {
-  this.options = options;
-  this.modules = modules;
-
-  var Renderer = require('../plugin/src/renderer/ejs');
+  var engine = options.template_engine;
+  var Renderer = require('../plugin/src/renderer/' + engine);
   var renderer = new Renderer(options, modules);
   return renderer.render();
 }

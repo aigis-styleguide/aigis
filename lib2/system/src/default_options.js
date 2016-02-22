@@ -11,6 +11,7 @@ module.exports = {
   format: "yaml",
   timestamp_format: "YYYY/MM/DD HH:mm",
   template: __dirname + "/../../../template/index.ejs",
+  template_engine: "ejs",
   md_class: {
     blockquote: "",
     heading   : "",

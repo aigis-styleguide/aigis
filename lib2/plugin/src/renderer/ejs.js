@@ -13,17 +13,22 @@ var EJS_Renderer = (function() {
     this.modules = modules;
     this.timestamp = system.timestamp.get(options);
     this.indexTemplate = reader.ejs(options);
+    this.collection = {
+      category: this.categorize('category'),
+      tag: this.categorize('tag')
+    }
   }
 
   EJS_Renderer.prototype = {
     constructor: EJS_Renderer,
 
     render: function() {
-      return this.renderPage({
-        modules: this.modules,
-        type: 'category',
-        name: 'hoge'
-      });
+      var pages = _.map(['category', 'tag'], function(type) {
+        return this.renderCollection(this.collection[type], type);
+      }, this);
+      pages = _.flatten(pages);
+
+      return pages;
     },
 
     renderPage: function(params) {
@@ -40,7 +45,36 @@ var EJS_Renderer = (function() {
         helper: helper
       });
 
-      return page;
+      return {
+        html: page,
+        outputPath: outputPath
+      };
+    },
+
+    renderCollection: function(categorizedModules, type) {
+      var pages = _.map(categorizedModules, function(modules, name) {
+        return this.renderPage({
+          modules: modules,
+          name: name,
+          type: type
+        });
+      }, this);
+
+      return pages;
+    },
+
+    categorize: function(type) {
+      var categorizedModules = {};
+      _.each(this.options[type], function(name) {
+        categorizedModules[name] = [];
+      });
+      _.each(this.modules, function(module) {
+        _.each(module.config[type], function(name) {
+          categorizedModules[name].push(module);
+        });
+      });
+
+      return categorizedModules;
     }
   };
 
