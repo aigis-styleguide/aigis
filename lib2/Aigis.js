@@ -30,6 +30,7 @@ var Aigis = (function() {
 
     run: function() {
       reader.css(this.options.source)
+        .then(this._getAllColors.bind(this))
         .then(parser.css)
         .then(this.initialize.bind(this))
         .then(this._replaceCustomSyntax.bind(this))
@@ -38,9 +39,6 @@ var Aigis = (function() {
         .then(this._render.bind(this))
         .then(this._copyAssets.bind(this))
         .then(this._write.bind(this))
-        .then((pages) => {
-//          console.log(pages[0]);
-        })
         .catch(function(e) {
           console.error(e);
         });
@@ -51,6 +49,11 @@ var Aigis = (function() {
       this.options.category = system.collector(modules, 'category');
       this.options.tag = system.collector(modules, 'tag');
       return modules;
+    },
+
+    _getAllColors: function(files) {
+      this.options.colors = parser.colors(files);
+      return files;
     },
 
     _mdToHtml: function(modules) {
