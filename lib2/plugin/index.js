@@ -3,7 +3,8 @@ var path = require('path');
 var _ = require('lodash');
 
 var Plugin = (function() {
-  function Plugin() {
+  function Plugin(options) {
+    this.options = options;
     this.engine = {};
     this.transform = {};
     this.initialize();
@@ -13,52 +14,53 @@ var Plugin = (function() {
     constructor: Plugin,
 
     initialize: function() {
-      this._loadTransforms();
-      this._loadEngines()
+      this._loadBuiltinPlugins('transform');
+      this._loadBuiltinPlugins('engine');
+      this._loadUserPlugin('transform');
+      this._loadUserPlugin('engine');
     },
 
     register: function(plugin) {
-      var name = plugin.name, fn = plugin.fn, type = plugin.type;
-      this[type][name] = fn;
+      this[plugin.type][plugin.name] = plugin.fn;
     },
 
     get: function(type, name) {
       return this[type][name];
     },
 
-    _loadTransforms: function() {
+    _loadBuiltinPlugins: function(type) {
       var baseDir = path.resolve(__dirname + '/src');
-      var files = fs.readdirSync(baseDir + '/transform');
+      var files = fs.readdirSync(path.join(baseDir, type));
+      this._bulkRegister(files, type, path.join(baseDir, type));
+    },
 
+    _bulkRegister: function(files, type, dirname) {
       _.each(files, function(filename) {
         var ext = path.extname(filename);
         var name = path.basename(filename, ext);
         this.register({
-          type: 'transform',
+          type: type,
           name: name,
-          fn: require('./src/transform/' + filename)
-        });
+          fn: require(path.join(dirname, filename))
+        })
       }, this);
     },
 
-    _loadEngines: function() {
-      var baseDir = path.resolve(__dirname + '/src');
-      var files = fs.readdirSync(baseDir + '/engine');
-
-      _.each(files, function(filename) {
-        var ext = path.extname(filename);
-        var name = path.basename(filename, ext);
-        this.register({
-          type: 'engine',
-          name: name,
-          fn: require('./src/engine/' + filename)
-        });
-      }, this);
+    _loadUserPlugin: function(type) {
+      var baseDir = path.resolve(this.options.plugin);
+      var files;
+      try {
+        files = fs.readdirSync(path.join(baseDir, type));
+        this._bulkRegister(files, type, path.join(baseDir, type));
+      }
+      catch (e) {}
     }
-
   };
 
   return Plugin;
 })();
 
-module.exports = new Plugin();
+//module.exports = new Plugin();
+module.exports = function(options) {
+  return new Plugin(options);
+};
