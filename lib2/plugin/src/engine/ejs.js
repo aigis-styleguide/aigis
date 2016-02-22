@@ -8,7 +8,7 @@ var reader = require('../../../reader');
 var helper = require('../../../renderer/helper');
 
 var EJS_Renderer = (function() {
-  function EJS_Renderer(options, modules) {
+  function EJS_Renderer(modules, options) {
     this.options = options;
     this.modules = modules;
     this.timestamp = system.timestamp.get(options);
