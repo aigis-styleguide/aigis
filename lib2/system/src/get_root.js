@@ -3,17 +3,17 @@ var path = require('path');
 
 function getRoot(outputPath, options) {
   var level = _.compact(outputPath
-      .replace(path.normalize(options.dest + "/"), "")
-      .replace("index.html", "")
-      .split("/")
+      .replace(path.normalize(options.dest + '/'), '')
+      .replace('index.html', '')
+      .split('/')
   ).length;
-  var dots = "";
+  var dots = '';
   if (level === 0) {
-    return "./";
+    return './';
   }
 
   for(var i = 0; i < level; i++) {
-    dots += "../";
+    dots += '../';
   }
 
   return dots;

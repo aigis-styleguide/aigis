@@ -8,9 +8,9 @@ function jade(modules) {
 
   return _.map(modules, function(module) {
     var md = module.md.replace(reg_block, function(codeblock) {
-      var code = codeblock.replace(reg_start, "").replace(reg_end, "");
+      var code = codeblock.replace(reg_start, '').replace(reg_end, '');
       code = Jade.compile(code)();
-      return "<div class='aigis-preview'>\n  " + code + "\n</div>\n\n" + codeblock;
+      return '<div class="aigis-preview">\n  ' + code + '\n</div>\n\n' + codeblock;
     });
     module.md = md;
     return module;

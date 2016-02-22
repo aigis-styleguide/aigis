@@ -1,9 +1,9 @@
-var _ = require("lodash");
-var format = require("util").format;
+var _ = require('lodash');
+var format = require('util').format;
 
 module.exports = function(href, title, text) {
-  var className = this.md_class["link"];
-  var classes = _.isArray(className) ? className.join(" ") : className;
+  var className = this.md_class['link'];
+  var classes = _.isArray(className) ? className.join(' ') : className;
 
   var prot;
   if (this.options.sanitize) {

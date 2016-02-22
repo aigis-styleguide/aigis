@@ -3,14 +3,18 @@ var _ = require('lodash');
 var path = require('path');
 
 function renderCategoryTree(tree, depth, root) {
-  var ul = ejs.compile(`<ul class="aigis-categoryList" data-path-depth="<%- depth %>">
-    <% children.forEach((child) => { %><%- child %><% }) %>
-    </ul>`);
+  var ul = ejs.compile(
+    '<ul class="aigis-categoryList" data-path-depth="<%- depth %>">' +
+      '<% children.forEach(function(child) { %><%- child %><% }) %>' +
+    '</ul>'
+  );
 
-  var li = ejs.compile(`<li class="aigis-categoryList__item" data-path-depth="<%- depth %>">
-      <a<% if (href) { %> href="<%- href %>"<% } %>><%- name %></a>
-      <%- children %>
-    </li>`);
+  var li = ejs.compile(
+    '<li class="aigis-categoryList__item" data-path-depth="<%- depth %>">' +
+      '<a<% if (href) { %> href="<%- href %>"<% } %>><%- name %></a>' +
+      '<%- children %>' +
+    '</li>'
+  );
 
   if (!tree) {
     return '';
@@ -20,7 +24,7 @@ function renderCategoryTree(tree, depth, root) {
       var href;
 
       if (values.path) {
-        href = path.join(root, "category", values.path, "index.html");
+        href = path.join(root, 'category', values.path, 'index.html');
       }
 
       var html = li({
