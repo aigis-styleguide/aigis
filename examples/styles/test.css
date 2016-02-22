@@ -1,0 +1,51 @@
+/*
+---
+name: mod1
+category:
+  - mod
+  - mod/btn
+  - css
+  - hoge/hogehoge
+tag:
+  - hoge1
+  - hoge2
+---
+
+```html
+    <li><a class="KBA-pullDownItem KBA-pullDownItem--active" href="#">
+
+
+
+
+
+      <span class="KBA-pullDownItem__icon"><span class="KBA-icon-search"></span></span><!--
+      --><span class="KBA-pullDownItem__text">デフォルト</span>
+
+
+
+
+    </a></li>
+```
+
+*/
+
+.btn {
+   color: red;
+}
+
+/*
+---
+name: mod2
+category:
+  - fuga
+  - fuga/fugafuga/fuga
+---
+
+!![](./hoge.html)
+
+```html
+<div>fuga</div>
+```
+
+aaa
+*/
