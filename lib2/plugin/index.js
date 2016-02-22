@@ -1,19 +1,6 @@
 var fs = require('fs-extra');
 var path = require('path');
 var _ = require('lodash');
-//
-//module.exports = {
-//  engine: {
-//    ejs: require('./src/engine/ejs')
-//  },
-//
-//  transform: {
-//    html: require('./src/transform/html'),
-//    coffee: require('./src/transform/coffee'),
-//    jade: require('./src/transform/jade'),
-//    js: require('./src/transform/js'),
-//  }
-//};
 
 var Plugin = (function() {
   function Plugin() {
@@ -36,7 +23,7 @@ var Plugin = (function() {
     },
 
     get: function(type, name) {
-      return this[type][name].fn;
+      return this[type][name];
     },
 
     _loadTransforms: function() {
