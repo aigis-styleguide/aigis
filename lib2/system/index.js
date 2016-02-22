@@ -6,4 +6,6 @@ module.exports = {
   pluginLoader: require('./src/plugin_loader'),
   pluginRegister: require('./src/plugin_register'),
   collector: require('./src/collector'),
+  getRoot: require('./src/get_root'),
+  timestamp: require('./src/timestamp')
 };
