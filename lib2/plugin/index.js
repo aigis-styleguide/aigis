@@ -28,6 +28,17 @@ var Plugin = (function() {
       return this[type][name];
     },
 
+    getTransforms: function() {
+      return this.transform;
+    },
+
+    applyTransforms: function(modules) {
+      modules = _.reduce(this.transform, function(modules, transform) {
+        return transform(modules);
+      }, modules);
+      return modules
+    },
+
     _loadBuiltinPlugins: function(type) {
       var baseDir = path.resolve(__dirname + '/src');
       var files = fs.readdirSync(path.join(baseDir, type));
@@ -47,6 +58,7 @@ var Plugin = (function() {
     },
 
     _loadUserPlugin: function(type) {
+      if (this.options.plugin === undefined) return;
       var baseDir = path.resolve(this.options.plugin);
       var files;
       try {
