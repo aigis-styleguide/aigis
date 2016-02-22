@@ -1,10 +1,9 @@
 var helper = helper || {};
+var tree = require('./render_category_tree');
 
 helper.init = function(options, root) {
-
   helper.renderCategoryTree = function() {
-   var tree = require('./render_category_tree');
-   return tree(options, root);
+    return tree(options, root);
   };
 
   // helperフォルダのjsを読む
