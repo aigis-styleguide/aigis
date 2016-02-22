@@ -8,6 +8,7 @@ var reader = require('../../../reader');
 var helper = require('../../../renderer/helper');
 var renderer = require('../../../renderer');
 var marked = require('marked');
+var util = require('util');
 
 var EJS_Renderer = (function() {
   function EJS_Renderer(modules, options) {
@@ -66,6 +67,13 @@ var EJS_Renderer = (function() {
     },
 
     renderSpecialPages: function(pages) {
+      pages.push(this.renderIndex());
+      pages.push(this.renderColors());
+      this.renderColors();
+      return pages;
+    },
+
+    renderIndex: function() {
       var markedRenderer = new renderer.markdown(this.options);
       var md = '', html = '';
       if(this.options.index) {
@@ -78,19 +86,52 @@ var EJS_Renderer = (function() {
       var outputPath = path.join(this.options.dest, 'index.html');
       helper.init(this.options, root);
 
-      var page = indexTemplate({
+      var indexPage = indexTemplate({
         html: html,
         config: this.options,
         timestamp: this.timestamp,
         root: root,
-        helper: helper
+        helper: helper,
+        title: 'Index'
       });
 
-      pages.push({
-        html: page,
+      return {
+        html: indexPage,
         outputPath: outputPath
+      };
+    },
+
+    renderColors: function() {
+      var html = '';
+      var templatePath = path.join(path.dirname(this.options.template), 'index.ejs');
+      var indexTemplate = reader.ejs(templatePath);
+      var root = './';
+      var outputPath = path.join(this.options.dest, 'color.html');
+      helper.init(this.options, root);
+
+      var partial =
+        '<div class="aigis-colorPalette">' +
+          '<div class="aigis-colorPalette__color" style="background-color: %s;"></div>' +
+          '<div class="aigis-colorPalette__label">%s</div>' +
+        '</div>';
+
+      var html = _.map(this.options.colors, function(color) {
+        return util.format(partial, color, color);
+      }).join('\n');
+
+      var indexPage = indexTemplate({
+        html: html,
+        config: this.options,
+        timestamp: this.timestamp,
+        root: root,
+        helper: helper,
+        title: 'All Colors'
       });
-      return pages;
+
+      return {
+        html: indexPage,
+        outputPath: outputPath
+      };
     },
 
     categorize: function(type) {
