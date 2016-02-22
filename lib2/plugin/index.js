@@ -41,8 +41,12 @@ var Plugin = (function() {
 
     _loadBuiltinPlugins: function(type) {
       var baseDir = path.resolve(__dirname + '/src');
-      var files = fs.readdirSync(path.join(baseDir, type));
-      this._bulkRegister(files, type, path.join(baseDir, type));
+      var files;
+      try {
+        files = fs.readdirSync(path.join(baseDir, type));
+        this._bulkRegister(files, type, path.join(baseDir, type));
+      }
+      catch (e) {}
     },
 
     _bulkRegister: function(files, type, dirname) {
