@@ -1,0 +1,14 @@
+{
+  "name": "aigis_examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "aigis": "aigis ./aigis_config.yml"
+  },
+  "author": "nakajmg",
+  "license": "MIT",
+  "dependencies": {
+    "node-aigis": "file:.."
+  }
+}
