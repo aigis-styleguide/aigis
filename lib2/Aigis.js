@@ -28,6 +28,11 @@ var Aigis = (function() {
   Aigis.prototype = {
     constructor: Aigis,
 
+    /*
+    * @method run
+    *
+    * just run
+    * */
     run: function() {
       reader.css(this.options.source)
         .then(this._getAllColors.bind(this))
@@ -44,6 +49,12 @@ var Aigis = (function() {
         });
     },
 
+    /*
+    * @method initialize
+    *
+    * to initialize plugin
+    * also set category & tag collection to render pages
+    * */
     initialize: function(modules) {
       this.plugin = require('./plugin')(this.options);
       this.options.category = system.collector(modules, 'category');
@@ -51,13 +62,24 @@ var Aigis = (function() {
       return modules;
     },
 
+    /*
+    * @method _getAllColors
+    *
+    * get CSS color variables in CSS files.
+    * */
     _getAllColors: function(files) {
       this.options.colors = parser.colors(files);
       return files;
     },
 
+    /*
+    * @method _mdToHtml
+    *
+    * compile HTML from Markdown
+    * using marked custom renderer function
+    * */
     _mdToHtml: function(modules) {
-      var markedRenderer =  new renderer.markdown(this.options);
+      var markedRenderer = new renderer.markdown(this.options);
       modules = _.map(modules, function(module) {
         module.html = marked(module.md, {renderer: markedRenderer});
         return module
@@ -75,16 +97,31 @@ var Aigis = (function() {
       return pages;
     },
 
+    /*
+    * @method _copyAssets
+    *
+    * copy assets
+    * */
     _copyAssets: function(pages) {
       system.assetsManager.copyAssets(this.options);
       return pages;
     },
 
+    /*
+    * @method _replaceCustomSyntax
+    *
+    * replace text for custom syntax
+    * */
     _replaceCustomSyntax(modules) {
       modules = replaceCustomSyntax(modules, this.options);
       return modules;
     },
 
+    /*
+    * @method _transform
+    *
+    * transform function transform codeblock
+    * */
     _transform: function(modules) {
       modules = this.plugin.applyTransforms(modules);
       return modules;
