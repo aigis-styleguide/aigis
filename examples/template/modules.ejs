@@ -15,7 +15,7 @@
       <%- module.config.filePath %>
     </div>
     <ul class="aigis-tags"><% module.config.tag.forEach((tag) => { %>
-      <li class="aigis-tags__item" aigis-tags__item--<%- tag %>>
+      <li class="aigis-tags__item aigis-tags__item--<%- tag %>">
         <%- tag %>
       </li><% })%>
     </ul>

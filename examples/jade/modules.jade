@@ -1,0 +1,14 @@
+nav
+  h2.aigis-module__heading Modules
+  ul.aigis-moduleList
+  each module in modules
+    li.aigis-moduleList__item
+      a(href='#' + module.config.name) #{module.config.name}
+each module in modules
+  .aigis-module
+    h2.aigis-module__heading(id=module.config.name) #{module.config.name}
+    .aigis-module__filepath!= module.config.filePath
+    ul.aigis-tags
+      each tag in module.config.tag
+        li.aigis-tags__item(class='aigis-tags__item--' + tag) #{tag}
+    div!= module.html
