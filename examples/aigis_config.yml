@@ -1,5 +1,5 @@
 name: Example Styleguide
-source: ./styles
+source: ./doc_assets/styles
 dest: ./styleguide
 dependencies:
   - ./doc_assets
