@@ -2,3 +2,4 @@ dist*
 docs/
 node_modules/
 aigis_config.yml
+styleguide/
