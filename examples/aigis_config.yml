@@ -1,0 +1,9 @@
+name: Example Styleguide
+source: ./styles
+dest: ./styleguide
+dependencies:
+  - ./doc_assets
+module_dir: ./html
+index: ./index.md
+template_dir: ./template
+
