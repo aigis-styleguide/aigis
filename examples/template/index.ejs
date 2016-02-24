@@ -1,9 +1,14 @@
-<%- include('header') %>
-<%- include('sidemenu') %>
-<div class="aigis-contents">
-  <div class="aigis-contents__body">
-    <h2 class="aigis-module__heading"><%- title %></h2>
-    <%- html %>
+<!DOCTYPE html>
+<html>
+  <%- include('header') %>
+  <body>
+  <%- include('sidemenu') %>
+  <div class="aigis-contents">
+    <div class="aigis-contents__body">
+      <h2 class="aigis-module__heading"><%- title %></h2>
+      <%- html %>
+    </div>
+    <%- include('footer') %>
   </div>
-</div>
-<%- include('footer') %>
+  </body>
+</html>
