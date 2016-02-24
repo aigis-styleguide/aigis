@@ -5,5 +5,6 @@ dependencies:
   - ./doc_assets
 module_dir: ./html
 index: ./index.md
+#dest: ./styleguide_jade
 #template_dir: ./template_jade
 #template_engine: jade
