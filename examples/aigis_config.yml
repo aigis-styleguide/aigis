@@ -1,11 +1,13 @@
 name: Example Styleguide
-source: ./doc_assets/styles
+source: ./doc_assets/src
 dest: ./styleguide
 dependencies:
   - ./doc_assets
 module_dir: ./html
 index: ./index.md
+template_engine: ejs
+template_dir: ./template/ejs
 #template_engine: jade
-#template_dir: ./template_jade
+#template_dir: ./template/jade
 #template_engine: handlebars
-#template_dir: ./template_hbs
+#template_dir: ./template/hbs
