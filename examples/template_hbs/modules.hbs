@@ -1,0 +1,31 @@
+<nav>
+  <h2 class="aigis-module__heading">Modules</h2>
+  <ul class="aigis-moduleList">
+    {{#each modules}}
+      <li class="aigis-moduleList__item">
+        <a href="#{{this.config.name}}">{{this.config.name}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</nav>
+<div>
+  {{#each modules}}
+  <div class="aigis-module">
+    <h2 class="aigis-module__heading" id="{{this.config.name}}">
+      {{this.config.name}}
+    </h2>
+    <div class="aigis-module__filepath">
+      {{this.config.name}}
+    </div>
+    <div class="aigis-module__filepath">
+      {{this.config.filePath}}
+    </div>
+    <ul class="aigis-tags">
+      {{#each this.config.tag}}
+        <li class="aigis-tags__item aigis-tags__item--{{this}}">{{this}}</li>
+      {{/each}}
+    </ul>
+    {{{this.html}}}
+  {{/each}}
+</div>
+</div>
