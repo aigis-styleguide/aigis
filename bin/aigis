@@ -5,21 +5,32 @@ var path = require("path");
 var _ = require("lodash");
 var fs = require("fs-extra");
 
+var cwd = path.resolve();
+var templateDir = path.join(__dirname, "../examples/template");
+var dest = path.join(cwd, "template");
+
 var Aigis = require("../index");
 var configFilePath
 
-if (_.isUndefined(argv._[0])) {
-  configFilePath = "aigis_config.yml";
+if (argv._[0] === 'init') {
+  var cwd = path.resolve();
+  console.log("copy template to '" + dest + "'");
+  fs.copySync(templateDir, dest);
 }
 else {
-  configFilePath = argv._[0];
-}
+  if (_.isUndefined(argv._[0])) {
+    configFilePath = "aigis_config.yml";
+  }
+  else {
+    configFilePath = argv._[0];
+  }
 
-try {
-  var aigis = new Aigis(configFilePath);
-  aigis.run();
-}
-catch(e) {
-  console.error(e.message);
-  process.exit(1);
+  try {
+    var aigis = new Aigis(configFilePath);
+    aigis.run();
+  }
+  catch(e) {
+    console.error(e.message);
+    process.exit(1);
+  }
 }
