@@ -51,7 +51,6 @@
   },
   "scripts": {
     "start": "gulp",
-    "watch": "gulp watch",
-    "postinstall": "aigis init"
+    "watch": "gulp watch"
   }
 }
