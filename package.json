@@ -52,6 +52,7 @@
   },
   "scripts": {
     "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch"
   }
 }
