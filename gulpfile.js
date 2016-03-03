@@ -27,7 +27,7 @@ gulp.task("watch",function() {
 gulp.task("serve", function() {
   bs.init({
     server: {
-      baseDir: ["./docs"],
+      baseDir: ["./examples"],
       directory: true
     },
     notify: false,
