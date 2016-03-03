@@ -58,7 +58,7 @@ md_class:
     list: [className]
     paragraph: [className]
     table: [className]
-    tablrow: [className]
+    tablerow: [className]
     tablecell: [className]
     link: [className]
     image: [className]
