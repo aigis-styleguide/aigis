@@ -25,7 +25,7 @@
   position: relative;
   margin: 0;
   overflow: scroll; }
-.aigis-codeblock pre.editor, .aigis-preview pre.editor {
+.aigis-preview + pre pre.editor {
   position: relative;
   padding: 35px 20px 20px;
   padding: 16px;
