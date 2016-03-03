@@ -1,0 +1,5 @@
+.test { color: black; }
+.test { background-color: #000; }
+.test { color: rgb(0,0,0); }
+.test { color: rgba(0,0,0,1); }
+.test { background-image: linear-gradient(#c3ecb4, #add39f); }

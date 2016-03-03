@@ -1,0 +1,7 @@
+machine:
+  node:
+    version: 4.2.2
+dependencies:
+  override:
+    - npm i
+    - npm rebuild node-sass
