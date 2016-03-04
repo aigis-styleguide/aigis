@@ -71,10 +71,10 @@
   color: inherit;
   text-decoration: none; }
 
-.aigis-categoryList {
+.aigis-categoryList ul {
   padding: 3px 10px;
   font-size: 14px; }
-.aigis-categoryList__item a{
+.aigis-categoryList li a{
   display: block;
   position: relative;
   padding: 3px 10px 3px 10px;
@@ -85,26 +85,21 @@
   border-radius: 0px;
   outline: none;
   text-decoration: none; }
-.aigis-categoryList__item > ul {
-  /*display: none;*/
-}
-.aigis-categoryList__item:hover a[href]:hover{
+
+.aigis-categoryList li:hover a[href]:hover{
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
   background-color: #fff; }
-.aigis-categoryList__item[data-path-depth] a:before {
+.aigis-categoryList li[data-path-depth] a:before {
   content: "└";
   margin-right: 10px; }
-.aigis-categoryList__item[data-path-depth="1"] a:before {
+.aigis-categoryList li[data-path-depth="1"] a:before {
   margin-left: 1em; }
-.aigis-categoryList__item[data-path-depth="2"] a:before {
+.aigis-categoryList li[data-path-depth="2"] a:before {
   margin-left: 2em; }
-.aigis-categoryList__item[data-path-depth="3"] a:before {
+.aigis-categoryList li[data-path-depth="3"] a:before {
   margin-left: 3em; }
-.aigis-categoryList__item[data-path-depth="4"] a:before {
+.aigis-categoryList li[data-path-depth="4"] a:before {
   margin-left: 4em; }
-.aigis-categoryList__toggle {
-  cursor: pointer;
-}
 
 .aigis-tags {
   padding: 10px;

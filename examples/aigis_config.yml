@@ -7,6 +7,9 @@ module_dir: ./html
 index: ./index.md
 template_engine: ejs
 template_dir: ./template/ejs
+output_collection:
+  - category
+  - tag
 log: true
 #template_engine: jade
 #template_dir: ./template/jade

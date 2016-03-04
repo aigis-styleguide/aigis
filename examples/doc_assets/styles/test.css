@@ -207,6 +207,7 @@ tag:
 Button styles.
 * Base button style.
 * Use `a` or `button` tag.
+
 ```html
 <a class="ag-btn">Button</a>
 <button class="ag-btn ag-btn--primary">Button</button>
