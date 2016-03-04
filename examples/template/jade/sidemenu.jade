@@ -6,7 +6,7 @@
     != helper.renderCategoryTree()
   h2.aigis-sidemenu__heading Tag
   nav.aigis-tags.aigis-tagList
-    each tag in config.colelction.tag
+    each tag in config.collection.tag
       a.aigis-tags__item(class="aigis-tags__item--" + tag, href=root + 'tag/' + tag + '/index.html') #{tag}
   h2.aigis-sidemenu__heading
     a(href=root + 'color.html') All Colors
