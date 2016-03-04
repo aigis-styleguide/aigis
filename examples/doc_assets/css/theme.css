@@ -45,7 +45,7 @@
 .aigis-preview + pre {
   font-size: 14px;
   margin-top: 0; }
-.aigis-preview + pre .editor {
+.aigis-preview + pre pre.editor {
   border-radius: 0 0 3px 3px;
   border-top: none; }
 
