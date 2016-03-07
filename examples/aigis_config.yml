@@ -1,17 +1,58 @@
+# Aigis will run from same directory where this config file resides
+# All paths should be relative to there
 name: Example Styleguide
+
+# The directory containing the source files to parse recursively
 source: ./doc_assets/styles
+# You may alternately specify multiple directories
+# source:
+#  - ./sass
+#  - ./sass/style.scss
+
+# The types that aigis will scan to document comment
+# If you want generate document from markdown
+source_type:
+  - .css
+  - .sass
+  - .scss
+  - .styl
+
+# The directory that aigis will build to
 dest: ./styleguide
+
+# The assets needed to build the docs
+# You may put doc related assets here too: images, css, etc.
 dependencies:
   - ./doc_assets
-module_dir: ./html
+
+# Index page created from markdown file
 index: ./index.md
+
+# You can choose template engine : ejs, jade, handlebars
 template_engine: ejs
+
+# The directory containing the tempalte files to generate pages
+# It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
 template_dir: ./template/ejs
+
+# Aigis displays logs
+log: true
+
+# When you don't want color palette page (color.html) you may set false
+color_palette: true
+
+#
+transform:
+  - html
+  - jade
+
+# Aigis
+timestamp_format: 'YYYY/MM/DD HH:mm'
+
+preview_class: aigis-preview
+
+module_dir: ./html
+
 output_collection:
   - category
   - tag
-log: true
-#template_engine: jade
-#template_dir: ./template/jade
-#template_engine: handlebars
-#template_dir: ./template/hbs
