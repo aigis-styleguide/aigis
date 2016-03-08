@@ -196,13 +196,14 @@ category:
 
 /*
 ---
-name: Buttons
+name: Button
 category:
   - mod/btn
   - base
 tag:
   - latest
   - base
+compile: false
 ---
 Button styles.
 * Base button style.
@@ -212,6 +213,26 @@ Button styles.
 <a class="ag-btn">Button</a>
 <button class="ag-btn ag-btn--primary">Button</button>
 ```
+
+```ejs
+<a class="ag-btn"><%- name %></a>
+<button class="ag-btn ag-btn--primary"><%- name %></button>
+```
+
+```jade
+a.ag-btn
+  != name
+button.ag-btn.ag-btn--primary
+  != name
+```
+
+```hbs
+{{include './button.html'}}
+<hr>
+<a class="ag-btn">{{name}}</a>
+<button class="ag-btn ag-btn--primary">{{name}}</button>
+```
+
 */
 .ag-btn {
   -webkit-appearance: none;
