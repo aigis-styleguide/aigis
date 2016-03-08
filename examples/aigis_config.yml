@@ -37,7 +37,7 @@ template_engine: ejs
 template_dir: ./template/ejs
 
 # Aigis displays logs
-log: true
+log: false
 
 # When you don't want color palette page (color.html) you may set false
 color_palette: true
