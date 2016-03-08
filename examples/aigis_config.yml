@@ -10,12 +10,13 @@ source: ./doc_assets/styles
 #  - ./sass/style.scss
 
 # The types that aigis will scan to document comment
-# If you want generate document from markdown
 source_type:
   - .css
   - .sass
   - .scss
   - .styl
+# If you want to generate documents from markdown
+# source_type: .md
 
 # The directory that aigis will build to
 dest: ./styleguide
@@ -45,6 +46,8 @@ color_palette: true
 transform:
   - html
   - jade
+  - ejs
+  - hbs
 
 # Aigis
 timestamp_format: 'YYYY/MM/DD HH:mm'
@@ -56,3 +59,5 @@ module_dir: ./html
 output_collection:
   - category
   - tag
+
+highlight_theme: monokai
