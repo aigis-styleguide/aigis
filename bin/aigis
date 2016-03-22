@@ -1,6 +1,15 @@
 #!/usr/bin/env node
 
-var argv = require("yargs").argv;
+var argv = require("yargs")
+  .alias('v', 'version')
+  .version(function() { return require('../package').version; })
+  .describe('v', 'show version information')
+  .alias('h', 'help')
+  .help('help')
+  .usage('Usage: $0 ./path/to/aigis_config.yml')
+  .showHelpOnFail(false, "Specify --help for available options")
+  .argv
+
 var path = require("path");
 var _ = require("lodash");
 var fs = require("fs-extra");
