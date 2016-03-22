@@ -60,4 +60,5 @@ output_collection:
   - category
   - tag
 
+highlight: true
 highlight_theme: monokai
