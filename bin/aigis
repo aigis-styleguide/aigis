@@ -17,7 +17,6 @@ var argv = require('yargs')
       default: './aigis_config.yml'
     }
   }, run)
-  .help()
   .example('$0 run -c ./config_file.yml')
   .command('init', 'Copy template & theme & config file', {
     'e': {
@@ -26,7 +25,6 @@ var argv = require('yargs')
       default: 'ejs'
     }
   }, init)
-  .help()
   .example('$0 init -e jade')
   .alias('v', 'version')
   .version(function() { return require('../package').version; })
@@ -36,6 +34,7 @@ var argv = require('yargs')
   .showHelpOnFail(false, 'Specify --help for available options')
   .detectLocale(false)
   .help('help')
+  .strict()
   .argv;
 
 function run(argv) {
