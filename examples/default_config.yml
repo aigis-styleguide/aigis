@@ -13,4 +13,3 @@ dependencies:
 
 # The directory containing the tempalte files to generate pages
 # It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
-template_dir: ./template

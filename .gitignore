@@ -1,7 +1,6 @@
-dist*
 docs/
 node_modules/
-aigis_config.yml
+/aigis_config.yml
 styleguide/
-/template/
+/template*/
 /aigis_assets/
