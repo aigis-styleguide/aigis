@@ -3,4 +3,4 @@ docs/
 node_modules/
 aigis_config.yml
 styleguide/
-styleguide_jade/
+/template/
