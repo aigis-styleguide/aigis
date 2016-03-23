@@ -1,24 +1,34 @@
 #!/usr/bin/env node
 
 var argv = require('yargs')
+  .demand(1, 'Usage: aigis run -c ./path/to/aigis_config.yml')
+  .command('run', 'Generate styleguide', {
+    'c': {
+      alias: 'config',
+      describe: 'Path to config file',
+      default: './aigis_config.yml'
+    }
+  }, run)
+  .help()
+  .example('$0 run -c ./config_file.yml')
+  .command('init', 'Copy template & theme & config file', {
+    'e': {
+      alias: 'engine',
+      describe: 'choose template engine [ejs, jade, hbs]',
+      default: 'ejs'
+    }
+  }, init)
+  .help()
+  .example('$0 init -e jade')
   .alias('v', 'version')
   .version(function() { return require('../package').version; })
   .describe('v', 'show version information')
   .alias('h', 'help')
-  .demand(1, 'Usage: aigis run -c ./path/to/aigis_config.yml')
   .usage('Usage: aigis run -c ./path/to/aigis_config.yml')
   .showHelpOnFail(false, 'Specify --help for available options')
   .detectLocale(false)
   .help('help')
-  .command('run', 'generate styleguide', {
-    'c': {
-      alias: 'config',
-      describe: 'path to config file',
-      default: './aigis_config.yml'
-    }
-  }, run)
-  .command('init', 'copy template & config file', {}, init)
-  .argv
+  .argv;
 
 function run(argv) {
   var Aigis = require('../index');
@@ -34,20 +44,32 @@ function run(argv) {
   }
 }
 
-function init() {
+function init(argv) {
   var path = require('path');
   var fs = require('fs-extra');
   var cwd = path.resolve();
   var exampleDir = path.join(__dirname, '../examples');
 
   var assets = [
-    'template',
-    'aigis_config.yml',
+    {
+      src: 'aigis_assets',
+      dest: 'aigis_assets'
+    },
+    {
+      src: 'template/' + argv.engine,
+      dest: 'template'
+    },
+    {
+      dest: 'aigis_config.yml',
+      src: 'default_config.yml'
+    },
   ];
 
-  assets.forEach(function(name) {
-    var _path = path.join(exampleDir, name);
-    var _dest = path.join(cwd, name);
+  assets.forEach(function(asset) {
+    var src = asset.src, dest = asset.dest;
+    var _path = path.join(exampleDir, src);
+    var _dest = path.join(cwd, dest);
+
     fs.copySync(_path, _dest);
     console.log('copy:', _dest);
   });
