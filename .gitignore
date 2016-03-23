@@ -4,3 +4,4 @@ node_modules/
 aigis_config.yml
 styleguide/
 /template/
+/aigis_assets/
