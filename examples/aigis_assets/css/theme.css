@@ -1,6 +1,38 @@
 /*
 ---
-name: header
+name: Paragraph
+category: body
+---
+
+```html
+<p>
+The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+</p>
+```
+
+*/
+
+/*
+---
+name: Heading
+category: body
+---
+
+```html
+<h1>Heading1</h1>
+<h2>Heading2</h2>
+<h3>Heading3</h3>
+<h4>Heading4</h4>
+<h5>Heading5</h5>
+<h6>Heading6</h6>
+```
+
+*/
+
+
+/*
+---
+name: Header
 category: layout/header
 tag:
   - deprecated
@@ -28,7 +60,7 @@ tag:
 
 /*
 ---
-name: footer
+name: Footer
 category: layout/footer
 tag: latest
 ---
@@ -50,7 +82,7 @@ tag: latest
 
 /*
 ---
-name: preview
+name: Preview
 category: body
 tag: latest
 ---
@@ -93,7 +125,7 @@ background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6
 
 /*
 ---
-name: codeblock
+name: Codeblock
 category: body
 tag: latest
 ---
@@ -128,7 +160,7 @@ pre pre.editor {
 
 /*
 ---
-name: sidemenu
+name: Sidemenu
 category: layout/sidemenu
 tag: latest
 ---
@@ -179,7 +211,7 @@ tag: latest
 
 /*
 ---
-name: category list
+name: Category list
 category: layout/sidemenu
 tag: latest
 ---
@@ -231,7 +263,7 @@ tag: latest
 
 /*
 ---
-name: tags
+name: Tag list
 category: layout/sidemenu
 tag: latest
 ---
@@ -269,7 +301,7 @@ tag: latest
 
 /*
 ---
-name: module list
+name: Module list
 category: body
 tag: latest
 ---
@@ -322,6 +354,20 @@ tag: latest
   padding-right: 5px;
   padding-left: 5px; }
 
+/*
+---
+name: File path
+category: body
+---
+
+```html
+<div class="aigis-module__filepath">
+  /aigis_assets/css/theme.css
+</div>
+```
+
+*/
+
 .aigis-module__filepath {
   display: block;
   text-align: right;
@@ -331,7 +377,7 @@ tag: latest
 
 /*
 ---
-name: color palette
+name: Color palette
 category: layout/special
 tag: special
 ---

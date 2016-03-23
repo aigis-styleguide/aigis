@@ -1,9 +1,9 @@
 # Aigis will run from same directory where this config file resides
 # All paths should be relative to there
-name: Example Styleguide
+name: Examples Styleguide
 
 # The directory containing the source files to parse recursively
-source: ./doc_assets/styles
+source: ./css
 # You may alternately specify multiple directories
 # source:
 #  - ./sass
@@ -24,7 +24,8 @@ dest: ./styleguide
 # The assets needed to build the docs
 # You may put doc related assets here too: images, css, etc.
 dependencies:
-  - ./doc_assets
+  - ./aigis_assets
+  - ./css
 
 # Index page created from markdown file
 index: ./index.md
