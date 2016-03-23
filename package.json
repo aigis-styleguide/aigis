@@ -43,7 +43,7 @@
     "stylus": "^0.51.1",
     "through2": "0.6.3",
     "vinyl-fs": "^1.0.0",
-    "yargs": "^3.15.0"
+    "yargs": "^4.3.2"
   },
   "devDependencies": {
     "browser-sync": "^2.7.13",
