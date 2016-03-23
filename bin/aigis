@@ -1,34 +1,54 @@
 #!/usr/bin/env node
 
-var argv = require("yargs")
+var argv = require('yargs')
   .alias('v', 'version')
   .version(function() { return require('../package').version; })
   .describe('v', 'show version information')
   .alias('h', 'help')
+  .demand(1, 'Usage: aigis run -c ./path/to/aigis_config.yml')
+  .usage('Usage: aigis run -c ./path/to/aigis_config.yml')
+  .showHelpOnFail(false, 'Specify --help for available options')
+  .detectLocale(false)
   .help('help')
-  .usage('Usage: $0 ./path/to/aigis_config.yml')
-  .showHelpOnFail(false, "Specify --help for available options")
+  .command('run', 'generate styleguide', {
+    'c': {
+      alias: 'config',
+      describe: 'path to config file',
+      default: './aigis_config.yml'
+    }
+  }, run)
+  .command('init', 'copy template & config file', {}, init)
   .argv
 
-var path = require("path");
-var _ = require("lodash");
-var fs = require("fs-extra");
+function run(argv) {
+  var Aigis = require('../index');
+  var aigis;
 
-var Aigis = require("../index");
-var aigis, configFilePath;
+  try {
+    aigis = new Aigis(argv.config);
+    aigis.run();
+  }
+  catch(e) {
+    console.error(e.message);
+    process.exit(1);
+  }
+}
 
-if (_.isUndefined(argv._[0])) {
-  configFilePath = "aigis_config.yml";
-}
-else {
-  configFilePath = argv._[0];
-}
+function init() {
+  var path = require('path');
+  var fs = require('fs-extra');
+  var cwd = path.resolve();
+  var exampleDir = path.join(__dirname, '../examples');
 
-try {
-  aigis = new Aigis(configFilePath);
-  aigis.run();
-}
-catch(e) {
-  console.error(e.message);
-  process.exit(1);
+  var assets = [
+    'template',
+    'aigis_config.yml',
+  ];
+
+  assets.forEach(function(name) {
+    var _path = path.join(exampleDir, name);
+    var _dest = path.join(cwd, name);
+    fs.copySync(_path, _dest);
+    console.log('copy:', _dest);
+  });
 }
