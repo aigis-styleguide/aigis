@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "aigis": "aigis ./aigis_config.yml"
+    "aigis": "aigis run -c ./aigis_config.yml"
   },
   "author": "nakajmg",
   "license": "MIT",
