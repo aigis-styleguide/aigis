@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-{{include './header'}}
+{{include "./header"}}
 <body>
-{{include './sidemenu'}}
-<div class="aigis-contents">
-  <div class="aigis-contents__body">
-    <h2 class="aigis-module__heading">{{title}}</h2>
-    {{{html}}}
+<div class="aigis-container">
+  {{include "./sidemenu"}}
+  <div class="aigis-contents">
+    <div class="aigis-contents__body">
+      {{{html}}}
+      {{include "./modules"}}
+      {{include "./footer"}}
+    </div>
   </div>
-  {{include './footer'}}
 </div>
 </body>
 </html>

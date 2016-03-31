@@ -1,3 +1,4 @@
+<% if(modules.length) { %>
 <nav>
   <h2 class="aigis-module__heading">Modules</h2>
   <ul class="aigis-moduleList"><% modules.forEach((module) => { %>
@@ -22,3 +23,4 @@
     <%- module.html %>
   </div><% }) %>
 </div>
+<% } %>

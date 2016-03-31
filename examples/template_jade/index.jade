@@ -2,9 +2,10 @@ doctype html
 html
   include ./header.jade
   body
-    include ./sidemenu
-    .aigis-contents
-      .aigis-contents__body
-        h2.aigis-module__heading= title
-        != html
-    include ./footer
+    .aigis-container
+      include ./sidemenu
+      .aigis-contents
+        .aigis-contents__body
+          != html
+          include ./modules
+          include ./footer
