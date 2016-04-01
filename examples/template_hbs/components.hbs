@@ -1,8 +1,8 @@
-{{#if modules.length}}
+{{#if components.length}}
 <nav>
-  <h2 class="aigis-module__heading">Modules</h2>
+  <h2 class="aigis-module__heading">Components</h2>
   <ul class="aigis-moduleList">
-    {{#each modules}}
+    {{#each components}}
       <li class="aigis-moduleList__item">
         <a href="#{{this.config.name}}">{{this.config.name}}</a>
       </li>
@@ -10,7 +10,7 @@
   </ul>
 </nav>
 <div>
-  {{#each modules}}
+  {{#each components}}
   <div class="aigis-module">
     <h2 class="aigis-module__heading" id="{{this.config.name}}">
       {{this.config.name}}

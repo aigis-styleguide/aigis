@@ -1,15 +1,15 @@
-if modules.length
+if components.length
   nav
-    h2.aigis-module__heading Modules
+    h2.aigis-module__heading Components
     ul.aigis-moduleList
-      each module in modules
+      each component in components
         li.aigis-moduleList__item
-          a(href='#' + module.config.name) #{module.config.name}
-  each module in modules
+          a(href='#' + component.config.name) #{component.config.name}
+  each component in components
     .aigis-module
-      h2.aigis-module__heading(id=module.config.name) #{module.config.name}
-      .aigis-module__filepath!= module.config.filePath
+      h2.aigis-module__heading(id=component.config.name) #{component.config.name}
+      .aigis-module__filepath!= component.config.filePath
       ul.aigis-tags
-        each tag in module.config.tag
+        each tag in component.config.tag
           li.aigis-tags__item(class='aigis-tags__item--' + tag) #{tag}
-      != module.html
+      != component.html

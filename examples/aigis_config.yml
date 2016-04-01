@@ -55,7 +55,7 @@ timestamp_format: 'YYYY/MM/DD HH:mm'
 
 preview_class: aigis-preview
 
-module_dir: ./html
+component_dir: ./html
 
 output_collection:
   - category
