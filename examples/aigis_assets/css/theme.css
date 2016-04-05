@@ -248,7 +248,8 @@ tag: latest
 
 .aigis-categoryList li:hover a[href]:hover{
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
-  background-color: #fff; }
+  background-color: #5D5D5D;
+  color: #fff; }
 .aigis-categoryList li[data-path-depth] a:before {
   content: "└";
   margin-right: 10px; }
@@ -260,6 +261,10 @@ tag: latest
   margin-left: 3em; }
 .aigis-categoryList li[data-path-depth="4"] a:before {
   margin-left: 4em; }
+.aigis-categoryList li[data-path-depth] [data-tree-current] {
+  background-color: #8C8C8C;
+  color: #fff;
+}
 
 /*
 ---
