@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "aigis-marked": "0.0.10",
-    "aigis-template-helper": "0.1.1",
+    "aigis-template-helper": "0.2.0",
     "beauty": "0.0.7",
     "bluebird": "^2.9.14",
     "coffee-script": "^1.9.1",
