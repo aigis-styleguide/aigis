@@ -49,6 +49,7 @@ transform:
   - jade
   - ejs
   - hbs
+#  - coffee
 
 # Aigis
 timestamp_format: 'YYYY/MM/DD HH:mm'
@@ -63,3 +64,6 @@ output_collection:
 
 highlight: true
 highlight_theme: monokai
+
+# plugin directory
+# plugin: ./plugin
