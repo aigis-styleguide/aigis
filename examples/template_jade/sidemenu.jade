@@ -3,7 +3,7 @@
     a(href=root + 'index.html') #{config.name}
   h2.aigis-sidemenu__heading Category
   nav.aigis-categoryList
-    != helper.renderCategoryTree()
+    != helper.renderCollectionTree('category')
   h2.aigis-sidemenu__heading Tag
   nav.aigis-tags.aigis-tagList
     each tag in config.collection.tag
