@@ -24,7 +24,7 @@
     "url": "https://github.com/pxgrid/aigis/issues"
   },
   "dependencies": {
-    "aigis-marked": "0.0.14",
+    "aigis-marked": "0.0.15",
     "bluebird": "^2.9.14",
     "colors": "^1.1.2",
     "ejs": "^2.4.1",
