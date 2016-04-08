@@ -18,7 +18,9 @@ p {
 /*
 ---
 name: header
-category: mod/header
+category:
+  - mod
+  - mod/header
 ---
 ```html
 <div class="gh-header">
@@ -79,7 +81,9 @@ category: mod/header
 /*
 ---
 name: hero
-category: mod/hero
+category:
+  - mod/hero
+  - mod
 ---
 ```html
 <div class="gh-hero gh-l-hero">
@@ -171,6 +175,7 @@ category: mod/hero
 name: footer
 category:
   - mod/footer
+  - mod
 ---
 ```html
 <div class="gh-footer">
@@ -200,6 +205,7 @@ name: Button
 category:
   - mod/btn
   - base
+  - mod
 tag:
   - latest
   - base
@@ -253,7 +259,9 @@ button.ag-btn.ag-btn--primary
 /*
 ---
 name: profile
-category: mod/footer
+category:
+  - mod/footer
+  - mod
 ---
 ```html
 <footer>
