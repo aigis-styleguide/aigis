@@ -1,0 +1,15 @@
+<div class="doc-Modules">
+  <% if(components.length) { %>
+    <% components.forEach((component) => { %>
+      <div class="doc-Module">
+        <h1 class="doc-Module_heading" id="<%- component.config.name.replace(/[^\w]+/g, '-') %>">
+          <%- component.config.name %>
+        </h1>
+        <%- component.html %>
+      </div><% }) %>
+  <% } else { %>
+    <div class="doc-Module">
+      <%- html %>
+    </div>
+  <% } %>
+</div>

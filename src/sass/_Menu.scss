@@ -1,0 +1,47 @@
+.doc-Menu {
+  min-width: 160px;
+  position: fixed;
+  z-index: 1;
+  ul {
+    line-height: 1.8em;
+    margin: 0;
+    padding-left: 1em;
+    list-style-type: none;
+  }
+  > ul {
+    padding-left: 0;
+  }
+  a[href] {
+    text-decoration: none;
+    color: $c-main_bg;
+    display: block;
+    padding-left: 3px;
+    position: relative;
+    &:hover {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        display: block;
+        background: -webkit-gradient(linear, left top, right bottom, from($c-main_bg), to(transparent));
+        height: 1px;
+        width: 100%;
+      }
+    }
+  }
+  a[data-tree-current] {
+    background-color: $c-main_bg;
+    color: $c-main_txt;
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 100%;
+      top: 0;
+      border-left: 8px solid #2B9063;
+      height: 100%;
+    }
+    pointer-events: none;
+  }
+}

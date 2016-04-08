@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sample</title>
+</head>
+<body>
+  <div class="doc-Modules"><% modules.forEach((module) => { %>
+    <div class="doc-Module">
+      <h1 class="doc-Module_heading" id="<%- module.config.name %>">
+        <%- module.config.name %>
+      </h1>
+      <%- module.html %>
+    </div><% }) %>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: "Helvetica Neue", Helvetica, arial, nimbussansl, liberationsans, freesans, clean, Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-weight: 300;
+  height: 100%;
+}
+main {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+$c_main_bg: #3DB680;
+$c_main_txt: #fff;
+$c_head_bg: #333;
+$c_body_bg: #fff;
+$c_body_txt: #555;
+
+$v_bp_small: 400px;
+
+@import 'Body';
+@import 'Header';
+@import 'Modules';
+@import 'Menu';
+
+.doc-Footer {
+  padding: 40px 0;
+  text-align: center;
+  @media(max-width: $v_bp_small) {
+    & {
+      background-color: #f5f5f5;
+      padding: 10px 0;
+    }
+  }
+}

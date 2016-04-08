@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="<%= root %>doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="<%= root %>doc_assets/css/doc.css" rel="stylesheet">
+  </head>
+  <body>
+    <%- include('header') %>
+    <main class="doc-Body">
+      <div class="doc-Body_Col-left">
+        <%- include('sidemenu') %>
+      </div>
+      <div class="doc-Body_Col-right">
+        <%- include("components") %>
+        <footer class="doc-Footer">Last updated: <%- timestamp %></footer>
+      </div>
+    </main>
+  </body>
+</html>

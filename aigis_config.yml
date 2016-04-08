@@ -1,6 +1,0 @@
-source: ./src/css
-dest: ./styleguide
-dependencies:
-  - ./css
-  - ./doc_assets
-template: ./template

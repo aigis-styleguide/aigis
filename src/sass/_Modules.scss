@@ -1,0 +1,152 @@
+.doc-Modules {
+  max-width: 600px;
+  margin: 0 auto;
+  > h1,
+  > h2 {
+    margin-top: 0;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.3em;
+    font-weight: 500;
+  }
+  .doc-Module:first-child {
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child {
+      margin-top: 0;
+    }
+  }
+}
+.doc-Module {
+  > pre {
+    margin: 0;
+    white-space: inherit;
+    border-radius: 3px;
+    + pre {
+      margin-top: 1em;
+    }
+  }
+
+  > h1,
+  > h2 {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.3em;
+    font-weight: 500;
+    margin-top: 2em;
+    &:hover {
+      &:before {
+        content: "#";
+        color: rgba(#42b983, .8);
+        position: absolute;
+        left: -0.9em;
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+    }
+  }
+
+  p {
+    //margin-bottom: 0;
+    margin: 1.2em 0;
+    line-height: 1.7em;
+  }
+
+  > ul,
+  > a,
+  > p ,
+  > blockquote > p,
+  > blockquote > h2,
+  > blockquote > h3,
+  > blockquote > h4,
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5 {
+    code {
+      color: #e96900;
+      padding: 3px;
+      margin: 0 2px;
+      border-radius: 2px;
+      white-space: nowrap;
+      font-family: 'Roboto Mono', Monaco, courier, monospace;
+      font-size: 0.8em;
+      background-color: #f8f8f8;
+      -webkit-font-smoothing: initial;
+      &:contains('*\/') {
+        color : red;
+      }
+    }
+    a[href] {
+      color: #42b983;
+      font-weight: 400;
+      margin: 0 3px;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  > table {
+    border-collapse: collapse;
+    border-radius: 3px;
+    width: 100%;
+    font-size: 1.1em;
+      th {
+      background-color: #FFA760;
+      color: #fff;
+      font-weight: 300;
+      border-left: 1px solid #fff;
+    }
+    th:empty {
+      display: none;
+    }
+    td {
+      background-color: #FFF3F3;
+      color: #444;
+      padding: 10px;
+      border: 1px solid #fff;
+    }
+  }
+
+  > blockquote {
+    margin: 10px 0;
+    padding: 15px;
+    color: #777;
+    background-color: #f8f8f8;
+    border: 1px solid #EEEEEE;
+    border-radius: 1px;
+    p {
+      margin: 0 0 0.8em;
+    }
+    pre {
+      white-space: normal;
+      margin: 0;
+      margin-bottom: 1em;
+    }
+    h3, h4, h5, h6 {
+      margin-bottom: 0;
+    }
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    h5:first-child,
+    h6:first-child {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+
+    > p > code {
+      background-color: #FFF3F3;
+    }
+    ul {
+      margin-bottom: 0;
+    }
+  }
+}
