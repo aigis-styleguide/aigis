@@ -1,0 +1,16 @@
+<div class="aigis-sidemenu">
+  <header class="aigis-header">
+    <a href="{{root}}index.html">{{config.name}}</a>
+  </header>
+  <h2 class="aigis-sidemenu__heading">Category</h2>
+  <nav class="aigis-categoryList">
+    {{{renderCollectionTree 'category'}}}
+  </nav>
+  <h2 class="aigis-sidemenu__heading">Tag</h2>
+  <nav class="aigis-tags aigis-tagList">
+    {{# each config.collection.tag}}
+      <a class="aigis-tags__item aigis-tags__item--{{this}}" href="{{@root.root}}tag/{{this}}/index.html">{{this}}</a>
+    {{/each}}
+  </nav>
+  <h2 class="aigis-sidemenu__heading"><a href="{{root}}color.html">All Colors</a></h2>
+</div>

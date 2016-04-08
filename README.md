@@ -1,83 +1,103 @@
 # aigis
 
-Here's an example aigis comment.
-
-<pre>
-/*
----
-name: module_name
-category:
-    - button/standard
-    - base
----
-
-## This is a standard button module
-
-* You can write markdown.
-
-```html
-&lt;a class="btn"&gt;
-  This is a Button
-&lt;/a&gt;
-```
-
-.btn {
-  color: white;
-  background-color: tomato;
-  text-align: center;
-  width: 200px;
-  line-height: 40px;
-  display: inline-block;
-}
-
-*/
-</pre>
+Aigis is a Node.js package that parses comments in your CSS and auto-generate a styleguide.
 
 ## Installation
 
-```sh
-npm install -g node-aigis
+```shell
+$ npm install --save-dev node-aigis
+```
+
+You can verify node-aigis was installed correctly by running:
+
+```shell
+$ ./node_modules/.bin/aigis -v
+$ 1.0.0
+```
+
+## Config file & HTML Templates
+
+aigis require "Config file" & "HTML Templates".
+
+```
+aigis init
+```
+
+This will create a `aigis_config.yml` file (more on this below)
+
+```shell
+$ ./node_modules/.bin/aigis init
+Created the following files and directories:
+  aigis_config.yml
+  aigis_assets
+  template_ejs
+```
+
+## Choose Template Engine
+
+You can choose The following Template engines for generate styleguide.
+
+* EJS（`ejs`）
+* Jade（`jade`）
+* Handlebars（`hbs`）
+
+When you run `aigis init`, add `--engine` option.
+
+e.g) choose jade
+
+```shell
+$ ./node_modules/.bin/aigis init --engine jade
 ```
 
 ## Config file
 
+After `aigis init`, edit `aigis_config.yml`. You have to write relative path to your source file's on `source`.
+
 ```yaml
-name: StyleGuide Name
 source:
-    - ./path/to/source/foder
-    - /path/to/source/file.css
-dest: ./path/to/destination
-dependencies:
-    - ./build
-timestamp_format: YYYY/MM/DD HH:mm
-template: ./path/to/template
-md_class:
-    blockquote: [className]
-    heading: [className]
-    hr: [className]
-    list: [className]
-    paragraph: [className]
-    table: [className]
-    tablerow: [className]
-    tablecell: [className]
-    link: [className]
-    image: [className]
-highlight: true
-highlight_theme: dracula
-inject:
-    - html
-    - jade
-    - js
-    - coffee
+  - ./lib/css
+  - ./style.css
 ```
 
-## Generate style guide.
+> Initially, config contain `source: aigis_assets`, You can run `aigis rung` then generate sample styleguide.
 
-```sh
-aigis ./path/to/aigis_config.yml
+## Adding comments
+
+Write following code on CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>)
+
+
+It's easy to add Comments. For example.
+
+````yaml
+---
+name: base button
+category: module/button
+---
+
+## This is base button
+
+* Base button style.
+* Use `a` or `button` tag.
+
+```html
+<a class="btn">Button</a>
+```
+````
+
+## Running aigis
+
+You're finally ready to generate a styleguide!
+
+```shell
+$ ./node_modules/.bin/aigis run -c ./aigis_config.yml
 ```
 
-## Others
+Then you get following output.
 
-* [gulp plugin](https://github.com/pxgrid/gulp-aigis)
-* [Styleguide Template](https://github.com/pxgrid/aigis-theme)
+<a href="/aigis-docs/doc/doc_assets/sample/styleguide/category/module/button/index.html" target="_blank">サンプル</a>
+
+> `-c`オプション無しで`run`コマンドが実行されたとき、aigisは実行されたディレクトリから`aigis_config.yml`を探して実行します。
+
+## More
+
+See the [documents]()

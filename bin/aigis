@@ -1,25 +1,17 @@
 #!/usr/bin/env node
-
-var argv = require("yargs").argv;
-var path = require("path");
-var _ = require("lodash");
-var fs = require("fs-extra");
-
-var Aigis = require("../index");
-var configFilePath
-
-if (_.isUndefined(argv._[0])) {
-  configFilePath = "aigis_config.yml";
-}
-else {
-  configFilePath = argv._[0];
-}
-
-try {
-  var aigis = new Aigis(configFilePath);
-  aigis.run();
-}
-catch(e) {
-  console.error(e.message);
-  process.exit(1);
-}
+var argv = require('yargs')
+  .demand(1, 'Usage: aigis run -c ./path/to/aigis_config.yml')
+  .command('run', 'Generate styleguide', require('./cmd/run'))
+  .example('$0 run -c ./config_file.yml')
+  .command('init', 'Copy template & theme & config file', require('./cmd/init'))
+  .example('$0 init -e jade')
+  .alias('v', 'version')
+  .version(function() { return require('../package').version; })
+  .describe('v', 'show version information')
+  .alias('h', 'help')
+  .usage('Usage: aigis run -c ./path/to/aigis_config.yml')
+  .showHelpOnFail(false, 'Specify --help for available options')
+  .detectLocale(false)
+  .help('help')
+  .strict()
+  .argv;

@@ -1,0 +1,15 @@
+name: Styleguide
+
+# The directory containing the source files to parse recursively
+source: ./aigis_assets
+
+# The directory that aigis will build to
+dest: ./styleguide
+
+# The assets needed to build the docs
+# You may put doc related assets here too: images, css, etc.
+dependencies:
+  - ./aigis_assets
+
+# The directory containing the tempalte files to generate pages
+# It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)

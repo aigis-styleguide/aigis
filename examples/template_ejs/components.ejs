@@ -1,0 +1,26 @@
+<% if(components.length) { %>
+<nav>
+  <h2 class="aigis-module__heading">Components</h2>
+  <ul class="aigis-moduleList"><% components.forEach((component) => { %>
+    <li class="aigis-moduleList__item">
+      <a href="#<%- component.config.name %>"><%- component.config.name %></a>
+    </li><% }) %>
+  </ul>
+</nav>
+<div><% components.forEach((component) => { %>
+  <div class="aigis-module">
+    <h2 class="aigis-module__heading" id="<%- component.config.name %>">
+      <%- component.config.name %>
+    </h2>
+    <div class="aigis-module__filepath">
+      <%- component.sourcePath %>
+    </div>
+    <ul class="aigis-tags"><% component.config.tag.forEach((tag) => { %>
+      <li class="aigis-tags__item aigis-tags__item--<%- tag %>">
+        <%- tag %>
+      </li><% })%>
+    </ul>
+    <%- component.html %>
+  </div><% }) %>
+</div>
+<% } %>
