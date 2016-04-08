@@ -7,18 +7,11 @@ exports.builder = {
 };
 
 exports.handler = function init(argv) {
-  var beauty = require('beauty');
-  beauty.beautifyConsole();
-  beauty.setTheme({
-    'log': ['blue'],
-    'info': ['cyan', 'bold'],
-    'warn': ['yellow','italic'],
-    'error': ['red','bold','underline']
-  });
   var path = require('path');
   var fs = require('fs-extra');
   var cwd = path.resolve();
   var exampleDir = path.join(__dirname, '../../examples');
+  var colors = require('colors/safe');
 
   var assets = [
     {
@@ -35,7 +28,7 @@ exports.handler = function init(argv) {
     }
   ];
 
-  console.log('Created the following files and directories:');
+  console.log(colors.blue('Created the following files and directories:'));
   assets.forEach(function(asset) {
     var src = asset.src, dest = asset.dest;
     var _path = path.join(exampleDir, src);
@@ -49,10 +42,10 @@ exports.handler = function init(argv) {
 
         try {
           var config = fs.readFileSync(_dest);
-          console.warn('Cowardly refusing to overwrite existing: aigis_config.yml');
+          console.warn(colors.yellow('Cowardly refusing to overwrite existing: aigis_config.yml'));
         }
         catch (err) {
-          console.log(' ', path.relative(cwd, _dest));
+          console.log(colors.blue(' ', path.relative(cwd, _dest)));
           fs.outputFileSync(_dest, file);
         }
         break;
@@ -60,7 +53,7 @@ exports.handler = function init(argv) {
         console.log(' ', path.relative(cwd, _dest));
         fs.copySync(_path, _dest, {
           filter: function(file) {
-            console.log(' ', path.relative(exampleDir, file));
+            console.log(colors.blue(' ', path.relative(exampleDir, file)));
             return true;
           }
         });
