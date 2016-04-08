@@ -1,13 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "start" : "gulp watch"
+    "aigis": "aigis run -c ./src/aigis_config.yml",
+    "start": "gulp watch"
   },
   "devDependencies": {
     "browser-sync": "^2.9.1",
     "gulp": "^3.9.0",
-    "gulp-aigis": "^0.2.3",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4"
+  },
+  "dependencies": {
+    "node-aigis": "github:pxgrid/aigis"
   }
 }

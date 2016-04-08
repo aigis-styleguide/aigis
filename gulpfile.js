@@ -1,9 +1,10 @@
 var gulp = require("gulp");
-var aigis = require("gulp-aigis");
 var sass = require("gulp-sass");
 var plumber = require("gulp-plumber");
 var bs = require("browser-sync");
 var reload = bs.reload;
+var process = require('child_process');
+var exec = process.exec;
 
 var src = {
   scss: ["src/css/**/*.scss"]
@@ -21,9 +22,12 @@ gulp.task("scss", function(){
     .pipe(gulp.dest("./css"));
 });
 
-gulp.task("aigis", function(){
-  return gulp.src("./aigis_config.yml")
-    .pipe(aigis());
+gulp.task('aigis', (cb) => {
+  exec('npm run aigis', (err, stdout, stderr) => {
+    console.log(stdout);
+    console.log(stderr);
+    cb();
+  });
 });
 
 gulp.task("serve", function(){
