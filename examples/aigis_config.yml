@@ -3,7 +3,9 @@
 name: Examples Styleguide
 
 # The directory containing the source files to parse recursively
-source: ./css
+source:
+  - ./css
+  - ./demo.md
 # You may alternately specify multiple directories
 # source:
 #  - ./sass
@@ -46,9 +48,9 @@ color_palette: true
 #
 transform:
   - html
-  - jade
-  - ejs
-  - hbs
+#  - jade
+#  - ejs
+#  - hbs
 #  - coffee
 
 # Aigis

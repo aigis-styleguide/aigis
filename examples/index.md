@@ -6,6 +6,6 @@
 npm run aigis
 ```
 
-edit `styles/test.css`
+edit `css/style.css`
 
-[doc](https://pxgrid.github.io/aigis/)
+[doc](https://pxgrid.github.io/aigis/doc/)
