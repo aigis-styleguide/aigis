@@ -13,3 +13,5 @@ if components.length
         each tag in component.config.tag
           li.aigis-tags__item(class='aigis-tags__item--' + tag) #{tag}
       != component.html
+else
+  != html
