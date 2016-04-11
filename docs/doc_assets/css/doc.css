@@ -111,7 +111,8 @@ main:after {
 
 .doc-Modules {
   max-width: 600px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-bottom: 50px; }
   .doc-Modules > h1,
   .doc-Modules > h2 {
     margin-top: 0;
