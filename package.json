@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "docs": "aigis run -c ./src/aigis_config.yml",
-    "sample": "aigis run -c ./src/examples/aigis_config.yml",
+    "sample": "aigis run -c ./src/sample/aigis_config.yml",
     "start": "gulp watch"
   },
   "devDependencies": {
