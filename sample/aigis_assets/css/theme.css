@@ -1,0 +1,464 @@
+/*
+---
+name: Paragraph
+category: body
+---
+
+```html
+<p>
+The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+</p>
+```
+
+*/
+
+/*
+---
+name: Heading
+category: body
+---
+
+```html
+<h1>Heading1</h1>
+<h2>Heading2</h2>
+<h3>Heading3</h3>
+<h4>Heading4</h4>
+<h5>Heading5</h5>
+<h6>Heading6</h6>
+```
+
+*/
+
+
+/*
+---
+name: Header
+category: layout/header
+tag:
+  - deprecated
+---
+
+```html
+<header class="aigis-header">
+  <a href="#">Styleguide</a>
+</header>
+```
+
+*/
+.aigis-header {
+  line-height: 1.5em;
+  padding-left: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #33331a;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px; }
+.aigis-header a {
+  text-decoration: none;
+  color: inherit; }
+
+/*
+---
+name: Footer
+category: layout/footer
+tag: latest
+---
+
+```html
+<footer class="aigis-footer">Last update at 2016/03/23 20:48</footer>
+```
+
+*/
+.aigis-footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+  line-height: 1.75;
+  color: #7a7a7a;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 16px; }
+
+/*
+---
+name: Preview
+category: body
+tag: latest
+---
+
+```html
+<div class="aigis-preview">
+  <a class="ex-ag-btn">Button</a>
+  <button class="ex-ag-btn ex-ag-btn--primary">Button</button>
+</div>
+```
+
+*/
+.aigis-codeblock, .aigis-preview {
+  position: relative;
+  margin: 0;
+  overflow: scroll; }
+.aigis-preview {
+background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAF0lEQVR4AWP4DwVvoWCgBGAMmMQACQAAuK72AWHjK4wAAAAASUVORK5CYII=' );
+}
+.aigis-preview + pre {
+  margin-top: 0;
+}
+
+.ex-ag-btn {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: none;
+  background-color: #3DB680;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  line-height: 40px;
+  min-width: 200px;
+  font-size: 20px;
+  box-sizing: border-box; }
+.ex-ag-btn--primary {
+  color: black;
+  background-color: #FFEA3A; }
+
+
+/*
+---
+name: Codeblock
+category: body
+tag: latest
+---
+
+```html
+<pre><code class="lang-html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span>aigis-header</span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;hoge</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+</code></pre>
+```
+
+*/
+pre pre.editor {
+  font-size: 14px;
+  position: relative;
+  padding: 0.5em;
+  border-radius: 3px;
+  margin: 0 auto;
+  overflow: scroll;
+  border: 1px solid #A0A0A0; }
+
+.aigis-preview {
+  border: 1px solid #A0A0A0;
+  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
+  padding: 20px 10px;
+  padding: 16px;
+  margin: 0;
+  margin-top: 10px; }
+
+.aigis-preview + pre pre.editor {
+  border-radius: 0 0 3px 3px;
+  border-top: none; }
+
+/*
+---
+name: Sidemenu
+category: layout/sidemenu
+tag: latest
+---
+
+```html
+<div class="aigis-sidemenu">
+  <header class="aigis-header">
+    <a href="../../index.html">Styleguide</a>
+  </header>
+  <h2 class="aigis-sidemenu__heading">Category</h2>
+  <nav class="aigis-categoryList">
+
+  </nav>
+  <h2 class="aigis-sidemenu__heading">Tag</h2>
+  <nav class="aigis-tags aigis-tagList">
+
+  </nav>
+  <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+</div>
+```
+
+*/
+.aigis-sidemenu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  box-sizing: border-box;
+  background-color: #f9faf9;
+  color: #33331a;
+  overflow-x: scroll;
+  height: 100%; }
+.aigis-sidemenu__heading {
+  font-size: 20px;
+  margin: 12px 0;
+  color: #33331a;
+  font-weight: normal;
+  padding-left: 10px;
+  line-height: 1em; }
+.aigis-sidemenu__heading a {
+  color: inherit;
+  text-decoration: none; }
+
+.aigis-preview .aigis-sidemenu {
+  position: relative;
+}
+
+/*
+---
+name: Category list
+category: layout/sidemenu
+tag: latest
+---
+
+```html
+<h2 class="aigis-sidemenu__heading">Category</h2>
+<nav class="aigis-categoryList">
+  <ul data-path-depth="0">
+    <li data-path-depth="0"><a href="#">body</a></li>
+    <li data-path-depth="0"><a href="#">layout</a>
+      <ul data-path-depth="1">
+        <li data-path-depth="1"><a href="#">sidemenu</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+```
+
+*/
+.aigis-categoryList ul {
+  padding: 3px 10px;
+  font-size: 14px; }
+.aigis-categoryList li a{
+  display: block;
+  position: relative;
+  padding: 3px 10px 3px 10px;
+  color: #454545;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 0px;
+  outline: none;
+  text-decoration: none; }
+
+.aigis-categoryList li:hover a[href]:hover{
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
+  background-color: #5D5D5D;
+  color: #fff; }
+.aigis-categoryList li[data-path-depth] a:before {
+  content: "└";
+  margin-right: 10px; }
+.aigis-categoryList li[data-path-depth="1"] a:before {
+  margin-left: 1em; }
+.aigis-categoryList li[data-path-depth="2"] a:before {
+  margin-left: 2em; }
+.aigis-categoryList li[data-path-depth="3"] a:before {
+  margin-left: 3em; }
+.aigis-categoryList li[data-path-depth="4"] a:before {
+  margin-left: 4em; }
+.aigis-categoryList li[data-path-depth] [data-tree-current] {
+  background-color: #8C8C8C;
+  color: #fff;
+}
+
+/*
+---
+name: Tag list
+category: layout/sidemenu
+tag: latest
+---
+
+```html
+<nav class="aigis-tags aigis-tagList">
+  <a class="aigis-tags__item aigis-tags__item--deprecated" href="#">deprecated</a>
+  <a class="aigis-tags__item aigis-tags__item--latest" href="#">latest</a>
+</nav>
+```
+
+*/
+.aigis-tags {
+  padding: 10px;
+  padding-left: 0;
+  margin: 0; }
+.aigis-tags__item {
+  display: inline-block;
+  border-radius: 1px;
+  margin: 5px 0;
+  margin-right: 5px;
+  font-size: 12px;
+  padding: 3px 5px;
+  background-color: #454545;
+  color: #fff;
+  text-decoration: none; }
+.aigis-tags__item--deprecated {
+  background-color: #ff4f4f;
+  color: #fff; }
+.aigis-tags__item--latest {
+  background-color: #00c655;
+  color: #fff; }
+.aigis-tags.aigis-tagList {
+  padding-left: 10px; }
+
+/*
+---
+name: Module list
+category: body
+tag: latest
+---
+
+```html
+<nav>
+  <h2 class="aigis-module__heading">Modules</h2>
+  <ul class="aigis-moduleList">
+    <li class="aigis-moduleList__item">
+      <a href="#header">header</a>
+    </li>
+    <li class="aigis-moduleList__item">
+      <a href="#sidemenu">sidemenu</a>
+    </li>
+    <li class="aigis-moduleList__item">
+      <a href="#category list">category list</a>
+    </li>
+    <li class="aigis-moduleList__item">
+      <a href="#tags">tags</a>
+    </li>
+  </ul>
+</nav>
+```
+
+*/
+.aigis-moduleList {
+  line-height: 1.6;
+  font-size: 16px; }
+.aigis-moduleList__item a {
+  color: #08f;
+  text-decoration: none; }
+.aigis-moduleList__item a:hover {
+  text-decoration: underline; }
+
+.aigis-module__heading {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+  position: relative; }
+.aigis-module__heading:hover a {
+  position: relative; }
+.aigis-module__heading:hover a:before {
+  content: "\00a7";
+  position: absolute;
+  right: 100%;
+  bottom: 5px;
+  font-size: 20px;
+  color: #000;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+/*
+---
+name: File path
+category: body
+---
+
+```html
+<div class="aigis-module__filepath">
+  /aigis_assets/css/theme.css
+</div>
+```
+
+*/
+
+.aigis-module__filepath {
+  display: block;
+  text-align: right;
+  margin-top: -15px;
+  font-size: 12px;
+  color: #ADADAD; }
+
+/*
+---
+name: Color palette
+category: layout/special
+tag: special
+---
+
+```html
+<div class="aigis-contents__body">
+  <h2 class="aigis-module__heading">colors</h2>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #428b1c;"></div><div class="aigis-colorPalette__label">#428b1c</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #55b5db;"></div><div class="aigis-colorPalette__label">#55b5db</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #5B594B;"></div><div class="aigis-colorPalette__label">#5B594B</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #6272a4;"></div><div class="aigis-colorPalette__label">#6272a4</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #666;"></div><div class="aigis-colorPalette__label">#666</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #66d9ef;"></div><div class="aigis-colorPalette__label">#66d9ef</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #66D9EF;"></div><div class="aigis-colorPalette__label">#66D9EF</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #6be5fd;"></div><div class="aigis-colorPalette__label">#6be5fd</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #728fcb;"></div><div class="aigis-colorPalette__label">#728fcb</div></div>
+  <div class="aigis-colorPalette"><div class="aigis-colorPalette__color" style="background-color: #75715E;"></div><div class="aigis-colorPalette__label">#75715E</div></div>
+</div>
+```
+
+*/
+.aigis-colorPalette {
+  margin-top: 5px; }
+.aigis-colorPalette__color {
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  width: 50%;
+  margin-right: 5px; }
+.aigis-colorPalette__label {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 40px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue",Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem; }
+
+.aigis-module > ul code, .aigis-module > p code, .aigis-contents__body > ul code, .aigis-contents__body > p code, .aigis-contents__body > h2 code, .aigis-contents__body > h3 code {
+  color: #666;
+  background-color: #f7f7f7;
+  padding: 0 3px;
+  font-size: 0.8em;
+  border-radius: 3px; }
+
+.aigis-container {
+  box-sizing: border-box;
+  width: auto;
+  min-width: 960px;
+  margin-right: auto; }
+.aigis-container:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.aigis-contents {
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-left: 280px;
+  margin: 0 auto;
+  font-size: 18px; }
+.aigis-contents__body {
+  color: #33331a;
+  max-width: 960px;
+  min-width: 600px;
+  padding: 20px 20px;
+  margin: 0 auto; }
+.aigis-contents__body > *:first-child {
+  margin-top: 0; }
+.aigis-contents__body > ul {
+  font-size: 16px; }
+.aigis-contents__body > p {
+  margin-bottom: 1em; }
+.aigis-contents__body > h2 {
+  font-size: 30px; }
+.aigis-contents__body > h3 {
+  font-size: 24px; }
