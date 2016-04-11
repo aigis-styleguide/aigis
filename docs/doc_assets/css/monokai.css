@@ -1,0 +1,138 @@
+.editor .invisible-character {
+  color: #3d3d3d;
+}
+.editor .indent-guide {
+  color: #3d3d3d;
+}
+.editor .wrap-guide {
+  background-color: #3d3d3d;
+}
+.editor .gutter {
+  background-color: #242729;
+}
+.editor .gutter .cursor-line {
+  background-color: #49483e;
+}
+.editor .line-number.cursor-line-no-selection {
+  background-color: #49483e;
+}
+.editor .invisible {
+  color: #f8f8f2;
+}
+.editor .cursor {
+  border-color: #f8f8f0;
+}
+.editor .selection .region {
+  background-color: #49483e;
+}
+.editor .search-results .marker .region {
+  background-color: transparent;
+  border: 1px solid #888888;
+}
+.editor .search-results .marker.current-result .region {
+  border: 1px solid white;
+}
+.editor .comment {
+  color: #75715E;
+}
+.editor .string {
+  color: #E6DB74;
+}
+.editor .constant.numeric {
+  color: #AE81FF;
+}
+.editor .constant.language {
+  color: #AE81FF;
+}
+.editor .constant.character,
+.editor .constant.other {
+  color: #AE81FF;
+}
+.editor .keyword {
+  color: #F92672;
+}
+.editor .storage {
+  color: #F92672;
+}
+.editor .storage.type {
+  font-style: italic;
+  color: #66D9EF;
+}
+.editor .entity.name.class {
+  text-decoration: underline;
+  color: #A6E22E;
+}
+.editor .entity.other.inherited-class {
+  font-style: italic;
+  text-decoration: underline;
+  color: #A6E22E;
+}
+.editor .entity.name.function {
+  color: #A6E22E;
+}
+.editor .entity.name.instance {
+  color: #66D9EF;
+}
+.editor .variable.parameter {
+  font-style: italic;
+  color: #FD971F;
+}
+.editor .entity.name.tag {
+  color: #F92672;
+}
+.editor .entity.other.attribute-name {
+  color: #A6E22E;
+}
+.editor .support.function {
+  color: #66D9EF;
+}
+.editor .support.constant {
+  color: #66D9EF;
+}
+.editor .support.type,
+.editor .support.class {
+  font-style: italic;
+  color: #66D9EF;
+}
+.editor .invalid {
+  color: #F8F8F0;
+  background-color: #F92672;
+}
+.editor .invalid.deprecated {
+  color: #F8F8F0;
+  background-color: #AE81FF;
+}
+.editor .class.jade {
+  color: #AE81FF;
+}
+.editor .gfm .markup.heading {
+  color: #A6E22E;
+  font-weight: bold;
+}
+.editor .gfm .markup.underline {
+  color: #E6DB74;
+  text-decoration: underline;
+}
+.editor .gfm .bold {
+  font-weight: bold;
+}
+.editor .gfm .italic {
+  font-style: italic;
+}
+.editor .gfm .raw {
+  color: #66D9EF;
+}
+.editor .gfm .variable.list {
+  color: #F92672;
+  font-weight: bold;
+}
+.editor .gfm .link {
+  color: #CCC;
+}
+.editor .gfm .link .entity {
+  color: #AE81FF;
+}
+.editor.editor-colors {
+  background-color: #1d1f21;
+  color: #f8f8f2;
+}

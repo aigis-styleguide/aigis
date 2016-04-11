@@ -1,0 +1,3 @@
+source: ./sample.css
+template_dir: ./template
+dest: ./styleguide

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="../../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../../doc_assets/css/doc.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="doc-Header">
+  <nav class="doc-Header_Nav">
+    <div class="doc-Header_Col-left">
+      <a class="doc-Header_Home" href="../../../../">
+        aigis
+      </a>
+    </div>
+    <div class="doc-Header_Col-right">
+      <ul class="doc-Header_Menu">
+        <li class="doc-Header_MenuItem"><a href="../../../../sample/" target="_blank">Sample</a></li>
+        <li class="doc-Header_MenuItem"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <main class="doc-Body">
+      <div class="doc-Body_Col-left">
+        <nav class="doc-Menu">
+  <a href="../../../index.html">Index</a>
+  <ul data-path-depth="0"><li data-path-depth="0"><a href="../../../category/Documentation/index.html">Documentation</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Documentation/Comment-Syntax/index.html">Comment Syntax</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Configs/index.html">Configs</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Syntax-Highlight/index.html">Syntax Highlight</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Templates/index.html">Templates</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Guide/index.html">Guide</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Guide/Quick-Start/index.html">Quick Start</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Tips/index.html">Tips</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Tips/Errors/index.html">Errors</a></li><li data-path-depth="1"><a href="../../../category/Tips/How-to/index.html" data-tree-current>How to</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Usage/index.html">Usage</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Usage/CLI/index.html">CLI</a></li><li data-path-depth="1"><a href="../../../category/Usage/Node.js/index.html">Node.js</a></li><li data-path-depth="1"><a href="../../../category/Usage/gulp/index.html">gulp</a></li></ul></li></ul>
+</nav>
+
+      </div>
+      <div class="doc-Body_Col-right">
+        <div class="doc-Modules">
+  
+    
+      <div class="doc-Module">
+        <h1 class="doc-Module_heading" id="How-to">
+          How to
+        </h1>
+        <h2 class="" id="fails-install-on-windows">Fails install on Windows</h2>
+<p class=""><a class="" href="https://github.com/nodejs/node-gyp/issues/629" title="null">https://github.com/nodejs/node-gyp/issues/629</a></p>
+<h2 class="" id="use-code-042-047-code-in-document-comment">use <code>&#042;&#047;</code> in document comment</h2>
+<p class="">When you want to use &quot;<code>&#042;&#047;</code>&quot; in document comment, you can use HTML entity wrapped HTML tag like below:</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="constant character entity html"><span class="punctuation definition entity html"><span>&amp;</span></span><span>#042</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#047</span><span class="punctuation definition entity html"><span>;</span></span></span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+</code></pre><h2 class="" id="use-code-8242-8242-8242-code-in-document-comment">use <code>&#8242;&#8242;&#8242;</code> in document comment</h2>
+<p class="">When you want to use <code>&#8242;&#8242;&#8242;</code> in document comment, you can use HTML entity wapped HTML tag like below:</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="constant character entity html"><span class="punctuation definition entity html"><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span></span></span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+</code></pre><h2 class="" id="use-code-8242-8242-8242-code-in-codeblock">use <code>&#8242;&#8242;&#8242;</code> in codeblock</h2>
+<p class="">When you want to use &quot;<code>&#8242;&#8242;&#8242;</code>&quot; in codeblock, you can use <code>&#8242;&#8242;&#8242;&#8242;</code> instead of <code>&#8242;&#8242;&#8242;</code> like below:</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>````</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>```html</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>btn</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>````</span></span></div></pre>
+</code></pre>
+      </div>
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>
