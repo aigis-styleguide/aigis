@@ -8,3 +8,4 @@ index: ./doc/index.md
 log: true
 transform: []
 color_palette: false
+disable_index: true
