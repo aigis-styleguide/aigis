@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="<%- root %>aigis_assets/css/highlight/monokai.css" rel="stylesheet">
+    <link href="<%- root %>aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="<%- root %>css/style.css" rel="stylesheet">
+  </head>
+<body>
+  <div class="aigis-container">
+    <%- include('sidemenu') %>
+    <div class="aigis-contents">
+      <div class="aigis-contents__body">
+        <%- include('components') %>
+        <footer class="aigis-footer">Last update at <%- timestamp %></footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
