@@ -39,7 +39,7 @@ gulp.task('serve', ['watch'], () => {
   bs.init({
     server: {
       baseDir: ['./'],
-      directory: true
+      directory: false
     },
     notify: false,
     host: 'localhost'

@@ -124,6 +124,9 @@
     border-radius: 1px;
     p {
       margin: 0 0 0.8em;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
     pre {
       white-space: normal;

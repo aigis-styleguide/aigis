@@ -6,6 +6,6 @@ dest: ../docs
 dependencies: ./doc_assets
 index: ./doc/index.md
 log: true
-transform: []
+transform: [ejs]
 color_palette: false
 disable_index: true

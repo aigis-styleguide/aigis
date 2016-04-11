@@ -247,6 +247,8 @@ main:after {
   border-radius: 1px; }
   .doc-Module > blockquote p {
     margin: 0 0 0.8em; }
+    .doc-Module > blockquote p:last-of-type {
+      margin-bottom: 0; }
   .doc-Module > blockquote pre {
     white-space: normal;
     margin: 0;
