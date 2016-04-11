@@ -2,7 +2,7 @@ source: ./doc
 source_type: .md
 template_engine: ejs
 template_dir: ./template
-dest: ../doc
+dest: ../docs
 dependencies: ./doc_assets
 index: ./doc/index.md
 log: true
