@@ -5,41 +5,45 @@ var bs = require("browser-sync");
 var reload = bs.reload;
 var process = require('child_process');
 var exec = process.exec;
-
 var src = {
-  scss: ["src/css/**/*.scss"]
+  sass: ['src/sass/*.scss'],
+  docs: ['src/template/*.ejs','src/doc/**/*.md', 'src/aigis_config.yml']
+};
+var dest = {
+  css: './src/doc_assets/css',
+  doc_css: './docs/doc_assets/css'
 };
 
-gulp.task("watch", ["serve"], function(){
-  gulp.watch("./**.html", reload);
-  gulp.watch(src.scss, ["scss", reload]);
-});
-
-gulp.task("scss", function(){
-  return gulp.src("./src/css/app.scss")
+gulp.task('sass', () => {
+  return gulp.src(src.sass)
     .pipe(plumber())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest("./css"));
+    .pipe(sass())
+    .pipe(gulp.dest(dest.css))
+    .pipe(gulp.dest(dest.doc_css));
 });
 
 gulp.task('aigis', (cb) => {
-  exec('npm run aigis', (err, stdout, stderr) => {
+  exec('npm run docs', (err, stdout, stderr) => {
     console.log(stdout);
     console.log(stderr);
     cb();
   });
 });
 
-gulp.task("serve", function(){
+gulp.task('watch', () => {
+  gulp.watch(src.sass, ['sass', reload]);
+  gulp.watch(src.docs, ['aigis', reload]);
+});
+
+gulp.task('serve', ['watch'], () => {
   bs.init({
     server: {
-      index: "./index.html",
-      baseDir: ["./"],
-      directory: false
+      baseDir: ['./'],
+      directory: true
     },
     notify: false,
-    host: "localhost"
+    host: 'localhost'
   });
 });
 
-gulp.task("default", ["scss"]);
+gulp.task("default", ["serve"]);
