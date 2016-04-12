@@ -7,7 +7,8 @@ var process = require('child_process');
 var exec = process.exec;
 var src = {
   sass: ['src/sass/*.scss'],
-  docs: ['src/template/*.ejs','src/doc/**/*.md', 'src/aigis_config.yml']
+  docs_jp: ['src/template/*.ejs','src/doc/jp/**/*.md', 'src/aigis_config_jp.yml'],
+  docs_en: ['src/template/*.ejs','src/doc/en/**/*.md', 'src/aigis_config_jp.yml']
 };
 var dest = {
   css: './src/doc_assets/css',
@@ -30,16 +31,21 @@ gulp.task('aigis', (cb) => {
   });
 });
 
-gulp.task('watch', () => {
+gulp.task('watch_jp', () => {
   gulp.watch(src.sass, ['sass', reload]);
-  gulp.watch(src.docs, ['aigis', reload]);
+  gulp.watch(src.docs_jp, ['aigis', reload]);
+});
+gulp.task('watch_en', () => {
+  gulp.watch(src.sass, ['sass', reload]);
+  gulp.watch(src.docs_en, ['aigis', reload]);
 });
 
-gulp.task('serve', ['watch'], () => {
+gulp.task('serve', ['watch_jp', 'watch_en'], () => {
   bs.init({
     server: {
       baseDir: ['./'],
-      directory: false
+      directory: false,
+      index: 'index.html'
     },
     notify: false,
     host: 'localhost'

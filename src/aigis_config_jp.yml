@@ -1,10 +1,10 @@
-source: ./doc
+source: ./jp
 source_type: .md
 template_engine: ejs
 template_dir: ./template
-dest: ../docs
+dest: ../docs/jp
 dependencies: ./doc_assets
-index: ./doc/index.md
+index: ./jp/index.md
 log: true
 transform: [ejs]
 color_palette: false

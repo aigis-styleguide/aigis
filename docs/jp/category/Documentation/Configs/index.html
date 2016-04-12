@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="../../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../../doc_assets/css/doc.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="doc-Header">
+  <nav class="doc-Header_Nav">
+    <div class="doc-Header_Col-left">
+      <a class="doc-Header_Home" href="../../../../">
+        aigis
+      </a>
+    </div>
+    <div class="doc-Header_Col-right">
+      <ul class="doc-Header_Menu">
+        <li class="doc-Header_MenuItem"><a href="../../../../docs/">Docs</a></li>
+        <li class="doc-Header_MenuItem"><a href="../../../../sample/" target="_blank">Sample</a></li>
+        <li class="doc-Header_MenuItem"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <main class="doc-Body">
+      <div class="doc-Body_Col-left">
+        <nav class="doc-Menu">
+  <a href="../../../">Index</a>
+  <ul data-path-depth="0"><li data-path-depth="0"><a href="../../../category/Documentation">Documentation</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Documentation/Comment-Syntax">Comment Syntax</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Configs" data-tree-current>Configs</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Syntax-Highlight">Syntax Highlight</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Templates">Templates</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Guide">Guide</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Guide/Quick-Start">Quick Start</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Tips">Tips</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Tips/Errors">Errors</a></li><li data-path-depth="1"><a href="../../../category/Tips/How-to">How to</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Usage">Usage</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Usage/CLI">CLI</a></li><li data-path-depth="1"><a href="../../../category/Usage/Node.js">Node.js</a></li><li data-path-depth="1"><a href="../../../category/Usage/gulp">gulp</a></li></ul></li></ul>
+</nav>
+
+      </div>
+      <div class="doc-Body_Col-right">
+        <div class="doc-Modules">
+  
+    
+      <div class="doc-Module">
+        <h1 class="doc-Module_heading" id="Configs">
+          Configs
+        </h1>
+        <p class="">aigisは動作の多くをコンフィグファイル（<code>aigis_config.yml</code>）で制御します。全てのパスはコンフィグファイル（<code>aigis_config.yml</code>）が置かれている場所から相対的に解決されます。</p>
+<h2 class="" id="source-required-">source: (<code>required</code>)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String or Array</td>
+<td   class="">undefined</td>
+</tr>
+</tbody>
+</table>
+<p class="">スタイルガイドを生成するソースとなるファイル（またはディレクトリ）への相対的なパスを指定します。単一の指定と配列による複数指定のどちらも行えます。</p>
+<blockquote class="">
+<h4 class="" id="example">Example</h4>
+<p class="">ソースとして特定のファイルとディレクトリを指定したい場合には次のように指定します。</p>
+<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./css/style.css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./scss</span></span></span></span></div></pre>
+</code></pre>
+</blockquote>
+<h2 class="" id="source_type-optional-">source_type: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String or Array</td>
+<td   class="">[&#39;.css&#39;, &#39;.sass&#39;, &#39;.scss&#39;, &#39;.styl&#39;]</td>
+</tr>
+</tbody>
+</table>
+<p class=""><code>source</code>にディレクトリが指定された場合、aigisは<code>source_type</code>に記述されている拡張子のファイルをソースの対象にします。デフォルトで<code>.css .sass .scss .styl</code>の4種類を対象とします。</p>
+<blockquote class="">
+<h4 class="" id="example">Example</h4>
+<p class="">ソースとするファイルのタイプを減らしたい場合、次のように対象とするタイプだけを指定します。</p>
+<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source_type</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.less</span></span></span></span></div></pre>
+</code></pre>
+<h5 class="" id="markdown-">Markdownからスタイルガイドを生成する</h5>
+<p class="">CSSのコメントブロック（<code>&#047;&#042; ~ &#042;&#047;</code>）と<code>---</code>で囲まれた設定の記述があれば、どんなファイルからでもスタイルガイドが生成できます。例えば、次のように<code>.md</code>を指定すればMarkdownファイルからスタイルガイドを生成できます。</p>
+<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source_type</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.md</span></span></span></span></div></pre>
+</code></pre>
+</blockquote>
+<h2 class="" id="dest-optional-">dest: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String</td>
+<td   class="">&#39;./styleguide&#39;</td>
+</tr>
+</tbody>
+</table>
+<p class="">スタイルガイドを出力するフォルダを指定します。指定がない場合、<code>aigis_config.yml</code>のあるフォルダに<code>styleguide</code>フォルダを作成して出力されます。</p>
+<blockquote class="">
+<h4 class="" id="example">Example</h4>
+<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>dest</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/destination</span></span></span></span></div></pre>
+</code></pre>
+</blockquote>
+<h2 class="" id="dependencies-optional-">dependencies: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String or Array</td>
+<td   class="">undefined</td>
+</tr>
+</tbody>
+</table>
+<p class="">スタイルガイドに必要なファイルやディレクトリを指定します。指定されたファイルやディレクトリはスタイルガイドの出力先にコピーされます。</p>
+<blockquote class="">
+<h4 class="" id="example">Example</h4>
+<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>dependencies</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/images</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/style.css</span></span></span></span></div></pre>
+</code></pre>
+</blockquote>
+<h2 class="" id="template_dir-optional-">template_dir: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String</td>
+<td   class="">&#39;./template&#39;</td>
+</tr>
+</tbody>
+</table>
+<p class="">スタイルガイドの生成に必要なテンプレートファイルが格納されているディレクトリを指定します。このディレクトリには<code>index.ejs</code>と<code>layout.ejs</code>の2つが含まれている必要があります。</p>
+<blockquote class="">
+<p class=""><code>template_engine</code>に<code>jade</code>を指定している場合には<code>index.jade layout.jade</code>を、<code>hbs</code>を指定している場合には<code>index.hbs layout.hbs</code>が必要になります。</p>
+<h4 class="" id="example">Example</h4>
+<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>template_dir</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string quoted single yaml"><span class="punctuation definition string begin yaml"><span>&#39;</span></span><span>./path/to/template_dir</span></span></span></span></div></pre>
+</code></pre>
+</blockquote>
+<h2 class="" id="component_dir-optional-">component_dir: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String</td>
+<td   class="">&#39;./html&#39;</td>
+</tr>
+</tbody>
+</table>
+<p class="">外部ファイルからHTMLをドキュメントコメント内に挿入したいときに使える<code>!![](./path/to/file.html)</code>という構文で、インポートするファイルのパスを解決するときに使われます。</p>
+<h2 class="" id="template_engine-optional-">template_engine: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String</td>
+<td   class="">&#39;ejs&#39;</td>
+</tr>
+</tbody>
+</table>
+<p class="">スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。aigisでは次の3つのテンプレートエンジンが利用できます。</p>
+<ul class="">
+<li class="">EJS（<code>ejs</code>）</li>
+<li class="">Jade（<code>jade</code>）</li>
+<li class="">Handlebars（<code>hbs</code>）</li>
+</ul>
+<p class="">このディレクトリには、利用するテンプレートごとに決められた拡張子で<code>index.xxx</code>というファイルが格納されている必要があります。</p>
+<blockquote class="">
+<h4 class="" id="example">Example</h4>
+<p class="">Jadeを利用したい場合</p>
+<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>template_engine</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>jade</span></span></span></span></div></pre>
+</code></pre>
+</blockquote>
+<h2 class="" id="log-optional-">log: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">Boolean</td>
+<td   class="">false</td>
+</tr>
+</tbody>
+</table>
+<p class=""><code>log</code>が<code>true</code>の場合、スタイルガイド生成の際に出力されるファイルの一覧などをコンソールに出力します。</p>
+<h2 class="" id="color_palette-optional-">color_palette: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">Boolean</td>
+<td   class="">true</td>
+</tr>
+</tbody>
+</table>
+<p class="">aigisは、スタイルガイドのソースとなるファイルから全ての色を収集し、一覧できるように<code>color.html</code>という特別なページを出力します。</p>
+<p class=""><a class="" href="https://pxgrid.github.io/aigis/styleguide/color.html" title="null">サンプル: color.html</a></p>
+<p class="">カラーパレットが必要ない場合、<code>false</code>を指定することでカラーパレットの出力を止めることができます。</p>
+<h2 class="" id="preview_class-optional-">preview_class: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String</td>
+<td   class="">&#39;aigis-preview&#39;</td>
+</tr>
+</tbody>
+</table>
+<p class="">aigisがコードブロック(<code>```html</code>なので始まるブロック)からHTMLのプレビューを生成する際に、プレビューの外側の要素につくCSSのクラス名を指定できます。コンポーネントがスタイルガイドの影響を受けないようにスタイルを付けたり、JavaScriptから操作したい場合などに役に立ちます。</p>
+<blockquote class="">
+<h4 class="" id="-">プレビューの挿入</h4>
+<p class="">例えば、次のようなコードブロックを記述した場合</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>```html</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
+</code></pre><p class="">次のようなHTMLが挿入されます。</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>aigis-preview</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+</code></pre></blockquote>
+<h2 class="" id="output_collection-optional-">output_collection: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String or Array</td>
+<td   class="">[&#39;category&#39;, &#39;tag&#39;]</td>
+</tr>
+</tbody>
+</table>
+<p class="">出力するページのグループを指定します。<code>category</code>や<code>tag</code>以外にグルーピングして出力したい項目がある場合は<code>output_collection</code>に追加します。</p>
+<p class="">例えばバージョニングを行っている場合には、コンポーネントの設定に次のように<code>version</code>を追加し、<code>output_collection</code>に<code>version</code>を追加することで<code>version</code>の値が同じコンポーネントがグルーピングされて出力されます。</p>
+<pre><code class="lang-css"><pre class="editor editor-colors"><div class="line"><span class="source css"><span>---</span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>name:&nbsp;btn</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>category:</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;</span><span class="entity name tag css"><span>base</span></span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;btn</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>version:&nbsp;1</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>---</span></span></span></div></pre>
+</code></pre>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>output_collection:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-&nbsp;category</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-&nbsp;version</span></span></div></pre>
+</code></pre><p class="">上記の指定の場合、<code>category</code>と<code>version</code>でまとめた2種類のページが出力されます。</p>
+<h2 class="" id="transform-optional-">transform: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String or Array</td>
+<td   class="">[&#39;html&#39;, &#39;ejs&#39;, &#39;jade&#39;, &#39;hbs&#39;]</td>
+</tr>
+</tbody>
+</table>
+<p class="">コードブロックに特定のタイプが指定されている場合、aigisはそのコードブロックを実際のHTMLとしてドキュメントに追加します。これによってマークアップの例を示すとともにプレビューの表示も手軽に行なえます。デフォルトでは<code>html</code> <code>jade</code> <code>ejs</code> <code>hbs</code>のプレビューが有効になっています。</p>
+<p class="">もしプレビューとして表示したくないブロックがある場合には、表示したいタイプだけを<code>transform</code>に指定します。</p>
+<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>transform</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>html</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>hbs</span></span></span></span></div></pre>
+</code></pre>
+<blockquote class="">
+<h4 class="" id="-">テンプレートエンジンのコンパイル</h4>
+<p class=""><code>ejs</code> <code>jade</code> <code>hbs</code>のコードブロックは、コンポーネントの設定に<code>compile: true</code>を指定することで、コードブロックに設定の値を渡してコンパイルを行えます。</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>---</span></span></div><div class="line"><span class="text html gohtml"><span>name:&nbsp;btn</span></span></div><div class="line"><span class="text html gohtml"><span>category:&nbsp;btn</span></span></div><div class="line"><span class="text html gohtml"><span>compile:&nbsp;true</span></span></div><div class="line"><span class="text html gohtml"><span>data:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;value1:&nbsp;hoge</span></span></div><div class="line"><span class="text html gohtml"><span>---</span></span></div><div class="line"><span class="text html gohtml"><span>```ejs&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>&lt;%-&nbsp;name&nbsp;%&gt;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>&lt;%-&nbsp;data.value1&nbsp;%&gt;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
+</code></pre><p class="">上記の場合、次のように値が反映された状態のHTMLが挿入されます。</p>
+<pre><code class="lang-html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>aigis-preview</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>btn</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+</code></pre>
+</blockquote>
+<h2 class="" id="highlight-optional-">highlight: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">Boolean</td>
+<td   class="">true</td>
+</tr>
+</tbody>
+</table>
+<p class="">コードブロックのシンタックスハイライトを有効にするかを指定します。別のハイライトライブラリを使う場合ときなどは<code>highlight: false</code>とすることでaigisのハイライトをオフにできます。</p>
+<h2 class="" id="timestamp_format-optional-">timestamp_format: (optional)</h2>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">Type</th>
+<th   class="">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class="">String</td>
+<td   class="">&#39;YYYY/MM/DD HH:mm&#39;</td>
+</tr>
+</tbody>
+</table>
+<p class="">スタイルガイドを生成する際、aigisは<code>timestamp</code>という特別な変数をテンプレートに渡します。ドキュメントの更新日を記述したい際などに役にたつかもしれません。</p>
+<p class=""><code>timestamp_format</code>に指定する形式は<a class="" href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">Moment.jsのformat</a>を参照してください。</p>
+
+      </div>
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>
