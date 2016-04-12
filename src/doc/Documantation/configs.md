@@ -206,10 +206,10 @@ compile: true
 data:
   value1: hoge
 ---
-```ejs
+```ejs  
 <h2><%- name %></h2>
 <button><%- data.value1 %></button>
-```
+```  
 ````
 上記の場合、次のように値が反映された状態のHTMLが挿入されます。
 ```html

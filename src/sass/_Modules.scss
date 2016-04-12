@@ -23,7 +23,7 @@
 }
 .doc-Module {
   > pre {
-    margin: 0;
+    margin: 0 0 1em;
     white-space: inherit;
     border-radius: 3px;
     + pre {
@@ -52,7 +52,7 @@
 
   p {
     //margin-bottom: 0;
-    margin: 1.2em 0;
+    margin: 0 0 1.2em;
     line-height: 1.7em;
   }
 
@@ -98,6 +98,7 @@
     border-radius: 3px;
     width: 100%;
     font-size: 1.1em;
+    margin-bottom: 1em;
       th {
       background-color: #FFA760;
       color: #fff;
@@ -112,11 +113,14 @@
       color: #444;
       padding: 10px;
       border: 1px solid #fff;
+      &:first-of-type {
+        width: 30%;
+      }
     }
   }
 
   > blockquote {
-    margin: 10px 0;
+    margin: 0 0 1em;
     padding: 15px;
     color: #777;
     background-color: #f8f8f8;
@@ -124,9 +128,6 @@
     border-radius: 1px;
     p {
       margin: 0 0 0.8em;
-      &:last-of-type {
-        margin-bottom: 0;
-      }
     }
     pre {
       white-space: normal;
@@ -150,6 +151,9 @@
       background-color: #FFF3F3;
     }
     ul {
+      margin-bottom: 0;
+    }
+    > *:last-child {
       margin-bottom: 0;
     }
   }

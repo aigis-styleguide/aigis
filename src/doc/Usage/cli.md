@@ -50,7 +50,7 @@ Examples:
 ### options
 
 |name|alias|value|
-|:---|:---|:---|
+|---|---|---|
 |`--config`|`-c`|./path/to/aigis_config.yml|
 
 
@@ -62,7 +62,7 @@ Examples:
 
 ### options
 |name|alias|value|
-|:---|:---|:---|
+|---|---|---|
 |`--engine`|`-c`|ejs, jade, hbs|
 
 

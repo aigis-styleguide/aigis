@@ -32,7 +32,7 @@ category:
 
 EJSのテンプレートの例です。テンプレートで参照している値は、スタイルガイド生成用にaigisがコンパイルした時に渡す値です。
 
-```ejs
+```ejs  
 <!DOCTYPE html>
 <html>
   <head>
@@ -58,7 +58,7 @@ EJSのテンプレートの例です。テンプレートで参照している�
     <footer>Last updated: <%- timestamp %></footer>
   </body>
 </html>
-```
+```  
 
 # テンプレートで使える値
 
@@ -96,7 +96,7 @@ this is component!
 
 `components[0]`には次のようなコンポーネントが格納される:
 
-```js
+```js  
 {
   md: '## component\n\nthis is component!', // コンポーネントのドキュメント部分
   html: '<h2>component</h2><p>this is component</p>', // ドキュメント部分をパースしたHTML
@@ -106,7 +106,7 @@ this is component!
   },
   sourcePath: '/css/style.css' // ドキュメントが記述されているファイルへのパス
 }
-```
+```  
 
 ## html
 
@@ -129,9 +129,9 @@ this is component!
 出力されるページから見た、コンフィグファイルの`dest`で指定されたフォルダへの相対パスが格納されています。`<head>`要素などにCSSファイルへの参照を相対パスで書く際に利用できます。ファイルの参照を絶対パスで行う場合には使う必要はないでしょう。
 
 > #### Example
-```ejs
+```ejs  
 <link href="<%= root %>aigis_assets/css/doc.css" rel="stylesheet">
-```
+```  
 
 
 ## config
@@ -144,17 +144,17 @@ config:
 name: styleguide!
 ```
 template:
-```ejs
+```ejs  
 <header>
   <%- config.name %>
 </header>
-```
+```  
 output:
-```html
+```html  
 <header>
   styleguide!
 </header>
-```
+```  
 
 ## timestamp
 
@@ -168,11 +168,11 @@ config:
 timestamp_format: YYYY/MM/DD HH:mm
 ```
 template:
-```ejs
+```ejs  
 <footer>
   <%- timestamp %>
 </footer>
-```
+```  
 output:
 ```html
 <footer>
@@ -202,10 +202,10 @@ category:
 (このドキュメントのサイドメニューもこのヘルパーを使って出力されたものです。)
 
 > #### Example
-```ejs
+```ejs  
 <nav>
   <%- helper.renderCollectionTree('category') %>
 </nav>
-```
+```  
 
 */

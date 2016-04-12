@@ -129,7 +129,7 @@ main:after {
     margin-top: 0; }
 
 .doc-Module > pre {
-  margin: 0;
+  margin: 0 0 1em;
   white-space: inherit;
   border-radius: 3px; }
   .doc-Module > pre + pre {
@@ -152,7 +152,7 @@ main:after {
     font-weight: bold; }
 
 .doc-Module p {
-  margin: 1.2em 0;
+  margin: 0 0 1.2em;
   line-height: 1.7em; }
 
 .doc-Module > ul code,
@@ -224,7 +224,8 @@ main:after {
   border-collapse: collapse;
   border-radius: 3px;
   width: 100%;
-  font-size: 1.1em; }
+  font-size: 1.1em;
+  margin-bottom: 1em; }
   .doc-Module > table th {
     background-color: #FFA760;
     color: #fff;
@@ -237,9 +238,11 @@ main:after {
     color: #444;
     padding: 10px;
     border: 1px solid #fff; }
+    .doc-Module > table td:first-of-type {
+      width: 30%; }
 
 .doc-Module > blockquote {
-  margin: 10px 0;
+  margin: 0 0 1em;
   padding: 15px;
   color: #777;
   background-color: #f8f8f8;
@@ -247,8 +250,6 @@ main:after {
   border-radius: 1px; }
   .doc-Module > blockquote p {
     margin: 0 0 0.8em; }
-    .doc-Module > blockquote p:last-of-type {
-      margin-bottom: 0; }
   .doc-Module > blockquote pre {
     white-space: normal;
     margin: 0;
@@ -266,6 +267,8 @@ main:after {
   .doc-Module > blockquote > p > code {
     background-color: #FFF3F3; }
   .doc-Module > blockquote ul {
+    margin-bottom: 0; }
+  .doc-Module > blockquote > *:last-child {
     margin-bottom: 0; }
 
 .doc-Menu {

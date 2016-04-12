@@ -54,11 +54,11 @@ var CommentBox = React.createClass({
 
 #### Keyword: `ejs`
 
-```ejs
+```ejs  
 <div class="awesome-class" data-awesome-attribute>
   <p><%- text -></p>
 </div>
-```
+```  
 
 ## Jade
 
