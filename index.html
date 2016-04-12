@@ -14,26 +14,26 @@
     <link rel="stylesheet" href="./css/normalize.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./css/app.css" media="screen" charset="utf-8">
     <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./docs/doc_assets/css/doc.css">
   </head>
   <body>
     <div class="gh-container">
       <header>
-        <div class="gh-header">
-          <div class="gh-l-container gh-l-header">
-            <div class="gh-l-header__left">
-              <h1 class="gh-header__name">
-                <a href="https://pxgrid.github.io/aigis/">aigis</a>
-              </h1>
+        <div class="doc-Header">
+          <nav class="doc-Header_Nav">
+            <div class="doc-Header_Col-left">
+              <a class="doc-Header_Home">
+                aigis
+              </a>
             </div>
-            <div class="gh-l-header__right">
-              <ul class="gh-header-menu">
-                <li class="gh-header-menu__item"><a href="#about">About</a>
-                <li class="gh-header-menu__item"><a href="./docs/">Docs</a>
-                <li class="gh-header-menu__item"><a href="./sample/">Sample</a>
-                <li class="gh-header-menu__item"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a>
+            <div class="doc-Header_Col-right">
+              <ul class="doc-Header_Menu">
+                <li class="doc-Header_MenuItem"><a href="./docs/">Docs</a></li>
+                <li class="doc-Header_MenuItem"><a href="./sample/" target="_blank">Sample</a></li>
+                <li class="doc-Header_MenuItem"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a></li>
               </ul>
             </div>
-          </div>
+          </nav>
         </div>
         <div class="gh-hero gh-l-hero">
           <p class="gh-hero__mainText">Aigis is a styleguide generator.</p>
@@ -53,7 +53,7 @@
           <h2>Why did we create aigis?</h2>
           <p>
             We didn't want the dependence on Ruby environment only to generate a styleguide. Less dependencies is better.
-            So we wanted a more casual-to-use styleguide generator.
+            So we wanted a <strong>more casual-to-use</strong> styleguide generator.
           </p>
         </section>
         <section class="gh-content" id="usage">
@@ -88,6 +88,28 @@ Button styles.
           </div>
         </section>
         <section class="gh-content">
+          <h2>Template and Theme</h2>
+          <p>
+            You can choose template engine from following list for generate styleguide.
+
+          </p>
+          <ul>
+            <li>EJS
+            <li>Jade
+            <li>Handlebars
+          </ul>
+          <p>
+            We provide styleguide examples for easy to start.
+            - <a href="https://github.com/pxgrid/aigis/tree/master/examples" target="_blank">pxgrid/aigis:examples</a> and look <a href="./docs/category/Guide/Quick-Start/">Quick start guide</a>
+          </p>
+        </section>
+        <section class="gh-content">
+          <h2>Supported File Types</h2>
+          <p>
+            It doesn't matter. Aigis can generate styleguide from any files.
+          </p>
+        </section>
+        <section class="gh-content">
           <h2>Extra Markdown syntax</h2>
           <p>
             Aigis can import HTML Files on Markdown.
@@ -113,33 +135,15 @@ Button styles.
         </p>
         </section>
         <section class="gh-content">
-          <h2>Template and theme</h2>
-          <p>
-            You can choose template engine from following list for generate styleguide.
-
-          </p>
-          <ul>
-            <li>EJS
-            <li>Jade
-            <li>Handlebars
-          </ul>
-          <p>
-            Also we provide Styleguide examples for easy to start.
-            - <a href="https://github.com/pxgrid/aigis/tree/master/examples" target="_blank">
-            pxgrid/aigis:examples
-          </a>
-          </p>
-        </section>
-        <section class="gh-content">
-          <h2>Supported File Types</h2>
-          <p>
-            It doesn't matter. Aigis can generate styleguide from any files.
-          </p>
-        </section>
-        <section class="gh-content">
           <h2>Feedback</h2>
           <p>
             Please give us your feedback on GitHub <a href="https://github.com/pxgrid/aigis/issues" targe="_blank">issues</a> or <a href="https://github.com/pxgrid/aigis/pulls" target="_blank">pull requests</a>.
+          </p>
+        </section>
+        <section class="gh-content">
+          <h2>More Details</h2>
+          <p>
+            See the <a href="./docs/">Documents</a>
           </p>
         </section>
       </main>
