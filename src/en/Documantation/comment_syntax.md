@@ -6,7 +6,8 @@ category:
   - Documentation/Comment Syntax
 ---
 
-aigisではコメントブロック(<code>&#047;&#042; ~ &#042;&#047;</code>)にコンポーネントの__コンフィグ__と、コンポーネントの__ドキュメント__を合わせて記述します。次のコードの`---`で囲まれているブロックがコンフィグ(YAML)、それ以下がドキュメント(Markdown)になります。
+In aigis, Documenting __component's configuration__ and __component's documentation__ in comment block (<code>&#047;&#042; ~ &#042;&#047;</code>).
+The block is surrounded by `---` is configuration (YAML) and after yaml block is a documentation (Markdown).
 
 ````css
 ---
@@ -31,15 +32,13 @@ Here's an example code.
 ```
 ````
 
-このコンフィグとドキュメントをセットに、コンポーネントのスタイルガイドを生成します。
+The component's style guide wil be generated from this configuration block and documentation block.
 
+## Configuration block
 
-## コンフィグブロック
+The block is surrounded by `---` is configuration (YAML). Documenting the configuration with YAML forms.
 
-`---`で囲まれた部分がコンポーネントのコンフィグです。コンフィグはYAML形式で記述します。
-
-> より正確に言うとコメントブロックの開始行(<code>&#047;&#042;</code>)の次の行に`---`がある必要があります。
-
+> To be more precise, `---` needs to contain at the next line of starting line of comment block (<code>&#047;&#042;</code>).
 
 ```yaml
 ---
@@ -53,30 +52,38 @@ category:
 ---
 ```
 
-コンフィグファイル(`aigis_config.yml`)の`output_collection:`に、コンポーネントのコンフィグの項目名(`category`や`tag`)を指定することで、その項目ごとにコンポーネントをグルーピングしてスタイルガイドを生成することができます。
+Specifying config keys of components (default is `category` and `tag`) in `output_collection:` which is in the configuration file ( `aigis_config.yml`) , you can generate a components style guide grouped by the specified configuration keys.
 
-> デフォルトでは`category`と`tag`をグルーピングして出力します。
+> `category` and `tag` are grouped and output by default.
 
+## Documentation block
 
-## ドキュメントブロック
+You can use Markdown ([GitHub flavored markdown](https://help.github.com/categories/writing-on-github/)) in documentation block of the component
 
-コンポーネントのドキュメントではMarkdown([GitHub flavored markdown](https://help.github.com/categories/writing-on-github/))を使うことができます。
+Enabled syntax highlight if you specified special keyword into code block (<code>&#8242;&#8242;&#8242;</code>).
+Please see [Documentation/Syntax Highlight](../Syntax-Highlight/) for more details.
 
-コードブロック(<code>&#8242;&#8242;&#8242;</code>)では特定のキーワードを指定することでシンタックスハイライトが有効になります。詳しくは[Documentation/Syntax Highlight](../Syntax-Highlight/)を参照してください。
+> Aigis compiles with [chjj/marked](https://github.com/chjj/marked) and original custom renderer named [aigis-marked](https://github.com/pxgrid/aigis-marked/) for syntax highlighting
 
->aigisでは[chjj/marked](https://github.com/chjj/marked)を使ってMarkdownをコンパイルします。また、Highlightなどの処理を行うために、[aigis-marked](https://github.com/pxgrid/aigis-marked/)というカスタムレンダラを使用しています。
+## Customize Code Example Renderers
 
-## コンフィグの値を使ってプレビューを生成する
+Aigis generates previewed components and appends it to the style guide, using a code block (<code>&#8242;&#8242;&#8242;</code>) which has a language identifier.
 
-aigisはコードブロック(<code>&#8242;&#8242;&#8242;</code>)に特定のキーワードをつけることでプレビューを生成し挿入します。EJSやJadeのようなテンプレートエンジンからプレビューを生成したい場合、コンフィグに`compile: true`を指定することでコンフィグに書かれた値をもとにプレビューを生成できます。
+Aigis can compile the components with a template engine, using the key / values in the configuration block.
 
-> プレビュー挿入の有効/無効の切り替えはコンフィグファイルの`transform:`で指定できます。`ejs`のときだけプレビューを有効にする場合には、次のように`transform:`に`ejs`だけを指定します。
+To enable this, set `compile: true` in configuration block and specify the syntax of the template engine as a language identifer in the code fence.
+
+You can write the component include the keys in the template syntax which you specify. Aigis compiles the components using the values of the keys.
+
+> If you want to enable or disable previewed components, set `transform:` value in configuration block.
+> In the case of enable only `ejs`, set `transform:` value to `ejs` only as follows.
 ```yaml
 transform:
   - ejs
 ```
 
-EJSのコードブロックからHTMLのプレビューを生成するには、次のようなコンフィグを記述します。`compile:`の項目はコンポーネントごとに切り替えることができます。(Defaultでは`false`)
+Describe configuration to generate from sample code block by using EJS.
+You can set `compile:` value each component. By default is `false`.
 
 ````yaml
 ---
@@ -102,7 +109,7 @@ compile: true
 ```  
 ````
 
-上記のコンフィグとコードブロックから次のようなHTMLがコードブロックの手前に挿入されます。Jade、Handlebarsも同様にコンパイルしたプレビューを生成することができます。
+The previewed component which was generated from the above configuration and sample code block will be prepend the sample code block.
 
 ````  
 <div>
@@ -111,5 +118,7 @@ compile: true
   <p>fuga</p>
 </div>
 ````  
+
+Jade and Handlebars also can generate compiled previewed component.
 
 */
