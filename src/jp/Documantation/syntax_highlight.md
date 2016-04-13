@@ -6,26 +6,27 @@ category:
   - Documentation/Syntax Highlight
 ---
 
-Aigis using [atom/highlights](https://github.com/atom/highlights) for highlighting which is used in [Atom Editor](https://atom.io/).
-So you can choose every [Atom's themes](https://atom.io/themes)!
+aigisはシンタックスハイライトにAtomエディタで使われている[atom/highlights](https://github.com/atom/highlights)を利用していますので、シンタックスハイライトのカラーリングに[Atom's themes](https://atom.io/themes)にあるテーマを利用できます。
 
-Also you can add syntax highlight support language. Please contact us on [pxgrid/aigis-marked#issues](https://github.com/pxgrid/aigis-marked/issues) or send PRs.
+シンタックスハイライトの言語サポートを増やしたいときには[pxgrid/aigis-marked#issues](https://github.com/pxgrid/aigis-marked/issues)にissueを立ててもらうか、PRを送ってください。(Contribute Guideは準備中です)
 
-## Basic Usage
+## 使い方
 
-Write codeblock with `keyword` like below (use `html`):
+ハイライトしたいコードブロックに次のようにキーワードを指定してください。
 
 ````
-```html
+```html  
 <div class="awesome-class" data-awesome-attribute>
   <p>The quick brown fox jumps over the lazy dog</p>
-</div>
+</div>  
 ```
 ````
 
-See the following list: [atom/highlights/tree/master/deps](https://github.com/atom/highlights/tree/master/deps), you can highlight from listed languages.
+ハイライトできる言語は次のリストに入っているものです。
 
-Also you can use the following unlisted keywords
+* [atom/highlights/tree/master/deps](https://github.com/atom/highlights/tree/master/deps)
+
+次のリストの言語もハイライトすることが可能です。
 
 * `jsx`
 * `ejs`

@@ -1,20 +1,21 @@
-## node-aigisのインストール
+## => [日本語ドキュメント](../jp/)
 
-aigisのインストールはNPMで行います。ターミナルから次のコマンドで`node-aigis`をインストールします。
+## Install node-aigis
+
+Install on NPM.
 
 ```shell
 $ npm install --save-dev node-aigis
 ```
 
-そしてaigisが正しくインストールされているか、次のコマンドを実行して確認します。`x.x.x`のようなバージョン番号が表示されれば正しくインストールされています。
-
+You can verify kss-node was installed correctly by running:
 
 ```shell
 $ ./node_modules/.bin/aigis -v
 $ 1.0.0
 ```
 
-## コンフィグファイルとHTMLテンプレートの作成
+## Config file & HTML Templates
 
 スタイルガイドの生成にはコンフィグファイルと、HTMLテンプレートが必要です。  
 aigisでは`init`コマンドを実行することで、コンフィグファイルとテンプレートのひな形を利用することができます。

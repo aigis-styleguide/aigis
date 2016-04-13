@@ -1,3 +1,5 @@
+## => [Documents in English](../en/)
+
 ## node-aigisのインストール
 
 aigisのインストールはNPMで行います。ターミナルから次のコマンドで`node-aigis`をインストールします。

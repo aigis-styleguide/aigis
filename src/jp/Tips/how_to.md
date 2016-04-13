@@ -6,38 +6,43 @@ category:
   - Tips/How to
 ---
 
-## Fails install on Windows
+## Windowsでインストールが失敗する
+
+利用しているonigurumaのインストールでコケるときがあります。次のissueを参考にしてみてください。
 
 https://github.com/nodejs/node-gyp/issues/629
 
-## use <code>&#042;&#047;</code> in document comment
+## ドキュメントブロックで<code>&#042;&#047;</code>を使いたい
 
-When you want to use "<code>&#042;&#047;</code>" in document comment, you can use HTML entity wrapped HTML tag like below:
+ドキュメントブロックの文中で"<code>&#042;&#047;</code>"を使いたい場合には、次のようにタグでHTMLの実体参照を記述してください。
 
 ```
 <code>&#042;&#047;</code>
 ```
+## ドキュメントブロックで<code>&#8242;&#8242;&#8242;</code>を使いたい
 
-## use <code>&#8242;&#8242;&#8242;</code> in document comment
-
-When you want to use <code>&#8242;&#8242;&#8242;</code> in document comment, you can use HTML entity wapped HTML tag like below:
+ドキュメントブロックの文中で<code>&#8242;&#8242;&#8242;</code>を使いたい場合には、次のようにタグでHTMLの実体参照を記述してください。
 
 ```
 <code>&#8242;&#8242;&#8242;</code>
 ```
 
-## use <code>&#8242;&#8242;&#8242;</code> in codeblock
+## コードブロック内で<code>&#8242;&#8242;&#8242;</code>を使いたい
 
-When you want to use "<code>&#8242;&#8242;&#8242;</code>" in codeblock, you can use <code>&#8242;&#8242;&#8242;&#8242;</code> instead of <code>&#8242;&#8242;&#8242;</code> like below:
+コードブロック内で<code>&#8242;&#8242;&#8242;</code>を使いたい場合には、<code>&#8242;&#8242;&#8242;</code>の代わりに<code>&#8242;&#8242;&#8242;&#8242;</code>と、4つの&#8242;でコードブロックを作成してください。
 
 `````
 ````
 
-```html
+```html  
 <a class="btn">Button</a>
-```
+```  
 
 ````
 ````` 
+
+## コードブロックを使いたいけどプレビューを挿入したくない
+
+特定のコードブロックだけプレビューを無効にしたい場合、コードブロックの開始と終了の<code>&#8242;&#8242;&#8242;html</code>と<code>&#8242;&#8242;&#8242;</code>のあとに空白文字を追加してください。
 
 */
