@@ -10,14 +10,14 @@
     <header class="doc-Header">
   <nav class="doc-Header_Nav">
     <div class="doc-Header_Col-left">
-      <a class="doc-Header_Home" href="../../../../">
+      <a class="doc-Header_Home" href="../../../../../">
         aigis
       </a>
     </div>
     <div class="doc-Header_Col-right">
       <ul class="doc-Header_Menu">
-        <li class="doc-Header_MenuItem"><a href="../../../../docs/">Docs</a></li>
-        <li class="doc-Header_MenuItem"><a href="../../../../sample/" target="_blank">Sample</a></li>
+        <li class="doc-Header_MenuItem">Docs</li>
+        <li class="doc-Header_MenuItem"><a href="../../../../../sample/" target="_blank">Sample</a></li>
         <li class="doc-Header_MenuItem"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a></li>
       </ul>
     </div>
@@ -40,18 +40,21 @@
         <h1 class="doc-Module_heading" id="How-to">
           How to
         </h1>
-        <h2 class="" id="fails-install-on-windows">Fails install on Windows</h2>
+        <h2 class="" id="windows-">Windowsでインストールが失敗する</h2>
+<p class="">利用しているonigurumaのインストールでコケるときがあります。次のissueを参考にしてみてください。</p>
 <p class=""><a class="" href="https://github.com/nodejs/node-gyp/issues/629" title="null">https://github.com/nodejs/node-gyp/issues/629</a></p>
-<h2 class="" id="use-code-042-047-code-in-document-comment">use <code>&#042;&#047;</code> in document comment</h2>
-<p class="">When you want to use &quot;<code>&#042;&#047;</code>&quot; in document comment, you can use HTML entity wrapped HTML tag like below:</p>
+<h2 class="" id="-code-042-047-code-">ドキュメントブロックで<code>&#042;&#047;</code>を使いたい</h2>
+<p class="">ドキュメントブロックの文中で&quot;<code>&#042;&#047;</code>&quot;を使いたい場合には、次のようにタグでHTMLの実体参照を記述してください。</p>
 <pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="constant character entity html"><span class="punctuation definition entity html"><span>&amp;</span></span><span>#042</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#047</span><span class="punctuation definition entity html"><span>;</span></span></span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre><h2 class="" id="use-code-8242-8242-8242-code-in-document-comment">use <code>&#8242;&#8242;&#8242;</code> in document comment</h2>
-<p class="">When you want to use <code>&#8242;&#8242;&#8242;</code> in document comment, you can use HTML entity wapped HTML tag like below:</p>
+</code></pre><h2 class="" id="-code-8242-8242-8242-code-">ドキュメントブロックで<code>&#8242;&#8242;&#8242;</code>を使いたい</h2>
+<p class="">ドキュメントブロックの文中で<code>&#8242;&#8242;&#8242;</code>を使いたい場合には、次のようにタグでHTMLの実体参照を記述してください。</p>
 <pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="constant character entity html"><span class="punctuation definition entity html"><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span></span></span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre><h2 class="" id="use-code-8242-8242-8242-code-in-codeblock">use <code>&#8242;&#8242;&#8242;</code> in codeblock</h2>
-<p class="">When you want to use &quot;<code>&#8242;&#8242;&#8242;</code>&quot; in codeblock, you can use <code>&#8242;&#8242;&#8242;&#8242;</code> instead of <code>&#8242;&#8242;&#8242;</code> like below:</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>````</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>```html</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>btn</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>````</span></span></div></pre>
-</code></pre>
+</code></pre><h2 class="" id="-code-8242-8242-8242-code-">コードブロック内で<code>&#8242;&#8242;&#8242;</code>を使いたい</h2>
+<p class="">コードブロック内で<code>&#8242;&#8242;&#8242;</code>を使いたい場合には、<code>&#8242;&#8242;&#8242;</code>の代わりに<code>&#8242;&#8242;&#8242;&#8242;</code>と、4つの&#8242;でコードブロックを作成してください。</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>````</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>```html&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>btn</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>````</span></span></div></pre>
+</code></pre><h2 class="" id="-">コードブロックを使いたいけどプレビューを挿入したくない</h2>
+<p class="">特定のコードブロックだけプレビューを無効にしたい場合、コードブロックの開始と終了の<code>&#8242;&#8242;&#8242;html</code>と<code>&#8242;&#8242;&#8242;</code>のあとに空白文字を追加してください。</p>
+
       </div>
   
 </div>

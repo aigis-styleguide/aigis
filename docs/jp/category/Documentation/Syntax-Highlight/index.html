@@ -10,14 +10,14 @@
     <header class="doc-Header">
   <nav class="doc-Header_Nav">
     <div class="doc-Header_Col-left">
-      <a class="doc-Header_Home" href="../../../../">
+      <a class="doc-Header_Home" href="../../../../../">
         aigis
       </a>
     </div>
     <div class="doc-Header_Col-right">
       <ul class="doc-Header_Menu">
-        <li class="doc-Header_MenuItem"><a href="../../../../docs/">Docs</a></li>
-        <li class="doc-Header_MenuItem"><a href="../../../../sample/" target="_blank">Sample</a></li>
+        <li class="doc-Header_MenuItem">Docs</li>
+        <li class="doc-Header_MenuItem"><a href="../../../../../sample/" target="_blank">Sample</a></li>
         <li class="doc-Header_MenuItem"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a></li>
       </ul>
     </div>
@@ -40,14 +40,16 @@
         <h1 class="doc-Module_heading" id="Syntax-Highlight">
           Syntax Highlight
         </h1>
-        <p class="">Aigis using <a class="" href="https://github.com/atom/highlights" title="null">atom/highlights</a> for highlighting which is used in <a class="" href="https://atom.io/" title="null">Atom Editor</a>.
-So you can choose every <a class="" href="https://atom.io/themes" title="null">Atom&#39;s themes</a>!</p>
-<p class="">Also you can add syntax highlight support language. Please contact us on <a class="" href="https://github.com/pxgrid/aigis-marked/issues" title="null">pxgrid/aigis-marked#issues</a> or send PRs.</p>
-<h2 class="" id="basic-usage">Basic Usage</h2>
-<p class="">Write codeblock with <code>keyword</code> like below (use <code>html</code>):</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>```html</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>awesome-class</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>data-awesome-attribute</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>The&nbsp;quick&nbsp;brown&nbsp;fox&nbsp;jumps&nbsp;over&nbsp;the&nbsp;lazy&nbsp;dog</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
-</code></pre><p class="">See the following list: <a class="" href="https://github.com/atom/highlights/tree/master/deps" title="null">atom/highlights/tree/master/deps</a>, you can highlight from listed languages.</p>
-<p class="">Also you can use the following unlisted keywords</p>
+        <p class="">aigisはシンタックスハイライトにAtomエディタで使われている<a class="" href="https://github.com/atom/highlights" title="null">atom/highlights</a>を利用していますので、シンタックスハイライトのカラーリングに<a class="" href="https://atom.io/themes" title="null">Atom&#39;s themes</a>にあるテーマを利用できます。</p>
+<p class="">シンタックスハイライトの言語サポートを増やしたいときには<a class="" href="https://github.com/pxgrid/aigis-marked/issues" title="null">pxgrid/aigis-marked#issues</a>にissueを立ててもらうか、PRを送ってください。(Contribute Guideは準備中です)</p>
+<h2 class="" id="-">使い方</h2>
+<p class="">ハイライトしたいコードブロックに次のようにキーワードを指定してください。</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>```html&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>awesome-class</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>data-awesome-attribute</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>The&nbsp;quick&nbsp;brown&nbsp;fox&nbsp;jumps&nbsp;over&nbsp;the&nbsp;lazy&nbsp;dog</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
+</code></pre><p class="">ハイライトできる言語は次のリストに入っているものです。</p>
+<ul class="">
+<li class=""><a class="" href="https://github.com/atom/highlights/tree/master/deps" title="null">atom/highlights/tree/master/deps</a></li>
+</ul>
+<p class="">次のリストの言語もハイライトすることが可能です。</p>
 <ul class="">
 <li class=""><code>jsx</code></li>
 <li class=""><code>ejs</code></li>
