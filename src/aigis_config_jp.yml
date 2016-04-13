@@ -1,0 +1,11 @@
+source: ./jp
+source_type: .md
+template_engine: ejs
+template_dir: ./template
+dest: ../docs/jp
+dependencies: ./doc_assets
+index: ./jp/index.md
+log: true
+transform: [ejs]
+color_palette: false
+disable_index: true

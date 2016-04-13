@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="../../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../../doc_assets/css/doc.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="doc-Header">
+  <nav class="doc-Header_Nav">
+    <div class="doc-Header_Col-left">
+      <a class="doc-Header_Home" href="../../../../../">
+        aigis
+      </a>
+    </div>
+    <div class="doc-Header_Col-right">
+      <ul class="doc-Header_Menu">
+        <li class="doc-Header_MenuItem">Docs</li>
+        <li class="doc-Header_MenuItem"><a href="../../../../../sample/" target="_blank">Sample</a></li>
+        <li class="doc-Header_MenuItem"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <main class="doc-Body">
+      <div class="doc-Body_Col-left">
+        <nav class="doc-Menu">
+  <a href="../../../">Index</a>
+  <ul data-path-depth="0"><li data-path-depth="0"><a href="../../../category/Documentation">Documentation</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Documentation/Comment-Syntax">Comment Syntax</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Configs">Configs</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Syntax-Highlight">Syntax Highlight</a></li><li data-path-depth="1"><a href="../../../category/Documentation/Templates">Templates</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Guide">Guide</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Guide/Quick-Start">Quick Start</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Tips">Tips</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Tips/Errors">Errors</a></li><li data-path-depth="1"><a href="../../../category/Tips/How-to">How to</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Usage">Usage</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Usage/CLI" data-tree-current>CLI</a></li><li data-path-depth="1"><a href="../../../category/Usage/Node.js">Node.js</a></li><li data-path-depth="1"><a href="../../../category/Usage/gulp">gulp</a></li></ul></li></ul>
+</nav>
+
+      </div>
+      <div class="doc-Body_Col-right">
+        <div class="doc-Modules">
+  
+    
+      <div class="doc-Module">
+        <h1 class="doc-Module_heading" id="With-CLI">
+          With CLI
+        </h1>
+        <h2 class="" id="installation">Installation</h2>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>npm&nbsp;i&nbsp;node-aigis</span></span></div></pre>
+</code></pre><h2 class="" id="version-help">Version &amp; Help</h2>
+<h3 class="" id="show-version">Show version</h3>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;--version</span></span></div><div class="line"><span class="text html gohtml"><span>1.0.0</span></span></div></pre>
+</code></pre><h3 class="" id="show-help">Show help</h3>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;--help</span></span></div><div class="line"><span class="text html gohtml"><span>Usage:&nbsp;aigis&nbsp;run&nbsp;-c&nbsp;./path/to/aigis_config.yml</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>Commands:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;run&nbsp;&nbsp;&nbsp;Generate&nbsp;styleguide</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;init&nbsp;&nbsp;Copy&nbsp;template&nbsp;</span><span class="invalid illegal bad-ampersand html"><span>&amp;</span></span><span>&nbsp;theme&nbsp;</span><span class="invalid illegal bad-ampersand html"><span>&amp;</span></span><span>&nbsp;config&nbsp;file</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>Options:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-v,&nbsp;--version&nbsp;&nbsp;Show&nbsp;version&nbsp;number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[boolean]</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-h,&nbsp;--help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[boolean]</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>Examples:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;node_modules/.bin/aigis&nbsp;run&nbsp;-c&nbsp;./config_file.yml</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;node_modules/.bin/aigis&nbsp;init&nbsp;-e&nbsp;jade</span></span></div></pre>
+</code></pre><h2 class="" id="run-aigis">Run aigis</h2>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>./node_modules/.bin/aigis&nbsp;run</span></span></div></pre>
+</code></pre><h3 class="" id="options">options</h3>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">name</th>
+<th   class="">alias</th>
+<th   class="">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class=""><code>--config</code></td>
+<td   class=""><code>-c</code></td>
+<td   class="">./path/to/aigis_config.yml</td>
+</tr>
+</tbody>
+</table>
+<h2 class="" id="init-config-file-templats">Init config file &amp; templats</h2>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>./node_modules/.bin/aigis&nbsp;init</span></span></div></pre>
+</code></pre><h3 class="" id="options">options</h3>
+<table class="">
+<thead>
+<tr class="">
+<th   class="">name</th>
+<th   class="">alias</th>
+<th   class="">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="">
+<td   class=""><code>--engine</code></td>
+<td   class=""><code>-c</code></td>
+<td   class="">ejs, jade, hbs</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

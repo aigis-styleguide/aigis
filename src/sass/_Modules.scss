@@ -38,16 +38,6 @@
     padding-bottom: 0.3em;
     font-weight: 500;
     margin-top: 2em;
-    &:hover {
-      &:before {
-        content: "#";
-        color: rgba(#42b983, .8);
-        position: absolute;
-        left: -0.9em;
-        font-size: 0.8em;
-        font-weight: bold;
-      }
-    }
   }
 
   p {

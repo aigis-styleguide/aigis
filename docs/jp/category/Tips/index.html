@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../doc_assets/css/doc.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="doc-Header">
+  <nav class="doc-Header_Nav">
+    <div class="doc-Header_Col-left">
+      <a class="doc-Header_Home" href="../../../../">
+        aigis
+      </a>
+    </div>
+    <div class="doc-Header_Col-right">
+      <ul class="doc-Header_Menu">
+        <li class="doc-Header_MenuItem">Docs</li>
+        <li class="doc-Header_MenuItem"><a href="../../../../sample/" target="_blank">Sample</a></li>
+        <li class="doc-Header_MenuItem"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <main class="doc-Body">
+      <div class="doc-Body_Col-left">
+        <nav class="doc-Menu">
+  <a href="../../">Index</a>
+  <ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/Documentation">Documentation</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../category/Documentation/Comment-Syntax">Comment Syntax</a></li><li data-path-depth="1"><a href="../../category/Documentation/Configs">Configs</a></li><li data-path-depth="1"><a href="../../category/Documentation/Syntax-Highlight">Syntax Highlight</a></li><li data-path-depth="1"><a href="../../category/Documentation/Templates">Templates</a></li></ul></li><li data-path-depth="0"><a href="../../category/Guide">Guide</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../category/Guide/Quick-Start">Quick Start</a></li></ul></li><li data-path-depth="0"><a href="../../category/Tips" data-tree-current>Tips</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../category/Tips/Errors">Errors</a></li><li data-path-depth="1"><a href="../../category/Tips/How-to">How to</a></li></ul></li><li data-path-depth="0"><a href="../../category/Usage">Usage</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../category/Usage/CLI">CLI</a></li><li data-path-depth="1"><a href="../../category/Usage/Node.js">Node.js</a></li><li data-path-depth="1"><a href="../../category/Usage/gulp">gulp</a></li></ul></li></ul>
+</nav>
+
+      </div>
+      <div class="doc-Body_Col-right">
+        <div class="doc-Modules">
+  
+    
+      <div class="doc-Module">
+        <h1 class="doc-Module_heading" id="Errors">
+          Errors
+        </h1>
+        <h2 class="" id="config-file-not-found">Config File Not Found</h2>
+<p class="">引数なしにaigisが実行されたとき、aigisは現在のディレクトリから<code>aigis_config.yml</code>というファイルを探します。もし<code>aigis_config.yml</code>が見つからない場合、aigisは次のようなエラーメッセージを表示します。</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>$&nbsp;[Error]&nbsp;Config&nbsp;File&nbsp;Not&nbsp;Found</span></span></div></pre>
+</code></pre>
+      </div>
+      <div class="doc-Module">
+        <h1 class="doc-Module_heading" id="How-to">
+          How to
+        </h1>
+        <h2 class="" id="windows-">Windowsでインストールが失敗する</h2>
+<p class="">利用しているonigurumaのインストールでコケるときがあります。次のissueを参考にしてみてください。</p>
+<p class=""><a class="" href="https://github.com/nodejs/node-gyp/issues/629" title="null">https://github.com/nodejs/node-gyp/issues/629</a></p>
+<h2 class="" id="-code-042-047-code-">ドキュメントブロックで<code>&#042;&#047;</code>を使いたい</h2>
+<p class="">ドキュメントブロックの文中で&quot;<code>&#042;&#047;</code>&quot;を使いたい場合には、次のようにタグでHTMLの実体参照を記述してください。</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="constant character entity html"><span class="punctuation definition entity html"><span>&amp;</span></span><span>#042</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#047</span><span class="punctuation definition entity html"><span>;</span></span></span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+</code></pre><h2 class="" id="-code-8242-8242-8242-code-">ドキュメントブロックで<code>&#8242;&#8242;&#8242;</code>を使いたい</h2>
+<p class="">ドキュメントブロックの文中で<code>&#8242;&#8242;&#8242;</code>を使いたい場合には、次のようにタグでHTMLの実体参照を記述してください。</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="constant character entity html"><span class="punctuation definition entity html"><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span></span></span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+</code></pre><h2 class="" id="-code-8242-8242-8242-code-">コードブロック内で<code>&#8242;&#8242;&#8242;</code>を使いたい</h2>
+<p class="">コードブロック内で<code>&#8242;&#8242;&#8242;</code>を使いたい場合には、<code>&#8242;&#8242;&#8242;</code>の代わりに<code>&#8242;&#8242;&#8242;&#8242;</code>と、4つの&#8242;でコードブロックを作成してください。</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>````</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>```html&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>btn</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>````</span></span></div></pre>
+</code></pre><h2 class="" id="-">コードブロックを使いたいけどプレビューを挿入したくない</h2>
+<p class="">特定のコードブロックだけプレビューを無効にしたい場合、コードブロックの開始と終了の<code>&#8242;&#8242;&#8242;html</code>と<code>&#8242;&#8242;&#8242;</code>のあとに空白文字を追加してください。</p>
+
+      </div>
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>
