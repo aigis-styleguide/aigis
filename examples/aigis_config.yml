@@ -70,4 +70,5 @@ highlight_theme: monokai
 # plugin directory
 # plugin: ./plugin
 
-disable_index: true
+helper_options:
+  disable_link_index: true
