@@ -1,5 +1,7 @@
 ## => [日本語ドキュメント](../jp/)
 
+# *Under Construction for English documents
+
 ## Install node-aigis
 
 Install on NPM.
