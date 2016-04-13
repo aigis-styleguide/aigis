@@ -1,4 +1,4 @@
-## => [Documents in English](../en/)
+## -> [Documents in English](../en/)
 
 ## node-aigisのインストール
 

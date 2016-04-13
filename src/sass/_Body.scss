@@ -22,8 +22,9 @@
   }
 
   @media(max-width: $v_bp_small) {
+    overflow: initial;
     display: block;
-    padding-top: 15px;
+    padding: 15px 10px;
     .doc-Body_Col-left {
       //position: absolute;
       //left: 0;

@@ -1,4 +1,4 @@
-## => [日本語ドキュメント](../jp/)
+## -> [日本語ドキュメント](../jp/)
 
 # *Under Construction for English documents
 
