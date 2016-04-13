@@ -142,14 +142,6 @@ main:after {
   padding-bottom: 0.3em;
   font-weight: 500;
   margin-top: 2em; }
-  .doc-Module > h1:hover:before,
-  .doc-Module > h2:hover:before {
-    content: "#";
-    color: rgba(66, 185, 131, 0.8);
-    position: absolute;
-    left: -0.9em;
-    font-size: 0.8em;
-    font-weight: bold; }
 
 .doc-Module p {
   margin: 0 0 1.2em;

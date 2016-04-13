@@ -10,14 +10,14 @@
     <header class="doc-Header">
   <nav class="doc-Header_Nav">
     <div class="doc-Header_Col-left">
-      <a class="doc-Header_Home" href="./../">
+      <a class="doc-Header_Home" href="./../../">
         aigis
       </a>
     </div>
     <div class="doc-Header_Col-right">
       <ul class="doc-Header_Menu">
-        <li class="doc-Header_MenuItem"><a href="./../docs/">Docs</a></li>
-        <li class="doc-Header_MenuItem"><a href="./../sample/" target="_blank">Sample</a></li>
+        <li class="doc-Header_MenuItem">Docs</li>
+        <li class="doc-Header_MenuItem"><a href="./../../sample/" target="_blank">Sample</a></li>
         <li class="doc-Header_MenuItem"><a href="https://github.com/pxgrid/aigis/" target="_blank">GitHub</a></li>
       </ul>
     </div>
@@ -36,14 +36,15 @@
         <div class="doc-Modules">
   
     <div class="doc-Module">
-      <h2 class="" id="node-aigis-">node-aigisのインストール</h2>
-<p class="">aigisのインストールはNPMで行います。ターミナルから次のコマンドで<code>node-aigis</code>をインストールします。</p>
+      <h2 class="" id="-jp-">=&gt; <a class="" href="../jp/" title="null">日本語ドキュメント</a></h2>
+<h2 class="" id="install-node-aigis">Install node-aigis</h2>
+<p class="">Install on NPM.</p>
 <pre><code class="lang-shell"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&nbsp;npm&nbsp;install&nbsp;--save-dev&nbsp;node-aigis</span></span></div></pre>
 </code></pre>
-<p class="">そしてaigisが正しくインストールされているか、次のコマンドを実行して確認します。<code>x.x.x</code>のようなバージョン番号が表示されれば正しくインストールされています。</p>
+<p class="">You can verify kss-node was installed correctly by running:</p>
 <pre><code class="lang-shell"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;-v</span></span></div><div class="line"><span class="text plain null-grammar"><span>$&nbsp;1.0.0</span></span></div></pre>
 </code></pre>
-<h2 class="" id="-html-">コンフィグファイルとHTMLテンプレートの作成</h2>
+<h2 class="" id="config-file-html-templates">Config file &amp; HTML Templates</h2>
 <p class="">スタイルガイドの生成にはコンフィグファイルと、HTMLテンプレートが必要です。<br>aigisでは<code>init</code>コマンドを実行することで、コンフィグファイルとテンプレートのひな形を利用することができます。</p>
 <pre><code class="lang-shell"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;init</span></span></div><div class="line"><span class="text plain null-grammar"><span>Created&nbsp;the&nbsp;following&nbsp;files&nbsp;and&nbsp;directories:</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;aigis_config.yml</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;aigis_assets</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;template_ejs</span></span></div></pre>
 </code></pre>
