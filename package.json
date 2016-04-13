@@ -1,6 +1,6 @@
 {
   "name": "node-aigis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "For documenting CSS and generating styleguide",
   "homepage": "https://pxgrid.github.io/aigis",
   "author": {
@@ -37,6 +37,7 @@
     "lodash": "^3.5.0",
     "marked": "^0.3.3",
     "moment": "^2.10.2",
+    "object-assign": "^4.0.1",
     "through2": "0.6.3",
     "vinyl-fs": "^1.0.0",
     "yargs": "^4.3.2"
