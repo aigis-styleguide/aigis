@@ -1,11 +1,3 @@
 # Example Styleguide
 
-## Usage
-
-```
-npm run aigis
-```
-
-edit `css/style.css`
-
-[doc](https://pxgrid.github.io/aigis/doc/)
+[Documents](https://pxgrid.github.io/aigis/docs/en/)
