@@ -8,7 +8,8 @@ category:
 
 ## Config File Not Found
 
-引数なしにaigisが実行されたとき、aigisは現在のディレクトリから`aigis_config.yml`というファイルを探します。もし`aigis_config.yml`が見つからない場合、aigisは次のようなエラーメッセージを表示します。
+When you run aigis with arguments, Aigis will be looking for `aigis_config.yml` from the directory the command was executed.
+If Aigis couldn't find `aigis_config.yml`, Error message will be displayed on your console as follows.
 
 ```
 $ [Error] Config File Not Found
