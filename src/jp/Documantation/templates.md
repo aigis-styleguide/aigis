@@ -18,8 +18,8 @@ category:
 
 
 > GitHubのリポジトリにはテーマを含めたexamplesがありますので、参考にしてみてください。このドキュメント自体もaigisで生成されたものなので、合わせて参考にしてみてください。
-* [aigis/examples](https://github.com/pxgrid/aigis/tree/topic/release_version_1/examples)
-* [aigis-docs/template](https://github.com/pxgrid/aigis-docs/tree/master/src/template)
+* [aigis/examples](https://github.com/pxgrid/aigis/tree/master/examples)
+* [aigis/gh-pages/src](https://github.com/pxgrid/aigis/tree/gh-pages/src/template)
 
 ## インデックステンプレート
 
