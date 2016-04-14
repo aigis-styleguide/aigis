@@ -6,31 +6,28 @@ category:
   - Documentation/Templates
 ---
 
-スタイルガイドの生成にはテンプレートが必要になります。aigisではテンプレートとして次の3種類のテンプレートエンジンから選択して利用することができます。
+>  you are free to make your style guide look however you would like. If you don't feel like going through this process yourself, you can take a look at the templates in our [examples](https://github.com/pxgrid/aigis/tree/master/examples) and [this document's assets](https://github.com/pxgrid/aigis-docs/tree/gh-pages/src/template), and use the assets defined there instead.
 
-### 利用できるテンプレートエンジンと拡張子
+Aigis require HTML templates. You can choose template engine from following list.
 
 * EJS: `.ejs`
 * Jade: `.jade`
 * Handlebars: `.hbs`
 
-選択するテンプレートエンジンごとに決められた拡張子で`index.xxx`というファイルを作成してください。
+You have to create `index.xxx`. (xxx is `ejs` or `jade` or `hbs`)
 
+## Index Template
 
-> GitHubのリポジトリにはテーマを含めたexamplesがありますので、参考にしてみてください。このドキュメント自体もaigisで生成されたものなので、合わせて参考にしてみてください。
-* [aigis/examples](https://github.com/pxgrid/aigis/tree/topic/release_version_1/examples)
-* [aigis-docs/template](https://github.com/pxgrid/aigis-docs/tree/master/src/template)
-
-## インデックステンプレート
+When generate styleguide aigis require `index.xxx`.
 
 スタイルガイドの生成にはテンプレートファイルとして`index.xxx`が必要になります。
 > #### インデックステンプレートのファイル名
 `template_engine`に`ejs`をしている場合には`index.ejs`が、`jade`を指定している場合には`index.jade`が、`hbs`を指定している場合には`index.hbs`が必要になります。
 テンプレートエンジンの指定については[Documentation/Configs]()を参照。
 
-### テンプレートのサンプル
+### Sample Template
 
-EJSのテンプレートの例です。テンプレートで参照している値は、スタイルガイド生成用にaigisがコンパイルした時に渡す値です。
+This is EJS sample template. Aigis pass referenced values to template when generate styleguide.
 
 ```ejs  
 <!DOCTYPE html>
@@ -60,9 +57,9 @@ EJSのテンプレートの例です。テンプレートで参照している�
 </html>
 ```  
 
-# テンプレートで使える値
+# Pass values
 
-aigisはコンパイル時につぎの値を元にテンプレートに渡しスタイルガイドを生成します。
+When styleguide generate aigis pass following values.
 
 Name|Type
 ---|---
@@ -72,8 +69,6 @@ root|String
 config|Object
 timestamp|String
 helper|Object
-
-テンプレートでこの値を使ってスタイルガイドを構築します。
 
 ## components
 
