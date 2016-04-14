@@ -6,18 +6,17 @@ category:
   - Documentation/Configs
 ---
 
-aigisは動作の多くをコンフィグファイル（`aigis_config.yml`）で制御します。全てのパスはコンフィグファイル（`aigis_config.yml`）が置かれている場所から相対的に解決されます。
-
+Aigis control a lot of action with configuration file (`aigis_config.yml`). All path names are interpreted relative from configuration file (`aigis_config.yml`) directory.
 
 ## source: (`required`)
 Type|Default
 ---|---
 String or Array|undefined
 
-スタイルガイドを生成するソースとなるファイル（またはディレクトリ）への相対的なパスを指定します。単一の指定と配列による複数指定のどちらも行えます。
+Specify relative path to source file (or directory) which is a source for generating style guide. You can specify single specified value or arrayed value.
 
 > #### Example
-ソースとして特定のファイルとディレクトリを指定したい場合には次のように指定します。
+In case of setting specific file and directory name to `source` value, see below:
 ```yaml
 source:
   - ./css/style.css
@@ -29,17 +28,18 @@ Type|Default
 ---|---
 String or Array|['.css', '.sass', '.scss', '.styl']
 
-`source`にディレクトリが指定された場合、aigisは`source_type`に記述されている拡張子のファイルをソースの対象にします。デフォルトで`.css .sass .scss .styl`の4種類を対象とします。
+In case of setting directory name to `source` value, Aigis will aim at source file which has an extension in `source_type`. By default, there are four type of extensions, `.css`, `.sass` and `.scss`, and `.styl`.
 
 > #### Example
-ソースとするファイルのタイプを減らしたい場合、次のように対象とするタイプだけを指定します。
+If you want to filter the type of source, set `source_type` value you want as follows.
 ```yaml
 source_type:
   - .css
   - .less
 ```
-> ##### Markdownからスタイルガイドを生成する
-> CSSのコメントブロック（<code>&#047;&#042; ~ &#042;&#047;</code>）と`---`で囲まれた設定の記述があれば、どんなファイルからでもスタイルガイドが生成できます。例えば、次のように`.md`を指定すればMarkdownファイルからスタイルガイドを生成できます。
+> ##### Generate style guide with Markdown
+> Aigis can generate style guide from every text file which has CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>) and configuration block which is surrounded by `---`
+> For example, Aigis generates from Markdown file when you set `source_type` to `.md`
 ```yaml
 source_type: .md
 ```
@@ -49,7 +49,7 @@ Type|Default
 ---|---
 String|'./styleguide'
 
-スタイルガイドを出力するフォルダを指定します。指定がない場合、`aigis_config.yml`のあるフォルダに`styleguide`フォルダを作成して出力されます。
+Specify destination directory. If you didn't specify it, Aigis will make a destination directory named `styleguide` at the configuration file (`aigis_config.yml`) directory.
 
 > #### Example
 ```yaml
@@ -61,7 +61,7 @@ Type|Default
 ---|---
 String or Array|undefined
 
-スタイルガイドに必要なファイルやディレクトリを指定します。指定されたファイルやディレクトリはスタイルガイドの出力先にコピーされます。
+Specify dependent file and directory for style guide. The specified file and directory is copied to destination directory.
 
 > #### Example
 ```yaml
@@ -76,9 +76,11 @@ Type|Default
 ---|---
 String|'./template'
 
-スタイルガイドの生成に必要なテンプレートファイルが格納されているディレクトリを指定します。このディレクトリには`index.ejs`と`layout.ejs`の2つが含まれている必要があります。
+Specify directory of template for generating style guide. This directory needs to contain `index.ejs` and `layout.ejs`.
 
-> `template_engine`に`jade`を指定している場合には`index.jade layout.jade`を、`hbs`を指定している場合には`index.hbs layout.hbs`が必要になります。
+> If you specified `jade` to `template_engine`, the directory needs to contain `index.jade` and `layout.jade`.
+>
+> If you specified `hbs` to `template_engine`, the directory needs to contain `index.hbs` and `layout.hbs`.
 
 > #### Example
 ```yaml
@@ -90,23 +92,23 @@ Type|Default
 ---|---
 String|'./html'
 
-外部ファイルからHTMLをドキュメントコメント内に挿入したいときに使える<code>!!\[](./path/to/file.html)</code>という構文で、インポートするファイルのパスを解決するときに使われます。
+Specify directory of imported html file. This option value is used for resolving a path of imported file when you want to append external file using special phrase (<code>!!\[](./path/to/file.html)</code>).
 
 ## template_engine: (optional)
 Type|Default
 ---|---
 String|'ejs'
 
-スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。aigisでは次の3つのテンプレートエンジンが利用できます。
+Specify template engine for generating style guide. Three type of template engines can be used in aigis as follows.
 
 * EJS（`ejs`）
 * Jade（`jade`）
 * Handlebars（`hbs`）
 
-このディレクトリには、利用するテンプレートごとに決められた拡張子で`index.xxx`というファイルが格納されている必要があります。
+This directory needs to contain `index.xxx` (e.g. index.jade) which has an extension for the template engine you choose.
 
 > #### Example
-Jadeを利用したい場合
+If you want to use Jade, see below:
 ```yaml
 template_engine: jade
 ```
@@ -116,36 +118,35 @@ Type|Default
 ---|---
 Boolean|false
 
-`log`が`true`の場合、スタイルガイド生成の際に出力されるファイルの一覧などをコンソールに出力します。
-
+In the case of the `log` value has `true`, The log which has a list of file when generating style guide will be outputted to your console.
 
 ## color_palette: (optional)
 Type|Default
 ---|---
 Boolean|true
 
-aigisは、スタイルガイドのソースとなるファイルから全ての色を収集し、一覧できるように`color.html`という特別なページを出力します。
+Aigis generates a color pallete page named `color.html` which has all the color that are used in your files.
 
-[サンプル: color.html](https://pxgrid.github.io/aigis/styleguide/color.html)
+[Sample: color.html](https://pxgrid.github.io/aigis/styleguide/color.html)
 
-カラーパレットが必要ない場合、`false`を指定することでカラーパレットの出力を止めることができます。
-
+If you don't need color palette, specify `false` to this option and then Aigis don't generate the color palette page.
 
 ## preview_class: (optional)
 Type|Default
 ---|---
 String|'aigis-preview'
 
-aigisがコードブロック(````html`なので始まるブロック)からHTMLのプレビューを生成する際に、プレビューの外側の要素につくCSSのクラス名を指定できます。コンポーネントがスタイルガイドの影響を受けないようにスタイルを付けたり、JavaScriptから操作したい場合などに役に立ちます。
+Specify class name of the preview area which contains previewed component when Aigis generated a previewed component from code block.
+So, This option helps to operate the your component with JavaScript or add a CSS which is unaffected by CSS of style guide
 
-> #### プレビューの挿入
-例えば、次のようなコードブロックを記述した場合
+> #### Appending previewed component
+For example, you wrote a code block as follows.
 ````
 ```html
 <button>hoge</button>
 ```
 ````
-次のようなHTMLが挿入されます。
+Aigis appends the following HTML to your style guide.
 ```
 <div class="aigis-preview">
   <button>hoge</button>
@@ -158,9 +159,9 @@ Type|Default
 ---|---
 String or Array|['category', 'tag']
 
-出力するページのグループを指定します。`category`や`tag`以外にグルーピングして出力したい項目がある場合は`output_collection`に追加します。
+Specify outputted page group. If you want to output page group besides `category` and `tag`, set group name to `output_collection`.
 
-例えばバージョニングを行っている場合には、コンポーネントの設定に次のように`version`を追加し、`output_collection`に`version`を追加することで`version`の値が同じコンポーネントがグルーピングされて出力されます。
+For example, In the case of your components require versioning, you added `version` to your components configuration block as follows.
 
 ````css
 ---
@@ -172,23 +173,27 @@ version: 1
 ---
 ````
 
+And then you set `version` to `output_collection`. Finally Aigis will generate a page for the components which is grouped by same `version` value.
+
 ```
 output_collection:
   - category
   - version
 ```
 
-上記の指定の場合、`category`と`version`でまとめた2種類のページが出力されます。
-
+In the case of above specified, two type of pages (`category` and `version`) will be outputted.
 
 ## transform: (optional)
 Type|Default
 ---|---
 String or Array|['html', 'ejs', 'jade', 'hbs']
 
-コードブロックに特定のタイプが指定されている場合、aigisはそのコードブロックを実際のHTMLとしてドキュメントに追加します。これによってマークアップの例を示すとともにプレビューの表示も手軽に行なえます。デフォルトでは`html` `jade` `ejs` `hbs`のプレビューが有効になっています。
+In the case of code block has special extension, Aigis will generate a actual HTML from the code block.
+It can be help you to show markup example and previewed component.
 
-もしプレビューとして表示したくないブロックがある場合には、表示したいタイプだけを`transform`に指定します。
+`html` `jade` `ejs` `hbs` will be enabled by default.
+
+If you don't want to generate previewed component from code block, specify `transform` value which you want.
 
 ```yaml
 transform:
@@ -196,8 +201,8 @@ transform:
   - hbs
 ```
 
-> #### テンプレートエンジンのコンパイル
-`ejs` `jade` `hbs`のコードブロックは、コンポーネントの設定に`compile: true`を指定することで、コードブロックに設定の値を渡してコンパイルを行えます。
+> #### Compile code block with template engine
+If you specify `compile: true` in configuration block of your component, The code block which is specify `ejs` or `jade` or `hbs` will be compile by using configuration value of the configuration block.
 > ````
 ---
 name: btn
@@ -211,7 +216,7 @@ data:
 <button><%- data.value1 %></button>
 ```  
 ````
-上記の場合、次のように値が反映された状態のHTMLが挿入されます。
+In the case of above, Aigis will append following HTML by using configuration values.
 ```html
 <div class="aigis-preview">
   <h2>btn</h2>
@@ -225,16 +230,15 @@ Type|Default
 ---|---
 Boolean|true
 
-コードブロックのシンタックスハイライトを有効にするかを指定します。別のハイライトライブラリを使う場合ときなどは`highlight: false`とすることでaigisのハイライトをオフにできます。
+Specify enabling or disabling syntax highlighting for code block. If you want other syntax highlighting library, specify `highlight: false` and then Aigis will disabled the syntax highlighting.
 
 ## timestamp_format: (optional)
 Type|Default
 ---|---
 String|'YYYY/MM/DD HH:mm'
 
-スタイルガイドを生成する際、aigisは`timestamp`という特別な変数をテンプレートに渡します。ドキュメントの更新日を記述したい際などに役にたつかもしれません。
+When aigis generate style guide, Aigis will path through special variable named `timestamp` to your template. It helps to mention about publish date of your style guide.
 
-`timestamp_format`に指定する形式は[Moment.jsのformat](http://momentjs.com/docs/#week-year-week-and-weekday-tokens)を参照してください。
-
+Please refer [format of Moment.js](http://momentjs.com/docs/#week-year-week-and-weekday-tokens) about The format of `timestamp_format` value.
 
 */
