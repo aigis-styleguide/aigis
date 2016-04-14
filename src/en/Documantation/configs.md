@@ -125,7 +125,7 @@ Type|Default
 ---|---
 Boolean|true
 
-Aigis generates a color pallete page named `color.html` which has all the color that are used in your files.
+Aigis generates a color palette page named `color.html` which has all the color that are used in your files.
 
 [Sample: color.html](https://pxgrid.github.io/aigis/styleguide/color.html)
 
