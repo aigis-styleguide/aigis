@@ -118,7 +118,7 @@ Type|Default
 ---|---
 Boolean|false
 
-In the case of the `log` value has `true`, The log which has a list of file when generating style guide will be outputted to your console.
+List of generated files will be displayed to console when this `log` is true.
 
 ## color_palette: (optional)
 Type|Default
@@ -216,7 +216,7 @@ data:
 <button><%- data.value1 %></button>
 ```  
 ````
-In the case of above, Aigis will append following HTML by using configuration values.
+In the above case, Aigis will append HTML like the following by using configuration values.
 ```html
 <div class="aigis-preview">
   <h2>btn</h2>
