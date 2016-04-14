@@ -146,7 +146,8 @@ main:after {
     margin-top: 2em; }
   .doc-Module p {
     margin: 0 0 1.2em;
-    line-height: 1.7em; }
+    line-height: 1.7em;
+    word-break: break-word; }
   .doc-Module > ul code,
   .doc-Module > a code,
   .doc-Module > p code,
