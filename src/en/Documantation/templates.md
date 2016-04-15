@@ -18,12 +18,14 @@ You have to create `index.xxx`. (xxx is `ejs` or `jade` or `hbs`)
 
 ## Index Template
 
-When generate style guide aigis require `index.xxx`.
+Aigis needs `index.xxx` (e.g. index.jade) for generating a style guide.
 
-スタイルガイドの生成にはテンプレートファイルとして`index.xxx`が必要になります。
-> #### インデックステンプレートのファイル名
-`template_engine`に`ejs`をしている場合には`index.ejs`が、`jade`を指定している場合には`index.jade`が、`hbs`を指定している場合には`index.hbs`が必要になります。
-テンプレートエンジンの指定については[Documentation/Configs]()を参照。
+> #### Naming for template file of index page
+- If you specified `template_engine: ejs`, aigis will need `index.ejs`.
+- If you specified `template_engine: jade`, aigis will need `index.jade`.
+- If you specified `template_engine: hbs`, aigis will need `index.hbs`.
+
+Please refer [Documentation/Configs](../Documentation/Configs/) about more details for `template_engine` option.
 
 ### Sample Template
 
@@ -59,7 +61,7 @@ This is EJS sample template. Aigis pass referenced values to template when gener
 
 # Pass values
 
-When style guide generate aigis pass following values.
+When style guide was generated, aigis will pass the following values.
 
 Name|Type
 ---|---
@@ -72,9 +74,9 @@ helper|Object
 
 ## components
 
-コンポーネントのHTMLなどが入ったオブジェクトの配列。
+`component` value is Array which contains Object. The Object has HTML of the component.
 
-たとえば`./css/style.css`に次のようなコンポーネントを記述した場合:
+For example, you wrote the following compponent in your CSS.
 
 ```yaml
 ---
@@ -89,25 +91,25 @@ category:
 this is component!
 ```
 
-`components[0]`には次のようなコンポーネントが格納される:
+`components[0]` contains the following Object.
 
 ```js  
 {
-  md: '## component\n\nthis is component!', // コンポーネントのドキュメント部分
-  html: '<h2>component</h2><p>this is component</p>', // ドキュメント部分をパースしたHTML
-  config: { // コンポーネントのコンフィグ部分
+  md: '## component\n\nthis is component!', // Document for this component
+  html: '<h2>component</h2><p>this is component</p>', // Parsed html of document
+  config: { // Configurnation for this component
     name: 'component name',
     category: ['mod', 'btn'] 
   },
-  sourcePath: '/css/style.css' // ドキュメントが記述されているファイルへのパス
+  sourcePath: '/css/style.css' // File path for this document
 }
 ```  
 
 ## html
 
-インデックスページ用のMarkdownファイルをパースしたHTMLが格納されている。
+`html` value contains HTML result of the parsed Markdown.
 
-`index.ejs`では次のようにすることで、インデックスページとコンポーネントページを同一のテンプレートでレンダリングすることができます。
+In `index.ejs`, you can write a template for rendering a page of index and component on the same page as follows.
 
 ```
 <main>
@@ -118,10 +120,11 @@ this is component!
 </main>
 ```
 
-
 ## root
 
-出力されるページから見た、コンフィグファイルの`dest`で指定されたフォルダへの相対パスが格納されています。`<head>`要素などにCSSファイルへの参照を相対パスで書く際に利用できます。ファイルの参照を絶対パスで行う場合には使う必要はないでしょう。
+`root` value cantian a relative path is the `dest` directory in your configurnation file from generated page
+This value is used to write a relative path which is interpreted a css file in `<head>`.
+If you want to use absolute path, you don't need to use this value.
 
 > #### Example
 ```ejs  
@@ -131,7 +134,8 @@ this is component!
 
 ## config
 
-コンフィグファイル(`aigis_config.yml`)の内容が格納されたオブジェクトです。例えばコンフィグファイルの`name`という項目をテンプレートで使いたい場合、次のように`config.name`とすることで参照できます。
+`config` value contains a Object which has a detail of a configurnation file (`aigis_config.yml`)
+For example, you can refer `config.name` in your template file if you want to use `name` in your configurnation file.
 
 > #### Example
 config:
@@ -153,9 +157,9 @@ output:
 
 ## timestamp
 
-`aigis run`が実行された時間が格納されています。形式はコンフィグファイルの`timestamp_format`で指定できます。
-
-`timestamp_format`に指定する形式は[Moment.jsのformat](http://momentjs.com/docs/#week-year-week-and-weekday-tokens)を参照してください。
+`timestamp` value contains a time from the execution end time of `aigis run`.
+The format of this value can be specified `timestamp_format` in configurnation file.
+Please refer [Moment.js format](http://momentjs.com/docs/#week-year-week-and-weekday-tokens) for the format of `timestamp_format`
 
 > #### Example
 config:
@@ -178,11 +182,13 @@ output:
 
 ## helper
 
-複雑な処理が必要な場面で役に立つテンプレートヘルパーの集まりです。
+`helper` value has a lot of template helper for complicated process in your template.
 
 ### helper.createCollectionTree(collection_name)
 
-aigisはコンフィグファイルの`output_collection`にある値でコンポーネントをグルーピングして出力します。デフォルトでは`category`と`tag`が設定してあります。コレクションは次のように`/`を使うことで階層表現をすることができます。
+Aigis outputs groupd components by `output_collection` value in configurnation file.
+By default, Specify `category` and `tag`.
+コレクションは次のように`/`を使うことで階層表現をすることができます。
 
 ```yaml
 ---
@@ -192,9 +198,11 @@ category:
 ---
 ```
 
-このコンポーネントの場合、parentカテゴリの下のchildカテゴリに所属しています。スタイルガイドの出力はこの階層情報を持ちながら出力されます。こういった階層をサイドメニューなどとして表現するのはとても面倒ですので、用意されていたヘルパーを使って簡単に行えるようにしてあります。
+In the avove case, This component belongs `child` category in parent category.
+スタイルガイドの出力はこの階層情報を持ちながら出力されます。
+こういった階層をサイドメニューなどとして表現するのはとても面倒ですので、用意されていたヘルパーを使って簡単に行えるようにしてあります。
 
-(このドキュメントのサイドメニューもこのヘルパーを使って出力されたものです。)
+(The sidebar for this document was outputted by this helper.)
 
 > #### Example
 ```ejs  
