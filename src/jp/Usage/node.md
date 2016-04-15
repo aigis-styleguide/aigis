@@ -1,18 +1,18 @@
 /*
 ---
-name: With Node.js
+name: Node.jsで利用する
 category:
   - Usage
   - Usage/Node.js
 ---
 
-## Installation
+## インストール
 
 ```
 npm install node-aigis
 ```
 
-## Run
+## 実行
 
 ```js
 var Aigis = require('node-aigis');

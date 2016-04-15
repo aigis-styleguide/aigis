@@ -1,18 +1,18 @@
 /*
 ---
-name: With gulp
+name: gulpで利用する
 category:
   - Usage
   - Usage/gulp
 ---
 
-## Installation
+## インストール
 
 ```
 $ npm install --save-dev gulp-aigis
 ```
 
-## Run gulp-aigis
+## gulp-aigisを実行する
 
 ```js
 var gulp = require('gulp');

@@ -1,27 +1,27 @@
 /*
 ---
-name: With CLI
+name: コマンドラインから利用する
 category:
   - Usage
   - Usage/CLI
 ---
 
-## Installation
+## インストール
 
 ```
 npm i node-aigis
 ```
 
-## Version & Help
+## バージョンの確認とヘルプの表示
 
-### Show version
+### バージョンを表示する
 
 ```
 $ ./node_modules/.bin/aigis --version
 1.0.0
 ```
 
-### Show help
+### ヘルプを表示する
 
 ```
 $ ./node_modules/.bin/aigis --help
@@ -41,26 +41,26 @@ Examples:
 ```
 
 
-## Run aigis
+## aigisを実行する
 
 ```
 ./node_modules/.bin/aigis run
 ```
 
-### options
+### オプション
 
 |name|alias|value|
 |---|---|---|
 |`--config`|`-c`|./path/to/aigis_config.yml|
 
 
-## Init config file & templats
+## 設定ファイルとテンプレートを作成する
 
 ```
 ./node_modules/.bin/aigis init
 ```
 
-### options
+### オプション
 |name|alias|value|
 |---|---|---|
 |`--engine`|`-c`|ejs, jade, hbs|
