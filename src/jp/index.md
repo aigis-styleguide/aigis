@@ -1,103 +1,27 @@
 ## -> [Documents in English](../en/)
 
-## node-aigisのインストール
+# aigisのドキュメント
 
-aigisのインストールはNPMで行います。ターミナルから次のコマンドで`node-aigis`をインストールします。
+- [インストール、スタイルガイドの生成](./category/Guide/Quick-Start/index.html)
+- [詳しいドキュメント](./category/Documentation/index.html)
+- [Tips集](./category/Tips/index.html)
+- [CLIやNode.js、gulpでaigisを利用する](./category/Usage/index.html)
 
-```shell
-$ npm install --save-dev node-aigis
-```
+aigisでは、メンテナブルなスタイルガイドを作成することができます。 aigisを使えば以下の様なことが可能です。
 
-そしてaigisが正しくインストールされているか、次のコマンドを実行して確認します。`x.x.x`のようなバージョン番号が表示されれば正しくインストールされています。
+- テキストファイルであれば、`.scss` `.styls` `.md`など、どのような形式からでもスタイルガイドを作成できます。
+- Markdownを使用してドキュメントを記述することができます。
+- スタイルガイドのテーマをカスタマイズすることができます。またテーマでは、JadeやHandlebarsといったテンプレートエンジンを利用できます。
 
+簡単に始められる[サンプル](https://github.com/pxgrid/aigis/tree/master/examples)を用意しました。[スタートガイド](./category/Guide/Quick-Start/)と合わせて御覧ください。
 
-```shell
-$ ./node_modules/.bin/aigis -v
-$ 1.0.0
-```
+実は、このドキュメントもaigisを使用して生成されています。
 
-## コンフィグファイルとHTMLテンプレートの作成
+## Feedback
 
-スタイルガイドの生成にはコンフィグファイルと、HTMLテンプレートが必要です。  
-aigisでは`init`コマンドを実行することで、コンフィグファイルとテンプレートのひな形を利用することができます。
+気になる点や、不具合、提案等ありましたら、GitHubの[Issue](https://github.com/pxgrid/aigis/issues)や[Pull Requests](https://github.com/pxgrid/aigis/pulls)へお願い致します。
 
-```shell
-$ ./node_modules/.bin/aigis init
-Created the following files and directories:
-  aigis_config.yml
-  aigis_assets
-  template_ejs
-```
+## 他の言語のドキュメント
 
-
-> #### テンプレートエンジンの選択
-aigisでは３つのテンプレートエンジンが利用できます。`aigis init`を実行する際に`--engine`オプションで利用するテンプレートエンジンを指定できます。
-#### 利用できるテンプレートエンジンと値
-* EJS（`ejs`）
-* Jade（`jade`）
-* Handlebars（`hbs`）
->
-#### 例）テンプレートエンジンにJadeを利用する場合 
-```shell
-$ ./node_modules/.bin/aigis init --engine jade
-```
-
-### コンフィグファイルの編集
-
-`init`で生成された`aigis_config.yml`を編集して、`source`の項目にスタイルガイドの元となるファイルを指定します。
-
-例えば`style.css`を元にスタイルガイドを生成したい場合`source: ./style.css`のように指定します。
-
-> #### sourceの指定方法 
-`source`はファイルとフォルダのどちらでも指定できます。次のように配列の形で指定することもできます。
-```yaml
-source:
-  - ./lib/css
-  - ./style.css
-```
-
-
->`init`で生成された`aigis_config.yml`では、`source`としてテーマで使われているCSSが指定されています。そのままaigisを実行することで、テーマのスタイルガイドを生成することができます。
-
-## CSSにコメントを追加する
-
-`source`に指定したCSSファイルに、スタイルガイド用のコメントを追加します。
-
-CSSのコメントブロック（<code>&#047;&#042; ~ &#042;&#047;</code>）に次のようなスタイルガイド生成用のコメントを追加します。
-
-````yaml
----
-name: base button
-category: module/button
----
-
-## This is base button
-
-* Base button style.
-* Use `a` or `button` tag.
-
-```html
-<a class="btn">Button</a>
-```
-````
-
-これはとてもシンプルなドキュメントコメントです。ドキュメントコメントの詳細については[次のドキュメント]()を参照してください。
-
-
-## aigisの実行
-
-次のコマンドでaigisを実行してスタイルガイドを生成します。
-
-```shell
-$ ./node_modules/.bin/aigis run -c ./aigis_config.yml
-```
-
-ドキュメントコメントから次のようなスタイルガイドが生成されます。
-
-<a href="/aigis-docs/doc/doc_assets/sample/styleguide/category/module/button/index.html" target="_blank">サンプル</a>
-
-> `-c`オプション無しで`run`コマンドが実行されたとき、aigisは実行されたディレクトリから`aigis_config.yml`を探して実行します。
-
-`init`で生成された`./aigis_assets/css/theme.css`にスタイルガイド用のコメントが記述してあります。また、`node-aigis`のパッケージにはexamplesがありますので、合わせて参考にしてみてください。
-
-ほか、aigisの詳しい機能についてはドキュメントを参照してください。
+- [日本語](https://pxgrid.github.io/aigis/docs/jp/)
+- [English](https://pxgrid.github.io/aigis/docs/en/)
