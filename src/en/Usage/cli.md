@@ -28,7 +28,7 @@ $ ./node_modules/.bin/aigis --help
 Usage: aigis run -c ./path/to/aigis_config.yml
 
 Commands:
-  run   Generate styleguide
+  run   Generate style guide
   init  Copy template & theme & config file
 
 Options:

@@ -6,7 +6,7 @@ category:
   - Documentation/Templates
 ---
 
->  you are free to make your styleguide look however you would like. If you don't feel like going through this process yourself, you can take a look at the templates in our [examples](https://github.com/pxgrid/aigis/tree/master/examples) and [this document's assets](https://github.com/pxgrid/aigis-docs/tree/gh-pages/src/template), and use the assets defined there instead.
+>  you are free to make your style guide look however you would like. If you don't feel like going through this process yourself, you can take a look at the templates in our [examples](https://github.com/pxgrid/aigis/tree/master/examples) and [this document's assets](https://github.com/pxgrid/aigis-docs/tree/gh-pages/src/template), and use the assets defined there instead.
 
 Aigis require HTML templates. You can choose template engine from following list.
 
@@ -18,7 +18,7 @@ You have to create `index.xxx`. (xxx is `ejs` or `jade` or `hbs`)
 
 ## Index Template
 
-When generate styleguide aigis require `index.xxx`.
+When generate style guide aigis require `index.xxx`.
 
 スタイルガイドの生成にはテンプレートファイルとして`index.xxx`が必要になります。
 > #### インデックステンプレートのファイル名
@@ -27,7 +27,7 @@ When generate styleguide aigis require `index.xxx`.
 
 ### Sample Template
 
-This is EJS sample template. Aigis pass referenced values to template when generate styleguide.
+This is EJS sample template. Aigis pass referenced values to template when generate style guide.
 
 ```ejs  
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ This is EJS sample template. Aigis pass referenced values to template when gener
 
 # Pass values
 
-When styleguide generate aigis pass following values.
+When style guide generate aigis pass following values.
 
 Name|Type
 ---|---

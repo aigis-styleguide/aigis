@@ -13,7 +13,7 @@ Type|Default
 ---|---
 String or Array|undefined
 
-Specify relative path to source file (or directory) which is a source for generating styleguide. You can specify single specified value or arrayed value.
+Specify relative path to source file (or directory) which is a source for generating style guide. You can specify single specified value or arrayed value.
 
 > #### Example
 In case of setting specific file and directory name to `source` value, see below:
@@ -37,8 +37,8 @@ source_type:
   - .css
   - .less
 ```
-> ##### Generate styleguide with Markdown
-> Aigis can generate styleguide from every text file which has CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>) and configuration block which is surrounded by `---`
+> ##### Generate style guide with Markdown
+> Aigis can generate style guide from every text file which has CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>) and configuration block which is surrounded by `---`
 > For example, Aigis generates from Markdown file when you set `source_type` to `.md`
 ```yaml
 source_type: .md
@@ -47,9 +47,9 @@ source_type: .md
 ## dest: (optional)
 Type|Default
 ---|---
-String|'./styleguide'
+String|'./style guide'
 
-Specify destination directory. If you didn't specify it, Aigis will make a destination directory named `styleguide` at the configuration file (`aigis_config.yml`) directory.
+Specify destination directory. If you didn't specify it, Aigis will make a destination directory named `style guide` at the configuration file (`aigis_config.yml`) directory.
 
 > #### Example
 ```yaml
@@ -61,7 +61,7 @@ Type|Default
 ---|---
 String or Array|undefined
 
-Specify dependent file and directory for styleguide. The specified file and directory is copied to destination directory.
+Specify dependent file and directory for style guide. The specified file and directory is copied to destination directory.
 
 > #### Example
 ```yaml
@@ -76,7 +76,7 @@ Type|Default
 ---|---
 String|'./template'
 
-Specify directory of template for generating styleguide. This directory needs to contain `index.ejs` and `layout.ejs`.
+Specify directory of template for generating style guide. This directory needs to contain `index.ejs` and `layout.ejs`.
 
 > If you specified `jade` to `template_engine`, the directory needs to contain `index.jade` and `layout.jade`.
 >
@@ -99,7 +99,7 @@ Type|Default
 ---|---
 String|'ejs'
 
-Specify template engine for generating styleguide. Three type of template engines can be used in aigis as follows.
+Specify template engine for generating style guide. Three type of template engines can be used in aigis as follows.
 
 * EJS（`ejs`）
 * Jade（`jade`）
@@ -137,7 +137,7 @@ Type|Default
 String|'aigis-preview'
 
 Specify class name of the preview area which contains previewed component when Aigis generated a previewed component from code block.
-So, This option helps to operate the your component with JavaScript or add a CSS which is unaffected by CSS of styleguide
+So, This option helps to operate the your component with JavaScript or add a CSS which is unaffected by CSS of style guide
 
 > #### Appending previewed component
 For example, you wrote a code block as follows.
@@ -146,7 +146,7 @@ For example, you wrote a code block as follows.
 <button>hoge</button>
 ```
 ````
-Aigis appends the following HTML to your styleguide.
+Aigis appends the following HTML to your style guide.
 ```
 <div class="aigis-preview">
   <button>hoge</button>
@@ -237,7 +237,7 @@ Type|Default
 ---|---
 String|'YYYY/MM/DD HH:mm'
 
-When aigis generate styleguide, Aigis will path through special variable named `timestamp` to your template. It helps to mention about publish date of your styleguide.
+When aigis generate style guide, Aigis will path through special variable named `timestamp` to your template. It helps to mention about publish date of your style guide.
 
 Please refer [format of Moment.js](http://momentjs.com/docs/#week-year-week-and-weekday-tokens) about The format of `timestamp_format` value.
 
