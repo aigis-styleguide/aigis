@@ -6,7 +6,7 @@ category:
   - Documentation/Templates
 ---
 
->  you are free to make your style guide look however you would like. If you don't feel like going through this process yourself, you can take a look at the templates in our [examples](https://github.com/pxgrid/aigis/tree/master/examples) and [this document's assets](https://github.com/pxgrid/aigis-docs/tree/gh-pages/src/template), and use the assets defined there instead.
+>  you are free to make your styleguide look however you would like. If you don't feel like going through this process yourself, you can take a look at the templates in our [examples](https://github.com/pxgrid/aigis/tree/master/examples) and [this document's assets](https://github.com/pxgrid/aigis-docs/tree/gh-pages/src/template), and use the assets defined there instead.
 
 Aigis require HTML templates. You can choose template engine from following list.
 

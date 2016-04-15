@@ -32,7 +32,7 @@ Here's an example code.
 ```
 ````
 
-The component's style guide wil be generated from this configuration block and documentation block.
+The component's styleguide wil be generated from this configuration block and documentation block.
 
 ## Configuration block
 
@@ -52,7 +52,7 @@ category:
 ---
 ```
 
-Specifying config keys of components (default is `category` and `tag`) in `output_collection:` which is in the configuration file ( `aigis_config.yml`) , you can generate a components style guide grouped by the specified configuration keys.
+Specifying config keys of components (default is `category` and `tag`) in `output_collection:` which is in the configuration file ( `aigis_config.yml`) , you can generate a components styleguide grouped by the specified configuration keys.
 
 > `category` and `tag` are grouped and output by default.
 
@@ -67,7 +67,7 @@ Please see [Documentation/Syntax Highlight](../Syntax-Highlight/) for more detai
 
 ## Customize Code Example Renderers
 
-Aigis generates previewed components and appends it to the style guide, using a code block (<code>&#8242;&#8242;&#8242;</code>) which has a language identifier.
+Aigis generates previewed components and appends it to the styleguide, using a code block (<code>&#8242;&#8242;&#8242;</code>) which has a language identifier.
 
 Aigis can compile the components with a template engine, using the key / values in the configuration block.
 
