@@ -6,7 +6,7 @@ category:
   - Guide/Quick Start
 ---
 
-aigisの持つ機能を簡単に試す方法を紹介します。（一番簡単な方法は[aigisのexample]()を試すことです。）
+aigisの持つ機能を簡単に試す方法を紹介します。（一番簡単な方法は[aigisのexample](https://github.com/pxgrid/aigis/tree/master/examples)を試すことです。）
 
 ## node-aigisのインストール
 
@@ -89,7 +89,7 @@ category: module/button
 ```
 ````
 
-これはとてもシンプルなドキュメントコメントです。ドキュメントコメントの詳細については[次のドキュメント]()を参照してください。
+これはとてもシンプルなドキュメントコメントです。ドキュメントコメントの詳細については[次のドキュメント](https://pxgrid.github.io/aigis/docs/jp/category/Documentation/Comment-Syntax/index.html)を参照してください。
 
 
 ## aigisの実行
@@ -108,7 +108,7 @@ $ ./node_modules/.bin/aigis run -c ./aigis_config.yml
 
 `init`で生成された`./aigis_assets/css/theme.css`にスタイルガイド用のコメントが記述してあります。また、`node-aigis`のパッケージにはexamplesがありますので、合わせて参考にしてみてください。
 
-ほか、aigisの詳しい機能についてはドキュメントを参照してください。
+ほか、aigisの詳しい機能については[ドキュメント](https://pxgrid.github.io/aigis/docs/en/category/Documentation/index.html)を参照してください。
 
 */
 
