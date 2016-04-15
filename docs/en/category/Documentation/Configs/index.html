@@ -56,7 +56,7 @@
 </tr>
 </tbody>
 </table>
-<p class="">Specify relative path to source file (or directory) which is a source for generating styleguide. You can specify single specified value or arrayed value.</p>
+<p class="">Specify relative path to source file (or directory) which is a source for generating style guide. You can specify single specified value or arrayed value.</p>
 <blockquote class="">
 <h4 class="" id="example">Example</h4>
 <p class="">In case of setting specific file and directory name to <code>source</code> value, see below:</p>
@@ -84,8 +84,8 @@
 <p class="">If you want to filter the type of source, set <code>source_type</code> value you want as follows.</p>
 <pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source_type</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.less</span></span></span></span></div></pre>
 </code></pre>
-<h5 class="" id="generate-styleguide-with-markdown">Generate styleguide with Markdown</h5>
-<p class="">Aigis can generate styleguide from every text file which has CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>) and configuration block which is surrounded by <code>---</code>
+<h5 class="" id="generate-style-guide-with-markdown">Generate style guide with Markdown</h5>
+<p class="">Aigis can generate style guide from every text file which has CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>) and configuration block which is surrounded by <code>---</code>
 For example, Aigis generates from Markdown file when you set <code>source_type</code> to <code>.md</code></p>
 <pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source_type</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.md</span></span></span></span></div></pre>
 </code></pre>
@@ -101,11 +101,11 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 <tbody>
 <tr class="">
 <td   class="">String</td>
-<td   class="">&#39;./styleguide&#39;</td>
+<td   class="">&#39;./style guide&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify destination directory. If you didn&#39;t specify it, Aigis will make a destination directory named <code>styleguide</code> at the configuration file (<code>aigis_config.yml</code>) directory.</p>
+<p class="">Specify destination directory. If you didn&#39;t specify it, Aigis will make a destination directory named <code>style guide</code> at the configuration file (<code>aigis_config.yml</code>) directory.</p>
 <blockquote class="">
 <h4 class="" id="example">Example</h4>
 <pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>dest</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/destination</span></span></span></span></div></pre>
@@ -126,7 +126,7 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 </tr>
 </tbody>
 </table>
-<p class="">Specify dependent file and directory for styleguide. The specified file and directory is copied to destination directory.</p>
+<p class="">Specify dependent file and directory for style guide. The specified file and directory is copied to destination directory.</p>
 <blockquote class="">
 <h4 class="" id="example">Example</h4>
 <pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>dependencies</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/images</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/style.css</span></span></span></span></div></pre>
@@ -147,7 +147,7 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 </tr>
 </tbody>
 </table>
-<p class="">Specify directory of template for generating styleguide. This directory needs to contain <code>index.ejs</code> and <code>layout.ejs</code>.</p>
+<p class="">Specify directory of template for generating style guide. This directory needs to contain <code>index.ejs</code> and <code>layout.ejs</code>.</p>
 <blockquote class="">
 <p class="">If you specified <code>jade</code> to <code>template_engine</code>, the directory needs to contain <code>index.jade</code> and <code>layout.jade</code>.</p>
 <p class="">If you specified <code>hbs</code> to <code>template_engine</code>, the directory needs to contain <code>index.hbs</code> and <code>layout.hbs</code>.</p>
@@ -186,7 +186,7 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 </tr>
 </tbody>
 </table>
-<p class="">Specify template engine for generating styleguide. Three type of template engines can be used in aigis as follows.</p>
+<p class="">Specify template engine for generating style guide. Three type of template engines can be used in aigis as follows.</p>
 <ul class="">
 <li class="">EJS（<code>ejs</code>）</li>
 <li class="">Jade（<code>jade</code>）</li>
@@ -249,12 +249,12 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 </tbody>
 </table>
 <p class="">Specify class name of the preview area which contains previewed component when Aigis generated a previewed component from code block.
-So, This option helps to operate the your component with JavaScript or add a CSS which is unaffected by CSS of styleguide</p>
+So, This option helps to operate the your component with JavaScript or add a CSS which is unaffected by CSS of style guide</p>
 <blockquote class="">
 <h4 class="" id="appending-previewed-component">Appending previewed component</h4>
 <p class="">For example, you wrote a code block as follows.</p>
 <pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>```html</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
-</code></pre><p class="">Aigis appends the following HTML to your styleguide.</p>
+</code></pre><p class="">Aigis appends the following HTML to your style guide.</p>
 <pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>aigis-preview</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
 </code></pre></blockquote>
 <h2 class="" id="output_collection-optional-">output_collection: (optional)</h2>
@@ -339,7 +339,7 @@ It can be help you to show markup example and previewed component.</p>
 </tr>
 </tbody>
 </table>
-<p class="">When aigis generate styleguide, Aigis will path through special variable named <code>timestamp</code> to your template. It helps to mention about publish date of your styleguide.</p>
+<p class="">When aigis generate style guide, Aigis will path through special variable named <code>timestamp</code> to your template. It helps to mention about publish date of your style guide.</p>
 <p class="">Please refer <a class="" href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">format of Moment.js</a> about The format of <code>timestamp_format</code> value.</p>
 
       </div>
