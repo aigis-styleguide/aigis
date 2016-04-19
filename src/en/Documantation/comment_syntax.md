@@ -7,7 +7,7 @@ category:
 ---
 
 In aigis, Documenting __component's configuration__ and __component's documentation__ in comment block (<code>&#047;&#042; ~ &#042;&#047;</code>).
-The block is surrounded by `---` is configuration (YAML) and after yaml block is a documentation (Markdown).
+The block is surrounded by `---` is configuration (YAML) and after YAML block is a documentation (Markdown).
 
 ````css
 ---
@@ -38,7 +38,7 @@ The component's style guide wil be generated from this configuration block and d
 
 The block is surrounded by `---` is configuration (YAML). Documenting the configuration with YAML forms.
 
-> To be more precise, `---` needs to contain at the next line of starting line of comment block (<code>&#047;&#042;</code>).
+> To be more precise, `---` needs to contain at the next line of starting line of the comment block (<code>&#047;&#042;</code>).
 
 ```yaml
 ---
@@ -58,7 +58,7 @@ Specifying config keys of components (default is `category` and `tag`) in `outpu
 
 ## Documentation block
 
-You can use Markdown ([GitHub flavored markdown](https://help.github.com/categories/writing-on-github/)) in documentation block of the component
+You can use Markdown ([GitHub Flavored Markdown](https://help.github.com/categories/writing-on-github/)) in documentation block of the component
 
 Enabled syntax highlight if you specified special keyword into code block (<code>&#8242;&#8242;&#8242;</code>).
 Please see [Documentation/Syntax Highlight](../Syntax-Highlight/) for more details.
@@ -71,12 +71,12 @@ Aigis generates previewed components and appends it to the style guide, using a 
 
 Aigis can compile the components with a template engine, using the key / values in the configuration block.
 
-To enable this, set `compile: true` in configuration block and specify the syntax of the template engine as a language identifer in the code fence.
+To enable this, set `compile: true` in configuration block and specify the syntax of the template engine as a language identifier in the code fence.
 
 You can write the component include the keys in the template syntax which you specify. Aigis compiles the components using the values of the keys.
 
 > If you want to enable or disable previewed components, set `transform:` value in configuration block.
-> In the case of enable only `ejs`, set `transform:` value to `ejs` only as follows.
+> In the case of enabling only `ejs`, set `transform:` value to `ejs` only as follows.
 ```yaml
 transform:
   - ejs

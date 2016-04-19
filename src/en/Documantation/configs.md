@@ -6,14 +6,14 @@ category:
   - Documentation/Configs
 ---
 
-Aigis control a lot of action with configuration file (`aigis_config.yml`). All path names are interpreted relative from configuration file (`aigis_config.yml`) directory.
+Aigis control a lot of action with a configuration file (`aigis_config.yml`). All path names are interpreted relative from a configuration file (`aigis_config.yml`) directory.
 
 ## source: (`required`)
 Type|Default
 ---|---
 String or Array|undefined
 
-Specify relative path to source file (or directory) which is a source for generating style guide. You can specify single specified value or arrayed value.
+Specify relative path to a source file (or directory) which is a source for generating style guide. You can specify single specified value or arrayed value.
 
 > #### Example
 In case of setting specific file and directory name to `source` value, see below:
@@ -61,7 +61,7 @@ Type|Default
 ---|---
 String or Array|undefined
 
-Specify dependent file and directory for style guide. The specified file and directory is copied to destination directory.
+Specify dependent file and directory for the style guide. The specified file and directory is copied to the destination directory.
 
 > #### Example
 ```yaml
@@ -105,7 +105,7 @@ Specify template engine for generating style guide. Three type of template engin
 * Jade（`jade`）
 * Handlebars（`hbs`）
 
-This directory needs to contain `index.xxx` (e.g. index.jade) which has an extension for the template engine you choose.
+This directory needs to contain a `index.xxx` (e.g. index.jade) which has an extension for the template engine you choose.
 
 > #### Example
 If you want to use Jade, see below:
@@ -118,7 +118,7 @@ Type|Default
 ---|---
 Boolean|false
 
-List of generated files will be displayed to console when this `log` is true.
+List of generated files will be displayed to the console when this `log` is true.
 
 ## color_palette: (optional)
 Type|Default
@@ -129,15 +129,15 @@ Aigis generates a color palette page named `color.html` which has all the color 
 
 [Sample: color.html](https://pxgrid.github.io/aigis/styleguide/color.html)
 
-If you don't need color palette, specify `false` to this option and then Aigis don't generate the color palette page.
+If you don't need the color palette, specify `false` to this option and then Aigis don't generate the color palette page.
 
 ## preview_class: (optional)
 Type|Default
 ---|---
 String|'aigis-preview'
 
-Specify class name of the preview area which contains previewed component when Aigis generated a previewed component from code block.
-So, This option helps to operate the your component with JavaScript or add a CSS which is unaffected by CSS of style guide
+Specify class name of the preview area which contains previewed component when Aigis generated a previewed component from the code block.
+So, This option helps to operate your component with JavaScript or add a CSS which is unaffected by CSS of style guide
 
 > #### Appending previewed component
 For example, you wrote a code block as follows.
@@ -173,7 +173,7 @@ version: 1
 ---
 ````
 
-And then you set `version` to `output_collection`. Finally Aigis will generate a page for the components which is grouped by same `version` value.
+And then you set `version` to `output_collection`. Finally, Aigis will generate a page for the components which is grouped by same `version` value.
 
 ```
 output_collection:
@@ -188,12 +188,12 @@ Type|Default
 ---|---
 String or Array|['html', 'ejs', 'jade', 'hbs']
 
-In the case of code block has special extension, Aigis will generate a actual HTML from the code block.
-It can be help you to show markup example and previewed component.
+In the case of code block has a special extension, Aigis will generate an actual HTML from the code block.
+It can help you to show markup example and previewed component.
 
 `html` `jade` `ejs` `hbs` will be enabled by default.
 
-If you don't want to generate previewed component from code block, specify `transform` value which you want.
+If you don't want to generate previewed component from the code block, specify `transform` value which you want.
 
 ```yaml
 transform:
@@ -202,7 +202,7 @@ transform:
 ```
 
 > #### Compile code block with template engine
-If you specify `compile: true` in configuration block of your component, The code block which is specify `ejs` or `jade` or `hbs` will be compile by using configuration value of the configuration block.
+If you specify `compile: true` in configuration block of your component, The code block which is specify `ejs` or `jade` or `hbs` will be compiled by using configuration value of the configuration block.
 > ````
 ---
 name: btn
@@ -230,7 +230,7 @@ Type|Default
 ---|---
 Boolean|true
 
-Specify enabling or disabling syntax highlighting for code block. If you want other syntax highlighting library, specify `highlight: false` and then Aigis will disabled the syntax highlighting.
+Specify enabling or disabling syntax highlighting for the code block. If you want another syntax highlighting library, specify `highlight: false` and then Aigis will disable the syntax highlighting.
 
 ## timestamp_format: (optional)
 Type|Default

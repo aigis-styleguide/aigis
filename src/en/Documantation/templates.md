@@ -8,7 +8,7 @@ category:
 
 >  you are free to make your style guide look however you would like. If you don't feel like going through this process yourself, you can take a look at the templates in our [examples](https://github.com/pxgrid/aigis/tree/master/examples) and [this document's assets](https://github.com/pxgrid/aigis-docs/tree/gh-pages/src/template), and use the assets defined there instead.
 
-Aigis require HTML templates. You can choose template engine from following list.
+Aigis require HTML templates. You can choose template engine from the following list.
 
 * EJS: `.ejs`
 * Jade: `.jade`
@@ -29,7 +29,7 @@ Please refer [Documentation/Configs](../Documentation/Configs/) about more detai
 
 ### Sample Template
 
-This is EJS sample template. Aigis pass referenced values to template when generate style guide.
+This is EJS sample template. Aigis pass referenced values to template when aigis generated style guide.
 
 ```ejs  
 <!DOCTYPE html>
@@ -76,7 +76,7 @@ helper|Object
 
 `component` value is Array which contains Object. The Object has HTML of the component.
 
-For example, you wrote the following compponent in your CSS.
+For example, you wrote the following component in your CSS.
 
 ```yaml
 ---
@@ -97,7 +97,7 @@ this is component!
 {
   md: '## component\n\nthis is component!', // Document for this component
   html: '<h2>component</h2><p>this is component</p>', // Parsed html of document
-  config: { // Configurnation for this component
+  config: { // Configurations for this component
     name: 'component name',
     category: ['mod', 'btn'] 
   },
@@ -122,9 +122,9 @@ In `index.ejs`, you can write a template for rendering a page of index and compo
 
 ## root
 
-`root` value cantian a relative path is the `dest` directory in your configurnation file from generated page
+`root` value contains a relative path is the `dest` directory in your configuration file from generated page
 This value is used to write a relative path which is interpreted a css file in `<head>`.
-If you want to use absolute path, you don't need to use this value.
+If you want to use an absolute path, you don't need to use this value.
 
 > #### Example
 ```ejs  
@@ -134,8 +134,8 @@ If you want to use absolute path, you don't need to use this value.
 
 ## config
 
-`config` value contains a Object which has a detail of a configurnation file (`aigis_config.yml`)
-For example, you can refer `config.name` in your template file if you want to use `name` in your configurnation file.
+`config` value contains an Object which has a detail of a configuration file (`aigis_config.yml`)
+For example, you can refer `config.name` in your template file if you want to use `name` in your configuration file.
 
 > #### Example
 config:
@@ -158,7 +158,7 @@ output:
 ## timestamp
 
 `timestamp` value contains a time from the execution end time of `aigis run`.
-The format of this value can be specified `timestamp_format` in configurnation file.
+The format of this value can be specified `timestamp_format` in configuration file.
 Please refer [Moment.js format](http://momentjs.com/docs/#week-year-week-and-weekday-tokens) for the format of `timestamp_format`
 
 > #### Example
@@ -182,11 +182,11 @@ output:
 
 ## helper
 
-`helper` value has a lot of template helper for complicated process in your template.
+`helper` value has a lot of template helper for a complicated process in your template.
 
 ### helper.createCollectionTree(collection_name)
 
-Aigis outputs groupd components by `output_collection` value in configurnation file.
+Aigis outputs grouped components by `output_collection` value in configuration file.
 By default, Specify `category` and `tag`.
 コレクションは次のように`/`を使うことで階層表現をすることができます。
 
@@ -198,7 +198,7 @@ category:
 ---
 ```
 
-In the avove case, This component belongs `child` category in parent category.
+In the above case, This component belongs `child` category in the parent category.
 スタイルガイドの出力はこの階層情報を持ちながら出力されます。
 こういった階層をサイドメニューなどとして表現するのはとても面倒ですので、用意されていたヘルパーを使って簡単に行えるようにしてあります。
 

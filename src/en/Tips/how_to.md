@@ -26,9 +26,9 @@ When you want to use <code>&#8242;&#8242;&#8242;</code> in document comment, you
 <code>&#8242;&#8242;&#8242;</code>
 ```
 
-## use <code>&#8242;&#8242;&#8242;</code> in codeblock
+## use <code>&#8242;&#8242;&#8242;</code> in code block
 
-When you want to use "<code>&#8242;&#8242;&#8242;</code>" in codeblock, you can use <code>&#8242;&#8242;&#8242;&#8242;</code> instead of <code>&#8242;&#8242;&#8242;</code> like below:
+When you want to use "<code>&#8242;&#8242;&#8242;</code>" in code block, you can use <code>&#8242;&#8242;&#8242;&#8242;</code> instead of <code>&#8242;&#8242;&#8242;</code> like below:
 
 `````
 ````

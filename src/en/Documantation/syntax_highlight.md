@@ -9,7 +9,7 @@ category:
 Aigis using [atom/highlights](https://github.com/atom/highlights) for highlighting which is used in [Atom Editor](https://atom.io/).
 So you can choose every [Atom's themes](https://atom.io/themes)!
 
-Also you can add syntax highlight support language. Please contact us on [pxgrid/aigis-marked#issues](https://github.com/pxgrid/aigis-marked/issues) or send PRs.
+Also, you can add syntax highlight support language. Please contact us on [pxgrid/aigis-marked#issues](https://github.com/pxgrid/aigis-marked/issues) or send PRs.
 
 ## Basic Usage
 
@@ -25,7 +25,7 @@ Write codeblock with `keyword` like below (use `html`):
 
 See the following list: [atom/highlights/tree/master/deps](https://github.com/atom/highlights/tree/master/deps), you can highlight from listed languages.
 
-Also you can use the following unlisted keywords
+Also, you can use the following unlisted keywords
 
 * `jsx`
 * `ejs`
