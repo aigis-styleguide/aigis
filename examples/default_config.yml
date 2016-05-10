@@ -1,5 +1,3 @@
-name: Styleguide
-
 # The directory containing the source files to parse recursively
 source: ./aigis_assets
 
