@@ -323,3 +323,19 @@ category:
 
 .gh-l-footer {
   margin-top: 60px; }
+
+/*
+---
+name: base button
+category: module/button
+---
+
+## This is base button
+
+* Base button style.
+* Use `a` or `button` tag.
+
+```html
+<a class="btn">Button</a>
+```
+*/
