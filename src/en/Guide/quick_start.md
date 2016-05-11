@@ -88,7 +88,7 @@ category: module/button
 ```
 ````
 
-So, this documentation is really simple. If you want to know detail about documentation comment, please see [next document]().
+So, this documentation is really simple. If you want to know detail about documentation comment, please see [next document](https://pxgrid.github.io/aigis/docs/en/category/Documentation/Comment-Syntax/).
 
 
 ## Execute aigis
@@ -101,7 +101,7 @@ $ ./node_modules/.bin/aigis run -c ./aigis_config.yml
 
 The following style guide is generated from documentn comment.
 
-<a href="/aigis-docs/doc/doc_assets/sample/styleguide/category/module/button/index.html" target="_blank">Sample</a>
+<a href="https://pxgrid.github.io/aigis/sample/category/module/button/index.html" target="_blank">Sample</a>
 
 > aigis will be looking for `aigis_config.yml` from the directory the command was executed.
 

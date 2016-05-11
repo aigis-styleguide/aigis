@@ -102,7 +102,7 @@ $ ./node_modules/.bin/aigis run -c ./aigis_config.yml
 
 ドキュメントコメントから次のようなスタイルガイドが生成されます。
 
-<a href="/aigis-docs/doc/doc_assets/sample/styleguide/category/module/button/index.html" target="_blank">サンプル</a>
+<a href="https://pxgrid.github.io/aigis/sample/category/module/button/index.html" target="_blank">サンプル</a>
 
 > `-c`オプション無しで`run`コマンドが実行されたとき、aigisは実行されたディレクトリから`aigis_config.yml`を探して実行します。
 
