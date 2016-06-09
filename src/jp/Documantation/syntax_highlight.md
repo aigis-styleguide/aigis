@@ -6,9 +6,7 @@ category:
   - Documentation/Syntax Highlight
 ---
 
-aigisはシンタックスハイライトにAtomエディタで使われている[atom/highlights](https://github.com/atom/highlights)を利用していますので、シンタックスハイライトのカラーリングに[Atom's themes](https://atom.io/themes)にあるテーマを利用できます。
-
-シンタックスハイライトの言語サポートを増やしたいときには[pxgrid/aigis-marked#issues](https://github.com/pxgrid/aigis-marked/issues)にissueを立ててもらうか、PRを送ってください。(Contribute Guideは準備中です)
+aigisはシンタックスのハイライトに[Prism](http://prismjs.com/)を利用しています。シンタックスのカラーリングには[http://prismjs.com/download.html](http://prismjs.com/download.html)にあるテーマをダウンロードして利用できます。
 
 ## 使い方
 
@@ -24,16 +22,11 @@ aigisはシンタックスハイライトにAtomエディタで使われてい�
 
 ハイライトできる言語は次のリストに入っているものです。
 
-* [atom/highlights/tree/master/deps](https://github.com/atom/highlights/tree/master/deps)
+* [Prism#language-list](http://prismjs.com/#languages-list)
 
-次のリストの言語もハイライトすることが可能です。
+## Example
 
-* `jsx`
-* `ejs`
-* `jade`
-* `stylus`
-
-## JSX
+### JSX
 
 #### Keyword: `jsx`
 
@@ -51,7 +44,7 @@ var CommentBox = React.createClass({
 });
 ```
 
-## EJS
+### EJS
 
 #### Keyword: `ejs`
 
@@ -61,7 +54,7 @@ var CommentBox = React.createClass({
 </div>
 ```  
 
-## Jade
+### Jade
 
 #### Keyword: `jade`
 
@@ -70,7 +63,7 @@ var CommentBox = React.createClass({
   p The quick brown fox jumps over the lazy dog
 ```
 
-## Stylus
+### Stylus
 
 #### Keyword: `stylus`
 

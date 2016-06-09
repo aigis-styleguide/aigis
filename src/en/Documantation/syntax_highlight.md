@@ -6,10 +6,8 @@ category:
   - Documentation/Syntax Highlight
 ---
 
-Aigis using [atom/highlights](https://github.com/atom/highlights) for highlighting which is used in [Atom Editor](https://atom.io/).
-So you can choose every [Atom's themes](https://atom.io/themes)!
-
-Also, you can add syntax highlight support language. Please contact us on [pxgrid/aigis-marked#issues](https://github.com/pxgrid/aigis-marked/issues) or send PRs.
+Aigis using [Prism](http://prismjs.com/) for highlighting.
+So you can download color theme from [prismjs.com/download](http://prismjs.com/download.html).
 
 ## Basic Usage
 
@@ -23,16 +21,11 @@ Write codeblock with `keyword` like below (use `html`):
 ```
 ````
 
-See the following list: [atom/highlights/tree/master/deps](https://github.com/atom/highlights/tree/master/deps), you can highlight from listed languages.
+See the following list: [Prism#language-list](http://prismjs.com/#languages-list), you can highlight from listed languages.
 
-Also, you can use the following unlisted keywords
+## Example
 
-* `jsx`
-* `ejs`
-* `jade`
-* `stylus`
-
-## JSX
+### JSX
 
 #### Keyword: `jsx`
 
@@ -50,7 +43,7 @@ var CommentBox = React.createClass({
 });
 ```
 
-## EJS
+### EJS
 
 #### Keyword: `ejs`
 
@@ -69,7 +62,7 @@ var CommentBox = React.createClass({
   p The quick brown fox jumps over the lazy dog
 ```
 
-## Stylus
+### Stylus
 
 #### Keyword: `stylus`
 
