@@ -136,12 +136,14 @@ tag: latest
 ```
 
 */
-pre pre.editor {
+.aigis-module > pre {
+  background-color: #272822;
+  color: #f8f8f2;
   font-size: 14px;
   position: relative;
   padding: 0.5em;
   border-radius: 3px;
-  margin: 0 auto;
+  margin: 0 auto 1em;
   overflow: scroll;
   border: 1px solid #A0A0A0; }
 
@@ -154,7 +156,7 @@ pre pre.editor {
   margin: 0;
   margin-top: 10px; }
 
-.aigis-preview + pre pre.editor {
+.aigis-preview + pre {
   border-radius: 0 0 3px 3px;
   border-top: none; }
 
