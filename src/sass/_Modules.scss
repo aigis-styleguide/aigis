@@ -23,8 +23,15 @@
 }
 .doc-Module {
   > pre {
-    margin: 0 0 1em;
-    white-space: inherit;
+    background-color: #272822;
+    color: #f8f8f2;
+    //margin: 0 0 1em;
+    font-size: 14px;
+    position: relative;
+    padding: 10px;
+    margin: 0 auto 3em;
+    overflow: scroll;
+    border: 1px solid #A0A0A0;
     border-radius: 3px;
     + pre {
       margin-top: 1em;
@@ -121,9 +128,12 @@
       margin: 0 0 0.8em;
     }
     pre {
-      white-space: normal;
+      padding: 8px;
+      background-color: #272822;
+      color: #f8f8f2;
       margin: 0;
       margin-bottom: 1em;
+      border-radius: 2px;
     }
     h3, h4, h5, h6 {
       margin-bottom: 0;
