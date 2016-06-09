@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../doc_assets/css/okadia.css" rel="stylesheet">
     <link href="../../doc_assets/css/doc.css" rel="stylesheet">
   </head>
   <body>
@@ -40,27 +40,33 @@
         <h1 class="doc-Module_heading" id="Errors">
           Errors
         </h1>
-        <h2 class="" id="config-file-not-found">Config File Not Found</h2>
-<p class="">When you run aigis with arguments, Aigis will be looking for <code>aigis_config.yml</code> from the directory the command was executed.
+        <h2 id="config-file-not-found">Config File Not Found</h2>
+<p>When you run aigis with arguments, Aigis will be looking for <code>aigis_config.yml</code> from the directory the command was executed.
 If Aigis couldn&#39;t find <code>aigis_config.yml</code>, Error message will be displayed on your console as follows.</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>$&nbsp;[Error]&nbsp;Config&nbsp;File&nbsp;Not&nbsp;Found</span></span></div></pre>
+<pre><code>$ <span class="token punctuation" >[</span>Error<span class="token punctuation" >]</span> Config File <span class="token operator" >Not</span> Found
 </code></pre>
       </div>
       <div class="doc-Module">
         <h1 class="doc-Module_heading" id="How-to">
           How to
         </h1>
-        <h2 class="" id="fails-install-on-windows">Fails install on Windows</h2>
-<p class=""><a class="" href="https://github.com/nodejs/node-gyp/issues/629" title="null">https://github.com/nodejs/node-gyp/issues/629</a></p>
-<h2 class="" id="use-code-042-047-code-in-document-comment">use <code>&#042;&#047;</code> in document comment</h2>
-<p class="">When you want to use &quot;<code>&#042;&#047;</code>&quot; in document comment, you can use HTML entity wrapped HTML tag like below:</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="constant character entity html"><span class="punctuation definition entity html"><span>&amp;</span></span><span>#042</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#047</span><span class="punctuation definition entity html"><span>;</span></span></span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre><h2 class="" id="use-code-8242-8242-8242-code-in-document-comment">use <code>&#8242;&#8242;&#8242;</code> in document comment</h2>
-<p class="">When you want to use <code>&#8242;&#8242;&#8242;</code> in document comment, you can use HTML entity wapped HTML tag like below:</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="constant character entity html"><span class="punctuation definition entity html"><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span><span>&amp;</span></span><span>#8242</span><span class="punctuation definition entity html"><span>;</span></span></span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>code</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre><h2 class="" id="use-code-8242-8242-8242-code-in-code-block">use <code>&#8242;&#8242;&#8242;</code> in code block</h2>
-<p class="">When you want to use &quot;<code>&#8242;&#8242;&#8242;</code>&quot; in code block, you can use <code>&#8242;&#8242;&#8242;&#8242;</code> instead of <code>&#8242;&#8242;&#8242;</code> like below:</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>````</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>```html</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>btn</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>````</span></span></div></pre>
+        <h2 id="fails-install-on-windows">Fails install on Windows</h2>
+<p><a href="https://github.com/nodejs/node-gyp/issues/629" title="null">https://github.com/nodejs/node-gyp/issues/629</a></p>
+<h2 id="use-code-042-047-code-in-document-comment">use <code>&#042;&#047;</code> in document comment</h2>
+<p>When you want to use &quot;<code>&#042;&#047;</code>&quot; in document comment, you can use HTML entity wrapped HTML tag like below:</p>
+<pre><code><span class="token operator" >&lt;</span>code<span class="token operator" >></span><span class="token operator" >&amp;</span>#<span class="token number" >042</span><span class="token comment" spellcheck="true">;&amp;#047;&lt;/code></span>
+</code></pre><h2 id="use-code-8242-8242-8242-code-in-document-comment">use <code>&#8242;&#8242;&#8242;</code> in document comment</h2>
+<p>When you want to use <code>&#8242;&#8242;&#8242;</code> in document comment, you can use HTML entity wapped HTML tag like below:</p>
+<pre><code><span class="token operator" >&lt;</span>code<span class="token operator" >></span><span class="token operator" >&amp;</span>#<span class="token number" >8242</span><span class="token comment" spellcheck="true">;&amp;#8242;&amp;#8242;&lt;/code></span>
+</code></pre><h2 id="use-code-8242-8242-8242-code-in-code-block">use <code>&#8242;&#8242;&#8242;</code> in code block</h2>
+<p>When you want to use &quot;<code>&#8242;&#8242;&#8242;</code>&quot; in code block, you can use <code>&#8242;&#8242;&#8242;&#8242;</code> instead of <code>&#8242;&#8242;&#8242;</code> like below:</p>
+<pre><code>````
+
+```html
+<span class="token operator" >&lt;</span>a class<span class="token operator" >=</span><span class="token string" >"btn"</span><span class="token operator" >></span>Button<span class="token operator" >&lt;</span><span class="token operator" >/</span>a<span class="token operator" >></span>
+```
+
+````
 </code></pre>
       </div>
   

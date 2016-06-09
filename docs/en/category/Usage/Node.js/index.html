@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="../../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../../doc_assets/css/okadia.css" rel="stylesheet">
     <link href="../../../doc_assets/css/doc.css" rel="stylesheet">
   </head>
   <body>
@@ -40,10 +40,12 @@
         <h1 class="doc-Module_heading" id="With-Node-js">
           With Node.js
         </h1>
-        <h2 class="" id="installation">Installation</h2>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>npm&nbsp;install&nbsp;node-aigis</span></span></div></pre>
-</code></pre><h2 class="" id="run">Run</h2>
-<pre><code class="lang-js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&nbsp;Aigis&nbsp;</span><span class="keyword operator js"><span>=</span></span><span>&nbsp;</span><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>node-aigis</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="storage modifier js"><span>var</span></span><span>&nbsp;aigis&nbsp;</span><span class="keyword operator js"><span>=</span></span><span>&nbsp;</span><span class="meta class instance constructor"><span class="keyword operator new js"><span>new</span></span><span>&nbsp;</span><span class="entity name type instance js"><span>Aigis</span></span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>./path/to/aigis_config.yml</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>aigis</span><span class="meta delimiter method period js"><span>.</span></span><span>run</span><span class="meta brace round js"><span>(</span><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre>
+        <h2 id="installation">Installation</h2>
+<pre><code>npm install node<span class="token operator" >-</span>aigis
+</code></pre><h2 id="run">Run</h2>
+<pre><code class="lang-js"><span class="token keyword" >var</span> Aigis <span class="token operator" >=</span> <span class="token function" >require</span><span class="token punctuation" >(</span><span class="token string" >'node-aigis'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+<span class="token keyword" >var</span> aigis <span class="token operator" >=</span> <span class="token keyword" >new</span> <span class="token class-name" >Aigis</span><span class="token punctuation" >(</span><span class="token string" >'./path/to/aigis_config.yml'</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+aigis<span class="token punctuation" >.</span><span class="token function" >run</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 </code></pre>
 
       </div>

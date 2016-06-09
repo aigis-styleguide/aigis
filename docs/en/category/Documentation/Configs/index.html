@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="../../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../../doc_assets/css/okadia.css" rel="stylesheet">
     <link href="../../../doc_assets/css/doc.css" rel="stylesheet">
   </head>
   <body>
@@ -40,307 +40,345 @@
         <h1 class="doc-Module_heading" id="Configs">
           Configs
         </h1>
-        <p class="">Aigis control a lot of action with a configuration file (<code>aigis_config.yml</code>). All path names are interpreted relative from a configuration file (<code>aigis_config.yml</code>) directory.</p>
-<h2 class="" id="source-required-">source: (<code>required</code>)</h2>
-<table class="">
+        <p>Aigis control a lot of action with a configuration file (<code>aigis_config.yml</code>). All path names are interpreted relative from a configuration file (<code>aigis_config.yml</code>) directory.</p>
+<h2 id="source-required-">source: (<code>required</code>)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">undefined</td>
+<tr>
+<td  >String or Array</td>
+<td  >undefined</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify relative path to a source file (or directory) which is a source for generating style guide. You can specify single specified value or arrayed value.</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<p class="">In case of setting specific file and directory name to <code>source</code> value, see below:</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./css/style.css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./scss</span></span></span></span></div></pre>
+<p>Specify relative path to a source file (or directory) which is a source for generating style guide. You can specify single specified value or arrayed value.</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>In case of setting specific file and directory name to <code>source</code> value, see below:</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >source</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> ./css/style.css
+  <span class="token punctuation" >-</span> ./scss
 </code></pre>
 </blockquote>
-<h2 class="" id="source_type-optional-">source_type: (optional)</h2>
-<table class="">
+<h2 id="source_type-optional-">source_type: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">[&#39;.css&#39;, &#39;.sass&#39;, &#39;.scss&#39;, &#39;.styl&#39;]</td>
+<tr>
+<td  >String or Array</td>
+<td  >[&#39;.css&#39;, &#39;.sass&#39;, &#39;.scss&#39;, &#39;.styl&#39;]</td>
 </tr>
 </tbody>
 </table>
-<p class="">In case of setting directory name to <code>source</code> value, Aigis will aim at source file which has an extension in <code>source_type</code>. By default, there are four type of extensions, <code>.css</code>, <code>.sass</code> and <code>.scss</code>, and <code>.styl</code>.</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<p class="">If you want to filter the type of source, set <code>source_type</code> value you want as follows.</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source_type</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.less</span></span></span></span></div></pre>
+<p>In case of setting directory name to <code>source</code> value, Aigis will aim at source file which has an extension in <code>source_type</code>. By default, there are four type of extensions, <code>.css</code>, <code>.sass</code> and <code>.scss</code>, and <code>.styl</code>.</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>If you want to filter the type of source, set <code>source_type</code> value you want as follows.</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >source_type</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> .css
+  <span class="token punctuation" >-</span> .less
 </code></pre>
-<h5 class="" id="generate-style-guide-with-markdown">Generate style guide with Markdown</h5>
-<p class="">Aigis can generate style guide from every text file which has CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>) and configuration block which is surrounded by <code>---</code>
+<h5 id="generate-style-guide-with-markdown">Generate style guide with Markdown</h5>
+<p>Aigis can generate style guide from every text file which has CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>) and configuration block which is surrounded by <code>---</code>
 For example, Aigis generates from Markdown file when you set <code>source_type</code> to <code>.md</code></p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source_type</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.md</span></span></span></span></div></pre>
+<pre><code class="lang-yaml"><span class="token key atrule" >source_type</span><span class="token punctuation" >:</span> .md
 </code></pre>
 </blockquote>
-<h2 class="" id="dest-optional-">dest: (optional)</h2>
-<table class="">
+<h2 id="dest-optional-">dest: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;./style guide&#39;</td>
+<tr>
+<td  >String</td>
+<td  >&#39;./style guide&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify destination directory. If you didn&#39;t specify it, Aigis will make a destination directory named <code>style guide</code> at the configuration file (<code>aigis_config.yml</code>) directory.</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>dest</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/destination</span></span></span></span></div></pre>
+<p>Specify destination directory. If you didn&#39;t specify it, Aigis will make a destination directory named <code>style guide</code> at the configuration file (<code>aigis_config.yml</code>) directory.</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<pre><code class="lang-yaml"><span class="token key atrule" >dest</span><span class="token punctuation" >:</span> ./path/to/destination
 </code></pre>
 </blockquote>
-<h2 class="" id="dependencies-optional-">dependencies: (optional)</h2>
-<table class="">
+<h2 id="dependencies-optional-">dependencies: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">undefined</td>
+<tr>
+<td  >String or Array</td>
+<td  >undefined</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify dependent file and directory for the style guide. The specified file and directory is copied to the destination directory.</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>dependencies</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/images</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/style.css</span></span></span></span></div></pre>
+<p>Specify dependent file and directory for the style guide. The specified file and directory is copied to the destination directory.</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<pre><code class="lang-yaml"><span class="token key atrule" >dependencies</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> ./path/to/css
+  <span class="token punctuation" >-</span> ./path/to/images
+  <span class="token punctuation" >-</span> ./path/to/style.css
 </code></pre>
 </blockquote>
-<h2 class="" id="template_dir-optional-">template_dir: (optional)</h2>
-<table class="">
+<h2 id="template_dir-optional-">template_dir: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;./template&#39;</td>
+<tr>
+<td  >String</td>
+<td  >&#39;./template&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify directory of template for generating style guide. This directory needs to contain <code>index.ejs</code> and <code>layout.ejs</code>.</p>
-<blockquote class="">
-<p class="">If you specified <code>jade</code> to <code>template_engine</code>, the directory needs to contain <code>index.jade</code> and <code>layout.jade</code>.</p>
-<p class="">If you specified <code>hbs</code> to <code>template_engine</code>, the directory needs to contain <code>index.hbs</code> and <code>layout.hbs</code>.</p>
-<h4 class="" id="example">Example</h4>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>template_dir</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string quoted single yaml"><span class="punctuation definition string begin yaml"><span>&#39;</span></span><span>./path/to/template_dir</span></span></span></span></div></pre>
+<p>Specify directory of template for generating style guide. This directory needs to contain <code>index.ejs</code> and <code>layout.ejs</code>.</p>
+<blockquote>
+<p>If you specified <code>jade</code> to <code>template_engine</code>, the directory needs to contain <code>index.jade</code> and <code>layout.jade</code>.</p>
+<p>If you specified <code>hbs</code> to <code>template_engine</code>, the directory needs to contain <code>index.hbs</code> and <code>layout.hbs</code>.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-yaml"><span class="token key atrule" >template_dir</span><span class="token punctuation" >:</span> './path/to/template_dir
 </code></pre>
 </blockquote>
-<h2 class="" id="component_dir-optional-">component_dir: (optional)</h2>
-<table class="">
+<h2 id="component_dir-optional-">component_dir: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;./html&#39;</td>
+<tr>
+<td  >String</td>
+<td  >&#39;./html&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify directory of imported html file. This option value is used for resolving a path of imported file when you want to append external file using special phrase (<code>!![](./path/to/file.html)</code>).</p>
-<h2 class="" id="template_engine-optional-">template_engine: (optional)</h2>
-<table class="">
+<p>Specify directory of imported html file. This option value is used for resolving a path of imported file when you want to append external file using special phrase (<code>!![](./path/to/file.html)</code>).</p>
+<h2 id="template_engine-optional-">template_engine: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;ejs&#39;</td>
+<tr>
+<td  >String</td>
+<td  >&#39;ejs&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify template engine for generating style guide. Three type of template engines can be used in aigis as follows.</p>
-<ul class="">
-<li class="">EJS（<code>ejs</code>）</li>
-<li class="">Jade（<code>jade</code>）</li>
-<li class="">Handlebars（<code>hbs</code>）</li>
+<p>Specify template engine for generating style guide. Three type of template engines can be used in aigis as follows.</p>
+<ul>
+<li>EJS（<code>ejs</code>）</li>
+<li>Jade（<code>jade</code>）</li>
+<li>Handlebars（<code>hbs</code>）</li>
 </ul>
-<p class="">This directory needs to contain a <code>index.xxx</code> (e.g. index.jade) which has an extension for the template engine you choose.</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<p class="">If you want to use Jade, see below:</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>template_engine</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>jade</span></span></span></span></div></pre>
+<p>This directory needs to contain a <code>index.xxx</code> (e.g. index.jade) which has an extension for the template engine you choose.</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>If you want to use Jade, see below:</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >template_engine</span><span class="token punctuation" >:</span> jade
 </code></pre>
 </blockquote>
-<h2 class="" id="log-optional-">log: (optional)</h2>
-<table class="">
+<h2 id="log-optional-">log: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">Boolean</td>
-<td   class="">false</td>
+<tr>
+<td  >Boolean</td>
+<td  >false</td>
 </tr>
 </tbody>
 </table>
-<p class="">List of generated files will be displayed to the console when this <code>log</code> is true.</p>
-<h2 class="" id="color_palette-optional-">color_palette: (optional)</h2>
-<table class="">
+<p>List of generated files will be displayed to the console when this <code>log</code> is true.</p>
+<h2 id="color_palette-optional-">color_palette: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">Boolean</td>
-<td   class="">true</td>
+<tr>
+<td  >Boolean</td>
+<td  >true</td>
 </tr>
 </tbody>
 </table>
-<p class="">Aigis generates a color palette page named <code>color.html</code> which has all the color that are used in your files.</p>
-<p class=""><a class="" href="https://pxgrid.github.io/aigis/styleguide/color.html" title="null">Sample: color.html</a></p>
-<p class="">If you don&#39;t need the color palette, specify <code>false</code> to this option and then Aigis don&#39;t generate the color palette page.</p>
-<h2 class="" id="preview_class-optional-">preview_class: (optional)</h2>
-<table class="">
+<p>Aigis generates a color palette page named <code>color.html</code> which has all the color that are used in your files.</p>
+<p><a href="https://pxgrid.github.io/aigis/styleguide/color.html" title="null">Sample: color.html</a></p>
+<p>If you don&#39;t need the color palette, specify <code>false</code> to this option and then Aigis don&#39;t generate the color palette page.</p>
+<h2 id="preview_class-optional-">preview_class: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;aigis-preview&#39;</td>
+<tr>
+<td  >String</td>
+<td  >&#39;aigis-preview&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify class name of the preview area which contains previewed component when Aigis generated a previewed component from the code block.
+<p>Specify class name of the preview area which contains previewed component when Aigis generated a previewed component from the code block.
 So, This option helps to operate your component with JavaScript or add a CSS which is unaffected by CSS of style guide</p>
-<blockquote class="">
-<h4 class="" id="appending-previewed-component">Appending previewed component</h4>
-<p class="">For example, you wrote a code block as follows.</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>```html</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
-</code></pre><p class="">Aigis appends the following HTML to your style guide.</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>aigis-preview</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre></blockquote>
-<h2 class="" id="output_collection-optional-">output_collection: (optional)</h2>
-<table class="">
-<thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">[&#39;category&#39;, &#39;tag&#39;]</td>
-</tr>
-</tbody>
-</table>
-<p class="">Specify outputted page group. If you want to output page group besides <code>category</code> and <code>tag</code>, set group name to <code>output_collection</code>.</p>
-<p class="">For example, In the case of your components require versioning, you added <code>version</code> to your components configuration block as follows.</p>
-<pre><code class="lang-css"><pre class="editor editor-colors"><div class="line"><span class="source css"><span>---</span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>name:&nbsp;btn</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>category:</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;</span><span class="entity name tag css"><span>base</span></span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;btn</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>version:&nbsp;1</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>---</span></span></span></div></pre>
+<blockquote>
+<h4 id="appending-previewed-component">Appending previewed component</h4>
+<p>For example, you wrote a code block as follows.</p>
+<pre><code class="lang-html">```html
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
+```
 </code></pre>
-<p class="">And then you set <code>version</code> to <code>output_collection</code>. Finally, Aigis will generate a page for the components which is grouped by same <code>version</code> value.</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>output_collection:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-&nbsp;category</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-&nbsp;version</span></span></div></pre>
-</code></pre><p class="">In the case of above specified, two type of pages (<code>category</code> and <code>version</code>) will be outputted.</p>
-<h2 class="" id="transform-optional-">transform: (optional)</h2>
-<table class="">
-<thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">[&#39;html&#39;, &#39;ejs&#39;, &#39;jade&#39;, &#39;hbs&#39;]</td>
-</tr>
-</tbody>
-</table>
-<p class="">In the case of code block has a special extension, Aigis will generate an actual HTML from the code block.
-It can help you to show markup example and previewed component.</p>
-<p class=""><code>html</code> <code>jade</code> <code>ejs</code> <code>hbs</code> will be enabled by default.</p>
-<p class="">If you don&#39;t want to generate previewed component from the code block, specify <code>transform</code> value which you want.</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>transform</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>html</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>hbs</span></span></span></span></div></pre>
-</code></pre>
-<blockquote class="">
-<h4 class="" id="compile-code-block-with-template-engine">Compile code block with template engine</h4>
-<p class="">If you specify <code>compile: true</code> in configuration block of your component, The code block which is specify <code>ejs</code> or <code>jade</code> or <code>hbs</code> will be compiled by using configuration value of the configuration block.</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>---</span></span></div><div class="line"><span class="text html gohtml"><span>name:&nbsp;btn</span></span></div><div class="line"><span class="text html gohtml"><span>category:&nbsp;btn</span></span></div><div class="line"><span class="text html gohtml"><span>compile:&nbsp;true</span></span></div><div class="line"><span class="text html gohtml"><span>data:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;value1:&nbsp;hoge</span></span></div><div class="line"><span class="text html gohtml"><span>---</span></span></div><div class="line"><span class="text html gohtml"><span>```ejs&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>&lt;%-&nbsp;name&nbsp;%&gt;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>&lt;%-&nbsp;data.value1&nbsp;%&gt;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
-</code></pre><p class="">In the above case, Aigis will append HTML like the following by using configuration values.</p>
-<pre><code class="lang-html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>aigis-preview</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>btn</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>Aigis appends the following HTML to your style guide.</p>
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>aigis-preview<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
 </blockquote>
-<h2 class="" id="highlight-optional-">highlight: (optional)</h2>
-<table class="">
+<h2 id="output_collection-optional-">output_collection: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">Boolean</td>
-<td   class="">true</td>
+<tr>
+<td  >String or Array</td>
+<td  >[&#39;category&#39;, &#39;tag&#39;]</td>
 </tr>
 </tbody>
 </table>
-<p class="">Specify enabling or disabling syntax highlighting for the code block. If you want another syntax highlighting library, specify <code>highlight: false</code> and then Aigis will disable the syntax highlighting.</p>
-<h2 class="" id="timestamp_format-optional-">timestamp_format: (optional)</h2>
-<table class="">
+<p>Specify outputted page group. If you want to output page group besides <code>category</code> and <code>tag</code>, set group name to <code>output_collection</code>.</p>
+<p>For example, In the case of your components require versioning, you added <code>version</code> to your components configuration block as follows.</p>
+<pre><code class="lang-css">---
+<span class="token property" >name</span><span class="token punctuation" >:</span> btn
+<span class="token property" >category</span><span class="token punctuation" >:</span>
+  - base
+  - btn
+<span class="token property" >version</span><span class="token punctuation" >:</span> <span class="token number" >1</span>
+---
+</code></pre>
+<p>And then you set <code>version</code> to <code>output_collection</code>. Finally, Aigis will generate a page for the components which is grouped by same <code>version</code> value.</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >output_collection</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> category
+  <span class="token punctuation" >-</span> version
+</code></pre>
+<p>In the case of above specified, two type of pages (<code>category</code> and <code>version</code>) will be outputted.</p>
+<h2 id="transform-optional-">transform: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;YYYY/MM/DD HH:mm&#39;</td>
+<tr>
+<td  >String or Array</td>
+<td  >[&#39;html&#39;, &#39;ejs&#39;, &#39;jade&#39;, &#39;hbs&#39;]</td>
 </tr>
 </tbody>
 </table>
-<p class="">When aigis generate style guide, Aigis will path through special variable named <code>timestamp</code> to your template. It helps to mention about publish date of your style guide.</p>
-<p class="">Please refer <a class="" href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">format of Moment.js</a> about The format of <code>timestamp_format</code> value.</p>
+<p>In the case of code block has a special extension, Aigis will generate an actual HTML from the code block.
+It can help you to show markup example and previewed component.</p>
+<p><code>html</code> <code>jade</code> <code>ejs</code> <code>hbs</code> will be enabled by default.</p>
+<p>If you don&#39;t want to generate previewed component from the code block, specify <code>transform</code> value which you want.</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >transform</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> html
+  <span class="token punctuation" >-</span> hbs
+</code></pre>
+<blockquote>
+<h4 id="compile-code-block-with-template-engine">Compile code block with template engine</h4>
+<p>If you specify <code>compile: true</code> in configuration block of your component, The code block which is specify <code>ejs</code> or <code>jade</code> or <code>hbs</code> will be compiled by using configuration value of the configuration block.</p>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> btn
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span> btn
+<span class="token key atrule" >compile</span><span class="token punctuation" >:</span> <span class="token boolean important" >true</span>
+<span class="token key atrule" >data</span><span class="token punctuation" >:</span>
+  <span class="token key atrule" >value1</span><span class="token punctuation" >:</span> hoge
+<span class="token punctuation" >---</span>
+```ejs  
+&lt;h2<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> name %<span class="token punctuation" >></span>&lt;/h2<span class="token punctuation" >></span>
+&lt;button<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> data.value1 %<span class="token punctuation" >></span>&lt;/button<span class="token punctuation" >></span>
+```
+</code></pre>
+<p>In the above case, Aigis will append HTML like the following by using configuration values.</p>
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>aigis-preview<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >></span></span>btn<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+</blockquote>
+<h2 id="highlight-optional-">highlight: (optional)</h2>
+<table>
+<thead>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td  >Boolean</td>
+<td  >true</td>
+</tr>
+</tbody>
+</table>
+<p>Specify enabling or disabling syntax highlighting for the code block. If you want another syntax highlighting library, specify <code>highlight: false</code> and then Aigis will disable the syntax highlighting.</p>
+<h2 id="timestamp_format-optional-">timestamp_format: (optional)</h2>
+<table>
+<thead>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td  >String</td>
+<td  >&#39;YYYY/MM/DD HH:mm&#39;</td>
+</tr>
+</tbody>
+</table>
+<p>When aigis generate style guide, Aigis will path through special variable named <code>timestamp</code> to your template. It helps to mention about publish date of your style guide.</p>
+<p>Please refer <a href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">format of Moment.js</a> about The format of <code>timestamp_format</code> value.</p>
 
       </div>
   

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="../../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../../doc_assets/css/okadia.css" rel="stylesheet">
     <link href="../../../doc_assets/css/doc.css" rel="stylesheet">
   </head>
   <body>
@@ -40,48 +40,62 @@
         <h1 class="doc-Module_heading" id="With-CLI">
           With CLI
         </h1>
-        <h2 class="" id="installation">Installation</h2>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>npm&nbsp;i&nbsp;node-aigis</span></span></div></pre>
-</code></pre><h2 class="" id="version-help">Version &amp; Help</h2>
-<h3 class="" id="show-version">Show version</h3>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;--version</span></span></div><div class="line"><span class="text html gohtml"><span>1.0.0</span></span></div></pre>
-</code></pre><h3 class="" id="show-help">Show help</h3>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;--help</span></span></div><div class="line"><span class="text html gohtml"><span>Usage:&nbsp;aigis&nbsp;run&nbsp;-c&nbsp;./path/to/aigis_config.yml</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>Commands:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;run&nbsp;&nbsp;&nbsp;Generate&nbsp;style&nbsp;guide</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;init&nbsp;&nbsp;Copy&nbsp;template&nbsp;</span><span class="invalid illegal bad-ampersand html"><span>&amp;</span></span><span>&nbsp;theme&nbsp;</span><span class="invalid illegal bad-ampersand html"><span>&amp;</span></span><span>&nbsp;config&nbsp;file</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>Options:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-v,&nbsp;--version&nbsp;&nbsp;Show&nbsp;version&nbsp;number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[boolean]</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-h,&nbsp;--help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[boolean]</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>Examples:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;node_modules/.bin/aigis&nbsp;run&nbsp;-c&nbsp;./config_file.yml</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;node_modules/.bin/aigis&nbsp;init&nbsp;-e&nbsp;jade</span></span></div></pre>
-</code></pre><h2 class="" id="run-aigis">Run aigis</h2>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>./node_modules/.bin/aigis&nbsp;run</span></span></div></pre>
-</code></pre><h3 class="" id="options">options</h3>
-<table class="">
+        <h2 id="installation">Installation</h2>
+<pre><code>npm i node<span class="token operator" >-</span>aigis
+</code></pre><h2 id="version-help">Version &amp; Help</h2>
+<h3 id="show-version">Show version</h3>
+<pre><code>$ <span class="token punctuation" >.</span><span class="token operator" >/</span>node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis <span class="token operator" >-</span><span class="token operator" >-</span>version
+<span class="token number" >1.0</span><span class="token punctuation" >.</span><span class="token number" >0</span>
+</code></pre><h3 id="show-help">Show help</h3>
+<pre><code>$ <span class="token punctuation" >.</span><span class="token operator" >/</span>node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis <span class="token operator" >-</span><span class="token operator" >-</span>help
+Usage<span class="token punctuation" >:</span> aigis run <span class="token operator" >-</span>c <span class="token punctuation" >.</span><span class="token operator" >/</span>path<span class="token operator" >/</span><span class="token keyword" >to</span><span class="token operator" >/</span>aigis_config<span class="token punctuation" >.</span>yml
+
+Commands<span class="token punctuation" >:</span>
+  run   Generate style guide
+  init  Copy template <span class="token operator" >&amp;</span> theme <span class="token operator" >&amp;</span> config file
+
+Options<span class="token punctuation" >:</span>
+  <span class="token operator" >-</span>v<span class="token punctuation" >,</span> <span class="token operator" >-</span><span class="token operator" >-</span>version  Show version number                                   <span class="token punctuation" >[</span>boolean<span class="token punctuation" >]</span>
+  <span class="token operator" >-</span>h<span class="token punctuation" >,</span> <span class="token operator" >-</span><span class="token operator" >-</span>help     Show help                                             <span class="token punctuation" >[</span>boolean<span class="token punctuation" >]</span>
+
+Examples<span class="token punctuation" >:</span>
+  node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis run <span class="token operator" >-</span>c <span class="token punctuation" >.</span><span class="token operator" >/</span>config_file<span class="token punctuation" >.</span>yml
+  node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis init <span class="token operator" >-</span>e jade
+</code></pre><h2 id="run-aigis">Run aigis</h2>
+<pre><code><span class="token punctuation" >.</span><span class="token operator" >/</span>node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis run
+</code></pre><h3 id="options">options</h3>
+<table>
 <thead>
-<tr class="">
-<th   class="">name</th>
-<th   class="">alias</th>
-<th   class="">value</th>
+<tr>
+<th  >name</th>
+<th  >alias</th>
+<th  >value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class=""><code>--config</code></td>
-<td   class=""><code>-c</code></td>
-<td   class="">./path/to/aigis_config.yml</td>
+<tr>
+<td  ><code>--config</code></td>
+<td  ><code>-c</code></td>
+<td  >./path/to/aigis_config.yml</td>
 </tr>
 </tbody>
 </table>
-<h2 class="" id="init-config-file-templats">Init config file &amp; templats</h2>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>./node_modules/.bin/aigis&nbsp;init</span></span></div></pre>
-</code></pre><h3 class="" id="options">options</h3>
-<table class="">
+<h2 id="init-config-file-templats">Init config file &amp; templats</h2>
+<pre><code><span class="token punctuation" >.</span><span class="token operator" >/</span>node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis init
+</code></pre><h3 id="options">options</h3>
+<table>
 <thead>
-<tr class="">
-<th   class="">name</th>
-<th   class="">alias</th>
-<th   class="">value</th>
+<tr>
+<th  >name</th>
+<th  >alias</th>
+<th  >value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class=""><code>--engine</code></td>
-<td   class=""><code>-c</code></td>
-<td   class="">ejs, jade, hbs</td>
+<tr>
+<td  ><code>--engine</code></td>
+<td  ><code>-c</code></td>
+<td  >ejs, jade, hbs</td>
 </tr>
 </tbody>
 </table>

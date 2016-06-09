@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../doc_assets/css/okadia.css" rel="stylesheet">
     <link href="../../doc_assets/css/doc.css" rel="stylesheet">
   </head>
   <body>
@@ -40,62 +40,81 @@
         <h1 class="doc-Module_heading" id="Quick-Start">
           Quick Start
         </h1>
-        <p class="">Tutorial:<br>The best way to learn it is <a class="" href="https://github.com/pxgrid/aigis/tree/master/examples" title="null">just trying</a>. Let&#39;s see the following steps to generate a style guide for CSS!</p>
-<h2 class="" id="install-node-aigis">Install node-aigis</h2>
-<p class="">Install on NPM.</p>
-<pre><code class="lang-shell"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&nbsp;npm&nbsp;install&nbsp;--save-dev&nbsp;node-aigis</span></span></div></pre>
+        <p>Tutorial:<br>The best way to learn it is <a href="https://github.com/pxgrid/aigis/tree/master/examples" title="null">just trying</a>. Let&#39;s see the following steps to generate a style guide for CSS!</p>
+<h2 id="install-node-aigis">Install node-aigis</h2>
+<p>Install on NPM.</p>
+<pre><code class="lang-shell">$ npm install <span class="token operator" >-</span><span class="token operator" >-</span>save<span class="token operator" >-</span>dev node<span class="token operator" >-</span>aigis
 </code></pre>
-<p class="">You can verify aigis by typing the following command:</p>
-<pre><code class="lang-shell"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;-v</span></span></div><div class="line"><span class="text plain null-grammar"><span>$&nbsp;1.0.0</span></span></div></pre>
+<p>You can verify aigis by typing the following command:</p>
+<pre><code class="lang-shell">$ <span class="token punctuation" >.</span><span class="token operator" >/</span>node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis <span class="token operator" >-</span>v
+$ <span class="token number" >1.0</span><span class="token punctuation" >.</span><span class="token number" >0</span>
 </code></pre>
-<h2 class="" id="config-file-html-templates">Config file &amp; HTML Templates</h2>
-<p class="">You need a configuration file and HTML template files in order to generate the style guide.
+<h2 id="config-file-html-templates">Config file &amp; HTML Templates</h2>
+<p>You need a configuration file and HTML template files in order to generate the style guide.
 However, you can execute <code>init</code> command and then you can use the default configuration file and HTML templates.</p>
-<pre><code class="lang-shell"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;init</span></span></div><div class="line"><span class="text plain null-grammar"><span>Created&nbsp;the&nbsp;following&nbsp;files&nbsp;and&nbsp;directories:</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;aigis_config.yml</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;aigis_assets</span></span></div><div class="line"><span class="text plain null-grammar"><span>&nbsp;&nbsp;template_ejs</span></span></div></pre>
+<pre><code class="lang-shell">$ <span class="token punctuation" >.</span><span class="token operator" >/</span>node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis init
+Created the following files <span class="token operator" >and</span> directories<span class="token punctuation" >:</span>
+  aigis_config<span class="token punctuation" >.</span>yml
+  aigis_assets
+  template_ejs
 </code></pre>
-<blockquote class="">
-<h4 class="" id="set-template-engine">Set template engine</h4>
-<p class="">You can choose one out of the three template engines by specifying the <code>--engine</code> option when you execute <code>aigis init</code>.
+<blockquote>
+<h4 id="set-template-engine">Set template engine</h4>
+<p>You can choose one out of the three template engines by specifying the <code>--engine</code> option when you execute <code>aigis init</code>.
 To do this, the the following command: </p>
-<h4 class="" id="template-engine-and-value-for-this-option">Template Engine and value for this option</h4>
-<ul class="">
-<li class="">EJS（<code>ejs</code>）</li>
-<li class="">Jade（<code>jade</code>）</li>
-<li class="">Handlebars（<code>hbs</code>）</li>
+<h4 id="template-engine-and-value-for-this-option">Template Engine and value for this option</h4>
+<ul>
+<li>EJS（<code>ejs</code>）</li>
+<li>Jade（<code>jade</code>）</li>
+<li>Handlebars（<code>hbs</code>）</li>
 </ul>
-<h4 class="" id="e-g-choose-jade">e.g. Choose Jade</h4>
-<pre><code class="lang-shell"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;init&nbsp;--engine&nbsp;jade</span></span></div></pre>
+<h4 id="e-g-choose-jade">e.g. Choose Jade</h4>
+<pre><code class="lang-shell">$ <span class="token punctuation" >.</span><span class="token operator" >/</span>node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis init <span class="token operator" >-</span><span class="token operator" >-</span>engine jade
 </code></pre>
 </blockquote>
-<h3 class="" id="edit-configuration-file">Edit configuration file</h3>
-<p class="">The <code>init</code> command will generate <code>aigis_config.yml</code>.
+<h3 id="edit-configuration-file">Edit configuration file</h3>
+<p>The <code>init</code> command will generate <code>aigis_config.yml</code>.
 You can edit it and then you assign source file name for generating the style guide to <code>source</code>.
 For example, If you want to generate the style guide from <code>style.css</code>, type the following code: <code>source: ./style.css</code>.</p>
-<blockquote class="">
-<h4 class="" id="how-to-specify-source">How to specify source</h4>
-<p class=""><code>source</code> field can be specified file and directory name, either one is OK</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./lib/css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./style.css</span></span></span></span></div></pre>
+<blockquote>
+<h4 id="how-to-specify-source">How to specify source</h4>
+<p><code>source</code> field can be specified file and directory name, either one is OK</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >source</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> ./lib/css
+  <span class="token punctuation" >-</span> ./style.css
 </code></pre>
-<p class="">CSS file path for default theme was assigned to <code>source</code> field in <code>aigis_config.yml</code> was generated by <code>init</code> command. If you don&#39;t edit <code>source</code> field and execute <code>aigis</code>, a style guide for this theme will be generated.</p>
+<p>CSS file path for default theme was assigned to <code>source</code> field in <code>aigis_config.yml</code> was generated by <code>init</code> command. If you don&#39;t edit <code>source</code> field and execute <code>aigis</code>, a style guide for this theme will be generated.</p>
 </blockquote>
-<h2 class="" id="add-comment-to-css">Add comment to CSS</h2>
-<p class="">Add some documentation to CSS was assigned to <code>source</code> field:</p>
-<p class="">In CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>), add this comment for generating style guide.</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>name</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>base&nbsp;button</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>category</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>module/button</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;</span></span></div><div class="line"><span class="source yaml"><span class="comment line number-sign yaml"><span class="punctuation definition comment yaml"><span>#</span></span><span>#&nbsp;This&nbsp;is&nbsp;base&nbsp;button</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;</span></span></div><div class="line"><span class="source yaml"><span>*&nbsp;Base&nbsp;button&nbsp;style.</span></span></div><div class="line"><span class="source yaml"><span>*&nbsp;Use&nbsp;</span><span class="string interpolated yaml"><span class="punctuation definition string begin yaml"><span>`</span></span><span>a</span><span class="punctuation definition string end yaml"><span>`</span></span></span><span>&nbsp;or&nbsp;</span><span class="string interpolated yaml"><span class="punctuation definition string begin yaml"><span>`</span></span><span>button</span><span class="punctuation definition string end yaml"><span>`</span></span></span><span>&nbsp;tag.</span></span></div><div class="line"><span class="source yaml"><span>&nbsp;</span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span class="punctuation definition string begin yaml"><span>`</span></span><span class="punctuation definition string end yaml"><span>`</span></span><span class="punctuation definition string begin yaml"><span>`</span></span><span>html</span></span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span>&lt;a&nbsp;class=&quot;btn&quot;&gt;Button&lt;/a&gt;</span></span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span class="punctuation definition string end yaml"><span>`</span></span><span class="punctuation definition string begin yaml"><span>`</span></span><span class="punctuation definition string end yaml"><span>`</span></span></span></span></div></pre>
+<h2 id="add-comment-to-css">Add comment to CSS</h2>
+<p>Add some documentation to CSS was assigned to <code>source</code> field:</p>
+<p>In CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>), add this comment for generating style guide.</p>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> base button
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span> module/button
+<span class="token punctuation" >---</span>
+
+<span class="token comment" spellcheck="true">## This is base button</span>
+
+* Base button style.
+* Use `a` or `button` tag.
+
+```html
+&lt;a class="btn"<span class="token punctuation" >></span>Button&lt;/a<span class="token punctuation" >></span>
+```
 </code></pre>
-<p class="">So, this documentation is really simple. If you want to know detail about documentation comment, please see <a class="" href="https://pxgrid.github.io/aigis/docs/en/category/Documentation/Comment-Syntax/" title="null">next document</a>.</p>
-<h2 class="" id="execute-aigis">Execute aigis</h2>
-<p class="">The following command runs aigis, generates style guide.</p>
-<pre><code class="lang-shell"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&nbsp;./node_modules/.bin/aigis&nbsp;run&nbsp;-c&nbsp;./aigis_config.yml</span></span></div></pre>
+<p>So, this documentation is really simple. If you want to know detail about documentation comment, please see <a href="https://pxgrid.github.io/aigis/docs/en/category/Documentation/Comment-Syntax/" title="null">next document</a>.</p>
+<h2 id="execute-aigis">Execute aigis</h2>
+<p>The following command runs aigis, generates style guide.</p>
+<pre><code class="lang-shell">$ <span class="token punctuation" >.</span><span class="token operator" >/</span>node_modules<span class="token operator" >/</span><span class="token punctuation" >.</span>bin<span class="token operator" >/</span>aigis run <span class="token operator" >-</span>c <span class="token punctuation" >.</span><span class="token operator" >/</span>aigis_config<span class="token punctuation" >.</span>yml
 </code></pre>
-<p class="">The following style guide is generated from documentn comment.</p>
-<p class=""><a href="https://pxgrid.github.io/aigis/sample/category/module/button/index.html" target="_blank">Sample</a></p>
-<blockquote class="">
-<p class="">aigis will be looking for <code>aigis_config.yml</code> from the directory the command was executed.</p>
+<p>The following style guide is generated from documentn comment.</p>
+<p><a href="https://pxgrid.github.io/aigis/sample/category/module/button/index.html" target="_blank">Sample</a></p>
+<blockquote>
+<p>aigis will be looking for <code>aigis_config.yml</code> from the directory the command was executed.</p>
 </blockquote>
-<p class="">Sample comment for style guide has been described in <code>./aigis_assets/css/theme.css</code> was generated by <code>init</code> command.
+<p>Sample comment for style guide has been described in <code>./aigis_assets/css/theme.css</code> was generated by <code>init</code> command.
 So, <code>node-aigis</code> has some examples. Please refer together with this page.</p>
-<p class="">Even apart from this, See the <a class="" href="https://pxgrid.github.io/aigis/docs/en/category/Documentation/index.html" title="null">Document</a> for more details. Please give us your feedback on <a class="" href="https://github.com/pxgrid/aigis/issues" title="null">GitHub issues</a> or <a class="" href="https://github.com/pxgrid/aigis/pulls" title="null">Pull Requests</a>.</p>
+<p>Even apart from this, See the <a href="https://pxgrid.github.io/aigis/docs/en/category/Documentation/index.html" title="null">Document</a> for more details. Please give us your feedback on <a href="https://github.com/pxgrid/aigis/issues" title="null">GitHub issues</a> or <a href="https://github.com/pxgrid/aigis/pulls" title="null">Pull Requests</a>.</p>
 
       </div>
   

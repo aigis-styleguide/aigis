@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="../../doc_assets/css/dracula.css" rel="stylesheet">
+    <link href="../../doc_assets/css/okadia.css" rel="stylesheet">
     <link href="../../doc_assets/css/doc.css" rel="stylesheet">
   </head>
   <body>
@@ -40,378 +40,487 @@
         <h1 class="doc-Module_heading" id="Comment-Syntax">
           Comment Syntax
         </h1>
-        <p class="">aigisではコメントブロック(<code>&#047;&#042; ~ &#042;&#047;</code>)にコンポーネントの<strong>コンフィグ</strong>と、コンポーネントの<strong>ドキュメント</strong>を合わせて記述します。次のコードの<code>---</code>で囲まれているブロックがコンフィグ(YAML)、それ以下がドキュメント(Markdown)になります。</p>
-<pre><code class="lang-css"><pre class="editor editor-colors"><div class="line"><span class="source css"><span>---</span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>name:&nbsp;component&nbsp;name</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>tag:</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;</span><span class="entity name tag css"><span>base</span></span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;latest</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>category:</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;component</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;component</span></span><span>/</span><span class="meta selector css"><span class="entity name tag css"><span>button</span></span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>---</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>##&nbsp;This&nbsp;is&nbsp;</span><span class="entity name tag css"><span>a</span></span><span>&nbsp;component&nbsp;document</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span class="entity name tag wildcard css"><span>*</span></span><span>&nbsp;Base&nbsp;</span><span class="entity name tag css"><span>button</span></span><span>&nbsp;component.</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span class="entity name tag wildcard css"><span>*</span></span><span>&nbsp;Use&nbsp;`</span><span class="entity name tag css"><span>a</span></span><span>`&nbsp;or&nbsp;`</span><span class="entity name tag css"><span>button</span></span><span>`&nbsp;tag.</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>Here&#39;</span><span class="entity name tag css"><span>s</span></span><span>&nbsp;an&nbsp;example&nbsp;</span><span class="entity name tag css"><span>code</span></span><span>.</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>```</span><span class="entity name tag css"><span>html</span></span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&lt;</span><span class="entity name tag css"><span>a</span></span><span>&nbsp;class=&quot;btn&quot;&gt;Button&lt;</span></span><span>/</span><span class="meta selector css"><span class="entity name tag css"><span>a</span></span><span>&gt;</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>```</span></span></span></div></pre>
+        <p>aigisではコメントブロック(<code>&#047;&#042; ~ &#042;&#047;</code>)にコンポーネントの<strong>コンフィグ</strong>と、コンポーネントの<strong>ドキュメント</strong>を合わせて記述します。次のコードの<code>---</code>で囲まれているブロックがコンフィグ(YAML)、それ以下がドキュメント(Markdown)になります。</p>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> component name
+<span class="token key atrule" >tag</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> base
+  <span class="token punctuation" >-</span> latest
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> component
+  <span class="token punctuation" >-</span> component/button
+<span class="token punctuation" >---</span>
+
+<span class="token comment" spellcheck="true">## This is a component document</span>
+
+* Base button component.
+* Use `a` or `button` tag.
+
+Here's an example code.
+
+```html
+&lt;a class="btn"<span class="token punctuation" >></span>Button&lt;/a<span class="token punctuation" >></span>
+```
 </code></pre>
-<p class="">このコンフィグとドキュメントをセットに、コンポーネントのスタイルガイドを生成します。</p>
-<h2 class="" id="-">コンフィグブロック</h2>
-<p class=""><code>---</code>で囲まれた部分がコンポーネントのコンフィグです。コンフィグはYAML形式で記述します。</p>
-<blockquote class="">
-<p class="">より正確に言うとコメントブロックの開始行(<code>&#047;&#042;</code>)の次の行に<code>---</code>がある必要があります。</p>
+<p>このコンフィグとドキュメントをセットに、コンポーネントのスタイルガイドを生成します。</p>
+<h2 id="-">コンフィグブロック</h2>
+<p><code>---</code>で囲まれた部分がコンポーネントのコンフィグです。コンフィグはYAML形式で記述します。</p>
+<blockquote>
+<p>より正確に言うとコメントブロックの開始行(<code>&#047;&#042;</code>)の次の行に<code>---</code>がある必要があります。</p>
 </blockquote>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>name</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>component&nbsp;name</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>tag</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>base</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>latest</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>category</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>component</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>component/button</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div></pre>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> component name
+<span class="token key atrule" >tag</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> base
+  <span class="token punctuation" >-</span> latest
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> component
+  <span class="token punctuation" >-</span> component/button
+<span class="token punctuation" >---</span>
 </code></pre>
-<p class="">コンフィグファイル(<code>aigis_config.yml</code>)の<code>output_collection:</code>に、コンポーネントのコンフィグの項目名(<code>category</code>や<code>tag</code>)を指定することで、その項目ごとにコンポーネントをグルーピングしてスタイルガイドを生成することができます。</p>
-<blockquote class="">
-<p class="">デフォルトでは<code>category</code>と<code>tag</code>をグルーピングして出力します。</p>
+<p>コンフィグファイル(<code>aigis_config.yml</code>)の<code>output_collection:</code>に、コンポーネントのコンフィグの項目名(<code>category</code>や<code>tag</code>)を指定することで、その項目ごとにコンポーネントをグルーピングしてスタイルガイドを生成することができます。</p>
+<blockquote>
+<p>デフォルトでは<code>category</code>と<code>tag</code>をグルーピングして出力します。</p>
 </blockquote>
-<h2 class="" id="-">ドキュメントブロック</h2>
-<p class="">コンポーネントのドキュメントではMarkdown(<a class="" href="https://help.github.com/categories/writing-on-github/" title="null">GitHub flavored markdown</a>)を使うことができます。</p>
-<p class="">コードブロック(<code>&#8242;&#8242;&#8242;</code>)では特定のキーワードを指定することでシンタックスハイライトが有効になります。詳しくは<a class="" href="../Syntax-Highlight/" title="null">Documentation/Syntax Highlight</a>を参照してください。</p>
-<blockquote class="">
-<p class="">aigisでは<a class="" href="https://github.com/chjj/marked" title="null">chjj/marked</a>を使ってMarkdownをコンパイルします。また、Highlightなどの処理を行うために、<a class="" href="https://github.com/pxgrid/aigis-marked/" title="null">aigis-marked</a>というカスタムレンダラを使用しています。</p>
+<h2 id="-">ドキュメントブロック</h2>
+<p>コンポーネントのドキュメントではMarkdown(<a href="https://help.github.com/categories/writing-on-github/" title="null">GitHub flavored markdown</a>)を使うことができます。</p>
+<p>コードブロック(<code>&#8242;&#8242;&#8242;</code>)では特定のキーワードを指定することでシンタックスハイライトが有効になります。詳しくは<a href="../Syntax-Highlight/" title="null">Documentation/Syntax Highlight</a>を参照してください。</p>
+<blockquote>
+<p>aigisでは<a href="https://github.com/chjj/marked" title="null">chjj/marked</a>を使ってMarkdownをコンパイルします。また、Highlightなどの処理を行うために、<a href="https://github.com/pxgrid/aigis-marked/" title="null">aigis-marked</a>というカスタムレンダラを使用しています。</p>
 </blockquote>
-<h2 class="" id="-">コンフィグの値を使ってプレビューを生成する</h2>
-<p class="">aigisはコードブロック(<code>&#8242;&#8242;&#8242;</code>)に特定のキーワードをつけることでプレビューを生成し挿入します。EJSやJadeのようなテンプレートエンジンからプレビューを生成したい場合、コンフィグに<code>compile: true</code>を指定することでコンフィグに書かれた値をもとにプレビューを生成できます。</p>
-<blockquote class="">
-<p class="">プレビュー挿入の有効/無効の切り替えはコンフィグファイルの<code>transform:</code>で指定できます。<code>ejs</code>のときだけプレビューを有効にする場合には、次のように<code>transform:</code>に<code>ejs</code>だけを指定します。</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>transform</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>ejs</span></span></span></span></div></pre>
+<h2 id="-">コンフィグの値を使ってプレビューを生成する</h2>
+<p>aigisはコードブロック(<code>&#8242;&#8242;&#8242;</code>)に特定のキーワードをつけることでプレビューを生成し挿入します。EJSやJadeのようなテンプレートエンジンからプレビューを生成したい場合、コンフィグに<code>compile: true</code>を指定することでコンフィグに書かれた値をもとにプレビューを生成できます。</p>
+<blockquote>
+<p>プレビュー挿入の有効/無効の切り替えはコンフィグファイルの<code>transform:</code>で指定できます。<code>ejs</code>のときだけプレビューを有効にする場合には、次のように<code>transform:</code>に<code>ejs</code>だけを指定します。</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >transform</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> ejs
 </code></pre>
 </blockquote>
-<p class="">EJSのコードブロックからHTMLのプレビューを生成するには、次のようなコンフィグを記述します。<code>compile:</code>の項目はコンポーネントごとに切り替えることができます。(Defaultでは<code>false</code>)</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>name</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>component&nbsp;name</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>tag</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>base</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>latest</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>category</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>component</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>component/button</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>data</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="entity name tag yaml"><span>value1</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>hoge</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="entity name tag yaml"><span>value2</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>fuga</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>compile</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>true</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;</span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span class="punctuation definition string begin yaml"><span>`</span></span><span class="punctuation definition string end yaml"><span>`</span></span><span class="punctuation definition string begin yaml"><span>`</span></span><span>ejs&nbsp;&nbsp;</span></span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span>&lt;div&gt;</span></span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span>&nbsp;&nbsp;&lt;h2&gt;</span><span class="meta embedded line ruby"><span class="punctuation definition embedded begin ruby"><span>&lt;%</span></span><span class="source ruby rails"><span class="keyword operator arithmetic ruby"><span>-</span></span><span>&nbsp;name&nbsp;</span></span><span class="punctuation definition embedded end ruby"><span class="source ruby rails"><span>%</span></span><span>&gt;</span></span></span><span>&lt;/h2&gt;</span></span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span>&nbsp;&nbsp;&lt;p&gt;</span><span class="meta embedded line ruby"><span class="punctuation definition embedded begin ruby"><span>&lt;%</span></span><span class="source ruby rails"><span class="keyword operator arithmetic ruby"><span>-</span></span><span>&nbsp;data</span><span class="punctuation separator method ruby"><span>.</span></span><span>value1&nbsp;</span></span><span class="punctuation definition embedded end ruby"><span class="source ruby rails"><span>%</span></span><span>&gt;</span></span></span><span>&lt;/p&gt;</span></span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span>&nbsp;&nbsp;&lt;p&gt;</span><span class="meta embedded line ruby"><span class="punctuation definition embedded begin ruby"><span>&lt;%</span></span><span class="source ruby rails"><span class="keyword operator arithmetic ruby"><span>-</span></span><span>&nbsp;data</span><span class="punctuation separator method ruby"><span>.</span></span><span>value2&nbsp;</span></span><span class="punctuation definition embedded end ruby"><span class="source ruby rails"><span>%</span></span><span>&gt;</span></span></span><span>&lt;/p&gt;</span></span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span>&lt;/div&gt;</span></span></span></div><div class="line"><span class="source yaml"><span class="string interpolated yaml"><span class="punctuation definition string end yaml"><span>`</span></span><span class="punctuation definition string begin yaml"><span>`</span></span><span class="punctuation definition string end yaml"><span>`</span></span></span></span></div></pre>
+<p>EJSのコードブロックからHTMLのプレビューを生成するには、次のようなコンフィグを記述します。<code>compile:</code>の項目はコンポーネントごとに切り替えることができます。(Defaultでは<code>false</code>)</p>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> component name
+<span class="token key atrule" >tag</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> base
+  <span class="token punctuation" >-</span> latest
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> component
+  <span class="token punctuation" >-</span> component/button
+<span class="token key atrule" >data</span><span class="token punctuation" >:</span>
+  <span class="token key atrule" >value1</span><span class="token punctuation" >:</span> hoge
+  <span class="token key atrule" >value2</span><span class="token punctuation" >:</span> fuga
+<span class="token key atrule" >compile</span><span class="token punctuation" >:</span> <span class="token boolean important" >true</span>
+<span class="token punctuation" >---</span>
+
+```ejs  
+&lt;div<span class="token punctuation" >></span>
+  &lt;h2<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> name %<span class="token punctuation" >></span>&lt;/h2<span class="token punctuation" >></span>
+  &lt;p<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> data.value1 %<span class="token punctuation" >></span>&lt;/p<span class="token punctuation" >></span>
+  &lt;p<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> data.value2 %<span class="token punctuation" >></span>&lt;/p<span class="token punctuation" >></span>
+&lt;/div<span class="token punctuation" >></span>
+```
 </code></pre>
-<p class="">上記のコンフィグとコードブロックから次のようなHTMLがコードブロックの手前に挿入されます。Jade、Handlebarsも同様にコンパイルしたプレビューを生成することができます。</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>component&nbsp;name</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>fuga</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>上記のコンフィグとコードブロックから次のようなHTMLがコードブロックの手前に挿入されます。Jade、Handlebarsも同様にコンパイルしたプレビューを生成することができます。</p>
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >></span></span>component name<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >></span></span>fuga<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
+
       </div>
       <div class="doc-Module">
         <h1 class="doc-Module_heading" id="Configs">
           Configs
         </h1>
-        <p class="">aigisは動作の多くをコンフィグファイル（<code>aigis_config.yml</code>）で制御します。全てのパスはコンフィグファイル（<code>aigis_config.yml</code>）が置かれている場所から相対的に解決されます。</p>
-<h2 class="" id="source-required-">source: (<code>required</code>)</h2>
-<table class="">
+        <p>aigisは動作の多くをコンフィグファイル（<code>aigis_config.yml</code>）で制御します。全てのパスはコンフィグファイル（<code>aigis_config.yml</code>）が置かれている場所から相対的に解決されます。</p>
+<h2 id="source-required-">source: (<code>required</code>)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">undefined</td>
+<tr>
+<td  >String or Array</td>
+<td  >undefined</td>
 </tr>
 </tbody>
 </table>
-<p class="">スタイルガイドを生成するソースとなるファイル（またはディレクトリ）への相対的なパスを指定します。単一の指定と配列による複数指定のどちらも行えます。</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<p class="">ソースとして特定のファイルとディレクトリを指定したい場合には次のように指定します。</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./css/style.css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./scss</span></span></span></span></div></pre>
+<p>スタイルガイドを生成するソースとなるファイル（またはディレクトリ）への相対的なパスを指定します。単一の指定と配列による複数指定のどちらも行えます。</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>ソースとして特定のファイルとディレクトリを指定したい場合には次のように指定します。</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >source</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> ./css/style.css
+  <span class="token punctuation" >-</span> ./scss
 </code></pre>
 </blockquote>
-<h2 class="" id="source_type-optional-">source_type: (optional)</h2>
-<table class="">
+<h2 id="source_type-optional-">source_type: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">[&#39;.css&#39;, &#39;.sass&#39;, &#39;.scss&#39;, &#39;.styl&#39;]</td>
+<tr>
+<td  >String or Array</td>
+<td  >[&#39;.css&#39;, &#39;.sass&#39;, &#39;.scss&#39;, &#39;.styl&#39;]</td>
 </tr>
 </tbody>
 </table>
-<p class=""><code>source</code>にディレクトリが指定された場合、aigisは<code>source_type</code>に記述されている拡張子のファイルをソースの対象にします。デフォルトで<code>.css .sass .scss .styl</code>の4種類を対象とします。</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<p class="">ソースとするファイルのタイプを減らしたい場合、次のように対象とするタイプだけを指定します。</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source_type</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.less</span></span></span></span></div></pre>
+<p><code>source</code>にディレクトリが指定された場合、aigisは<code>source_type</code>に記述されている拡張子のファイルをソースの対象にします。デフォルトで<code>.css .sass .scss .styl</code>の4種類を対象とします。</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>ソースとするファイルのタイプを減らしたい場合、次のように対象とするタイプだけを指定します。</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >source_type</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> .css
+  <span class="token punctuation" >-</span> .less
 </code></pre>
-<h5 class="" id="markdown-">Markdownからスタイルガイドを生成する</h5>
-<p class="">CSSのコメントブロック（<code>&#047;&#042; ~ &#042;&#047;</code>）と<code>---</code>で囲まれた設定の記述があれば、どんなファイルからでもスタイルガイドが生成できます。例えば、次のように<code>.md</code>を指定すればMarkdownファイルからスタイルガイドを生成できます。</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>source_type</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>.md</span></span></span></span></div></pre>
-</code></pre>
-</blockquote>
-<h2 class="" id="dest-optional-">dest: (optional)</h2>
-<table class="">
-<thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;./styleguide&#39;</td>
-</tr>
-</tbody>
-</table>
-<p class="">スタイルガイドを出力するフォルダを指定します。指定がない場合、<code>aigis_config.yml</code>のあるフォルダに<code>styleguide</code>フォルダを作成して出力されます。</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>dest</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/destination</span></span></span></span></div></pre>
+<h5 id="markdown-">Markdownからスタイルガイドを生成する</h5>
+<p>CSSのコメントブロック（<code>&#047;&#042; ~ &#042;&#047;</code>）と<code>---</code>で囲まれた設定の記述があれば、どんなファイルからでもスタイルガイドが生成できます。例えば、次のように<code>.md</code>を指定すればMarkdownファイルからスタイルガイドを生成できます。</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >source_type</span><span class="token punctuation" >:</span> .md
 </code></pre>
 </blockquote>
-<h2 class="" id="dependencies-optional-">dependencies: (optional)</h2>
-<table class="">
+<h2 id="dest-optional-">dest: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">undefined</td>
+<tr>
+<td  >String</td>
+<td  >&#39;./styleguide&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">スタイルガイドに必要なファイルやディレクトリを指定します。指定されたファイルやディレクトリはスタイルガイドの出力先にコピーされます。</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>dependencies</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/css</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/images</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>./path/to/style.css</span></span></span></span></div></pre>
+<p>スタイルガイドを出力するフォルダを指定します。指定がない場合、<code>aigis_config.yml</code>のあるフォルダに<code>styleguide</code>フォルダを作成して出力されます。</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<pre><code class="lang-yaml"><span class="token key atrule" >dest</span><span class="token punctuation" >:</span> ./path/to/destination
 </code></pre>
 </blockquote>
-<h2 class="" id="template_dir-optional-">template_dir: (optional)</h2>
-<table class="">
+<h2 id="dependencies-optional-">dependencies: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;./template&#39;</td>
+<tr>
+<td  >String or Array</td>
+<td  >undefined</td>
 </tr>
 </tbody>
 </table>
-<p class="">スタイルガイドの生成に必要なテンプレートファイルが格納されているディレクトリを指定します。このディレクトリには<code>index.ejs</code>と<code>layout.ejs</code>の2つが含まれている必要があります。</p>
-<blockquote class="">
-<p class=""><code>template_engine</code>に<code>jade</code>を指定している場合には<code>index.jade layout.jade</code>を、<code>hbs</code>を指定している場合には<code>index.hbs layout.hbs</code>が必要になります。</p>
-<h4 class="" id="example">Example</h4>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>template_dir</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string quoted single yaml"><span class="punctuation definition string begin yaml"><span>&#39;</span></span><span>./path/to/template_dir</span></span></span></span></div></pre>
+<p>スタイルガイドに必要なファイルやディレクトリを指定します。指定されたファイルやディレクトリはスタイルガイドの出力先にコピーされます。</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<pre><code class="lang-yaml"><span class="token key atrule" >dependencies</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> ./path/to/css
+  <span class="token punctuation" >-</span> ./path/to/images
+  <span class="token punctuation" >-</span> ./path/to/style.css
 </code></pre>
 </blockquote>
-<h2 class="" id="component_dir-optional-">component_dir: (optional)</h2>
-<table class="">
+<h2 id="template_dir-optional-">template_dir: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;./html&#39;</td>
+<tr>
+<td  >String</td>
+<td  >&#39;./template&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">外部ファイルからHTMLをドキュメントコメント内に挿入したいときに使える<code>!![](./path/to/file.html)</code>という構文で、インポートするファイルのパスを解決するときに使われます。</p>
-<h2 class="" id="template_engine-optional-">template_engine: (optional)</h2>
-<table class="">
+<p>スタイルガイドの生成に必要なテンプレートファイルが格納されているディレクトリを指定します。このディレクトリには<code>index.ejs</code>と<code>layout.ejs</code>の2つが含まれている必要があります。</p>
+<blockquote>
+<p><code>template_engine</code>に<code>jade</code>を指定している場合には<code>index.jade layout.jade</code>を、<code>hbs</code>を指定している場合には<code>index.hbs layout.hbs</code>が必要になります。</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-yaml"><span class="token key atrule" >template_dir</span><span class="token punctuation" >:</span> './path/to/template_dir
+</code></pre>
+</blockquote>
+<h2 id="component_dir-optional-">component_dir: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;ejs&#39;</td>
+<tr>
+<td  >String</td>
+<td  >&#39;./html&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。aigisでは次の3つのテンプレートエンジンが利用できます。</p>
-<ul class="">
-<li class="">EJS（<code>ejs</code>）</li>
-<li class="">Jade（<code>jade</code>）</li>
-<li class="">Handlebars（<code>hbs</code>）</li>
+<p>外部ファイルからHTMLをドキュメントコメント内に挿入したいときに使える<code>!![](./path/to/file.html)</code>という構文で、インポートするファイルのパスを解決するときに使われます。</p>
+<h2 id="template_engine-optional-">template_engine: (optional)</h2>
+<table>
+<thead>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td  >String</td>
+<td  >&#39;ejs&#39;</td>
+</tr>
+</tbody>
+</table>
+<p>スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。aigisでは次の3つのテンプレートエンジンが利用できます。</p>
+<ul>
+<li>EJS（<code>ejs</code>）</li>
+<li>Jade（<code>jade</code>）</li>
+<li>Handlebars（<code>hbs</code>）</li>
 </ul>
-<p class="">このディレクトリには、利用するテンプレートごとに決められた拡張子で<code>index.xxx</code>というファイルが格納されている必要があります。</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<p class="">Jadeを利用したい場合</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>template_engine</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>jade</span></span></span></span></div></pre>
+<p>このディレクトリには、利用するテンプレートごとに決められた拡張子で<code>index.xxx</code>というファイルが格納されている必要があります。</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>Jadeを利用したい場合</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >template_engine</span><span class="token punctuation" >:</span> jade
 </code></pre>
 </blockquote>
-<h2 class="" id="log-optional-">log: (optional)</h2>
-<table class="">
+<h2 id="log-optional-">log: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">Boolean</td>
-<td   class="">false</td>
+<tr>
+<td  >Boolean</td>
+<td  >false</td>
 </tr>
 </tbody>
 </table>
-<p class=""><code>log</code>が<code>true</code>の場合、スタイルガイド生成の際に出力されるファイルの一覧などをコンソールに出力します。</p>
-<h2 class="" id="color_palette-optional-">color_palette: (optional)</h2>
-<table class="">
+<p><code>log</code>が<code>true</code>の場合、スタイルガイド生成の際に出力されるファイルの一覧などをコンソールに出力します。</p>
+<h2 id="color_palette-optional-">color_palette: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">Boolean</td>
-<td   class="">true</td>
+<tr>
+<td  >Boolean</td>
+<td  >true</td>
 </tr>
 </tbody>
 </table>
-<p class="">aigisは、スタイルガイドのソースとなるファイルから全ての色を収集し、一覧できるように<code>color.html</code>という特別なページを出力します。</p>
-<p class=""><a class="" href="https://pxgrid.github.io/aigis/styleguide/color.html" title="null">サンプル: color.html</a></p>
-<p class="">カラーパレットが必要ない場合、<code>false</code>を指定することでカラーパレットの出力を止めることができます。</p>
-<h2 class="" id="preview_class-optional-">preview_class: (optional)</h2>
-<table class="">
+<p>aigisは、スタイルガイドのソースとなるファイルから全ての色を収集し、一覧できるように<code>color.html</code>という特別なページを出力します。</p>
+<p><a href="https://pxgrid.github.io/aigis/styleguide/color.html" title="null">サンプル: color.html</a></p>
+<p>カラーパレットが必要ない場合、<code>false</code>を指定することでカラーパレットの出力を止めることができます。</p>
+<h2 id="preview_class-optional-">preview_class: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;aigis-preview&#39;</td>
+<tr>
+<td  >String</td>
+<td  >&#39;aigis-preview&#39;</td>
 </tr>
 </tbody>
 </table>
-<p class="">aigisがコードブロック(<code>```html</code>なので始まるブロック)からHTMLのプレビューを生成する際に、プレビューの外側の要素につくCSSのクラス名を指定できます。コンポーネントがスタイルガイドの影響を受けないようにスタイルを付けたり、JavaScriptから操作したい場合などに役に立ちます。</p>
-<blockquote class="">
-<h4 class="" id="-">プレビューの挿入</h4>
-<p class="">例えば、次のようなコードブロックを記述した場合</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>```html</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
-</code></pre><p class="">次のようなHTMLが挿入されます。</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>aigis-preview</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre></blockquote>
-<h2 class="" id="output_collection-optional-">output_collection: (optional)</h2>
-<table class="">
-<thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">[&#39;category&#39;, &#39;tag&#39;]</td>
-</tr>
-</tbody>
-</table>
-<p class="">出力するページのグループを指定します。<code>category</code>や<code>tag</code>以外にグルーピングして出力したい項目がある場合は<code>output_collection</code>に追加します。</p>
-<p class="">例えばバージョニングを行っている場合には、コンポーネントの設定に次のように<code>version</code>を追加し、<code>output_collection</code>に<code>version</code>を追加することで<code>version</code>の値が同じコンポーネントがグルーピングされて出力されます。</p>
-<pre><code class="lang-css"><pre class="editor editor-colors"><div class="line"><span class="source css"><span>---</span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>name:&nbsp;btn</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>category:</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;</span><span class="entity name tag css"><span>base</span></span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>&nbsp;&nbsp;-&nbsp;btn</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>version:&nbsp;1</span></span></span></div><div class="line"><span class="source css"><span class="meta selector css"><span>---</span></span></span></div></pre>
+<p>aigisがコードブロック(<code>```html</code>なので始まるブロック)からHTMLのプレビューを生成する際に、プレビューの外側の要素につくCSSのクラス名を指定できます。コンポーネントがスタイルガイドの影響を受けないようにスタイルを付けたり、JavaScriptから操作したい場合などに役に立ちます。</p>
+<blockquote>
+<h4 id="-">プレビューの挿入</h4>
+<p>例えば、次のようなコードブロックを記述した場合</p>
+<pre><code class="lang-html">```html
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
+```
 </code></pre>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>output_collection:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-&nbsp;category</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;-&nbsp;version</span></span></div></pre>
-</code></pre><p class="">上記の指定の場合、<code>category</code>と<code>version</code>でまとめた2種類のページが出力されます。</p>
-<h2 class="" id="transform-optional-">transform: (optional)</h2>
-<table class="">
-<thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="">
-<td   class="">String or Array</td>
-<td   class="">[&#39;html&#39;, &#39;ejs&#39;, &#39;jade&#39;, &#39;hbs&#39;]</td>
-</tr>
-</tbody>
-</table>
-<p class="">コードブロックに特定のタイプが指定されている場合、aigisはそのコードブロックを実際のHTMLとしてドキュメントに追加します。これによってマークアップの例を示すとともにプレビューの表示も手軽に行なえます。デフォルトでは<code>html</code> <code>jade</code> <code>ejs</code> <code>hbs</code>のプレビューが有効になっています。</p>
-<p class="">もしプレビューとして表示したくないタイプがある場合には、表示したいタイプだけを<code>transform</code>に指定します。</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>transform</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>html</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>hbs</span></span></span></span></div></pre>
-</code></pre>
-<blockquote class="">
-<h4 class="" id="-">テンプレートエンジンのコンパイル</h4>
-<p class=""><code>ejs</code> <code>jade</code> <code>hbs</code>のコードブロックは、コンポーネントの設定に<code>compile: true</code>を指定することで、コードブロックに設定の値を渡してコンパイルを行えます。</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>---</span></span></div><div class="line"><span class="text html gohtml"><span>name:&nbsp;btn</span></span></div><div class="line"><span class="text html gohtml"><span>category:&nbsp;btn</span></span></div><div class="line"><span class="text html gohtml"><span>compile:&nbsp;true</span></span></div><div class="line"><span class="text html gohtml"><span>data:</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;value1:&nbsp;hoge</span></span></div><div class="line"><span class="text html gohtml"><span>---</span></span></div><div class="line"><span class="text html gohtml"><span>```ejs&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>&lt;%-&nbsp;name&nbsp;%&gt;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>&lt;%-&nbsp;data.value1&nbsp;%&gt;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
-</code></pre><p class="">上記の場合、次のように値が反映された状態のHTMLが挿入されます。</p>
-<pre><code class="lang-html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>aigis-preview</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>btn</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>h2</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>hoge</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>次のようなHTMLが挿入されます。</p>
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>aigis-preview<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
 </blockquote>
-<h2 class="" id="highlight-optional-">highlight: (optional)</h2>
-<table class="">
+<h2 id="output_collection-optional-">output_collection: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">Boolean</td>
-<td   class="">true</td>
+<tr>
+<td  >String or Array</td>
+<td  >[&#39;category&#39;, &#39;tag&#39;]</td>
 </tr>
 </tbody>
 </table>
-<p class="">コードブロックのシンタックスハイライトを有効にするかを指定します。別のハイライトライブラリを使う場合ときなどは<code>highlight: false</code>とすることでaigisのハイライトをオフにできます。</p>
-<h2 class="" id="timestamp_format-optional-">timestamp_format: (optional)</h2>
-<table class="">
+<p>出力するページのグループを指定します。<code>category</code>や<code>tag</code>以外にグルーピングして出力したい項目がある場合は<code>output_collection</code>に追加します。</p>
+<p>例えばバージョニングを行っている場合には、コンポーネントの設定に次のように<code>version</code>を追加し、<code>output_collection</code>に<code>version</code>を追加することで<code>version</code>の値が同じコンポーネントがグルーピングされて出力されます。</p>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> btn
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> base
+  <span class="token punctuation" >-</span> btn
+<span class="token key atrule" >version</span><span class="token punctuation" >:</span> <span class="token number" >1</span>
+<span class="token punctuation" >---</span>
+</code></pre>
+<pre><code class="lang-yaml"><span class="token key atrule" >output_collection</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> category
+  <span class="token punctuation" >-</span> version
+</code></pre>
+<p>上記の指定の場合、<code>category</code>と<code>version</code>でまとめた2種類のページが出力されます。</p>
+<h2 id="transform-optional-">transform: (optional)</h2>
+<table>
 <thead>
-<tr class="">
-<th   class="">Type</th>
-<th   class="">Default</th>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">String</td>
-<td   class="">&#39;YYYY/MM/DD HH:mm&#39;</td>
+<tr>
+<td  >String or Array</td>
+<td  >[&#39;html&#39;, &#39;ejs&#39;, &#39;jade&#39;, &#39;hbs&#39;]</td>
 </tr>
 </tbody>
 </table>
-<p class="">スタイルガイドを生成する際、aigisは<code>timestamp</code>という特別な変数をテンプレートに渡します。ドキュメントの更新日を記述したい際などに役にたつかもしれません。</p>
-<p class=""><code>timestamp_format</code>に指定する形式は<a class="" href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">Moment.jsのformat</a>を参照してください。</p>
+<p>コードブロックに特定のタイプが指定されている場合、aigisはそのコードブロックを実際のHTMLとしてドキュメントに追加します。これによってマークアップの例を示すとともにプレビューの表示も手軽に行なえます。デフォルトでは<code>html</code> <code>jade</code> <code>ejs</code> <code>hbs</code>のプレビューが有効になっています。</p>
+<p>もしプレビューとして表示したくないタイプがある場合には、表示したいタイプだけを<code>transform</code>に指定します。</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >transform</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> html
+  <span class="token punctuation" >-</span> hbs
+</code></pre>
+<blockquote>
+<h4 id="-">テンプレートエンジンのコンパイル</h4>
+<p><code>ejs</code> <code>jade</code> <code>hbs</code>のコードブロックは、コンポーネントの設定に<code>compile: true</code>を指定することで、コードブロックに設定の値を渡してコンパイルを行えます。</p>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> btn
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span> btn
+<span class="token key atrule" >compile</span><span class="token punctuation" >:</span> <span class="token boolean important" >true</span>
+<span class="token key atrule" >data</span><span class="token punctuation" >:</span>
+  <span class="token key atrule" >value1</span><span class="token punctuation" >:</span> hoge
+<span class="token punctuation" >---</span>
+```ejs  
+&lt;h2<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> name %<span class="token punctuation" >></span>&lt;/h2<span class="token punctuation" >></span>
+&lt;button<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> data.value1 %<span class="token punctuation" >></span>&lt;/button<span class="token punctuation" >></span>
+```
+</code></pre>
+<p>上記の場合、次のように値が反映された状態のHTMLが挿入されます。</p>
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>aigis-preview<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >></span></span>btn<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+</blockquote>
+<h2 id="highlight-optional-">highlight: (optional)</h2>
+<table>
+<thead>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td  >Boolean</td>
+<td  >true</td>
+</tr>
+</tbody>
+</table>
+<p>コードブロックのシンタックスハイライトを有効にするかを指定します。別のハイライトライブラリを使う場合ときなどは<code>highlight: false</code>とすることでaigisのハイライトをオフにできます。</p>
+<h2 id="timestamp_format-optional-">timestamp_format: (optional)</h2>
+<table>
+<thead>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td  >String</td>
+<td  >&#39;YYYY/MM/DD HH:mm&#39;</td>
+</tr>
+</tbody>
+</table>
+<p>スタイルガイドを生成する際、aigisは<code>timestamp</code>という特別な変数をテンプレートに渡します。ドキュメントの更新日を記述したい際などに役にたつかもしれません。</p>
+<p><code>timestamp_format</code>に指定する形式は<a href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">Moment.jsのformat</a>を参照してください。</p>
 
       </div>
       <div class="doc-Module">
         <h1 class="doc-Module_heading" id="Syntax-Highlight">
           Syntax Highlight
         </h1>
-        <p class="">aigisはシンタックスハイライトにAtomエディタで使われている<a class="" href="https://github.com/atom/highlights" title="null">atom/highlights</a>を利用していますので、シンタックスハイライトのカラーリングに<a class="" href="https://atom.io/themes" title="null">Atom&#39;s themes</a>にあるテーマを利用できます。</p>
-<p class="">シンタックスハイライトの言語サポートを増やしたいときには<a class="" href="https://github.com/pxgrid/aigis-marked/issues" title="null">pxgrid/aigis-marked#issues</a>にissueを立ててもらうか、PRを送ってください。(Contribute Guideは準備中です)</p>
-<h2 class="" id="-">使い方</h2>
-<p class="">ハイライトしたいコードブロックに次のようにキーワードを指定してください。</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span>```html&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>awesome-class</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>data-awesome-attribute</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>The&nbsp;quick&nbsp;brown&nbsp;fox&nbsp;jumps&nbsp;over&nbsp;the&nbsp;lazy&nbsp;dog</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>&nbsp;&nbsp;</span></span></div><div class="line"><span class="text html gohtml"><span>```</span></span></div></pre>
-</code></pre><p class="">ハイライトできる言語は次のリストに入っているものです。</p>
-<ul class="">
-<li class=""><a class="" href="https://github.com/atom/highlights/tree/master/deps" title="null">atom/highlights/tree/master/deps</a></li>
+        <p>aigisはシンタックスのハイライトに<a href="http://prismjs.com/" title="null">Prism</a>を利用しています。シンタックスのカラーリングには<a href="http://prismjs.com/download.html" title="null">http://prismjs.com/download.html</a>にあるテーマをダウンロードして利用できます。</p>
+<h2 id="-">使い方</h2>
+<p>ハイライトしたいコードブロックに次のようにキーワードを指定してください。</p>
+<pre><code class="lang-html">```html  
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>awesome-class<span class="token punctuation" >"</span></span> <span class="token attr-name" >data-awesome-attribute</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >></span></span>The quick brown fox jumps over the lazy dog<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>  
+```
+</code></pre>
+<p>ハイライトできる言語は次のリストに入っているものです。</p>
+<ul>
+<li><a href="http://prismjs.com/#languages-list" title="null">Prism#language-list</a></li>
 </ul>
-<p class="">次のリストの言語もハイライトすることが可能です。</p>
-<ul class="">
-<li class=""><code>jsx</code></li>
-<li class=""><code>ejs</code></li>
-<li class=""><code>jade</code></li>
-<li class=""><code>stylus</code></li>
-</ul>
-<h2 class="" id="jsx">JSX</h2>
-<h4 class="" id="keyword-jsx-">Keyword: <code>jsx</code></h4>
-<p class="">Write codeblock with <code>jsx</code> keyword then you get highlighted codeblock:</p>
-<pre><code class="lang-jsx"><pre class="editor editor-colors"><div class="line"><span class="source js jsx"><span class="storage modifier js"><span>var</span></span><span>&nbsp;CommentBox&nbsp;</span><span class="keyword operator js"><span>=</span></span><span>&nbsp;React</span><span class="meta method-call js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>createClass</span></span><span class="meta brace round js"><span>(</span></span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js jsx"><span class="meta method-call js"><span>&nbsp;&nbsp;</span><span class="meta function json js"><span class="entity name function js"><span>render</span></span><span>:&nbsp;</span><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></span></div><div class="line"><span class="source js jsx"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control js"><span>return</span></span><span>&nbsp;</span><span class="meta brace round js"><span>(</span></span></span></span></div><div class="line"><span class="source js jsx"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tag open js"><span class="punctuation definition tag begin js"><span>&lt;</span></span><span class="entity name tag js"><span>div</span></span><span>&nbsp;</span><span class="meta tag attribute-name js"><span class="entity other attribute-name js"><span>className</span></span></span><span>=</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>&quot;</span></span><span>commentBox</span><span class="punctuation definition string end js"><span>&quot;</span></span></span><span class="punctuation definition tag end js"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="source js jsx"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello</span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;world</span><span class="keyword operator js"><span>!</span></span><span>&nbsp;I&nbsp;am&nbsp;a&nbsp;CommentBox</span><span class="meta delimiter method period js"><span>.</span></span></span></span></div><div class="line"><span class="source js jsx"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="tag closed js"><span class="punctuation definition tag begin js"><span>&lt;/</span></span><span class="entity name tag js"><span>div</span></span><span class="punctuation definition tag end js"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="source js jsx"><span class="meta method-call js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></span></div><div class="line"><span class="source js jsx"><span class="meta method-call js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></span></div><div class="line"><span class="source js jsx"><span class="meta method-call js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre>
+<h2 id="example">Example</h2>
+<h3 id="jsx">JSX</h3>
+<h4 id="keyword-jsx-">Keyword: <code>jsx</code></h4>
+<p>Write codeblock with <code>jsx</code> keyword then you get highlighted codeblock:</p>
+<pre><code class="lang-jsx"><span class="token keyword" >var</span> CommentBox <span class="token operator" >=</span> React<span class="token punctuation" >.</span><span class="token function" >createClass</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  render<span class="token punctuation" >:</span> <span class="token keyword" >function</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+    <span class="token keyword" >return</span> <span class="token punctuation" >(</span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >className</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>commentBox<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+        Hello<span class="token punctuation" >,</span> world<span class="token operator" >!</span> I am a CommentBox<span class="token punctuation" >.</span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token punctuation" >)</span><span class="token punctuation" >;</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span><span class="token punctuation" >;</span>
 </code></pre>
-<h2 class="" id="ejs">EJS</h2>
-<h4 class="" id="keyword-ejs-">Keyword: <code>ejs</code></h4>
-<pre><code class="lang-ejs"><pre class="editor editor-colors"><div class="line"><span class="text html js"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>awesome-class</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>data-awesome-attribute</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;text&nbsp;</span><span class="keyword operator js"><span>-</span><span>&gt;</span><span>&lt;</span></span><span>/p</span><span class="keyword operator js"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span class="source js embedded html"><span class="keyword operator js"><span>&lt;</span></span><span>/div</span><span class="keyword operator js"><span>&gt;</span></span></span></span></div></pre>
+<h3 id="ejs">EJS</h3>
+<h4 id="keyword-ejs-">Keyword: <code>ejs</code></h4>
+<pre><code class="lang-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>awesome-class<span class="token punctuation" >"</span></span> <span class="token attr-name" >data-awesome-attribute</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >text</span> <span class="token attr-name" >-</span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
 </code></pre>
-<h2 class="" id="jade">Jade</h2>
-<h4 class="" id="keyword-jade-">Keyword: <code>jade</code></h4>
-<pre><code class="lang-jade"><pre class="editor editor-colors"><div class="line"><span class="source jade"><span class="tag jade"><span class="complete_tag jade"><span class="meta selector css jade"><span class="entity other attribute-name class css jade"><span>.awesome-class</span></span></span><span class="attributes tag jade"><span class="constant name attribute tag jade"><span>(</span></span><span class="attributes tag jade"><span class="entity other attribute-name tag jade"><span>data-awesome-attribute</span></span></span><span class="constant name attribute tag jade"><span>)</span></span></span></span></span></span></div><div class="line"><span class="source jade"><span class="tag jade"><span>&nbsp;&nbsp;</span><span class="complete_tag jade"><span class="entity name tag jade"><span>p</span></span><span class="text jade"><span>&nbsp;The&nbsp;quick&nbsp;brown&nbsp;fox&nbsp;jumps&nbsp;over&nbsp;the&nbsp;lazy&nbsp;dog</span></span></span></span></span></div></pre>
+<h3 id="jade">Jade</h3>
+<h4 id="keyword-jade-">Keyword: <code>jade</code></h4>
+<pre><code class="lang-jade"><span class="token tag" >.awesome-class<span class="token attributes" ><span class="token punctuation" >(</span><span class="token attr-name" >data-awesome-attribute</span><span class="token punctuation" >)</span></span></span>
+  <span class="token tag" >p</span> <span class="token plain-text" >The quick brown fox jumps over the lazy dog</span>
 </code></pre>
-<h2 class="" id="stylus">Stylus</h2>
-<h4 class="" id="keyword-stylus-">Keyword: <code>stylus</code></h4>
-<pre><code class="lang-stylus"><pre class="editor editor-colors"><div class="line"><span class="source stylus"><span class="meta function stylus"><span class="entity name function stylus"><span>border-radius</span></span><span>(</span></span><span>)</span></span></div><div class="line"><span class="source stylus"><span>&nbsp;&nbsp;</span><span class="meta vendor-prefix stylus"><span>-webkit-</span></span><span class="support type property-name stylus"><span>border-radius</span></span><span>:&nbsp;</span><span class="variable language stylus"><span>arguments</span></span></span></div><div class="line"><span class="source stylus"><span>&nbsp;&nbsp;</span><span class="meta vendor-prefix stylus"><span>-moz-</span></span><span class="support type property-name stylus"><span>border-radius</span></span><span>:&nbsp;</span><span class="variable language stylus"><span>arguments</span></span></span></div><div class="line"><span class="source stylus"><span>&nbsp;&nbsp;</span><span class="support type property-name stylus"><span>border-radius</span></span><span>:&nbsp;</span><span class="variable language stylus"><span>arguments</span></span></span></div><div class="line"><span class="source stylus"><span>&nbsp;</span></span></div><div class="line"><span class="source stylus"><span class="entity name tag stylus"><span>body</span></span></span></div><div class="line"><span class="source stylus"><span>&nbsp;&nbsp;</span><span class="support type property-name stylus"><span>font</span></span><span>:&nbsp;</span><span class="constant numeric stylus"><span>12</span><span class="keyword other unit stylus"><span>px</span></span></span><span>&nbsp;</span><span class="support constant font-name stylus"><span>Helvetica</span></span><span>,&nbsp;</span><span class="support constant font-name stylus"><span>Arial</span></span><span>,&nbsp;</span><span class="support constant font-name stylus"><span>sans-serif</span></span></span></div><div class="line"><span class="source stylus"><span>&nbsp;</span></span></div><div class="line"><span class="source stylus"><span class="entity name tag stylus"><span>a</span></span><span class="entity other attribute-name class stylus"><span>.button</span></span></span></div><div class="line"><span class="source stylus"><span>&nbsp;&nbsp;</span><span class="support type property-name stylus"><span>border-radius</span></span><span>:&nbsp;</span><span class="constant numeric stylus"><span>5</span><span class="keyword other unit stylus"><span>px</span></span></span></span></div></pre>
+<h3 id="stylus">Stylus</h3>
+<h4 id="keyword-stylus-">Keyword: <code>stylus</code></h4>
+<pre><code class="lang-stylus"><span class="token func" ><span class="token function" >border-radius</span><span class="token punctuation" >(</span><span class="token punctuation" >)</span></span>
+  <span class="token property-declaration" ><span class="token property" >-webkit-border-radius</span><span class="token punctuation" >:</span> arguments</span>
+  <span class="token property-declaration" ><span class="token property" >-moz-border-radius</span><span class="token punctuation" >:</span> arguments</span>
+  <span class="token property-declaration" ><span class="token property" >border-radius</span><span class="token punctuation" >:</span> arguments</span>
+
+<span class="token selector" >body</span>
+  <span class="token property-declaration" ><span class="token property" >font</span><span class="token punctuation" >:</span> <span class="token number" >12</span>px Helvetica<span class="token punctuation" >,</span> Arial<span class="token punctuation" >,</span> sans-serif</span>
+
+<span class="token selector" >a.button</span>
+  <span class="token property-declaration" ><span class="token property" >border-radius</span><span class="token punctuation" >:</span> <span class="token number" >5</span>px</span>
 </code></pre>
 
       </div>
@@ -419,128 +528,189 @@
         <h1 class="doc-Module_heading" id="Templates">
           Templates
         </h1>
-        <p class="">スタイルガイドの生成にはテンプレートが必要になります。aigisではテンプレートとして次の3種類のテンプレートエンジンから選択して利用することができます。</p>
-<h3 class="" id="-">利用できるテンプレートエンジンと拡張子</h3>
-<ul class="">
-<li class="">EJS: <code>.ejs</code></li>
-<li class="">Jade: <code>.jade</code></li>
-<li class="">Handlebars: <code>.hbs</code></li>
+        <p>スタイルガイドの生成にはテンプレートが必要になります。aigisではテンプレートとして次の3種類のテンプレートエンジンから選択して利用することができます。</p>
+<h3 id="-">利用できるテンプレートエンジンと拡張子</h3>
+<ul>
+<li>EJS: <code>.ejs</code></li>
+<li>Jade: <code>.jade</code></li>
+<li>Handlebars: <code>.hbs</code></li>
 </ul>
-<p class="">選択するテンプレートエンジンごとに決められた拡張子で<code>index.xxx</code>というファイルを作成してください。</p>
-<blockquote class="">
-<p class="">GitHubのリポジトリにはテーマを含めたexamplesがありますので、参考にしてみてください。このドキュメント自体もaigisで生成されたものなので、合わせて参考にしてみてください。</p>
-<ul class="">
-<li class=""><a class="" href="https://github.com/pxgrid/aigis/tree/master/examples" title="null">aigis/examples</a></li>
-<li class=""><a class="" href="https://github.com/pxgrid/aigis/tree/gh-pages/src/template" title="null">aigis/gh-pages/src</a></li>
+<p>選択するテンプレートエンジンごとに決められた拡張子で<code>index.xxx</code>というファイルを作成してください。</p>
+<blockquote>
+<p>GitHubのリポジトリにはテーマを含めたexamplesがありますので、参考にしてみてください。このドキュメント自体もaigisで生成されたものなので、合わせて参考にしてみてください。</p>
+<ul>
+<li><a href="https://github.com/pxgrid/aigis/tree/master/examples" title="null">aigis/examples</a></li>
+<li><a href="https://github.com/pxgrid/aigis/tree/gh-pages/src/template" title="null">aigis/gh-pages/src</a></li>
 </ul>
 </blockquote>
-<h2 class="" id="-">インデックステンプレート</h2>
-<p class="">スタイルガイドの生成にはテンプレートファイルとして<code>index.xxx</code>が必要になります。</p>
-<blockquote class="">
-<h4 class="" id="-">インデックステンプレートのファイル名</h4>
-<p class=""><code>template_engine</code>に<code>ejs</code>をしている場合には<code>index.ejs</code>が、<code>jade</code>を指定している場合には<code>index.jade</code>が、<code>hbs</code>を指定している場合には<code>index.hbs</code>が必要になります。
-テンプレートエンジンの指定については<a class="" href="" title="null">Documentation/Configs</a>を参照。</p>
+<h2 id="-">インデックステンプレート</h2>
+<p>スタイルガイドの生成にはテンプレートファイルとして<code>index.xxx</code>が必要になります。</p>
+<blockquote>
+<h4 id="-">インデックステンプレートのファイル名</h4>
+<p><code>template_engine</code>に<code>ejs</code>をしている場合には<code>index.ejs</code>が、<code>jade</code>を指定している場合には<code>index.jade</code>が、<code>hbs</code>を指定している場合には<code>index.hbs</code>が必要になります。
+テンプレートエンジンの指定については<a href="" title="null">Documentation/Configs</a>を参照。</p>
 </blockquote>
-<h3 class="" id="-">テンプレートのサンプル</h3>
-<p class="">EJSのテンプレートの例です。テンプレートで参照している値は、スタイルガイド生成用にaigisがコンパイルした時に渡す値です。</p>
-<pre><code class="lang-ejs"><pre class="editor editor-colors"><div class="line"><span class="text html js"><span class="meta tag sgml html"><span class="punctuation definition tag html"><span>&lt;!</span></span><span class="meta tag sgml doctype html"><span>DOCTYPE</span><span>&nbsp;html</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span class="meta tag structure any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag structure any html"><span>html</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;</span><span class="meta tag structure any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag structure any html"><span>head</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>meta</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>charset</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>utf-8</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>link</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>&lt;%=&nbsp;root&nbsp;%&gt;aigis_assets/css/doc.css</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>rel</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>stylesheet</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;</span><span class="meta tag structure any html"><span class="punctuation definition tag html"><span>&lt;/</span></span><span class="entity name tag structure any html"><span>head</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;</span><span class="meta tag structure any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag structure any html"><span>body</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>header</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;config</span><span class="meta delimiter method period js"><span>.</span></span><span class="support constant dom js"><span>name</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>header</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>nav</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;helper</span><span class="meta delimiter method period js"><span>.</span></span><span>renderCollectionTree</span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>category</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta brace round js"><span>)</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>nav</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>main</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;html&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span>&nbsp;</span><span class="keyword control js"><span>if</span></span><span class="meta brace round js"><span>(</span></span><span>components</span><span class="meta delimiter method period js"><span>.</span></span><span class="support constant js"><span>length</span></span><span class="meta brace round js"><span>)</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span>&nbsp;components</span><span class="meta delimiter method period js"><span>.</span></span><span>forEach</span><span class="meta brace round js"><span>(</span><span>(</span></span><span>component</span><span class="meta brace round js"><span>)</span></span><span>&nbsp;</span><span class="keyword operator js"><span>=</span><span>&gt;</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;component</span><span class="meta delimiter method period js"><span>.</span></span><span>config</span><span class="meta delimiter method period js"><span>.</span></span><span class="support constant dom js"><span>name</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;component</span><span class="meta delimiter method period js"><span>.</span></span><span>html&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>main</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>footer</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Last&nbsp;updated:&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;timestamp&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>footer</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;</span><span class="meta tag structure any html"><span class="punctuation definition tag html"><span>&lt;/</span></span><span class="entity name tag structure any html"><span>body</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span class="meta tag structure any html"><span class="punctuation definition tag html"><span>&lt;/</span></span><span class="entity name tag structure any html"><span>html</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div></pre>
+<h3 id="-">テンプレートのサンプル</h3>
+<p>EJSのテンプレートの例です。テンプレートで参照している値は、スタイルガイド生成用にaigisがコンパイルした時に渡す値です。</p>
+<pre><code class="lang-ejs"><span class="token doctype" >&lt;!DOCTYPE html></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>html</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>head</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>meta</span> <span class="token attr-name" >charset</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>utf-8<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>link</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>&lt;%<span class="token punctuation" >=</span> root %<span class="token punctuation" >></span>aigis_assets/css/doc.css<span class="token punctuation" >"</span></span> <span class="token attr-name" >rel</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>stylesheet<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>head</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>body</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>header</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >config.name</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>header</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>nav</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >helper.renderCollectionTree('category')</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>nav</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >html</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%</span> <span class="token attr-name" >if(components.length)</span> <span class="token attr-name" >{</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+        &lt;% components.forEach((component) => { %>
+          <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >component.config.name</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+          <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >component.html</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%</span> <span class="token attr-name" >})</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+      <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%</span> <span class="token attr-name" >}</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span><span class="token punctuation" >></span></span>Last updated: <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >timestamp</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>body</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>html</span><span class="token punctuation" >></span></span>
 </code></pre>
-<h1 class="" id="-">テンプレートで使える値</h1>
-<p class="">aigisはコンパイル時につぎの値を元にテンプレートに渡しスタイルガイドを生成します。</p>
-<table class="">
+<h1 id="-">テンプレートで使える値</h1>
+<p>aigisはコンパイル時につぎの値を元にテンプレートに渡しスタイルガイドを生成します。</p>
+<table>
 <thead>
-<tr class="">
-<th   class="">Name</th>
-<th   class="">Type</th>
+<tr>
+<th  >Name</th>
+<th  >Type</th>
 </tr>
 </thead>
 <tbody>
-<tr class="">
-<td   class="">components</td>
-<td   class="">Array</td>
+<tr>
+<td  >components</td>
+<td  >Array</td>
 </tr>
-<tr class="">
-<td   class="">html</td>
-<td   class="">String</td>
+<tr>
+<td  >html</td>
+<td  >String</td>
 </tr>
-<tr class="">
-<td   class="">root</td>
-<td   class="">String</td>
+<tr>
+<td  >root</td>
+<td  >String</td>
 </tr>
-<tr class="">
-<td   class="">config</td>
-<td   class="">Object</td>
+<tr>
+<td  >config</td>
+<td  >Object</td>
 </tr>
-<tr class="">
-<td   class="">timestamp</td>
-<td   class="">String</td>
+<tr>
+<td  >timestamp</td>
+<td  >String</td>
 </tr>
-<tr class="">
-<td   class="">helper</td>
-<td   class="">Object</td>
+<tr>
+<td  >helper</td>
+<td  >Object</td>
 </tr>
 </tbody>
 </table>
-<p class="">テンプレートでこの値を使ってスタイルガイドを構築します。</p>
-<h2 class="" id="components">components</h2>
-<p class="">コンポーネントのHTMLなどが入ったオブジェクトの配列。</p>
-<p class="">たとえば<code>./css/style.css</code>に次のようなコンポーネントを記述した場合:</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>name</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>component&nbsp;name</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>category</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>mod</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>btn</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;</span></span></div><div class="line"><span class="source yaml"><span class="comment line number-sign yaml"><span class="punctuation definition comment yaml"><span>#</span></span><span>#&nbsp;component</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;</span></span></div><div class="line"><span class="source yaml"><span>this&nbsp;is&nbsp;component!</span></span></div></pre>
+<p>テンプレートでこの値を使ってスタイルガイドを構築します。</p>
+<h2 id="components">components</h2>
+<p>コンポーネントのHTMLなどが入ったオブジェクトの配列。</p>
+<p>たとえば<code>./css/style.css</code>に次のようなコンポーネントを記述した場合:</p>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> component name
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> mod
+  <span class="token punctuation" >-</span> btn
+<span class="token punctuation" >---</span>
+
+<span class="token comment" spellcheck="true">## component</span>
+
+this is component!
 </code></pre>
-<p class=""><code>components[0]</code>には次のようなコンポーネントが格納される:</p>
-<pre><code class="lang-js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;md</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>##&nbsp;component</span><span class="constant character escape js"><span>\n</span><span>\n</span></span><span>this&nbsp;is&nbsp;component!</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;コンポーネントのドキュメント部分</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;html</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>&lt;h2&gt;component&lt;/h2&gt;&lt;p&gt;this&nbsp;is&nbsp;component&lt;/p&gt;</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;ドキュメント部分をパースしたHTML</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;config</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;コンポーネントのコンフィグ部分</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;name</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>component&nbsp;name</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;category</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="meta brace square js"><span>[</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>mod</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>btn</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta brace square js"><span>]</span></span><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;sourcePath</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>/css/style.css</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;ドキュメントが記述されているファイルへのパス</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span></span></div></pre>
+<p><code>components[0]</code>には次のようなコンポーネントが格納される:</p>
+<pre><code class="lang-js"><span class="token punctuation" >{</span>
+  md<span class="token punctuation" >:</span> <span class="token string" >'## component\n\nthis is component!'</span><span class="token punctuation" >,</span> <span class="token comment" spellcheck="true">// コンポーネントのドキュメント部分</span>
+  html<span class="token punctuation" >:</span> <span class="token string" >'&lt;h2>component&lt;/h2>&lt;p>this is component&lt;/p>'</span><span class="token punctuation" >,</span> <span class="token comment" spellcheck="true">// ドキュメント部分をパースしたHTML</span>
+  config<span class="token punctuation" >:</span> <span class="token punctuation" >{</span> <span class="token comment" spellcheck="true">// コンポーネントのコンフィグ部分</span>
+    name<span class="token punctuation" >:</span> <span class="token string" >'component name'</span><span class="token punctuation" >,</span>
+    category<span class="token punctuation" >:</span> <span class="token punctuation" >[</span><span class="token string" >'mod'</span><span class="token punctuation" >,</span> <span class="token string" >'btn'</span><span class="token punctuation" >]</span> 
+  <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+  sourcePath<span class="token punctuation" >:</span> <span class="token string" >'/css/style.css'</span> <span class="token comment" spellcheck="true">// ドキュメントが記述されているファイルへのパス</span>
+<span class="token punctuation" >}</span>
 </code></pre>
-<h2 class="" id="html">html</h2>
-<p class="">インデックスページ用のMarkdownファイルをパースしたHTMLが格納されている。</p>
-<p class=""><code>index.ejs</code>では次のようにすることで、インデックスページとコンポーネントページを同一のテンプレートでレンダリングすることができます。</p>
-<pre><code><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag other html"><span>main</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&lt;%-&nbsp;html&nbsp;%&gt;</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&lt;%&nbsp;if(components.length)&nbsp;{&nbsp;%&gt;</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;...</span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&lt;%&nbsp;}&nbsp;%&gt;</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag other html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag other html"><span>main</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre><h2 class="" id="root">root</h2>
-<p class="">出力されるページから見た、コンフィグファイルの<code>dest</code>で指定されたフォルダへの相対パスが格納されています。<code>&lt;head&gt;</code>要素などにCSSファイルへの参照を相対パスで書く際に利用できます。ファイルの参照を絶対パスで行う場合には使う必要はないでしょう。</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<pre><code class="lang-ejs"><pre class="editor editor-colors"><div class="line"><span class="text html js"><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>link</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>&lt;%=&nbsp;root&nbsp;%&gt;aigis_assets/css/doc.css</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>rel</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>stylesheet</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<h2 id="html">html</h2>
+<p>インデックスページ用のMarkdownファイルをパースしたHTMLが格納されている。</p>
+<p><code>index.ejs</code>では次のようにすることで、インデックスページとコンポーネントページを同一のテンプレートでレンダリングすることができます。</p>
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>main</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >html</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%</span> <span class="token attr-name" >if(components.length)</span> <span class="token attr-name" >{</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+  ...
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%</span> <span class="token attr-name" >}</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>main</span><span class="token punctuation" >></span></span>
 </code></pre>
-</blockquote>
-<h2 class="" id="config">config</h2>
-<p class="">コンフィグファイル(<code>aigis_config.yml</code>)の内容が格納されたオブジェクトです。例えばコンフィグファイルの<code>name</code>という項目をテンプレートで使いたい場合、次のように<code>config.name</code>とすることで参照できます。</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<p class="">config:</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>name</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>styleguide!</span></span></span></span></div></pre>
-</code></pre>
-<p class="">template:</p>
-<pre><code class="lang-ejs"><pre class="editor editor-colors"><div class="line"><span class="text html js"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>header</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;config</span><span class="meta delimiter method period js"><span>.</span></span><span class="support constant dom js"><span>name</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>header</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre>
-<p class="">output:</p>
-<pre><code class="lang-html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>header</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;styleguide!</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>header</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre>
-</blockquote>
-<h2 class="" id="timestamp">timestamp</h2>
-<p class=""><code>aigis run</code>が実行された時間が格納されています。形式はコンフィグファイルの<code>timestamp_format</code>で指定できます。</p>
-<p class=""><code>timestamp_format</code>に指定する形式は<a class="" href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">Moment.jsのformat</a>を参照してください。</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<p class="">config:</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>timestamp_format</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>YYYY/MM/DD&nbsp;HH:mm</span></span></span></span></div></pre>
-</code></pre>
-<p class="">template:</p>
-<pre><code class="lang-ejs"><pre class="editor editor-colors"><div class="line"><span class="text html js"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>footer</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;timestamp&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>footer</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
-</code></pre>
-<p class="">output:</p>
-<pre><code class="lang-html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>footer</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;2016/04/07&nbsp;17:11</span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>footer</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<h2 id="root">root</h2>
+<p>出力されるページから見た、コンフィグファイルの<code>dest</code>で指定されたフォルダへの相対パスが格納されています。<code>&lt;head&gt;</code>要素などにCSSファイルへの参照を相対パスで書く際に利用できます。ファイルの参照を絶対パスで行う場合には使う必要はないでしょう。</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<pre><code class="lang-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>link</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>&lt;%<span class="token punctuation" >=</span> root %<span class="token punctuation" >></span>aigis_assets/css/doc.css<span class="token punctuation" >"</span></span> <span class="token attr-name" >rel</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>stylesheet<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
 </code></pre>
 </blockquote>
-<h2 class="" id="helper">helper</h2>
-<p class="">複雑な処理が必要な場面で役に立つテンプレートヘルパーの集まりです。</p>
-<h3 class="" id="helper-createcollectiontree-collection_name-">helper.createCollectionTree(collection_name)</h3>
-<p class="">aigisはコンフィグファイルの<code>output_collection</code>にある値でコンポーネントをグルーピングして出力します。デフォルトでは<code>category</code>と<code>tag</code>が設定してあります。コレクションは次のように<code>/</code>を使うことで階層表現をすることができます。</p>
-<pre><code class="lang-yaml"><pre class="editor editor-colors"><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>name</span><span class="punctuation separator key-value yaml"><span>:</span></span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>component</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="entity name tag yaml"><span>category</span><span class="punctuation separator key-value yaml"><span>:</span></span></span></span></span></div><div class="line"><span class="source yaml"><span>&nbsp;&nbsp;</span><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span>&nbsp;</span><span class="string unquoted yaml"><span>parent/child</span></span></span></span></div><div class="line"><span class="source yaml"><span class="string unquoted yaml"><span class="punctuation definition entry yaml"><span>-</span></span><span class="string unquoted yaml"><span>--</span></span></span></span></div></pre>
+<h2 id="config">config</h2>
+<p>コンフィグファイル(<code>aigis_config.yml</code>)の内容が格納されたオブジェクトです。例えばコンフィグファイルの<code>name</code>という項目をテンプレートで使いたい場合、次のように<code>config.name</code>とすることで参照できます。</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>config:</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >name</span><span class="token punctuation" >:</span> styleguide!
 </code></pre>
-<p class="">このコンポーネントの場合、parentカテゴリの下のchildカテゴリに所属しています。スタイルガイドの出力はこの階層情報を持ちながら出力されます。こういった階層をサイドメニューなどとして表現するのはとても面倒ですので、用意されていたヘルパーを使って簡単に行えるようにしてあります。</p>
-<p class="">(このドキュメントのサイドメニューもこのヘルパーを使って出力されたものです。)</p>
-<blockquote class="">
-<h4 class="" id="example">Example</h4>
-<pre><code class="lang-ejs"><pre class="editor editor-colors"><div class="line"><span class="text html js"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>nav</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span>&nbsp;&nbsp;</span><span class="source js embedded html"><span class="punctuation section embedded js"><span>&lt;%</span></span><span class="keyword operator js"><span>-</span></span><span>&nbsp;helper</span><span class="meta delimiter method period js"><span>.</span></span><span>renderCollectionTree</span><span class="meta brace round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&#39;</span></span><span>category</span><span class="punctuation definition string end js"><span>&#39;</span></span></span><span class="meta brace round js"><span>)</span></span><span>&nbsp;</span><span class="punctuation section embedded js"><span>%&gt;</span></span></span></span></div><div class="line"><span class="text html js"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>nav</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre>
+<p>template:</p>
+<pre><code class="lang-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>header</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >config.name</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>header</span><span class="token punctuation" >></span></span>
+</code></pre>
+<p>output:</p>
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>header</span><span class="token punctuation" >></span></span>
+  styleguide!
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>header</span><span class="token punctuation" >></span></span>
+</code></pre>
+</blockquote>
+<h2 id="timestamp">timestamp</h2>
+<p><code>aigis run</code>が実行された時間が格納されています。形式はコンフィグファイルの<code>timestamp_format</code>で指定できます。</p>
+<p><code>timestamp_format</code>に指定する形式は<a href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">Moment.jsのformat</a>を参照してください。</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>config:</p>
+<pre><code class="lang-yaml"><span class="token key atrule" >timestamp_format</span><span class="token punctuation" >:</span> YYYY/MM/DD HH<span class="token punctuation" >:</span>mm
+</code></pre>
+<p>template:</p>
+<pre><code class="lang-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >timestamp</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >></span></span>
+</code></pre>
+<p>output:</p>
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span><span class="token punctuation" >></span></span>
+  2016/04/07 17:11
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >></span></span>
+</code></pre>
+</blockquote>
+<h2 id="helper">helper</h2>
+<p>複雑な処理が必要な場面で役に立つテンプレートヘルパーの集まりです。</p>
+<h3 id="helper-createcollectiontree-collection_name-">helper.createCollectionTree(collection_name)</h3>
+<p>aigisはコンフィグファイルの<code>output_collection</code>にある値でコンポーネントをグルーピングして出力します。デフォルトでは<code>category</code>と<code>tag</code>が設定してあります。コレクションは次のように<code>/</code>を使うことで階層表現をすることができます。</p>
+<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
+<span class="token key atrule" >name</span><span class="token punctuation" >:</span> component
+<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
+  <span class="token punctuation" >-</span> parent/child
+<span class="token punctuation" >---</span>
+</code></pre>
+<p>このコンポーネントの場合、parentカテゴリの下のchildカテゴリに所属しています。スタイルガイドの出力はこの階層情報を持ちながら出力されます。こういった階層をサイドメニューなどとして表現するのはとても面倒ですので、用意されていたヘルパーを使って簡単に行えるようにしてあります。</p>
+<p>(このドキュメントのサイドメニューもこのヘルパーを使って出力されたものです。)</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<pre><code class="lang-ejs"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>nav</span><span class="token punctuation" >></span></span>
+  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>%-</span> <span class="token attr-name" >helper.renderCollectionTree('category')</span> <span class="token attr-name" >%</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>nav</span><span class="token punctuation" >></span></span>
 </code></pre>
 </blockquote>
 

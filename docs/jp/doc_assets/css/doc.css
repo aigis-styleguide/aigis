@@ -132,8 +132,14 @@ main:after {
 .doc-Module {
   word-break: break-all; }
   .doc-Module > pre {
-    margin: 0 0 1em;
-    white-space: inherit;
+    background-color: #272822;
+    color: #f8f8f2;
+    font-size: 14px;
+    position: relative;
+    padding: 10px;
+    margin: 0 auto 3em;
+    overflow: scroll;
+    border: 1px solid #A0A0A0;
     border-radius: 3px; }
     .doc-Module > pre + pre {
       margin-top: 1em; }
@@ -241,9 +247,12 @@ main:after {
     .doc-Module > blockquote p {
       margin: 0 0 0.8em; }
     .doc-Module > blockquote pre {
-      white-space: normal;
+      padding: 8px;
+      background-color: #272822;
+      color: #f8f8f2;
       margin: 0;
-      margin-bottom: 1em; }
+      margin-bottom: 1em;
+      border-radius: 2px; }
     .doc-Module > blockquote h3, .doc-Module > blockquote h4, .doc-Module > blockquote h5, .doc-Module > blockquote h6 {
       margin-bottom: 0; }
     .doc-Module > blockquote h1:first-child,
