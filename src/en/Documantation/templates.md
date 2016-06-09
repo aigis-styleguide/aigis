@@ -6,7 +6,7 @@ category:
   - Documentation/Templates
 ---
 
->  you are free to make your style guide look however you would like. If you don't feel like going through this process yourself, you can take a look at the templates in our [examples](https://github.com/pxgrid/aigis/tree/master/examples) and [this document's assets](https://github.com/pxgrid/aigis-docs/tree/gh-pages/src/template), and use the assets defined there instead.
+>  You are free to make your style guide look however you would like. If you don't feel like going through this process yourself, you can take a look at the templates in our [examples](https://github.com/pxgrid/aigis/tree/master/examples) and [this document's assets](https://github.com/pxgrid/aigis-docs/tree/gh-pages/src/template), and use the assets defined there instead.
 
 Aigis require HTML templates. You can choose template engine from the following list.
 
@@ -111,7 +111,7 @@ this is component!
 
 In `index.ejs`, you can write a template for rendering a page of index and component on the same page as follows.
 
-```
+```html
 <main>
   <%- html %>
   <% if(components.length) { %>

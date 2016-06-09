@@ -141,13 +141,13 @@ So, This option helps to operate your component with JavaScript or add a CSS whi
 
 > #### Appending previewed component
 For example, you wrote a code block as follows.
-````
+````html
 ```html
 <button>hoge</button>
 ```
 ````
 Aigis appends the following HTML to your style guide.
-```
+```html
 <div class="aigis-preview">
   <button>hoge</button>
 </div>
@@ -175,7 +175,7 @@ version: 1
 
 And then you set `version` to `output_collection`. Finally, Aigis will generate a page for the components which is grouped by same `version` value.
 
-```
+```yaml
 output_collection:
   - category
   - version
@@ -203,7 +203,7 @@ transform:
 
 > #### Compile code block with template engine
 If you specify `compile: true` in configuration block of your component, The code block which is specify `ejs` or `jade` or `hbs` will be compiled by using configuration value of the configuration block.
-> ````
+> ````yaml
 ---
 name: btn
 category: btn

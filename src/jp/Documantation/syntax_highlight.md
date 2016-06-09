@@ -14,7 +14,7 @@ aigisはシンタックスハイライトにAtomエディタで使われてい�
 
 ハイライトしたいコードブロックに次のようにキーワードを指定してください。
 
-````
+````html
 ```html  
 <div class="awesome-class" data-awesome-attribute>
   <p>The quick brown fox jumps over the lazy dog</p>

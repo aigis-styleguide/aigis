@@ -114,7 +114,7 @@ this is component!
 
 `index.ejs`では次のようにすることで、インデックスページとコンポーネントページを同一のテンプレートでレンダリングすることができます。
 
-```
+```html
 <main>
   <%- html %>
   <% if(components.length) { %>

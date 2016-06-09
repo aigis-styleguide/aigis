@@ -9,7 +9,7 @@ category:
 In aigis, Documenting __component's configuration__ and __component's documentation__ in comment block (<code>&#047;&#042; ~ &#042;&#047;</code>).
 The block is surrounded by `---` is configuration (YAML) and after YAML block is a documentation (Markdown).
 
-````css
+````yaml
 ---
 name: component name
 tag:
@@ -111,7 +111,7 @@ compile: true
 
 The previewed component which was generated from the above configuration and sample code block will be prepend the sample code block.
 
-````  
+````html  
 <div>
   <h2>component name</h2>
   <p>hoge</p>

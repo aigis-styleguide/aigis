@@ -140,13 +140,13 @@ aigisがコードブロック(````html`なので始まるブロック)からHTML
 
 > #### プレビューの挿入
 例えば、次のようなコードブロックを記述した場合
-````
+````html
 ```html
 <button>hoge</button>
 ```
 ````
 次のようなHTMLが挿入されます。
-```
+```html  
 <div class="aigis-preview">
   <button>hoge</button>
 </div>
@@ -162,7 +162,7 @@ String or Array|['category', 'tag']
 
 例えばバージョニングを行っている場合には、コンポーネントの設定に次のように`version`を追加し、`output_collection`に`version`を追加することで`version`の値が同じコンポーネントがグルーピングされて出力されます。
 
-````css
+````yaml
 ---
 name: btn
 category:
@@ -172,7 +172,7 @@ version: 1
 ---
 ````
 
-```
+```yaml
 output_collection:
   - category
   - version
@@ -198,7 +198,7 @@ transform:
 
 > #### テンプレートエンジンのコンパイル
 `ejs` `jade` `hbs`のコードブロックは、コンポーネントの設定に`compile: true`を指定することで、コードブロックに設定の値を渡してコンパイルを行えます。
-````
+````yaml
 ---
 name: btn
 category: btn

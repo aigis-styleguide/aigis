@@ -15,7 +15,7 @@ Also, you can add syntax highlight support language. Please contact us on [pxgri
 
 Write codeblock with `keyword` like below (use `html`):
 
-````
+````html
 ```html
 <div class="awesome-class" data-awesome-attribute>
   <p>The quick brown fox jumps over the lazy dog</p>
