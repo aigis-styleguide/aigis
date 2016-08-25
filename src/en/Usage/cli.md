@@ -63,7 +63,7 @@ Examples:
 ### options
 |name|alias|value|
 |---|---|---|
-|`--engine`|`-c`|ejs, jade, hbs|
+|`--engine`|`-e`|ejs, jade, hbs|
 
 
 */
