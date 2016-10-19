@@ -66,6 +66,7 @@ output_collection:
 
 highlight: true
 highlight_theme: monokai
+lang_prefix: 'language-'
 
 # plugin directory
 # plugin: ./plugin
