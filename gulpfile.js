@@ -1,9 +1,11 @@
 var gulp = require("gulp");
 var plumber = require("gulp-plumber");
+var mocha = require('gulp-mocha');
 var process = require("child_process");
 var exec = process.exec;
 var bs = require("browser-sync");
 var reload = bs.reload;
+
 
 var src = {
   js: ["lib2/**/*.js"],
@@ -34,5 +36,9 @@ gulp.task("serve", function() {
     host: "localhost"
   });
 });
+
+gulp.task('test', () =>
+  gulp.src('test/**/*.js', {read: false}).pipe(mocha({reporter: 'nyan'}))
+);
 
 gulp.task("default", ["exec:index"]);
