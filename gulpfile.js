@@ -37,8 +37,8 @@ gulp.task("serve", function() {
   });
 });
 
-gulp.task('test', () =>
-  gulp.src('test/**/*.js', {read: false}).pipe(mocha({reporter: 'nyan'}))
-);
+gulp.task('test', function() {
+  gulp.src('test/**/*.js', {read: false}).pipe(mocha({reporter: 'nyan'}));
+});
 
 gulp.task("default", ["exec:index"]);
