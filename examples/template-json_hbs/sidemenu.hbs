@@ -10,11 +10,8 @@
         {{!-- Inline Partial needed for the recursive menu list --}}
         {{#*inline "menulist"}}
           <li class="{{#if isCurrent}}current{{/if}}" data-path-depth="{{depth}}">
-            {{#if href}}
-              <a href="{{href}}">{{name}}</a>
-            {{else}}
-              {{name}}
-            {{/if}}
+
+            <a href="{{#if href}}{{href}}{{else}}#{{/if}}">{{name}}</a>
 
             {{#if children.length}}
               <ul>
