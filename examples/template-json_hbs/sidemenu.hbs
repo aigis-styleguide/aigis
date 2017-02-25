@@ -7,6 +7,7 @@
 
     <ul>
       {{#each (renderCollectionTree 'category' key='children')}}
+        {{!-- Inline Partial needed for the recursive menu list --}}
         {{#*inline "menulist"}}
           <li class="{{#if isCurrent}}current{{/if}}" data-path-depth="{{depth}}">
             {{#if href}}
@@ -18,6 +19,7 @@
             {{#if children.length}}
               <ul>
                 {{#each children}}
+                  {{!-- call the partial --}}
                   {{> menulist}}
                 {{/each}}
               </ul>
