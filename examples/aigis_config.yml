@@ -39,6 +39,9 @@ template_engine: ejs
 # It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
 template_dir: ./template_ejs
 
+# data passed to the template comes either from the config or by params
+template_global_data: true
+
 # Aigis displays logs
 log: false
 
@@ -67,6 +70,7 @@ output_collection:
 highlight: true
 highlight_theme: monokai
 lang_prefix: 'language-'
+
 
 # plugin directory
 # plugin: ./plugin
