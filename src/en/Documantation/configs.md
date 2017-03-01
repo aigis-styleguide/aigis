@@ -244,7 +244,7 @@ Please refer [format of Moment.js](http://momentjs.com/docs/#week-year-week-and-
 ## template_global_data: (optional) `Only Handlebars`
 Type|Default
 ---|---
-Boolean| false
+Boolean| true
 
 ⚠ This feature is only Handlebars template.
 
