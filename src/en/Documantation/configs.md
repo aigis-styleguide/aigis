@@ -241,4 +241,67 @@ When aigis generate style guide, Aigis will path through special variable named 
 
 Please refer [format of Moment.js](http://momentjs.com/docs/#week-year-week-and-weekday-tokens) about The format of `timestamp_format` value.
 
+## template_global_data: (optional) `Only Handlebars`
+Type|Default
+---|---
+Boolean| true
+
+⚠ This feature is only Handlebars template.
+
+When you specify 'false', enabling handlebars include to pass contextual params.
+
+> #### Example
+aigis_config.yml
+>````yaml
+template_global_data: false
+transform:
+  - html
+  - hbs
+````
+your css
+````yaml
+---
+name: Button
+compile: true
+---
+Button styles.
+* Base button style.
+* Use `a` or `button` tag.
+```hbs
+{{include './button.html' label='Buy'}}
+```
+````
+button.html
+````html
+<button>{{label}}</button>
+````
+Output html for style guide is below:
+```html
+<div class="aigis-preview">
+  <button>Buy</button>
+</div>
+```
+
+## helper_options: (optional)
+
+### renderTemplateJSON: (optional) `Only Handlebars`
+Type|Default
+---|---
+Boolean| true
+
+⚠ This feature is only Handlebars template.
+
+When you specify `false`, Get a JSON object from css comment and build the menu according to our needs.
+
+> #### Example
+aigis_config.yml
+>````yaml
+template_engine: hbs
+template_dir: ./template-json_hbs
+helper_options:
+  renderTemplateJSON: true
+````
+You can customize side menu you want :)
+Please refer [/examples/template-json_hbs/sidemenu.hbs](https://github.com/pxgrid/aigis/blob/master/examples/template-json_hbs/sidemenu.hbs)
+
 */
