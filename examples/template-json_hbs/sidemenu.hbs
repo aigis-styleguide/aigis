@@ -1,0 +1,38 @@
+<div class="aigis-sidemenu">
+  <header class="aigis-header">
+    <a href="{{root}}index.html">{{config.name}}</a>
+  </header>
+  <h2 class="aigis-sidemenu__heading">Category</h2>
+  <nav class="aigis-categoryList">
+
+    <ul>
+      {{#each (renderCollectionTree 'category' key='children')}}
+        {{!-- Inline Partial needed for the recursive menu list --}}
+        {{#*inline "menulist"}}
+          <li class="{{#if isCurrent}}current{{/if}}" data-path-depth="{{depth}}">
+
+            <a href="{{#if href}}{{href}}{{else}}#{{/if}}">{{name}}</a>
+
+            {{#if children.length}}
+              <ul>
+                {{#each children}}
+                  {{!-- call the partial --}}
+                  {{> menulist}}
+                {{/each}}
+              </ul>
+            {{/if}}
+          </li>
+        {{/inline}}
+        {{> menulist}}
+      {{/each}}
+    </ul>
+
+  </nav>
+  <h2 class="aigis-sidemenu__heading">Tag</h2>
+  <nav class="aigis-tags aigis-tagList">
+    {{# each config.collection.tag}}
+      <a class="aigis-tags__item aigis-tags__item--{{this}}" href="{{@root.root}}tag/{{this}}/index.html">{{this}}</a>
+    {{/each}}
+  </nav>
+  <h2 class="aigis-sidemenu__heading"><a href="{{root}}color.html">All Colors</a></h2>
+</div>

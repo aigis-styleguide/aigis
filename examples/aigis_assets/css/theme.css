@@ -264,7 +264,8 @@ tag: latest
   margin-left: 3em; }
 .aigis-categoryList li[data-path-depth="4"] a:before {
   margin-left: 4em; }
-.aigis-categoryList li[data-path-depth] [data-tree-current] {
+.aigis-categoryList li[data-path-depth] [data-tree-current],
+.aigis-categoryList .current > a {
   background-color: #8C8C8C;
   color: #fff;
 }

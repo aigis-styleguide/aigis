@@ -77,3 +77,4 @@ lang_prefix: 'language-'
 
 helper_options:
   disable_link_index: true
+  renderTemplateJSON: false
