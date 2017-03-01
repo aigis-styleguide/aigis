@@ -60,9 +60,9 @@
 <blockquote>
 <h4 id="example">Example</h4>
 <p>In case of setting specific file and directory name to <code>source</code> value, see below:</p>
-<pre><code class="lang-yaml"><span class="token key atrule" >source</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> ./css/style.css
-  <span class="token punctuation" >-</span> ./scss
+<pre><code class="language-yaml"><span class="token key atrule">source</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ./css/style.css
+  <span class="token punctuation">-</span> ./scss
 </code></pre>
 </blockquote>
 <h2 id="source_type-optional-">source_type: (optional)</h2>
@@ -84,14 +84,14 @@
 <blockquote>
 <h4 id="example">Example</h4>
 <p>If you want to filter the type of source, set <code>source_type</code> value you want as follows.</p>
-<pre><code class="lang-yaml"><span class="token key atrule" >source_type</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> .css
-  <span class="token punctuation" >-</span> .less
+<pre><code class="language-yaml"><span class="token key atrule">source_type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> .css
+  <span class="token punctuation">-</span> .less
 </code></pre>
 <h5 id="generate-style-guide-with-markdown">Generate style guide with Markdown</h5>
 <p>Aigis can generate style guide from every text file which has CSS comment block (<code>&#047;&#042; ~ &#042;&#047;</code>) and configuration block which is surrounded by <code>---</code>
 For example, Aigis generates from Markdown file when you set <code>source_type</code> to <code>.md</code></p>
-<pre><code class="lang-yaml"><span class="token key atrule" >source_type</span><span class="token punctuation" >:</span> .md
+<pre><code class="language-yaml"><span class="token key atrule">source_type</span><span class="token punctuation">:</span> .md
 </code></pre>
 </blockquote>
 <h2 id="dest-optional-">dest: (optional)</h2>
@@ -112,7 +112,7 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 <p>Specify destination directory. If you didn&#39;t specify it, Aigis will make a destination directory named <code>style guide</code> at the configuration file (<code>aigis_config.yml</code>) directory.</p>
 <blockquote>
 <h4 id="example">Example</h4>
-<pre><code class="lang-yaml"><span class="token key atrule" >dest</span><span class="token punctuation" >:</span> ./path/to/destination
+<pre><code class="language-yaml"><span class="token key atrule">dest</span><span class="token punctuation">:</span> ./path/to/destination
 </code></pre>
 </blockquote>
 <h2 id="dependencies-optional-">dependencies: (optional)</h2>
@@ -133,10 +133,10 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 <p>Specify dependent file and directory for the style guide. The specified file and directory is copied to the destination directory.</p>
 <blockquote>
 <h4 id="example">Example</h4>
-<pre><code class="lang-yaml"><span class="token key atrule" >dependencies</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> ./path/to/css
-  <span class="token punctuation" >-</span> ./path/to/images
-  <span class="token punctuation" >-</span> ./path/to/style.css
+<pre><code class="language-yaml"><span class="token key atrule">dependencies</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ./path/to/css
+  <span class="token punctuation">-</span> ./path/to/images
+  <span class="token punctuation">-</span> ./path/to/style.css
 </code></pre>
 </blockquote>
 <h2 id="template_dir-optional-">template_dir: (optional)</h2>
@@ -159,7 +159,7 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 <p>If you specified <code>jade</code> to <code>template_engine</code>, the directory needs to contain <code>index.jade</code> and <code>layout.jade</code>.</p>
 <p>If you specified <code>hbs</code> to <code>template_engine</code>, the directory needs to contain <code>index.hbs</code> and <code>layout.hbs</code>.</p>
 <h4 id="example">Example</h4>
-<pre><code class="lang-yaml"><span class="token key atrule" >template_dir</span><span class="token punctuation" >:</span> './path/to/template_dir
+<pre><code class="language-yaml"><span class="token key atrule">template_dir</span><span class="token punctuation">:</span> './path/to/template_dir
 </code></pre>
 </blockquote>
 <h2 id="component_dir-optional-">component_dir: (optional)</h2>
@@ -203,7 +203,7 @@ For example, Aigis generates from Markdown file when you set <code>source_type</
 <blockquote>
 <h4 id="example">Example</h4>
 <p>If you want to use Jade, see below:</p>
-<pre><code class="lang-yaml"><span class="token key atrule" >template_engine</span><span class="token punctuation" >:</span> jade
+<pre><code class="language-yaml"><span class="token key atrule">template_engine</span><span class="token punctuation">:</span> jade
 </code></pre>
 </blockquote>
 <h2 id="log-optional-">log: (optional)</h2>
@@ -260,14 +260,14 @@ So, This option helps to operate your component with JavaScript or add a CSS whi
 <blockquote>
 <h4 id="appending-previewed-component">Appending previewed component</h4>
 <p>For example, you wrote a code block as follows.</p>
-<pre><code class="lang-html">```html
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
+<pre><code class="language-html">```html
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>hoge<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
 ```
 </code></pre>
 <p>Aigis appends the following HTML to your style guide.</p>
-<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>aigis-preview<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>aigis-preview<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>hoge<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </blockquote>
 <h2 id="output_collection-optional-">output_collection: (optional)</h2>
@@ -287,18 +287,18 @@ So, This option helps to operate your component with JavaScript or add a CSS whi
 </table>
 <p>Specify outputted page group. If you want to output page group besides <code>category</code> and <code>tag</code>, set group name to <code>output_collection</code>.</p>
 <p>For example, In the case of your components require versioning, you added <code>version</code> to your components configuration block as follows.</p>
-<pre><code class="lang-css">---
-<span class="token property" >name</span><span class="token punctuation" >:</span> btn
-<span class="token property" >category</span><span class="token punctuation" >:</span>
+<pre><code class="language-css">---
+<span class="token property">name</span><span class="token punctuation">:</span> btn
+<span class="token property">category</span><span class="token punctuation">:</span>
   - base
   - btn
-<span class="token property" >version</span><span class="token punctuation" >:</span> <span class="token number" >1</span>
+<span class="token property">version</span><span class="token punctuation">:</span> <span class="token number">1</span>
 ---
 </code></pre>
 <p>And then you set <code>version</code> to <code>output_collection</code>. Finally, Aigis will generate a page for the components which is grouped by same <code>version</code> value.</p>
-<pre><code class="lang-yaml"><span class="token key atrule" >output_collection</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> category
-  <span class="token punctuation" >-</span> version
+<pre><code class="language-yaml"><span class="token key atrule">output_collection</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> category
+  <span class="token punctuation">-</span> version
 </code></pre>
 <p>In the case of above specified, two type of pages (<code>category</code> and <code>version</code>) will be outputted.</p>
 <h2 id="transform-optional-">transform: (optional)</h2>
@@ -320,30 +320,30 @@ So, This option helps to operate your component with JavaScript or add a CSS whi
 It can help you to show markup example and previewed component.</p>
 <p><code>html</code> <code>jade</code> <code>ejs</code> <code>hbs</code> will be enabled by default.</p>
 <p>If you don&#39;t want to generate previewed component from the code block, specify <code>transform</code> value which you want.</p>
-<pre><code class="lang-yaml"><span class="token key atrule" >transform</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> html
-  <span class="token punctuation" >-</span> hbs
+<pre><code class="language-yaml"><span class="token key atrule">transform</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> html
+  <span class="token punctuation">-</span> hbs
 </code></pre>
 <blockquote>
 <h4 id="compile-code-block-with-template-engine">Compile code block with template engine</h4>
 <p>If you specify <code>compile: true</code> in configuration block of your component, The code block which is specify <code>ejs</code> or <code>jade</code> or <code>hbs</code> will be compiled by using configuration value of the configuration block.</p>
-<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
-<span class="token key atrule" >name</span><span class="token punctuation" >:</span> btn
-<span class="token key atrule" >category</span><span class="token punctuation" >:</span> btn
-<span class="token key atrule" >compile</span><span class="token punctuation" >:</span> <span class="token boolean important" >true</span>
-<span class="token key atrule" >data</span><span class="token punctuation" >:</span>
-  <span class="token key atrule" >value1</span><span class="token punctuation" >:</span> hoge
-<span class="token punctuation" >---</span>
+<pre><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> btn
+<span class="token key atrule">category</span><span class="token punctuation">:</span> btn
+<span class="token key atrule">compile</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">value1</span><span class="token punctuation">:</span> hoge
+<span class="token punctuation">---</span>
 ```ejs  
-&lt;h2<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> name %<span class="token punctuation" >></span>&lt;/h2<span class="token punctuation" >></span>
-&lt;button<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> data.value1 %<span class="token punctuation" >></span>&lt;/button<span class="token punctuation" >></span>
+&lt;h2<span class="token punctuation">></span>&lt;%<span class="token punctuation">-</span> name %<span class="token punctuation">></span>&lt;/h2<span class="token punctuation">></span>
+&lt;button<span class="token punctuation">></span>&lt;%<span class="token punctuation">-</span> data.value1 %<span class="token punctuation">></span>&lt;/button<span class="token punctuation">></span>
 ```
 </code></pre>
 <p>In the above case, Aigis will append HTML like the following by using configuration values.</p>
-<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>aigis-preview<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >></span></span>btn<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>button</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>button</span><span class="token punctuation" >></span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>aigis-preview<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>btn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>hoge<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </blockquote>
 <h2 id="highlight-optional-">highlight: (optional)</h2>
@@ -379,6 +379,52 @@ It can help you to show markup example and previewed component.</p>
 </table>
 <p>When aigis generate style guide, Aigis will path through special variable named <code>timestamp</code> to your template. It helps to mention about publish date of your style guide.</p>
 <p>Please refer <a href="http://momentjs.com/docs/#week-year-week-and-weekday-tokens" title="null">format of Moment.js</a> about The format of <code>timestamp_format</code> value.</p>
+<h2 id="template_global_data-optional-only-handlebars-">template_global_data: (optional) <code>Only Handlebars</code></h2>
+<table>
+<thead>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td  >Boolean</td>
+<td  >false</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ This feature is only Handlebars template.</p>
+<p>When you specify &#39;false&#39;, enabling handlebars include to pass contextual params.</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>aigis_config.yml</p>
+<pre><code class="language-yaml"><span class="token key atrule">template_global_data</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">transform</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> html
+  <span class="token punctuation">-</span> hbs
+</code></pre>
+<p>your css</p>
+<pre><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> Button
+<span class="token key atrule">compile</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token punctuation">---</span>
+Button styles.
+* Base button style.
+* Use `a` or `button` tag.
+```hbs
+<span class="token punctuation">{</span><span class="token punctuation">{</span>include './button.html' label='Buy'<span class="token punctuation">}</span><span class="token punctuation">}</span>
+```
+</code></pre>
+<p>button.html</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>{{label}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>Output html for style guide is below:</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>aigis-preview<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Buy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+</blockquote>
 
       </div>
   

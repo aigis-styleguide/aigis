@@ -241,4 +241,45 @@ When aigis generate style guide, Aigis will path through special variable named 
 
 Please refer [format of Moment.js](http://momentjs.com/docs/#week-year-week-and-weekday-tokens) about The format of `timestamp_format` value.
 
+## template_global_data: (optional) `Only Handlebars`
+Type|Default
+---|---
+Boolean| false
+
+⚠ This feature is only Handlebars template.
+
+When you specify 'false', enabling handlebars include to pass contextual params.
+
+> #### Example
+aigis_config.yml
+>````yaml
+template_global_data: false
+transform:
+  - html
+  - hbs
+````
+your css
+````yaml
+---
+name: Button
+compile: true
+---
+Button styles.
+* Base button style.
+* Use `a` or `button` tag.
+```hbs
+{{include './button.html' label='Buy'}}
+```
+````
+button.html
+````html
+<button>{{label}}</button>
+````
+Output html for style guide is below:
+```html
+<div class="aigis-preview">
+  <button>Buy</button>
+</div>
+```
+
 */

@@ -42,15 +42,15 @@
         </h1>
         <p>In aigis, Documenting <strong>component&#39;s configuration</strong> and <strong>component&#39;s documentation</strong> in comment block (<code>&#047;&#042; ~ &#042;&#047;</code>).
 The block is surrounded by <code>---</code> is configuration (YAML) and after YAML block is a documentation (Markdown).</p>
-<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
-<span class="token key atrule" >name</span><span class="token punctuation" >:</span> component name
-<span class="token key atrule" >tag</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> base
-  <span class="token punctuation" >-</span> latest
-<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> component
-  <span class="token punctuation" >-</span> component/button
-<span class="token punctuation" >---</span>
+<pre><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> component name
+<span class="token key atrule">tag</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> base
+  <span class="token punctuation">-</span> latest
+<span class="token key atrule">category</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> component
+  <span class="token punctuation">-</span> component/button
+<span class="token punctuation">---</span>
 
 <span class="token comment" spellcheck="true">## This is a component document</span>
 
@@ -60,7 +60,7 @@ The block is surrounded by <code>---</code> is configuration (YAML) and after YA
 Here's an example code.
 
 ```html
-&lt;a class="btn"<span class="token punctuation" >></span>Button&lt;/a<span class="token punctuation" >></span>
+&lt;a class="btn"<span class="token punctuation">></span>Button&lt;/a<span class="token punctuation">></span>
 ```
 </code></pre>
 <p>The component&#39;s style guide wil be generated from this configuration block and documentation block.</p>
@@ -69,15 +69,15 @@ Here's an example code.
 <blockquote>
 <p>To be more precise, <code>---</code> needs to contain at the next line of starting line of the comment block (<code>&#047;&#042;</code>).</p>
 </blockquote>
-<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
-<span class="token key atrule" >name</span><span class="token punctuation" >:</span> component name
-<span class="token key atrule" >tag</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> base
-  <span class="token punctuation" >-</span> latest
-<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> component
-  <span class="token punctuation" >-</span> component/button
-<span class="token punctuation" >---</span>
+<pre><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> component name
+<span class="token key atrule">tag</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> base
+  <span class="token punctuation">-</span> latest
+<span class="token key atrule">category</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> component
+  <span class="token punctuation">-</span> component/button
+<span class="token punctuation">---</span>
 </code></pre>
 <p>Specifying config keys of components (default is <code>category</code> and <code>tag</code>) in <code>output_collection:</code> which is in the configuration file ( <code>aigis_config.yml</code>) , you can generate a components style guide grouped by the specified configuration keys.</p>
 <blockquote>
@@ -98,40 +98,40 @@ Please see <a href="../Syntax-Highlight/" title="null">Documentation/Syntax High
 <blockquote>
 <p>If you want to enable or disable previewed components, set <code>transform:</code> value in configuration block.
 In the case of enabling only <code>ejs</code>, set <code>transform:</code> value to <code>ejs</code> only as follows.</p>
-<pre><code class="lang-yaml"><span class="token key atrule" >transform</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> ejs
+<pre><code class="language-yaml"><span class="token key atrule">transform</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ejs
 </code></pre>
 </blockquote>
 <p>Describe configuration to generate from sample code block by using EJS.
 You can set <code>compile:</code> value each component. By default is <code>false</code>.</p>
-<pre><code class="lang-yaml"><span class="token punctuation" >---</span>
-<span class="token key atrule" >name</span><span class="token punctuation" >:</span> component name
-<span class="token key atrule" >tag</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> base
-  <span class="token punctuation" >-</span> latest
-<span class="token key atrule" >category</span><span class="token punctuation" >:</span>
-  <span class="token punctuation" >-</span> component
-  <span class="token punctuation" >-</span> component/button
-<span class="token key atrule" >data</span><span class="token punctuation" >:</span>
-  <span class="token key atrule" >value1</span><span class="token punctuation" >:</span> hoge
-  <span class="token key atrule" >value2</span><span class="token punctuation" >:</span> fuga
-<span class="token key atrule" >compile</span><span class="token punctuation" >:</span> <span class="token boolean important" >true</span>
-<span class="token punctuation" >---</span>
+<pre><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> component name
+<span class="token key atrule">tag</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> base
+  <span class="token punctuation">-</span> latest
+<span class="token key atrule">category</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> component
+  <span class="token punctuation">-</span> component/button
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">value1</span><span class="token punctuation">:</span> hoge
+  <span class="token key atrule">value2</span><span class="token punctuation">:</span> fuga
+<span class="token key atrule">compile</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token punctuation">---</span>
 
 ```ejs  
-&lt;div<span class="token punctuation" >></span>
-  &lt;h2<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> name %<span class="token punctuation" >></span>&lt;/h2<span class="token punctuation" >></span>
-  &lt;p<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> data.value1 %<span class="token punctuation" >></span>&lt;/p<span class="token punctuation" >></span>
-  &lt;p<span class="token punctuation" >></span>&lt;%<span class="token punctuation" >-</span> data.value2 %<span class="token punctuation" >></span>&lt;/p<span class="token punctuation" >></span>
-&lt;/div<span class="token punctuation" >></span>
+&lt;div<span class="token punctuation">></span>
+  &lt;h2<span class="token punctuation">></span>&lt;%<span class="token punctuation">-</span> name %<span class="token punctuation">></span>&lt;/h2<span class="token punctuation">></span>
+  &lt;p<span class="token punctuation">></span>&lt;%<span class="token punctuation">-</span> data.value1 %<span class="token punctuation">></span>&lt;/p<span class="token punctuation">></span>
+  &lt;p<span class="token punctuation">></span>&lt;%<span class="token punctuation">-</span> data.value2 %<span class="token punctuation">></span>&lt;/p<span class="token punctuation">></span>
+&lt;/div<span class="token punctuation">></span>
 ```
 </code></pre>
 <p>The previewed component which was generated from the above configuration and sample code block will be prepend the sample code block.</p>
-<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h2</span><span class="token punctuation" >></span></span>component name<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h2</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >></span></span>hoge<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >></span></span>
-  <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >></span></span>fuga<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >></span></span>
-<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>component name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>hoge<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>fuga<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>Jade and Handlebars also can generate compiled previewed component.</p>
 
