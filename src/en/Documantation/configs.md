@@ -282,4 +282,26 @@ Output html for style guide is below:
 </div>
 ```
 
+## helper_options: (optional)
+
+### renderTemplateJSON: (optional) `Only Handlebars`
+Type|Default
+---|---
+Boolean| true
+
+⚠ This feature is only Handlebars template.
+
+When you specify `false`, Get a JSON object from css comment and build the menu according to our needs.
+
+> #### Example
+aigis_config.yml
+>````yaml
+template_engine: hbs
+template_dir: ./template-json_hbs
+helper_options:
+  renderTemplateJSON: true
+````
+You can customize side menu you want :)
+Please refer [/examples/template-json_hbs/sidemenu.hbs](https://github.com/pxgrid/aigis/blob/master/examples/template-json_hbs/sidemenu.hbs)
+
 */

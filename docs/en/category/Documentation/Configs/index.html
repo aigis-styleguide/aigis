@@ -425,6 +425,35 @@ Button styles.
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre>
 </blockquote>
+<h2 id="helper_options-optional-">helper_options: (optional)</h2>
+<h3 id="rendertemplatejson-optional-only-handlebars-">renderTemplateJSON: (optional) <code>Only Handlebars</code></h3>
+<table>
+<thead>
+<tr>
+<th  >Type</th>
+<th  >Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td  >Boolean</td>
+<td  >true</td>
+</tr>
+</tbody>
+</table>
+<p>⚠ This feature is only Handlebars template.</p>
+<p>When you specify <code>false</code>, Get a JSON object from css comment and build the menu according to our needs.</p>
+<blockquote>
+<h4 id="example">Example</h4>
+<p>aigis_config.yml</p>
+<pre><code class="language-yaml"><span class="token key atrule">template_engine</span><span class="token punctuation">:</span> hbs
+<span class="token key atrule">template_dir</span><span class="token punctuation">:</span> ./template<span class="token punctuation">-</span>json_hbs
+<span class="token key atrule">helper_options</span><span class="token punctuation">:</span>
+  <span class="token key atrule">renderTemplateJSON</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+<p>You can customize side menu you want :)
+Please refer <a href="https://github.com/pxgrid/aigis/blob/master/examples/template-json_hbs/sidemenu.hbs" title="null">/examples/template-json_hbs/sidemenu.hbs</a></p>
+</blockquote>
 
       </div>
   
