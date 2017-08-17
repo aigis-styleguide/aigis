@@ -6,11 +6,15 @@
   <nav class="aigis-categoryList">
     <%- helper.renderCollectionTree('category') %>
   </nav>
-  <h2 class="aigis-sidemenu__heading">Tag</h2>
-  <nav class="aigis-tags aigis-tagList">
-    <% config.collection.tag.forEach(function(tag) { %>
-      <a class="aigis-tags__item aigis-tags__item--<%- tag %>" href="<%- root %>tag/<%- tag %>/index.html"><%- tag %></a>
-    <% }) %>
-  </nav>
-  <h2 class="aigis-sidemenu__heading"><a href="<%- root %>color.html">All Colors</a></h2>
+  <% if (config.collection.tag.length) { %>
+    <h2 class="aigis-sidemenu__heading">Tag</h2>
+    <nav class="aigis-tags aigis-tagList">
+      <% config.collection.tag.forEach(function(tag) { %>
+        <a class="aigis-tags__item aigis-tags__item--<%- tag %>" href="<%- root %>tag/<%- tag %>/index.html"><%- tag %></a>
+      <% }) %>
+    </nav>
+  <% } %>
+  <% if (config.collection.tag) { %>
+    <h2 class="aigis-sidemenu__heading"><a href="<%- root %>color.html">All Colors</a></h2>
+  <% } %>
 </div>
