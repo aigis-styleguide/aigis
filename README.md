@@ -1,5 +1,8 @@
 # ⚠️  **[This project is no longer maintained.](https://github.com/pxgrid/aigis/issues/121)** ⚠️
 
+However you can use aigis to generate styleguide.
+
+
 # aigis
 
 Aigis is a Node.js package that parses comments in your CSS and auto-generate a style guide.
