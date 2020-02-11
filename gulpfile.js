@@ -22,9 +22,7 @@ gulp.task("exec:index", function(cb) {
   });
 });
 
-gulp.task("watch",function() {
-  return gulp.watch(src.js, ["exec:index"]);
-});
+gulp.watch(src.js, gulp.series("exec:index"));
 
 gulp.task("serve", function() {
   bs.init({
@@ -41,4 +39,4 @@ gulp.task('test', function() {
   gulp.src('test/**/*.js', {read: false}).pipe(mocha({reporter: 'nyan'}));
 });
 
-gulp.task("default", ["exec:index"]);
+exports.default = gulp.series("exec:index");

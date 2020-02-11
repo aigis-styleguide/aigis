@@ -35,22 +35,22 @@
     "jade": "^1.9.2",
     "js-beautify": "^1.5.10",
     "js-yaml": "^3.3.0",
-    "lodash": "^3.5.0",
+    "lodash": "^4.17.15",
     "marked": "^0.3.3",
     "moment": "^2.10.2",
     "object-assign": "^4.0.1",
+    "sass-color-json": "^0.4.0",
     "yargs": "^4.3.2"
   },
   "devDependencies": {
     "browser-sync": "^2.7.13",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "gulp-mocha": "^3.0.1",
     "gulp-plumber": "^1.0.0",
     "power-assert": "^1.4.2"
   },
   "scripts": {
     "start": "gulp",
-    "test": "gulp test",
-    "watch": "gulp watch"
+    "test": "gulp test"
   }
 }

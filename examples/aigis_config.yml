@@ -48,7 +48,12 @@ log: false
 # When you don't want color palette page (color.html) you may set false
 color_palette: true
 
-#
+# If you want to parse a color palette Sass file
+# custom_template will look for a file called colors into your template folder
+# color_palette_sass:
+#   file_path: './sass/palette.scss'
+#   custom_template: true
+
 transform:
   - html
 #  - jade
@@ -70,7 +75,6 @@ output_collection:
 highlight: true
 highlight_theme: monokai
 lang_prefix: 'language-'
-
 
 # plugin directory
 # plugin: ./plugin
